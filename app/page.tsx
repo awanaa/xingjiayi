@@ -613,7 +613,7 @@ export default function HomePage() {
               >
                 <div className="aspect-video relative overflow-hidden bg-white/[0.03]">
                   <OptimizedImage
-                    src={`/products/prod-${String(i + 1).padStart(2, "0")}.png`}
+                    src={`/products/prod-${String(i + 1).padStart(2, "0")}.webp`}
                     alt={cat.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-smooth opacity-90"
@@ -685,13 +685,13 @@ export default function HomePage() {
             <div className="w-full lg:w-[70%] h-[45vh] lg:h-[75vh] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl flex-shrink-0 group ring-1 ring-white/5">
               {content.capabilities.steps.map((s, i) => {
                 const processImages = [
-                  "/process-illustrations/Gemini_Generated_Image_h4tdnmh4tdnmh4td.png", // 0: Design
-                  "/process-illustrations/Gemini_Generated_Image_38tvxi38tvxi38tv.png", // 1: Prototyping/Prep
-                  "/process-illustrations/Gemini_Generated_Image_3i7d4v3i7d4v3i7d.png", // 2: Printing
-                  "/process-illustrations/Gemini_Generated_Image_4nzn934nzn934nzn.png", // 3: Die-cutting
-                  "/process-illustrations/Gemini_Generated_Image_1zhoul1zhoul1zho.png", // 4: Assembly/Binding
-                  "/process-illustrations/Gemini_Generated_Image_rrrvparrrvparrrv.png", // 5: QC
-                  "/process-illustrations/Gemini_Generated_Image_t02tdut02tdut02t.png", // 6: Packaging
+                  "/process-illustrations/Gemini_Generated_Image_h4tdnmh4tdnmh4td.webp", // 0: Design
+                  "/process-illustrations/Gemini_Generated_Image_38tvxi38tvxi38tv.webp", // 1: Prototyping/Prep
+                  "/process-illustrations/Gemini_Generated_Image_3i7d4v3i7d4v3i7d.webp", // 2: Printing
+                  "/process-illustrations/Gemini_Generated_Image_4nzn934nzn934nzn.webp", // 3: Die-cutting
+                  "/process-illustrations/Gemini_Generated_Image_1zhoul1zhoul1zho.webp", // 4: Assembly/Binding
+                  "/process-illustrations/Gemini_Generated_Image_rrrvparrrvparrrv.webp", // 5: QC
+                  "/process-illustrations/Gemini_Generated_Image_t02tdut02tdut02t.webp", // 6: Packaging
                   "/real-factory/truck-loading.jpg", // 7: Logistics
                 ];
                 const picSrc = processImages[i % processImages.length];
