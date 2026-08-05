@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#BF953F"/>
+      <stop offset="25%"  stop-color="#FCF6B5"/>
+      <stop offset="50%"  stop-color="#B38728"/>
+      <stop offset="75%"  stop-color="#FBF5B7"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FCF6B5" stop-opacity="0.6"/>
+      <stop offset="50%"  stop-color="#BF953F" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#AA771C" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#BF953F" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <polygon points="48,0 96,48 48,96 0,48" fill="none" stroke="url(#gold)" stroke-width="3"/>
+    <polygon points="48,0 96,48 48,48" fill="url(#goldShine)" opacity="0.7"/>
+    <polygon points="96,48 48,96 48,48" fill="url(#gold)" opacity="0.45"/>
+    <polygon points="48,96 0,48 48,48" fill="url(#gold)" opacity="0.2"/>
+    <polygon points="0,48 48,0 48,48" fill="url(#goldShine)" opacity="0.15"/>
+    <line x1="48" y1="0" x2="48" y2="96" stroke="url(#gold)" stroke-width="1.2" opacity="0.5"/>
+    <line x1="0" y1="48" x2="96" y2="48" stroke="url(#gold)" stroke-width="0.8" opacity="0.3"/>
+    <polygon points="48,36 60,48 48,60 36,48" fill="#141414" stroke="url(#gold)" stroke-width="1.5"/>
+    <polygon points="48,39 57,48 48,57 39,48" fill="url(#gold)" opacity="0.9"/>
+  </g>
+</svg>

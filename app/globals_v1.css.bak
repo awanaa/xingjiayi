@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-300: #FFD770;
+  --color-gold-400: #F5C542;
+  --color-gold-500: #D4A84B;
+  --color-gold-600: #D4AF37;
+  --color-surface-base: #141414;
+  --color-surface-1: #1C1C1C;
+  --color-surface-2: #2A2A2A;
+  --color-surface-3: #333333;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A1A1AA;
+  --color-text-warm: #B8B0A5;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-gold: rgba(212, 168, 75, 0.3);
+  --radius-container: 16px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 9999px;
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: var(--color-surface-base);
+    color: var(--color-text-secondary);
+  }
+
+  ::selection {
+    background-color: var(--color-gold-500);
+    color: var(--color-surface-base);
+  }
+
+  *, ::before, ::after {
+    transition-timing-function: var(--ease-smooth);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .shadow-elevation-1 {
+    background-color: var(--color-surface-1);
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  .shadow-elevation-2 {
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  .hover-lift {
+    transition-property: transform, border-color, box-shadow, background-color;
+    transition-duration: 400ms;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-gold);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-surface-3);
+    border-radius: var(--radius-pill);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-text-secondary);
+  }
+}

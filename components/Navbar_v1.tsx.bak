@@ -1,0 +1,70 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { Languages } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
+import { useScroll } from '../hooks/useScroll';
+
+interface NavbarProps {
+  lang?: "en" | "zh" | "ja";
+  onLangChange?: (lang: "en" | "zh" | "ja") => void;
+  showBackButton?: boolean;
+}
+
+export default function Navbar({ lang, onLangChange, showBackButton }: NavbarProps) {
+  const scrolled = useScroll(50);
+
+  return (
+    <nav
+      className={`fixed w-full z-50 ease-smooth ${
+        scrolled
+          ? 'bg-surface-base/90 backdrop-blur-md border-b border-subtle py-4'
+          : 'bg-transparent py-6'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <Link href="/" className="hover:opacity-80 ease-smooth shrink-0 flex items-center">
+          <img
+            src="/logo.svg"
+            alt={lang === "zh" ? "星嘉艺" : "XINGJIAYI"}
+            className="h-10 md:h-14 w-auto object-contain"
+          />
+          {!showBackButton && <div className="h-6 w-[1px] bg-border-subtle mx-3 hidden md:block" />}
+        </Link>
+
+        <div className="hidden md:flex space-x-8 text-sm font-medium text-secondary">
+          {showBackButton ? (
+            <Link href="/" className="hover:text-primary ease-smooth flex items-center">
+              {lang === "zh" ? "← 返回首页" : lang === "ja" ? "← 戻る" : "← Back to Home"}
+            </Link>
+          ) : (
+            <>
+              <Link href="/about" className="hover:text-primary ease-smooth">{lang === "zh" ? "关于我们" : lang === "ja" ? "会社概要" : "About Us"}</Link>
+              <Link href="/plant" className="hover:text-primary ease-smooth">{lang === "zh" ? "智能工厂" : lang === "ja" ? "スマート工場" : "Intelligent Plant"}</Link>
+              <Link href="/portfolio" className="hover:text-primary ease-smooth">{lang === "zh" ? "产品画册" : lang === "ja" ? "製品カタログ" : "Portfolio"}</Link>
+            </>
+          )}
+        </div>
+
+        <div className="flex items-center space-x-4">
+          {onLangChange && (
+            <button
+              onClick={() => onLangChange(lang === 'zh' ? 'en' : lang === 'en' ? 'ja' : 'zh')}
+              className="flex items-center text-xs font-bold text-gold-500 border border-gold-500/30 px-3 py-1.5 rounded-btn hover:bg-gold-500/10 ease-smooth"
+            >
+              <span className={`${lang === 'zh' ? 'font-bold text-gold-300' : 'text-gold-500/60'}`}>中</span>
+              <span className="mx-1">/</span>
+              <span className={`${lang === 'en' ? 'font-bold text-gold-300' : 'text-gold-500/60'}`}>EN</span>
+              <span className="mx-1">/</span>
+              <span className={`${lang === 'ja' ? 'font-bold text-gold-300' : 'text-gold-500/60'}`}>日</span>
+            </button>
+          )}
+          <Link href="/portal" className="hidden sm:block bg-surface-1 hover:bg-surface-2 text-primary px-5 py-2.5 rounded-btn text-sm font-medium ease-smooth border border-subtle">
+            {lang === "zh" ? "客户门户" : lang === "ja" ? "お客様ポータル" : "Client Portal"}
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+}

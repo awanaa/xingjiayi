@@ -1,0 +1,219 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, Box, Cpu } from "lucide-react";
+import Navbar from "../components/Navbar";
+import OptimizedImage from "../components/OptimizedImage";
+import { useLang } from "../hooks/useLang";
+import Footer from "../components/Footer";
+
+export default function HomePage() {
+  const { lang, setLang } = useLang();
+
+  const certifications = [
+    { name: "Disney", src: "/certificate/Disney_logo.png" },
+    { name: "Walmart", src: "/certificate/Walmart.png" },
+    { name: "Target", src: "/certificate/Target.png" },
+    { name: "Costco", src: "/certificate/Costco.png" },
+    { name: "ISO 9001", src: "/certificate/ISO_9001-2015.png" },
+    { name: "ISO 14001", src: "/certificate/iso14001.png" },
+  ];
+
+  const portfolioItems = [
+    {
+      title: lang === "zh" ? "立体书工程" : lang === "ja" ? "ポップアップエンジニアリング" : "Pop-up Engineering",
+      desc: lang === "zh" ? "复杂 3D 互动结构" : lang === "ja" ? "複雑な3D立体構造" : "Complex 3D interactive mechanics.",
+      img: "/exhibit-01.jpg",
+    },
+    {
+      title: lang === "zh" ? "精品礼盒" : lang === "ja" ? "高級ギフトボックス" : "Luxury Packaging",
+      desc: lang === "zh" ? "高端品牌的触感体验" : lang === "ja" ? "高級ブランドのための上質な触感" : "Tactile excellence for premium brands.",
+      img: "/exhibit-02.jpg",
+    },
+    {
+      title: lang === "zh" ? "桌游印制" : lang === "ja" ? "ボードゲーム印刷" : "Board Games",
+      desc: lang === "zh" ? "高精度组件制造" : lang === "ja" ? "高精度コンポーネント製造" : "High-precision component manufacturing.",
+      img: "/exhibit-03.jpg",
+    },
+  ];
+
+  const content = {
+    en: {
+      hero: {
+        title: "Infinite Craft.",
+        sub: "Global Precision.",
+        desc: "Based in Shenzhen, Serving the World. Over 30 Years of Excellence in Global Paper Art & Intelligent Print Solutions.",
+      },
+      btn: "Explore Capabilities",
+      tourBtn: "Tour the Plant",
+      section1: { title: "End-to-End", accent: "Precision." },
+      portfolioTitle: "Portfolio",
+    },
+    zh: {
+      hero: {
+        title: "匠心无限。",
+        sub: "全球精度。",
+        desc: "立足深圳，服务全球。三十年深耕纸艺工程与智能印刷解决方案。",
+      },
+      btn: "探索核心能力",
+      tourBtn: "参观工厂",
+      section1: { title: "全流程", accent: "精准交付。" },
+      portfolioTitle: "产品画册",
+    },
+    ja: {
+      hero: {
+        title: "無限の匠心。",
+        sub: "世界標準の精度。",
+        desc: "深圳を拠点に世界へ。紙工芸技術とスマート印刷ソリューションにおける30年の実績。",
+      },
+      btn: "コア技術を探る",
+      tourBtn: "工場見学",
+      section1: { title: "エンドツーエンド", accent: "精度。" },
+      portfolioTitle: "製品カタログ",
+    },
+  }[lang];
+
+  return (
+    <div className="min-h-screen bg-surface-base text-primary font-sans selection:bg-gold-500 selection:text-surface-base">
+      <Navbar lang={lang} onLangChange={setLang} />
+
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-base/60 via-surface-base/80 to-surface-base z-10" />
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover scale-105">
+          <source src="/Premium_Children_s_Book_Factory_Video_opt.mp4" type="video/mp4" />
+        </video>
+        <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-extrabold text-primary mb-6 tracking-tight leading-tight">
+            {content.hero.title}
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-secondary">
+              {content.hero.sub}
+            </span>
+          </h1>
+          <p className="text-lg md:text-2xl text-secondary mb-12 max-w-3xl mx-auto font-light">
+            {content.hero.desc}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/portfolio"
+              className="w-full sm:w-auto bg-gold-500 text-surface-base px-8 py-4 rounded-btn font-bold hover:bg-gold-400 ease-smooth flex items-center justify-center group shadow-lg shadow-gold-500/20"
+            >
+              {content.btn}{" "}
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 ease-smooth" />
+            </Link>
+            <Link
+              href="/plant"
+              className="w-full sm:w-auto bg-transparent border border-text-secondary text-primary px-8 py-4 rounded-btn font-medium hover:bg-white/10 ease-smooth flex items-center justify-center"
+            >
+              {content.tourBtn}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <div className="border-y border-subtle bg-surface-base py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
+            <div>
+              <h3 className="text-primary font-bold text-xl mb-1 tracking-tight">
+                {lang === "zh" ? "权威认证" : "Certified Excellence."}
+              </h3>
+              <p className="text-secondary text-sm tracking-wide">
+                {lang === "zh" ? "全球公认的安全与质量标准。" : "Globally recognized standards in safety and quality."}
+              </p>
+            </div>
+            <div className="mt-4 md:mt-0 h-[1px] md:h-12 w-24 md:w-[1px] bg-border-subtle" />
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {certifications.map((cert, i) => (
+              <div
+                key={i}
+                className="aspect-square shadow-elevation-1 rounded-card flex flex-col items-center justify-center p-5 group hover-lift cursor-pointer"
+              >
+                <div className="h-14 w-full flex items-center justify-center mb-3 px-2">
+                  <div className="bg-surface-2/50 backdrop-blur-sm rounded-btn w-full h-full flex items-center justify-center p-3 ring-1 ring-border-subtle shadow-lg">
+                    <OptimizedImage
+                      src={cert.src}
+                      alt={cert.name}
+                      wrapperClassName="h-full w-full"
+                      className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:scale-110 ease-smooth duration-500"
+                    />
+                  </div>
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/80 group-hover:text-gold-500 ease-smooth text-center">
+                  {cert.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Capabilities */}
+      <section id="capabilities" className="py-32 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-16 text-primary italic">
+          {content.section1.title}{" "}
+          <span className="text-secondary">{content.section1.accent}</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[340px]">
+          <div className="md:col-span-2 bg-gradient-to-br from-surface-1 to-surface-base border border-subtle rounded-container p-10 flex flex-col justify-between group hover-lift relative overflow-hidden">
+            <div className="relative z-10">
+              <Box className="w-12 h-12 text-gold-500 mb-8" />
+              <h3 className="text-3xl font-bold mb-4 text-primary">
+                {lang === "zh" ? "纸艺工程" : lang === "ja" ? "紙工芸エンジニアリング" : "Paper Engineering"}
+              </h3>
+              <p className="text-warm text-lg max-w-md">
+                {lang === "zh" ? "将抽象创意转化为复杂的立体互动结构。" : lang === "ja" ? "抽象的なアイデアを複雑な立体構造へと具現化。" : "Transforming abstract concepts into interactive mechanics."}
+              </p>
+            </div>
+          </div>
+          <div className="shadow-elevation-1 p-10 rounded-container flex flex-col justify-between group hover-lift">
+            <Cpu className="w-10 h-10 text-gold-500 mb-6" />
+            <h3 className="text-xl font-bold text-primary">
+              {lang === "zh" ? "智能工厂" : lang === "ja" ? "スマート工場" : "Smart Plant"}
+            </h3>
+            <p className="text-warm text-sm">
+              {lang === "zh" ? "超过 50% 的自动化率。" : lang === "ja" ? "50%以上の自動化率。" : "50%+ Automation rate."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Preview */}
+      <section id="portfolio" className="py-32 bg-surface-2 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <h2 className="text-4xl font-bold text-primary mb-4">
+            {content.portfolioTitle}
+          </h2>
+        </div>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex gap-6 overflow-x-auto pb-8 scroll-smooth no-scrollbar" style={{ scrollbarWidth: "none" }}>
+            {portfolioItems.map((item, i) => (
+              <div key={i} className="min-w-[80vw] md:min-w-[450px] aspect-[4/5] relative rounded-container overflow-hidden group border border-subtle shrink-0 hover-lift">
+                <OptimizedImage
+                  src={item.img}
+                  alt={item.title}
+                  wrapperClassName="absolute inset-0"
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 ease-smooth duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-base/80 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 text-primary">
+                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm text-warm opacity-0 group-hover:opacity-100 ease-smooth">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
