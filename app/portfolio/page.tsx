@@ -43,6 +43,7 @@ export default function PortfolioPage() {
   const [selectedCatKey, setSelectedCatKey] = useState<string | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [folders, setFolders] = useState<FolderData[]>([]);
+  const [catNames, setCatNames] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
@@ -53,6 +54,11 @@ export default function PortfolioPage() {
       .then((data) => {
         if (data && data.gallery && Array.isArray(data.gallery.folders)) {
           setFolders(data.gallery.folders);
+          if (Array.isArray(data.gallery.categories)) {
+            const names: Record<string, string> = {};
+            data.gallery.categories.forEach((c: { key: string; name: string }) => { if (c?.key) names[c.key] = c.name || c.key; });
+            setCatNames(names);
+          }
           setLoading(false);
         } else {
           return fetch("/gallery-index.json").then((r2) => r2.json());
@@ -138,7 +144,7 @@ export default function PortfolioPage() {
       {/* ===== HERO ===== */}
       <div className="max-w-7xl mx-auto px-5 pt-36 pb-8">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-          产品<span className="text-gold-500">画册</span>
+          产品<span className="text-gold-500">展示</span>
         </h1>
       </div>
 
@@ -151,6 +157,7 @@ export default function PortfolioPage() {
         labels={labels}
         allImages={allImages}
         typeGroups={typeGroups}
+        catNames={catNames}
         hasOthers={hasOthers}
         othersCount={othersGroup?.length ?? 0}
       />
@@ -188,7 +195,7 @@ export default function PortfolioPage() {
             <div key={type} id={`cat-${type}`}>
               <div className="flex items-center gap-2 mb-5">
                 {meta && <span className="text-gold-400 w-5 h-5 flex items-center justify-center">{meta.icon}</span>}
-                <h2 className="text-lg font-semibold">{t(meta.label)}</h2>
+                <h2 className="text-lg font-semibold">{meta ? t(meta.label) : catNames[type] || type}</h2>
                 <span className="text-xs text-white/30 font-mono">{images.length}</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
@@ -352,10 +359,10 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
 // FILTER BAR
 // =============================================================================
 
-function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, typeGroups, hasOthers, othersCount }: {
+function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, typeGroups, catNames, hasOthers, othersCount }: {
   activeFilter: string; setActiveFilter: (f: string) => void; lang: string;
   t: (m: Record<string,string>) => string; labels: Record<string,Record<string,string>>;
-  allImages: any[]; typeGroups: Record<string,any[]>; hasOthers: boolean; othersCount: number;
+  allImages: any[]; typeGroups: Record<string,any[]>; catNames: Record<string,string>; hasOthers: boolean; othersCount: number;
 }) {
   const rowRef = useRef<HTMLDivElement>(null);
   const moreRef = useRef<HTMLButtonElement>(null);
@@ -427,7 +434,7 @@ function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, all
             return (
               <button key={key} data-chip={key} onClick={() => setActiveFilter(key)} className={`shrink-0 px-3 py-1.5 text-sm rounded-md font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${isHidden ? "sr-only focus:not-sr-only focus:absolute" : ""} ${activeFilter === key ? "bg-gold-500/10 text-gold-500" : "text-white/50 hover:text-white hover:bg-white/[0.06]"}`}>
                 {meta && <span className="w-3.5 h-3.5 flex items-center">{meta.icon}</span>}
-                <span className="hidden sm:inline">{meta ? t(meta.label).split(" ")[0] : lang === "zh" ? "其他" : "Other"}</span>
+                <span className="hidden sm:inline">{meta ? t(meta.label).split(" ")[0] : catNames[key] || (lang === "zh" ? "其他" : "Other")}</span>
                 <span className="text-xs opacity-40">{count}</span>
               </button>
             );
@@ -448,7 +455,7 @@ function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, all
               return (
                 <button key={key} onClick={() => { setActiveFilter(key); setShowPop(false); }} className={`w-full text-left px-3 py-2 rounded text-sm flex items-center gap-2 ${isActive ? "bg-gold-500/10 text-gold-500 font-medium" : "text-white/60 hover:bg-white/[0.05]"}`}>
                   {meta && <span className="w-4 h-4 flex items-center text-inherit">{meta.icon}</span>}
-                  <span className="flex-1">{meta ? t(meta.label) : lang === "zh" ? "其他" : "Other"}</span>
+                  <span className="flex-1">{meta ? t(meta.label) : catNames[key] || (lang === "zh" ? "其他" : "Other")}</span>
                   <span className="text-xs text-white/30">{count}</span>
                 </button>
               );

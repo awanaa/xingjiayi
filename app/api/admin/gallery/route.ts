@@ -9,6 +9,18 @@ const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"];
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 const MAX_FILES = 50;
 
+const DEFAULT_CATEGORY_NAMES: Record<string, string> = {
+  boardbook: "纸板书",
+  hardcover: "精装书",
+  mechanism: "机关书",
+  popup: "立体书",
+  touch: "触摸书",
+  sound: "发声书",
+  magnetic: "磁性拼图",
+  giftbox: "精品包装",
+  uncategorized: "未分类",
+};
+
 // 批量上传图片：写入 public/uploads/，并把条目追加进 content.json 的 gallery.folders
 export async function POST(req: NextRequest) {
   const cookieStore = await cookies();
@@ -62,7 +74,12 @@ export async function POST(req: NextRequest) {
     // 写入 gallery 数据（追加到 category 同名文件夹，不存在则新建）
     if (uploaded.length > 0) {
       const content = getContent() as any;
-      const gallery: GalleryData = content?.gallery || { folders: [] };
+      const gallery: GalleryData = content?.gallery || { folders: [], categories: [] };
+      if (!gallery.categories) gallery.categories = [];
+      // 分类不在列表则自动追加（带默认中文名）
+      if (!gallery.categories.some((c: any) => c.key === category)) {
+        gallery.categories.push({ key: category, name: DEFAULT_CATEGORY_NAMES[category] || category });
+      }
       let folder = gallery.folders.find((f) => f.key === category);
       if (!folder) {
         folder = { key: category, images: [] };

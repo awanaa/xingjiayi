@@ -30,7 +30,7 @@ const defaultContent: SiteContent = {
     certTitle: defaultLocale, ctaTitle: defaultLocale, ctaDesc: defaultLocale, ctaBtn: defaultLocale,
     certifications: [],
   },
-  gallery: { folders: [] },
+  gallery: { folders: [], categories: [] },
 };
 
 const fillPlantSteps = (arr: any[] | undefined, len: number) => {
@@ -54,6 +54,34 @@ const fillPlantStats = (arr: any[] | undefined, len: number) => {
   while (result.length < len) {
     result.push({ value: "", suffix: "", label: defaultLocale });
   }
+  return result;
+};
+
+const DEFAULT_CATEGORY_NAMES: Record<string, string> = {
+  boardbook: "纸板书",
+  hardcover: "精装书",
+  mechanism: "机关书",
+  popup: "立体书",
+  touch: "触摸书",
+  sound: "发声书",
+  magnetic: "磁性拼图",
+  giftbox: "精品包装",
+  uncategorized: "未分类",
+};
+
+const buildCategories = (folders: { images: { category?: string }[] }[] | undefined): { key: string; name: string }[] => {
+  const seen = new Set<string>();
+  const result: { key: string; name: string }[] = [];
+  for (const f of folders || []) {
+    for (const img of f.images || []) {
+      const cat = img.category || "uncategorized";
+      if (!seen.has(cat)) {
+        seen.add(cat);
+        result.push({ key: cat, name: DEFAULT_CATEGORY_NAMES[cat] || cat });
+      }
+    }
+  }
+  if (!seen.has("uncategorized")) result.push({ key: "uncategorized", name: "未分类" });
   return result;
 };
 
@@ -106,7 +134,14 @@ const mergeDefaults = (data: any): SiteContent => {
       equipItems: fillPlantEquips(safeData.plant?.equipItems, 2),
       certifications: fillArray(safeData.plant?.certifications, 6, () => ({ name: defaultLocale, src: "", invert: false, scale: "" })),
     },
-    gallery: safeData.gallery || { folders: [] },
+    gallery: (() => {
+      const g = safeData.gallery || { folders: [] };
+      const folders = g.folders || [];
+      return {
+        folders,
+        categories: Array.isArray(g.categories) && g.categories.length > 0 ? g.categories : buildCategories(folders),
+      };
+    })(),
   };
 };
 
@@ -206,13 +241,51 @@ const ArraySection = ({ title, subtitle, onTitleChange, onSubtitleChange, items,
   </div>
 );
 
-const GALLERY_CATEGORIES = ["boardbook", "hardcover", "mechanism", "giftbox", "popup", "touch", "sound", "magnetic", "uncategorized"];
-
 const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onContentChange: (c: SiteContent) => void }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [category, setCategory] = useState("boardbook");
   const [uploading, setUploading] = useState(false);
   const [uploadMsg, setUploadMsg] = useState("");
+  const [newCatName, setNewCatName] = useState("");
+
+  const folders = content.gallery?.folders || [];
+  const categories = content.gallery?.categories || [];
+  const catName = (key: string) => categories.find((c) => c.key === key)?.name || DEFAULT_CATEGORY_NAMES[key] || key;
+
+  const updateGallery = (g: { folders: { key: string; images: any[] }[]; categories: { key: string; name: string }[] }) => {
+    onContentChange({ ...content, gallery: g as any });
+  };
+
+  const addCategory = () => {
+    const name = newCatName.trim();
+    if (!name) return;
+    const key = name.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "-") || `cat-${Date.now()}`;
+    const finalKey = categories.some((c) => c.key === key) ? `${key}-${Date.now().toString(36)}` : key;
+    updateGallery({
+      folders,
+      categories: [...categories, { key: finalKey, name }],
+    });
+    setNewCatName("");
+  };
+
+  const renameCategory = (key: string, name: string) => {
+    updateGallery({ folders, categories: categories.map((c) => (c.key === key ? { ...c, name } : c)) });
+  };
+
+  const removeCategory = (key: string) => {
+    const target = key === "uncategorized" ? null : "uncategorized";
+    // 该分类下的图片移到未分类，同时删除该分类文件夹
+    const newFolders = folders
+      .map((f) => ({
+        ...f,
+        images: f.images.map((img) => (img.category === key && target ? { ...img, category: target } : img)),
+      }))
+      .filter((f) => !(f.key === key));
+    updateGallery({
+      folders: newFolders,
+      categories: categories.filter((c) => c.key !== key),
+    });
+  };
 
   const handleFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files ? Array.from(e.target.files) : [];
@@ -234,13 +307,13 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       const res = await fetch("/api/admin/gallery", { method: "POST", body: formData });
       const data = await res.json();
       if (data.ok) {
-        setUploadMsg(`✅ 成功上传 ${data.count} 张 (${category})${data.errors?.length ? `，${data.errors.length} 张失败` : ""}`);
+        setUploadMsg(`✅ 成功上传 ${data.count} 张 (${catName(category)})${data.errors?.length ? `，${data.errors.length} 张失败` : ""}`);
         setSelectedFiles([]);
         // 重新拉取最新 content 以刷新图库列表
         const contentRes = await fetch("/api/admin/content");
         if (contentRes.ok) {
           const fresh = await contentRes.json();
-          onContentChange(fresh);
+          onContentChange(mergeDefaults(fresh));
         }
       } else {
         setUploadMsg(`上传失败: ${data.error || "未知错误"}`);
@@ -252,10 +325,48 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
     }
   };
 
-  const folders = content.gallery?.folders || [];
-
   return (
     <div className="space-y-8">
+      <Section title="分类管理">
+        <p className="text-sm text-neutral-500 mb-4">管理产品展示的分类栏目：可修改名称、删除栏目。删除后该栏目下的图片会归入「未分类」。</p>
+        <div className="space-y-2 mb-4">
+          {categories.map((c) => (
+            <div key={c.key} className="flex items-center gap-3 bg-neutral-900/60 border border-neutral-800 rounded px-3 py-2">
+              <span className="text-xs text-neutral-500 font-mono w-32 truncate">{c.key}</span>
+              <input
+                type="text"
+                value={c.name}
+                onChange={(e) => renameCategory(c.key, e.target.value)}
+                className="flex-1 bg-neutral-800 border border-neutral-700 rounded px-3 py-1.5 text-sm text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+              />
+              <button
+                onClick={() => removeCategory(c.key)}
+                className="text-xs text-red-400 hover:text-red-300 border border-red-900/50 rounded px-2.5 py-1.5 transition-colors"
+              >
+                删除
+              </button>
+            </div>
+          ))}
+          {categories.length === 0 && <p className="text-sm text-neutral-500">暂无分类，请先添加。</p>}
+        </div>
+        <div className="flex items-center gap-3">
+          <input
+            type="text"
+            value={newCatName}
+            onChange={(e) => setNewCatName(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && addCategory()}
+            placeholder="新分类名称（如：圣诞礼盒）"
+            className="flex-1 bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+          />
+          <button
+            onClick={addCategory}
+            className="bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+          >
+            + 添加分类
+          </button>
+        </div>
+      </Section>
+
       <Section title="批量上传图片">
         <p className="text-sm text-neutral-500 mb-4">可一次选择多张图片（JPG/PNG/WebP/GIF/SVG，单张 ≤5MB，最多 50 张），上传后自动归入所选分类并在下方图库中显示。</p>
         <div className="flex flex-wrap items-end gap-4">
@@ -266,8 +377,8 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
               onChange={(e) => setCategory(e.target.value)}
               className="bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
             >
-              {GALLERY_CATEGORIES.map((c) => (
-                <option key={c} value={c}>{c}</option>
+              {categories.map((c) => (
+                <option key={c.key} value={c.key}>{catName(c.key)}</option>
               ))}
             </select>
           </div>
@@ -299,33 +410,35 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       </Section>
 
       <Section title="产品展示图库">
-        <p className="text-sm text-neutral-500 mb-4">图片按文件夹分组（每组对应一个分类）。可修改分类、名称或移除条目，修改后记得保存。</p>
+        <p className="text-sm text-neutral-500 mb-4">图片按分类分组展示。可修改图片分类、名称或移除条目，修改后记得保存。</p>
         {folders.map((folder, folderIdx) => (
           <div key={folderIdx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
-            <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {folder.key}</h4>
+            <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {catName(folder.key)}</h4>
             <p className="text-xs text-neutral-500 mb-4">{folder.images?.length || 0} 张图片</p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
               {(folder.images || []).map((img, imgIdx) => (
                 <div key={imgIdx} className="p-2 border border-neutral-800 rounded bg-neutral-900 relative group">
                   {img.src ? <img src={img.src} alt="" className="w-full h-20 object-cover rounded bg-neutral-800" /> : <div className="w-full h-20 bg-neutral-800 rounded" />}
                   <div className="mt-2 space-y-1">
-                    <input
-                      type="text"
+                    <select
                       value={img.category || ""}
-                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, category: e.target.value } : im) } : f) } })}
-                      placeholder="分类"
-                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
-                    />
+                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, category: e.target.value } : im) } : f), categories } as any })}
+                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-1.5 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+                    >
+                      {categories.map((c) => (
+                        <option key={c.key} value={c.key}>{catName(c.key)}</option>
+                      ))}
+                    </select>
                     <input
                       type="text"
                       value={img.name || ""}
-                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, name: e.target.value } : im) } : f) } })}
+                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, name: e.target.value } : im) } : f), categories } as any })}
                       placeholder="名称"
                       className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
                     />
                   </div>
                   <button
-                    onClick={() => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.filter((_, ii) => ii !== imgIdx) } : f) } })}
+                    onClick={() => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.filter((_, ii) => ii !== imgIdx) } : f), categories } as any })}
                     className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     移除

@@ -147,8 +147,14 @@ export interface GalleryFolder {
   images: GalleryImage[];
 }
 
+export interface GalleryCategory {
+  key: string;
+  name: string;
+}
+
 export interface GalleryData {
   folders: GalleryFolder[];
+  categories: GalleryCategory[];
 }
 
 export interface SiteContent {
