@@ -95,6 +95,62 @@ export interface TrustNumberItem {
   desc: LocaleString;
 }
 
+// ── 智能工厂页 (Plant) ──
+export interface PlantNumberItem {
+  value: string;      // 数字(如 "50")
+  suffix: string;     // 后缀(如 "%+")
+  label: LocaleString;
+}
+
+export interface PlantStepItem {
+  title: LocaleString;
+  desc: LocaleString;
+  img: string;        // 图片路径
+}
+
+export interface PlantEquipItem {
+  title: LocaleString;
+  desc: LocaleString;
+  img: string;
+}
+
+export interface PlantSection {
+  heroOver: LocaleString;
+  heroTitle: LocaleString;
+  heroAccent: LocaleString;
+  heroDesc: LocaleString;
+  scroll: LocaleString;
+  stats: PlantNumberItem[];
+  processTitle: LocaleString;
+  processSub: LocaleString;
+  steps: PlantStepItem[];
+  equipTitle: LocaleString;
+  equipSub: LocaleString;
+  equipItems: PlantEquipItem[];
+  certTitle: LocaleString;
+  ctaTitle: LocaleString;
+  ctaDesc: LocaleString;
+  ctaBtn: LocaleString;
+  certifications: CertificationItem[];
+}
+
+// ── 产品画册 (Portfolio/Gallery) ──
+export interface GalleryImage {
+  src: string;
+  name: string;
+  sizeKB: number;
+  category: string;
+}
+
+export interface GalleryFolder {
+  key: string;
+  images: GalleryImage[];
+}
+
+export interface GalleryData {
+  folders: GalleryFolder[];
+}
+
 export interface SiteContent {
   hero: HeroSection;
   trust: TrustSection;
@@ -105,6 +161,8 @@ export interface SiteContent {
   cta: CtaSection;
   certifications: CertificationItem[];
   trustNumbers: TrustNumberItem[];
+  plant?: PlantSection;
+  gallery?: GalleryData;
 }
 
 export interface AuthData {

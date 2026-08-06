@@ -47,10 +47,29 @@ export default function PortfolioPage() {
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    fetch("/gallery-index.json")
+    // 优先从 CMS 读图库(后台可编辑)，fallback 到静态 JSON
+    fetch("/api/content", { cache: "no-store" })
       .then((r) => r.json())
-      .then((data: FolderData[]) => { setFolders(data); setLoading(false); })
-      .catch(() => setLoading(false));
+      .then((data) => {
+        if (data && data.gallery && Array.isArray(data.gallery.folders)) {
+          setFolders(data.gallery.folders);
+          setLoading(false);
+        } else {
+          return fetch("/gallery-index.json").then((r2) => r2.json());
+        }
+      })
+      .then((data2) => {
+        if (data2 && Array.isArray(data2)) {
+          setFolders(data2);
+          setLoading(false);
+        }
+      })
+      .catch(() => {
+        fetch("/gallery-index.json")
+          .then((r) => r.json())
+          .then((data: FolderData[]) => { setFolders(data); setLoading(false); })
+          .catch(() => setLoading(false));
+      });
   }, []);
 
   const typeGroups = React.useMemo(() => {
@@ -98,7 +117,7 @@ export default function PortfolioPage() {
   const t = (m: Record<string, string>) => m[lang] ?? m.en ?? "";
 
   const labels: Record<string, Record<string, string>> = {
-    title: { en:"Product Gallery", zh:"产品画册", ja:"製品カタログ" },
+    title: { en:"Product Gallery", zh:"产品展示", ja:"製品カタログ" },
     all: { en:"All Products", zh:"全部产品", ja:"全製品" },
     quote: { en:"Request Quote", zh:"获取报价", ja:"見積り依頼" },
   };

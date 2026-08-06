@@ -75,7 +75,7 @@ export default function Footer({ dark = false }: { dark?: boolean }) {
           <ul className={`space-y-3 text-sm ${tSec}`}>
             <li><a href="/" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "首页" : lang === "ja" ? "ホーム" : "Home"}</a></li>
             <li><a href="/about" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "关于我们" : lang === "ja" ? "会社概要" : "About"}</a></li>
-            <li><a href="/portfolio" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "产品画册" : lang === "ja" ? "製品カタログ" : "Portfolio"}</a></li>
+            <li><a href="/portfolio" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "产品展示" : lang === "ja" ? "製品カタログ" : "Portfolio"}</a></li>
             <li><a href="/plant" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "智能工厂" : lang === "ja" ? "スマート工場" : "Plant"}</a></li>
             <li><a href="/portal" className={`${tSec} hover:text-gold-500 ease-smooth`}>{lang === "zh" ? "客户门户" : lang === "ja" ? "お客様ポータル" : "Client Portal"}</a></li>
           </ul>

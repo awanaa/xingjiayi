@@ -22,6 +22,39 @@ const defaultContent: SiteContent = {
   cta: { title: defaultLocale, subtitle: defaultLocale, buttonPrimary: defaultLocale, buttonSecondary: defaultLocale },
   certifications: [],
   trustNumbers: [],
+  plant: {
+    heroOver: defaultLocale, heroTitle: defaultLocale, heroAccent: defaultLocale, heroDesc: defaultLocale, scroll: defaultLocale,
+    stats: [],
+    processTitle: defaultLocale, processSub: defaultLocale, steps: [],
+    equipTitle: defaultLocale, equipSub: defaultLocale, equipItems: [],
+    certTitle: defaultLocale, ctaTitle: defaultLocale, ctaDesc: defaultLocale, ctaBtn: defaultLocale,
+    certifications: [],
+  },
+  gallery: { folders: [] },
+};
+
+const fillPlantSteps = (arr: any[] | undefined, len: number) => {
+  const result = [...(arr || [])];
+  while (result.length < len) {
+    result.push({ title: defaultLocale, desc: defaultLocale, img: "" });
+  }
+  return result;
+};
+
+const fillPlantEquips = (arr: any[] | undefined, len: number) => {
+  const result = [...(arr || [])];
+  while (result.length < len) {
+    result.push({ title: defaultLocale, desc: defaultLocale, img: "" });
+  }
+  return result;
+};
+
+const fillPlantStats = (arr: any[] | undefined, len: number) => {
+  const result = [...(arr || [])];
+  while (result.length < len) {
+    result.push({ value: "", suffix: "", label: defaultLocale });
+  }
+  return result;
 };
 
 const mergeDefaults = (data: any): SiteContent => {
@@ -52,6 +85,28 @@ const mergeDefaults = (data: any): SiteContent => {
     cta: safeData.cta || defaultContent.cta,
     certifications: fillArray(safeData.certifications, 12, () => ({ name: defaultLocale, src: "", invert: false, scale: "" })),
     trustNumbers: fillArray(safeData.trustNumbers, 4, () => ({ value: "", suffix: "", label: defaultLocale, desc: defaultLocale })),
+    plant: {
+      ...defaultContent.plant,
+      ...(safeData.plant || {}),
+      heroOver: safeData.plant?.heroOver || defaultLocale,
+      heroTitle: safeData.plant?.heroTitle || defaultLocale,
+      heroAccent: safeData.plant?.heroAccent || defaultLocale,
+      heroDesc: safeData.plant?.heroDesc || defaultLocale,
+      scroll: safeData.plant?.scroll || defaultLocale,
+      processTitle: safeData.plant?.processTitle || defaultLocale,
+      processSub: safeData.plant?.processSub || defaultLocale,
+      equipTitle: safeData.plant?.equipTitle || defaultLocale,
+      equipSub: safeData.plant?.equipSub || defaultLocale,
+      certTitle: safeData.plant?.certTitle || defaultLocale,
+      ctaTitle: safeData.plant?.ctaTitle || defaultLocale,
+      ctaDesc: safeData.plant?.ctaDesc || defaultLocale,
+      ctaBtn: safeData.plant?.ctaBtn || defaultLocale,
+      stats: fillPlantStats(safeData.plant?.stats, 4),
+      steps: fillPlantSteps(safeData.plant?.steps, 6),
+      equipItems: fillPlantEquips(safeData.plant?.equipItems, 2),
+      certifications: fillArray(safeData.plant?.certifications, 6, () => ({ name: defaultLocale, src: "", invert: false, scale: "" })),
+    },
+    gallery: safeData.gallery || { folders: [] },
   };
 };
 
@@ -151,6 +206,141 @@ const ArraySection = ({ title, subtitle, onTitleChange, onSubtitleChange, items,
   </div>
 );
 
+const GALLERY_CATEGORIES = ["boardbook", "hardcover", "mechanism", "giftbox", "popup", "touch", "sound", "magnetic", "uncategorized"];
+
+const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onContentChange: (c: SiteContent) => void }) => {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [category, setCategory] = useState("boardbook");
+  const [uploading, setUploading] = useState(false);
+  const [uploadMsg, setUploadMsg] = useState("");
+
+  const handleFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files ? Array.from(e.target.files) : [];
+    setSelectedFiles(files);
+    setUploadMsg("");
+  };
+
+  const handleUpload = async () => {
+    if (selectedFiles.length === 0) {
+      setUploadMsg("请先选择图片");
+      return;
+    }
+    setUploading(true);
+    setUploadMsg("");
+    const formData = new FormData();
+    selectedFiles.forEach((f) => formData.append("files", f));
+    formData.append("category", category);
+    try {
+      const res = await fetch("/api/admin/gallery", { method: "POST", body: formData });
+      const data = await res.json();
+      if (data.ok) {
+        setUploadMsg(`✅ 成功上传 ${data.count} 张 (${category})${data.errors?.length ? `，${data.errors.length} 张失败` : ""}`);
+        setSelectedFiles([]);
+        // 重新拉取最新 content 以刷新图库列表
+        const contentRes = await fetch("/api/admin/content");
+        if (contentRes.ok) {
+          const fresh = await contentRes.json();
+          onContentChange(fresh);
+        }
+      } else {
+        setUploadMsg(`上传失败: ${data.error || "未知错误"}`);
+      }
+    } catch {
+      setUploadMsg("上传异常，请重试");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const folders = content.gallery?.folders || [];
+
+  return (
+    <div className="space-y-8">
+      <Section title="批量上传图片">
+        <p className="text-sm text-neutral-500 mb-4">可一次选择多张图片（JPG/PNG/WebP/GIF/SVG，单张 ≤5MB，最多 50 张），上传后自动归入所选分类并在下方图库中显示。</p>
+        <div className="flex flex-wrap items-end gap-4">
+          <div>
+            <label className="block text-sm text-neutral-400 mb-2">选择分类</label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+            >
+              {GALLERY_CATEGORIES.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm text-neutral-400 mb-2">选择图片 ({selectedFiles.length} 张)</label>
+            <label className={`cursor-pointer bg-neutral-800 hover:bg-neutral-700 border border-neutral-600 px-4 py-2 rounded text-sm text-white transition-colors ${uploading ? "opacity-50 pointer-events-none" : ""}`}>
+              {selectedFiles.length > 0 ? "重新选择" : "选择图片"}
+              <input type="file" accept="image/*" multiple className="hidden" onChange={handleFiles} disabled={uploading} />
+            </label>
+          </div>
+          <button
+            onClick={handleUpload}
+            disabled={uploading || selectedFiles.length === 0}
+            className="bg-[#d4a84b] hover:bg-[#c29639] text-[#141414] px-6 py-2.5 rounded font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+          >
+            {uploading ? `上传中... ${selectedFiles.length} 张` : "开始上传"}
+          </button>
+        </div>
+        {selectedFiles.length > 0 && (
+          <div className="mt-4 grid grid-cols-4 md:grid-cols-8 gap-3">
+            {selectedFiles.map((f, i) => (
+              <div key={i} className="relative aspect-square rounded overflow-hidden border border-neutral-800 bg-neutral-900">
+                <img src={URL.createObjectURL(f)} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        )}
+        {uploadMsg && <p className={`mt-4 text-sm font-medium ${uploadMsg.startsWith("✅") ? "text-green-400" : "text-red-400"}`}>{uploadMsg}</p>}
+      </Section>
+
+      <Section title="产品展示图库">
+        <p className="text-sm text-neutral-500 mb-4">图片按文件夹分组（每组对应一个分类）。可修改分类、名称或移除条目，修改后记得保存。</p>
+        {folders.map((folder, folderIdx) => (
+          <div key={folderIdx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
+            <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {folder.key}</h4>
+            <p className="text-xs text-neutral-500 mb-4">{folder.images?.length || 0} 张图片</p>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+              {(folder.images || []).map((img, imgIdx) => (
+                <div key={imgIdx} className="p-2 border border-neutral-800 rounded bg-neutral-900 relative group">
+                  {img.src ? <img src={img.src} alt="" className="w-full h-20 object-cover rounded bg-neutral-800" /> : <div className="w-full h-20 bg-neutral-800 rounded" />}
+                  <div className="mt-2 space-y-1">
+                    <input
+                      type="text"
+                      value={img.category || ""}
+                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, category: e.target.value } : im) } : f) } })}
+                      placeholder="分类"
+                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+                    />
+                    <input
+                      type="text"
+                      value={img.name || ""}
+                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, name: e.target.value } : im) } : f) } })}
+                      placeholder="名称"
+                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+                    />
+                  </div>
+                  <button
+                    onClick={() => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.filter((_, ii) => ii !== imgIdx) } : f) } })}
+                    className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    移除
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+        {folders.length === 0 && <p className="text-sm text-neutral-500">暂无图片，请先批量上传。</p>}
+      </Section>
+    </div>
+  );
+};
+
 const TABS = [
   { id: "home", name: "首页文案" },
   { id: "featured", name: "产品分类" },
@@ -159,6 +349,8 @@ const TABS = [
   { id: "sustainability", name: "可持续" },
   { id: "certifications", name: "认证Logo" },
   { id: "trustNumbers", name: "数据数字" },
+  { id: "plant", name: "智能工厂" },
+  { id: "gallery", name: "产品展示" },
 ];
 
 export default function AdminPage() {
@@ -245,17 +437,26 @@ export default function AdminPage() {
     }
   };
 
-  const updateSectionState = <K extends keyof SiteContent>(section: K, field: keyof SiteContent[K], value: any) => {
+  const updateSectionState = (section: keyof SiteContent, field: string, value: any) => {
     setContent((prev) => ({ ...prev, [section]: { ...(prev[section] as any), [field]: value } }));
   };
 
-  const updateArray = <K extends "featured" | "capabilities" | "quality" | "sustainability">(section: K, arrayField: keyof SiteContent[K], index: number, field: string, value: any) => {
+  const updateArray = (section: string, arrayField: string, index: number, field: string, value: any) => {
     setContent((prev) => {
-      const arr = [...(prev[section] as any)[arrayField]];
+      const arr = [...(prev as any)[section][arrayField]];
       arr[index] = { ...arr[index], [field]: value };
-      return { ...prev, [section]: { ...(prev[section] as any), [arrayField]: arr } };
+      return { ...prev, [section]: { ...(prev as any)[section], [arrayField]: arr } };
     });
   };
+
+  const updatePlantRootArray = (index: number, field: string, value: any) => {
+    setContent((prev) => {
+      const arr = [...(prev.plant?.certifications || [])];
+      (arr as any)[index] = { ...(arr as any)[index], [field]: value };
+      return { ...prev, plant: { ...(prev.plant as any), certifications: arr } };
+    });
+  };
+
 
   const updateRootArray = <K extends "certifications" | "trustNumbers">(section: K, index: number, field: string, value: any) => {
     setContent((prev) => {
@@ -402,6 +603,81 @@ export default function AdminPage() {
             </Section>
           </div>
         );
+      case "plant":
+        return (
+          <div className="space-y-12">
+            <Section title="智能工厂 首屏 (Hero)">
+              <LocaleRow label="顶部徽章 (如 始于2005)" value={content.plant!.heroOver} onChange={(v: LocaleString) => updateSectionState("plant", "heroOver", v)} />
+              <LocaleRow label="主标题" value={content.plant!.heroTitle} onChange={(v: LocaleString) => updateSectionState("plant", "heroTitle", v)} />
+              <LocaleRow label="强调词 (金色渐变)" value={content.plant!.heroAccent} onChange={(v: LocaleString) => updateSectionState("plant", "heroAccent", v)} />
+              <LocaleRow label="副标题描述" value={content.plant!.heroDesc} onChange={(v: LocaleString) => updateSectionState("plant", "heroDesc", v)} isTextArea />
+              <LocaleRow label="滚动提示文字" value={content.plant!.scroll} onChange={(v: LocaleString) => updateSectionState("plant", "scroll", v)} />
+            </Section>
+            <Section title="统计数字">
+              {(content.plant!.stats || []).map((item, idx) => (
+                <div key={idx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-4 shadow-inner">
+                  <h4 className="text-sm font-bold text-[#d4a84b] mb-4 uppercase">数字 #{idx + 1}</h4>
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm text-neutral-400 mb-2">数值 (如 50)</label>
+                      <input type="text" value={item.value} onChange={(e) => updateArray("plant", "stats", idx, "value", e.target.value)} className="w-full bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all" />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-neutral-400 mb-2">后缀 (如 %+ / 小时)</label>
+                      <input type="text" value={item.suffix} onChange={(e) => updateArray("plant", "stats", idx, "suffix", e.target.value)} className="w-full bg-neutral-800 border border-neutral-700 rounded px-3 py-2 text-sm text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all" />
+                    </div>
+                  </div>
+                  <LocaleRow label="标签 (如 自动化率)" value={item.label} onChange={(v: LocaleString) => updateArray("plant", "stats", idx, "label", v)} />
+                </div>
+              ))}
+            </Section>
+            <Section title="生产流程">
+              <LocaleRow label="大标题" value={content.plant!.processTitle} onChange={(v: LocaleString) => updateSectionState("plant", "processTitle", v)} />
+              <LocaleRow label="副标题" value={content.plant!.processSub} onChange={(v: LocaleString) => updateSectionState("plant", "processSub", v)} isTextArea />
+              {(content.plant!.steps || []).map((item, idx) => (
+                <div key={idx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-4 shadow-inner">
+                  <h4 className="text-sm font-bold text-[#d4a84b] mb-4 uppercase">流程步骤 #{idx + 1}</h4>
+                  <LocaleRow label="步骤名称" value={item.title} onChange={(v: LocaleString) => updateArray("plant", "steps", idx, "title", v)} />
+                  <LocaleRow label="步骤描述" value={item.desc} onChange={(v: LocaleString) => updateArray("plant", "steps", idx, "desc", v)} isTextArea />
+                  <ImagePicker label="步骤配图" value={item.img} onChange={(v: string) => updateArray("plant", "steps", idx, "img", v)} />
+                </div>
+              ))}
+            </Section>
+            <Section title="核心设备">
+              <LocaleRow label="大标题" value={content.plant!.equipTitle} onChange={(v: LocaleString) => updateSectionState("plant", "equipTitle", v)} />
+              <LocaleRow label="副标题" value={content.plant!.equipSub} onChange={(v: LocaleString) => updateSectionState("plant", "equipSub", v)} isTextArea />
+              {(content.plant!.equipItems || []).map((item, idx) => (
+                <div key={idx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-4 shadow-inner">
+                  <h4 className="text-sm font-bold text-[#d4a84b] mb-4 uppercase">设备 #{idx + 1}</h4>
+                  <LocaleRow label="设备名称" value={item.title} onChange={(v: LocaleString) => updateArray("plant", "equipItems", idx, "title", v)} />
+                  <LocaleRow label="设备描述" value={item.desc} onChange={(v: LocaleString) => updateArray("plant", "equipItems", idx, "desc", v)} isTextArea />
+                  <ImagePicker label="设备配图" value={item.img} onChange={(v: string) => updateArray("plant", "equipItems", idx, "img", v)} />
+                </div>
+              ))}
+            </Section>
+            <Section title="认证 + 底部行动">
+              <LocaleRow label="认证区标题" value={content.plant!.certTitle} onChange={(v: LocaleString) => updateSectionState("plant", "certTitle", v)} />
+              <LocaleRow label="CTA 标题" value={content.plant!.ctaTitle} onChange={(v: LocaleString) => updateSectionState("plant", "ctaTitle", v)} />
+              <LocaleRow label="CTA 描述" value={content.plant!.ctaDesc} onChange={(v: LocaleString) => updateSectionState("plant", "ctaDesc", v)} isTextArea />
+              <LocaleRow label="CTA 按钮" value={content.plant!.ctaBtn} onChange={(v: LocaleString) => updateSectionState("plant", "ctaBtn", v)} />
+            </Section>
+            <Section title="认证Logo列表 (智能工厂页)">
+              {(content.plant!.certifications || []).map((item, idx) => (
+                <div key={idx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-4 shadow-inner">
+                  <h4 className="text-sm font-bold text-[#d4a84b] mb-4 uppercase">Logo #{idx + 1}</h4>
+                  <LocaleRow label="名称" value={item.name} onChange={(v: LocaleString) => updatePlantRootArray(idx, "name", v)} />
+                  <ImagePicker label="Logo原图" value={item.src} onChange={(v: string) => updatePlantRootArray(idx, "src", v)} />
+                  <label className="flex items-center gap-2 text-sm text-neutral-300 cursor-pointer select-none mt-4">
+                    <input type="checkbox" checked={item.invert || false} onChange={(e) => updatePlantRootArray(idx, "invert", e.target.checked)} className="accent-[#d4a84b] w-4 h-4 rounded" />
+                    深色模式反转
+                  </label>
+                </div>
+              ))}
+            </Section>
+          </div>
+        );
+      case "gallery":
+        return <GalleryTab content={content} onContentChange={setContent} />;
       default:
         return null;
     }

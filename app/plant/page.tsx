@@ -10,6 +10,7 @@ import Navbar from "../../components/Navbar";
 import OptimizedImage from "../../components/OptimizedImage";
 import Footer from "../../components/Footer";
 import { useLang } from "../../hooks/useLang";
+import type { SiteContent, LocaleString } from "../../lib/cms";
 
 /* ── Scroll Reveal ── */
 function useInView(threshold = 0.2) {
@@ -48,13 +49,36 @@ function CountUp({ end, suffix = "", duration = 2000, started }: { end: number; 
   return <>{val}{suffix}</>;
 }
 
+// ── CMS 数据接入 ──
+const LS = (ls: LocaleString | undefined, lang: string, fallback: string) => {
+  if (!ls) return fallback;
+  const v = ls[lang as keyof LocaleString];
+  return v || ls.en || fallback;
+};
+
+function useCmsPlant() {
+  const [plant, setPlant] = useState<SiteContent["plant"] | null>(null);
+  useEffect(() => {
+    fetch("/api/content", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data && data.plant) {
+          setPlant(data.plant as SiteContent["plant"]);
+        }
+      })
+      .catch(() => {});
+  }, []);
+  return plant;
+}
+
 export default function IntelligentPlant() {
   const { lang, setLang } = useLang();
+  const cmsPlant = useCmsPlant();
 
   const [statsRef, statsIn] = useInView(0.3);
   const [processRef, processIn] = useInView(0.15);
 
-  const t = {
+  const t0 = {
     en: {
       heroOver: "Since 2005",
       heroTitle: "Where Precision",
@@ -192,6 +216,45 @@ export default function IntelligentPlant() {
     heroOver: "Since 2005", heroTitle: "Where Precision", heroAccent: "Meets Efficiency", heroDesc: "", scroll: "Scroll", stats: [], processTitle: "", processSub: "", steps: [], equipTitle: "", equipSub: "", equipItems: [], certTitle: "", ctaTitle: "", ctaDesc: "", ctaBtn: ""
   };
 
+  // ── CMS 数据优先，硬编码为 fallback ──
+  const cms = cmsPlant;
+  const L = (ls: LocaleString | undefined, fallback: string) => LS(ls, lang, fallback);
+  const fallbackCertifications = [
+    { src: "/certificate/ISO_9001-2015.png", name: "ISO 9001" },
+    { src: "/certificate/iso14001.png", name: "ISO 14001" },
+    { src: "/certificate/Disney_logo.png", name: "Disney FAMA", invert: true },
+    { src: "/certificate/Walmart.png", name: "Walmart" },
+    { src: "/certificate/Target.png", name: "Target" },
+    { src: "/certificate/Costco.png", name: "Costco" },
+  ];
+
+  const t = cms
+    ? {
+        heroOver: L(cms.heroOver, ""),
+        heroTitle: L(cms.heroTitle, ""),
+        heroAccent: L(cms.heroAccent, ""),
+        heroDesc: L(cms.heroDesc, ""),
+        scroll: L(cms.scroll, ""),
+        stats: (cms.stats || []).map((s) => ({ end: Number(s.value) || 0, suffix: s.suffix || "", label: L(s.label, "") })),
+        processTitle: L(cms.processTitle, ""),
+        processSub: L(cms.processSub, ""),
+        steps: (cms.steps || []).map((s) => ({ title: L(s.title, ""), desc: L(s.desc, ""), img: s.img || "" })),
+        equipTitle: L(cms.equipTitle, ""),
+        equipSub: L(cms.equipSub, ""),
+        equipItems: (cms.equipItems || []).map((e) => ({ title: L(e.title, ""), desc: L(e.desc, ""), img: e.img || "" })),
+        certTitle: L(cms.certTitle, ""),
+        ctaTitle: L(cms.ctaTitle, ""),
+        ctaDesc: L(cms.ctaDesc, ""),
+        ctaBtn: L(cms.ctaBtn, ""),
+        certifications: cms.certifications?.length
+          ? cms.certifications.map((c) => ({ src: c.src, name: L(c.name, c.src), invert: c.invert }))
+          : fallbackCertifications,
+      }
+    : {
+        ...t0,
+        certifications: fallbackCertifications,
+      };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-gold-500/40 selection:text-white overflow-x-hidden">
       <Navbar showBackButton lang={lang} onLangChange={setLang} />
@@ -323,14 +386,7 @@ export default function IntelligentPlant() {
         <div className="max-w-6xl mx-auto text-center">
           <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-8 block">{t.certTitle}</span>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {[
-              { src: "/certificate/ISO_9001-2015.png", name: "ISO 9001" },
-              { src: "/certificate/iso14001.png", name: "ISO 14001" },
-              { src: "/certificate/Disney_logo.png", name: "Disney FAMA", invert: true },
-              { src: "/certificate/Walmart.png", name: "Walmart" },
-              { src: "/certificate/Target.png", name: "Target" },
-              { src: "/certificate/Costco.png", name: "Costco" },
-            ].map((cert, i) => (
+            {(t.certifications || []).map((cert, i) => (
               <div key={i} className="group flex flex-col items-center gap-2">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg border border-white/[0.08] p-2 bg-white/[0.03] flex items-center justify-center hover:border-gold-500/30 transition-all duration-300">
                   <OptimizedImage src={cert.src} alt={cert.name} wrapperClassName="w-full h-full" className={`w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 ${cert.invert ? 'invert' : ''}`} />

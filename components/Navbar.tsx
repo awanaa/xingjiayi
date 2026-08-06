@@ -62,7 +62,7 @@ export default function Navbar({ lang, onLangChange, showBackButton }: NavbarPro
                 <>
                   <Link href="/about" className="hover:text-gold-400 hover:drop-shadow-[0_0_8px_rgba(212,168,75,0.4)] ease-smooth">{lang === "zh" ? "关于我们" : lang === "ja" ? "会社概要" : lang === "ko" ? "회사 소개" : "About Us"}</Link>
                   <Link href="/plant" className="hover:text-gold-400 hover:drop-shadow-[0_0_8px_rgba(212,168,75,0.4)] ease-smooth">{lang === "zh" ? "智能工厂" : lang === "ja" ? "スマート工場" : lang === "ko" ? "스마트 팩토리" : "Intelligent Plant"}</Link>
-                  <Link href="/portfolio" className="hover:text-gold-400 hover:drop-shadow-[0_0_8px_rgba(212,168,75,0.4)] ease-smooth">{lang === "zh" ? "产品画册" : lang === "ja" ? "製品カタログ" : lang === "ko" ? "제품 카탈로그" : "Portfolio"}</Link>
+                  <Link href="/portfolio" className="hover:text-gold-400 hover:drop-shadow-[0_0_8px_rgba(212,168,75,0.4)] ease-smooth">{lang === "zh" ? "产品展示" : lang === "ja" ? "製品カタログ" : lang === "ko" ? "제품 카탈로그" : "Portfolio"}</Link>
                 </>
               )}
             </div>
