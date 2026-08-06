@@ -28,6 +28,7 @@ import { useLang } from "../hooks/useLang";
 import Footer from "../components/Footer";
 import TrustProofSection from "../components/TrustProofSection";
 import InteractiveGlobe from "../components/InteractiveGlobe";
+import type { SiteContent, LocaleString } from "../lib/cms";
 import QuoteForm from "../components/QuoteForm";
 
 // --- Types (Strict TypeScript) ---
@@ -357,6 +358,83 @@ const sectionLabels = [
   "Contact",
 ];
 
+// --- CMS Integration ---
+// 页面启动时拉取 CMS 内容;拉取失败/为空时回退到硬编码 contentDict
+const LS = (ls: LocaleString | undefined, lang: string, fallback: string): string => {
+  if (!ls) return fallback;
+  const v = ls[lang as keyof LocaleString];
+  return v || ls.en || fallback;
+};
+
+function useCmsContent() {
+  const [cms, setCms] = useState<SiteContent | null>(null);
+  useEffect(() => {
+    fetch("/api/content", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data && data.hero && data.featured && data.capabilities) {
+          setCms(data as SiteContent);
+        }
+      })
+      .catch(() => {});
+  }, []);
+  return cms;
+}
+
+// 把 CMS SiteContent 转成页面 ContentType(按当前语言取字符串)
+function cmsToContent(cms: SiteContent, lang: string): ContentType {
+  const L = (ls: LocaleString | undefined, fallback: string) => LS(ls, lang, fallback);
+  return {
+    hero: {
+      title: L(cms.hero?.title, ""),
+      subtitle: L(cms.hero?.subtitle, ""),
+      ctaPrimary: L(cms.hero?.ctaPrimary, ""),
+      ctaSecondary: L(cms.hero?.ctaSecondary, ""),
+    },
+    trust: {
+      title: L(cms.trust?.title, ""),
+      subtitle: L(cms.trust?.subtitle, ""),
+    },
+    featured: {
+      title: L(cms.featured?.title, ""),
+      subtitle: L(cms.featured?.subtitle, ""),
+      categories: (cms.featured?.categories || []).map((cat) => ({
+        name: L(cat.name, ""),
+        desc: L(cat.desc, ""),
+      })),
+    },
+    capabilities: {
+      title: L(cms.capabilities?.title, ""),
+      subtitle: L(cms.capabilities?.subtitle, ""),
+      steps: (cms.capabilities?.steps || []).map((s) => ({
+        name: L(s.name, ""),
+        desc: L(s.desc, ""),
+      })),
+    },
+    quality: {
+      title: L(cms.quality?.title, ""),
+      subtitle: L(cms.quality?.subtitle, ""),
+      modules: (cms.quality?.modules || []).map((m) => L(m.name, "")),
+    },
+    sustainability: {
+      title: L(cms.sustainability?.title, ""),
+      subtitle: L(cms.sustainability?.subtitle, ""),
+      items: (cms.sustainability?.items || []).map((it) => L(it.name, "")),
+    },
+    global: {
+      title: "",
+      subtitle: "",
+      regions: [],
+    },
+    cta: {
+      title: L(cms.cta?.title, ""),
+      subtitle: L(cms.cta?.subtitle, ""),
+      buttonPrimary: L(cms.cta?.buttonPrimary, ""),
+      buttonSecondary: L(cms.cta?.buttonSecondary, ""),
+    },
+  };
+}
+
 export default function HomePage() {
   const { lang, setLang } = useLang();
   const [activeSection, setActiveSection] = useState(0);
@@ -367,7 +445,17 @@ export default function HomePage() {
   const [showGif, setShowGif] = useState(false);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const content = contentDict[lang as "en" | "zh" | "ja" | "ko"] || contentDict.en;
+  const cmsContent = useCmsContent();
+  const fallbackContent = contentDict[lang as "en" | "zh" | "ja" | "ko"] || contentDict.en;
+  const content = cmsContent ? cmsToContent(cmsContent, lang) : fallbackContent;
+  const certs = cmsContent?.certifications?.length
+    ? cmsContent.certifications.map((c) => ({
+        name: LS(c.name, lang, c.name?.en || ""),
+        src: c.src,
+        invert: c.invert,
+        scale: c.scale,
+      }))
+    : certifications;
 
   // Loop back to video after GIF finishes playing (21 frames * 380ms = ~7.98s + fade time)
   useEffect(() => {
@@ -564,7 +652,7 @@ export default function HomePage() {
             GLOBAL CERTIFICATIONS
           </h2>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {certifications.map((cert, i) => (
+            {certs.map((cert, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center justify-center gap-3 group"
@@ -584,7 +672,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Trust Proof Section (Why Us) */}
-      <TrustProofSection dataIndex={2} lang={lang} isActive={activeSection === 2} />
+      <TrustProofSection dataIndex={2} lang={lang} isActive={activeSection === 2} trustData={cmsContent?.trustNumbers} />
 
       <section
         data-index={3}

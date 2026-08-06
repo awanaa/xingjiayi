@@ -1,12 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { Building2, Globe, Award, Clock } from "lucide-react";
+import type { TrustNumberItem } from "../lib/cms";
 
 interface Props {
   lang: string;
   isActive: boolean;
   topContent?: React.ReactNode;
   dataIndex?: number;
+  trustData?: TrustNumberItem[];
 }
 
 // 跳动数字组件 — easeOutExpo 缓动，每次滚动到此屏时重新触发动画
@@ -40,7 +42,22 @@ const AnimatedNumber = ({ end, suffix, isActive }: { end: number; suffix: string
   return <span className="tabular-nums">{count}{suffix}</span>;
 };
 
-export default function TrustProofSection({ lang, isActive, topContent, dataIndex }: Props) {
+export default function TrustProofSection({ lang, isActive, topContent, dataIndex, trustData }: Props) {
+  const L = (ls: { en: string; zh: string; ja: string; ko: string } | undefined, fallback: string) => {
+    if (!ls) return fallback;
+    const v = ls[lang as keyof typeof ls];
+    return v || ls.en || fallback;
+  };
+
+  const icons = [Building2, Globe, Award, Clock];
+  const cmsCards = (trustData || []).map((t, i) => ({
+    end: Number(t.value) || 0,
+    suffix: t.suffix || "",
+    label: L(t.label, ""),
+    desc: L(t.desc, ""),
+    Icon: icons[i % icons.length],
+  }));
+
   const content = {
     title:
       lang === "zh"
@@ -54,7 +71,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
         : lang === "ja"
           ? "コンセプトから納品まで、出版社・小売・ブランドを支える信頼のパートナー"
           : "A trusted manufacturing partner supporting publishers, retailers and creative brands from concept to delivery",
-    cards: [
+    cards: cmsCards.length ? cmsCards : [
       {
         end: 25, suffix: "+",
         label: lang === "zh" ? "行业经验" : lang === "ja" ? "業界経験" : "Years of Experience",
