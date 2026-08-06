@@ -21,6 +21,11 @@ yarn-error.log*
 .env*.local
 .env
 
+# CMS runtime data (auth hash, sessions, editable content)
+/data/
+/public/uploads/
+
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
