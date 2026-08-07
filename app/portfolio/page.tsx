@@ -123,10 +123,18 @@ export default function PortfolioPage() {
   const t = (m: Record<string, string>) => m[lang] ?? m.en ?? "";
 
   const labels: Record<string, Record<string, string>> = {
-    title: { en:"Product Gallery", zh:"产品展示", ja:"製品カタログ" },
-    all: { en:"All Products", zh:"全部产品", ja:"全製品" },
-    quote: { en:"Request Quote", zh:"获取报价", ja:"見積り依頼" },
+    title: { en: "Product Gallery", zh: "产品展示", ja: "製品カタログ" },
+    all: { en: "All Products", zh: "全部产品", ja: "全製品" },
+    quote: { en: "Request Quote", zh: "获取报价", ja: "見積り依頼" },
   };
+
+  // 标题分两段渲染(后半段金色高亮)，随语言切换
+  const titleParts: Record<string, [string, string]> = {
+    en: ["Product", "Gallery"],
+    zh: ["产品", "展示"],
+    ja: ["製品", "カタログ"],
+  };
+  const titleNow = titleParts[lang] || titleParts.en;
 
   if (loading) return (
     <div className="min-h-screen bg-white flex items-center justify-center">
@@ -144,7 +152,7 @@ export default function PortfolioPage() {
       {/* ===== HERO ===== */}
       <div className="max-w-7xl mx-auto px-5 pt-36 pb-8">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-          产品<span className="text-gold-500">展示</span>
+          {titleNow[0]} <span className="text-gold-500">{titleNow[1]}</span>
         </h1>
       </div>
 
