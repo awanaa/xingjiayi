@@ -102,7 +102,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
   return (
     <section data-index={dataIndex} className="snap-section snap-start relative min-h-screen sm:h-screen w-full flex flex-col items-center justify-start overflow-hidden">
       {topContent && <div className="w-full shrink-0">{topContent}</div>}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center justify-center h-full py-16 sm:py-12 md:py-16 flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center justify-center h-full pt-28 pb-16 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 flex-1">
         {/* 标题区 */}
         <div className="text-center flex-shrink-0 mb-8 sm:mb-10 md:mb-12 mt-4 sm:mt-0 max-w-3xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">

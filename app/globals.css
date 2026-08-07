@@ -149,4 +149,264 @@
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* ============================================================
+   矮屏适配：视口高度 ≤ 760px（笔记本 1366x768 / 1536x864，含 125% 缩放）
+   fullpage 各屏由固定 100vh 改为内容自适应，防止内容被
+   overflow-hidden 截断；同时大幅压缩间距/卡片/字号，尽量塞回一屏。
+   首屏 Hero（data-index=0）豁免，保持大标题视觉。
+   注：规则位于 @layer 之外，优先级高于 Tailwind 工具类。
+   ============================================================ */
+@media (max-height: 760px) {
+  /* 1) 所有 fullpage 屏：高度自适应，最低保持一屏高 */
+  .snap-section {
+    height: auto !important;
+    min-height: 100vh;
+  }
+
+  /* 1b) 修复 h-full 塌陷：section 变 height:auto 后，子元素 height:100% 失效，
+      justify-center 失去完整高度导致内容贴顶。改用 min-height:100vh，
+      内容更高时照样撑开不截断。仅作用于 section 直接子级容器
+      （排除 img/svg/canvas 及 TrustProof 卡片等内部 h-full 元素，避免误抬） */
+  .snap-section > [class*="h-full"]:not(img):not(svg):not(canvas) {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  /* 2) 内容自适应后不再需要放开 max-height（保留 globe 等元素的尺寸限制） */
+
+  /* ========== 以下压缩仅作用于非首屏 ========== */
+  /* 3) 屏标题统一压缩 */
+  .snap-section[data-index]:not([data-index="0"]) h2 {
+    font-size: clamp(1.375rem, 4vw, 1.875rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* 4) 字号压缩：正文/副标题/标签/描述 */
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-xl"] {
+    font-size: 0.875rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-lg"] {
+    font-size: 0.875rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-base"] {
+    font-size: 0.8125rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-sm"] {
+    font-size: 0.75rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-4xl"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-5xl"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-6xl"] {
+    font-size: 1.5rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-\[11px\]"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="text-\[12px\]"] {
+    font-size: 0.625rem !important;
+  }
+
+  /* 5) 下边距压缩 */
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-16"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-12"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-10"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-8"] {
+    margin-bottom: 0.375rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-6"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-5"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-4"] {
+    margin-bottom: 0.25rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-3"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mb-2"] {
+    margin-bottom: 0.125rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="mt-12"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mt-6"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mt-4"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mt-3"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="mt-2"] {
+    margin-top: 0.25rem !important;
+  }
+
+  /* 6) 容器 padding 压缩（px/py/pt 可能直接挂在 section 自身，需同时覆盖自身与后代） */
+  .snap-section[data-index]:not([data-index="0"]) [class*="px-10"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"])[class*="px-8"],
+  .snap-section[data-index]:not([data-index="0"])[class*="px-6"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="px-8"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="px-6"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="py-16"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="py-12"] {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"])[class*="pt-24"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="pt-24"] {
+    padding-top: 1.5rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"])[class*="pt-8"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="pt-8"] {
+    padding-top: 0.25rem !important;
+  }
+
+  /* 7) 卡片内边距压缩 */
+  .snap-section[data-index]:not([data-index="0"]) [class*="p-8"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="p-6"] {
+    padding: 0.5rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="p-5"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="p-4"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="p-3"] {
+    padding: 0.375rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="py-4"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* 8) 间距 gap 压缩 */
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-12"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-8"] {
+    gap: 0.75rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-6"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-5"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-4"] {
+    gap: 0.5rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-3"],
+  .snap-section[data-index]:not([data-index="0"]) [class*="gap-2"] {
+    gap: 0.25rem !important;
+  }
+
+  /* 9) TrustProof 图标圈与图标压缩（排除 max-w-/max-h- 类误伤） */
+  .snap-section[data-index]:not([data-index="0"]) [class*="w-14"]:not([class*="max-w-"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="h-14"]:not([class*="max-h-"]) {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="w-12"]:not([class*="max-w-"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="h-12"]:not([class*="max-h-"]) {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="w-7"]:not([class*="max-w-"]):not([class*="w-72"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="h-7"]:not([class*="max-h-"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="w-6"]:not([class*="max-w-"]):not([class*="w-64"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="h-6"]:not([class*="max-h-"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="w-5"]:not([class*="max-w-"]):not([class*="w-56"]),
+  .snap-section[data-index]:not([data-index="0"]) [class*="h-5"]:not([class*="max-h-"]):not([class*="h-28"]) {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  /* 10b) TrustProof 统计卡片：恢复内容高度（不被 1b 误抬到 100vh），
+      由外层 max-w-7xl 容器 min-height:100vh 整体居中 */
+  .snap-section[data-index="2"] [class*="rounded-2xl"] {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* 10) 认证 logo 卡片：矮屏下放大，12 个卡自然排成 6x2 两行（卡片更大更清晰）
+      注意：此规则特异性必须高于 9) 的 [class*="w-5"] 匹配（w-56 含 w-5 子串），
+      9) 已用 :not([class*="w-56"]) 排除，这里再放大尺寸 */
+  .snap-section[data-index="1"] [class*="h-28"] {
+    height: 6rem !important;
+  }
+  .snap-section[data-index="1"] [class*="w-56"] {
+    width: 10rem !important;
+  }
+  .snap-section[data-index="1"] [class*="gap-8"],
+  .snap-section[data-index="1"] [class*="gap-12"] {
+    gap: 1rem !important;
+  }
+
+  /* 11) Global 屏坐标卡最小宽度缩小 */
+  .snap-section[data-index]:not([data-index="0"]) [class*="min-w-\[160px\]"] {
+    min-width: 8rem !important;
+  }
+  .snap-section[data-index]:not([data-index="0"]) [class*="min-w-\[180px\]"] {
+    min-width: 9rem !important;
+  }
+
+  /* 12) Featured 屏（作品展示，6 卡片 3x2）：矮屏下压扁卡片图高 */
+  .snap-section[data-index="3"] [class*="aspect-video"] {
+    height: 100px !important;
+  }
+
+  /* 13) Global 屏地球缩小（避免超出矮屏视口） */
+  .snap-section[data-index="7"] [class*="w-\[80vw\]"],
+  .snap-section[data-index="7"] [class*="h-\[80vw\]"],
+  .snap-section[data-index="7"] [class*="w-\[120vw\]"],
+  .snap-section[data-index="7"] [class*="h-\[120vw\]"] {
+    width: 32vw !important;
+    height: 32vw !important;
+  }
+
+  /* 14) Hero 屏：压缩标题字号与间距（保持大气，但塞回一屏） */
+  .snap-section[data-index="0"] h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+    line-height: 1.1 !important;
+  }
+  .snap-section[data-index="0"] [class*="mb-8"] {
+    margin-bottom: 0.5rem !important;
+  }
+  .snap-section[data-index="0"] [class*="mb-12"],
+  .snap-section[data-index="0"] [class*="mt-12"] {
+    margin-bottom: 0.75rem !important;
+    margin-top: 0.75rem !important;
+  }
+
+  /* 15) CTA 屏（index 8）：内容全屏垂直居中 + footer 压缩贴底 */
+  .snap-section[data-index="8"] > [class*="flex-1"] {
+    position: absolute !important;
+    inset: 0 !important;
+  }
+  .snap-section[data-index="8"] > [class*="shrink-0"] {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  /* footer 内部压缩（pt-16/pb-8 在 footer 自身，需自身选择器） */
+  .snap-section[data-index="8"] footer[class*="pt-16"] {
+    padding-top: 0.75rem !important;
+  }
+  .snap-section[data-index="8"] footer[class*="pb-8"] {
+    padding-bottom: 0.5rem !important;
+  }
+  .snap-section[data-index="8"] footer [class*="gap-10"] {
+    gap: 1rem !important;
+  }
+  .snap-section[data-index="8"] footer [class*="mb-12"] {
+    margin-bottom: 0.5rem !important;
+  }
+  .snap-section[data-index="8"] footer [class*="mb-6"],
+  .snap-section[data-index="8"] footer [class*="mb-5"] {
+    margin-bottom: 0.25rem !important;
+  }
+  .snap-section[data-index="8"] footer [class*="space-y-3"] > * + * {
+    margin-top: 0.375rem !important;
+  }
+  .snap-section[data-index="8"] footer h3 {
+    font-size: 0.75rem !important;
+  }
+
+  /* 16) CTA 超矮屏（≤600px）防重叠：内容略上移 + footer 更紧 */
+  @media (max-height: 600px) {
+    .snap-section[data-index="8"] > [class*="flex-1"] {
+      padding-bottom: 2.25rem !important;
+    }
+    .snap-section[data-index="8"] button[class*="py-4"] {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+    }
+  }
+}
+
 

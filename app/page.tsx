@@ -605,7 +605,7 @@ export default function HomePage() {
         </div>
 
         {/* Content Layer — centered vertically & horizontally */}
-        <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
+        <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto pt-20 md:pt-24">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-[1.1] drop-shadow-sm">
             {content.hero.title}
           </h1>
@@ -642,7 +642,7 @@ export default function HomePage() {
       {/* 1. Certifications Dedicated Section */}
       <section
         data-index={1}
-        className="snap-section relative snap-start h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-black"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pb-0 px-6 overflow-hidden bg-black"
       >
         <div className="max-w-6xl mx-auto text-center w-full">
           <span className="text-gold-500 text-xs tracking-[0.2em] uppercase font-semibold mb-4 block">
@@ -676,7 +676,7 @@ export default function HomePage() {
 
       <section
         data-index={3}
-        className="snap-section relative snap-start h-screen flex flex-col items-center justify-center pt-24 px-6 overflow-hidden"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pb-0 px-6 overflow-hidden"
       >
         <div className="max-w-7xl w-full">
           <div className="text-center mb-4 md:mb-8">
@@ -724,13 +724,13 @@ export default function HomePage() {
 
       <section
         data-index={4}
-        className="snap-section relative snap-start h-screen overflow-hidden flex flex-col py-12 md:py-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-white/[0.02] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
-          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-20 pt-8 md:pt-0">
+          <div className="flex flex-col lg:flex-row h-full md:max-h-[800px] items-center gap-10 lg:gap-20 pt-8 md:pt-0">
             {/* Left Column: Menu & Header */}
             <div className="w-full lg:w-[30%] flex flex-col">
               <div className="mb-12 pl-2">
@@ -827,7 +827,7 @@ export default function HomePage() {
 
       <section
         data-index={5}
-        className="snap-section relative snap-start h-screen overflow-hidden flex flex-col py-12 md:py-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
@@ -913,7 +913,7 @@ export default function HomePage() {
 
       <section
         data-index={6}
-        className="snap-section relative snap-start h-screen overflow-hidden flex flex-col py-12 md:py-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
@@ -991,7 +991,7 @@ export default function HomePage() {
       {/* Section 6: Global Presence — Ultra Premium Cinematic (Light Theme) */}
       <section
         data-index={7}
-        className="snap-section relative snap-start h-screen flex flex-col items-center justify-center overflow-hidden"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center overflow-hidden"
       >
         {/* Background Text / Typography */}
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full text-center z-0 pointer-events-none select-none">
@@ -1062,7 +1062,7 @@ export default function HomePage() {
 {/* Section 7: CTA + Footer */}
       <section
         data-index={8}
-        className="snap-section relative snap-start h-screen flex flex-col items-center"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center"
       >
         {/* Main Content centered in remaining vertical space */}
         <div className="flex-1 w-full flex flex-col items-center justify-center px-6">

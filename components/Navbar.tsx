@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   lang?: "en" | "zh" | "ja" | "ko";
@@ -10,6 +11,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ lang, onLangChange, showBackButton }: NavbarProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav
       className="fixed top-0 left-0 w-full z-50"
@@ -52,7 +55,7 @@ export default function Navbar({ lang, onLangChange, showBackButton }: NavbarPro
         <div
           className={`h-full flex justify-end items-center transition-all duration-500 opacity-100`}
         >
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <div className="hidden md:flex space-x-8 text-sm font-medium text-white/90">
               {showBackButton ? (
                 <Link href="/" className="hover:text-gold-400 hover:drop-shadow-[0_0_8px_rgba(212,168,75,0.4)] ease-smooth flex items-center">
@@ -87,8 +90,45 @@ export default function Navbar({ lang, onLangChange, showBackButton }: NavbarPro
                 {lang === "zh" ? "客户门户" : lang === "ja" ? "お客様ポータル" : lang === "ko" ? "클라이언트 포털" : "Client Portal"}
               </Link>
             </div>
+
+            {/* Mobile Hamburger Icon */}
+            <div className="md:hidden flex items-center ml-2">
+              <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="text-white/90 hover:text-gold-400 focus:outline-none transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-stone-950/95 backdrop-blur-xl border-b border-gold-500/15 py-4 px-6 flex flex-col gap-2 shadow-2xl">
+            {showBackButton ? (
+              <Link href="/" className="text-white/90 hover:text-gold-400 py-3 border-b border-white/10 text-sm font-medium" onClick={() => setIsOpen(false)}>
+                {lang === "zh" ? "← 返回首页" : lang === "ja" ? "← 戻る" : lang === "ko" ? "← 홈으로" : "← Back to Home"}
+              </Link>
+            ) : (
+              <>
+                <Link href="/about" className="text-white/90 hover:text-gold-400 py-3 border-b border-white/10 text-sm font-medium" onClick={() => setIsOpen(false)}>
+                  {lang === "zh" ? "关于我们" : lang === "ja" ? "会社概要" : lang === "ko" ? "회사 소개" : "About Us"}
+                </Link>
+                <Link href="/plant" className="text-white/90 hover:text-gold-400 py-3 border-b border-white/10 text-sm font-medium" onClick={() => setIsOpen(false)}>
+                  {lang === "zh" ? "智能工厂" : lang === "ja" ? "スマート工場" : lang === "ko" ? "스마트 팩토리" : "Intelligent Plant"}
+                </Link>
+                <Link href="/portfolio" className="text-white/90 hover:text-gold-400 py-3 border-b border-white/10 text-sm font-medium" onClick={() => setIsOpen(false)}>
+                  {lang === "zh" ? "产品展示" : lang === "ja" ? "製品カタログ" : lang === "ko" ? "제품 카탈로그" : "Portfolio"}
+                </Link>
+                <Link href="/portal" className="text-white/90 hover:text-gold-400 py-3 border-b border-white/10 text-sm font-medium sm:hidden" onClick={() => setIsOpen(false)}>
+                  {lang === "zh" ? "客户门户" : lang === "ja" ? "お客様ポータル" : lang === "ko" ? "클라이언트 포털" : "Client Portal"}
+                </Link>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </nav>
   );
