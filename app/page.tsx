@@ -798,13 +798,9 @@ export default function HomePage() {
                 })}
               </div>
 
-              {/* Info Panel below the image */}
-              <div className="bg-black/95 backdrop-blur-md border-l-4 border-gold-500 rounded-r-xl rounded-bl-sm p-5 md:p-6 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-                <h3 className="text-lg md:text-xl font-bold text-white flex items-center gap-4 tracking-wide">
-                  <span className="text-gold-500 font-mono">{String(activeProcess + 1).padStart(2, "0")}</span>
-                  {content.capabilities.steps[activeProcess].name}
-                </h3>
-                <p className="text-white/70 text-sm md:text-base leading-relaxed mt-2">
+              {/* Info text below the image (title lives in the side menu) */}
+              <div className="px-1">
+                <p className="text-white/60 text-sm md:text-base leading-relaxed border-l border-gold-500/50 pl-4">
                   {content.capabilities.steps[activeProcess].desc}
                 </p>
               </div>
