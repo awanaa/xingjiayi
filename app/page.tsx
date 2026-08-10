@@ -763,55 +763,51 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Cinematic Display */}
-            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl flex-shrink-0 group ring-1 ring-white/5">
-              {content.capabilities.steps.map((s, i) => {
-                const processImages = [
-                  "/process-illustrations/process-01.webp", // 0: Prepress & Proofing
-                  "/process-illustrations/process-02.webp", // 1: Precision Printing
-                  "/process-illustrations/process-03.webp", // 2: Premium Finishing
-                  "/process-illustrations/process-04.webp", // 3: Die-Cutting & Bookmaking
-                  "/process-illustrations/process-05.webp", // 4: Interactive Assembly & QC
-                  "/process-illustrations/process-06.webp", // 5: Packing & Global Fulfillment
-                ];
-                const picSrc = processImages[i % processImages.length];
-                const isActive = activeProcess === i;
-                
-                return (
-                  <div 
-                    key={i}
-                    className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                      isActive ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105 pointer-events-none"
-                    }`}
-                  >
-                    <OptimizedImage
-                      src={picSrc}
-                      alt={s.name}
-                      fill
-                      className="w-full h-full object-cover"
-                      priority={i === 0}
-                    />
-                    {/* Dark gradient at bottom to anchor the text box */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
-                    {/* Floating Info Panel (Redesigned Box) */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                      <div className={`transform transition-all duration-1000 delay-200 ${isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
-                        {/* Solid premium dark background with gold accent bar */}
-                        <div className="bg-black/95 backdrop-blur-md border-l-4 border-gold-500 rounded-r-xl rounded-bl-sm p-6 md:p-8 max-w-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-                          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 flex items-center gap-4 tracking-wide">
-                            <span className="text-gold-500 font-mono text-lg">{String(i + 1).padStart(2, "0")}</span>
-                            {s.name}
-                          </h3>
-                          <p className="text-white/70 text-sm md:text-base leading-relaxed">
-                            {s.desc}
-                          </p>
-                        </div>
-                      </div>
+            {/* Right Column: Cinematic Display (16:9 image + info below) */}
+            <div className="w-full lg:w-[70%] flex flex-col gap-4 flex-shrink-0">
+              {/* 16:9 Image Window (clean, no text overlay) */}
+              <div className="w-full aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl group ring-1 ring-white/5">
+                {content.capabilities.steps.map((s, i) => {
+                  const processImages = [
+                    "/process-illustrations/process-01.webp", // 0: Prepress & Proofing
+                    "/process-illustrations/process-02.webp", // 1: Precision Printing
+                    "/process-illustrations/process-03.webp", // 2: Premium Finishing
+                    "/process-illustrations/process-04.webp", // 3: Die-Cutting & Bookmaking
+                    "/process-illustrations/process-05.webp", // 4: Interactive Assembly & QC
+                    "/process-illustrations/process-06.webp", // 5: Packing & Global Fulfillment
+                  ];
+                  const picSrc = processImages[i % processImages.length];
+                  const isActive = activeProcess === i;
+
+                  return (
+                    <div
+                      key={i}
+                      className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                        isActive ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105 pointer-events-none"
+                      }`}
+                    >
+                      <OptimizedImage
+                        src={picSrc}
+                        alt={s.name}
+                        fill
+                        className="w-full h-full object-cover"
+                        priority={i === 0}
+                      />
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              {/* Info Panel below the image */}
+              <div className="bg-black/95 backdrop-blur-md border-l-4 border-gold-500 rounded-r-xl rounded-bl-sm p-5 md:p-6 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                <h3 className="text-lg md:text-xl font-bold text-white flex items-center gap-4 tracking-wide">
+                  <span className="text-gold-500 font-mono">{String(activeProcess + 1).padStart(2, "0")}</span>
+                  {content.capabilities.steps[activeProcess].name}
+                </h3>
+                <p className="text-white/70 text-sm md:text-base leading-relaxed mt-2">
+                  {content.capabilities.steps[activeProcess].desc}
+                </p>
+              </div>
             </div>
           </div>
         </div>
