@@ -83,14 +83,12 @@ const contentDict: Record<Lang, ContentType> = {
       subtitle:
         "One integrated team supporting engineering, sampling, production, quality assurance and international delivery",
       steps: [
-        { name: "Engineering & Design", desc: "Structural evaluation, manufacturability analysis, material & cost optimization." },
-        { name: "Sampling & Prototyping", desc: "Blank dummies, color proofs, functional samples & client approval process." },
-        { name: "Offset & Digital Printing", desc: "Color management, spot colors, surface finishing & process control." },
-        { name: "Die-cutting & Binding", desc: "Stitching, casing-in, custom shaping & complex structure forming." },
-        { name: "Hand Assembly", desc: "Manual assembly, module installation, accessory & set packing." },
-        { name: "Quality Assurance", desc: "Incoming, in-process, final inspection & functional testing." },
-        { name: "Packaging", desc: "Retail packaging, shipping protection & plastic reduction solutions." },
-        { name: "Global Logistics", desc: "Shipping plans, documentation, logistics coordination & delivery tracking." },
+        { name: "Prepress & Proofing", desc: "File receiving, preflight checks, CTP plate-making, proofing & white dummy." },
+        { name: "Precision Printing", desc: "Printing, color management, color approval & process control." },
+        { name: "Premium Finishing", desc: "Lamination, Spot UV, foil stamping, embossing/debossing & special textures." },
+        { name: "Die-Cutting & Bookmaking", desc: "Custom die-cutting, window patches, label pages, folding, collating, thread-sewing, hardcover, paperback & board books." },
+        { name: "Interactive Assembly & QC", desc: "Pop-up, lift-the-flap, sound books, magnetic books, accessory installation, QC & safety testing." },
+        { name: "Packing & Global Fulfillment", desc: "Packing, cartoning, palletizing, warehousing, container loading & global shipping." },
       ],
     },
     quality: {
@@ -156,14 +154,12 @@ const contentDict: Record<Lang, ContentType> = {
       title: "从卓越产品到全球交付",
       subtitle: "一体化团队支持工程设计、打样、生产、质量保证与国际物流",
       steps: [
-        { name: "工程设计", desc: "结构评估、可制造性建议、材料与成本优化。" },
-        { name: "打样与原型", desc: "白样、彩样、功能样及客户确认流程。" },
-        { name: "胶印与数码印刷", desc: "色彩管理、专色、表面处理及过程控制。" },
-        { name: "模切与装订", desc: "装订、裱合、异形加工及复杂结构成型。" },
-        { name: "手工组装", desc: "手工装配、模块安装、配件与套装组合。" },
-        { name: "质量检测", desc: "来料、过程、成品及功能测试。" },
-        { name: "包装出货", desc: "零售包装、运输保护及减塑方案。" },
-        { name: "全球物流", desc: "出货计划、文件、物流协同与交付跟踪。" },
+        { name: "印前与打样", desc: "文件接收、印前检查、CTP制版、打样、White Dummy。" },
+        { name: "精密印刷", desc: "印刷、色彩管理、看色与过程控制。" },
+        { name: "高端表面处理", desc: "覆膜、Spot UV、烫金、压凹凸、特殊纹理。" },
+        { name: "模切与装订", desc: "异形模切、开窗、标签页、折页、配页、锁线、精装、平装、Board Book等。" },
+        { name: "手工组装与质检", desc: "Pop-up、Lift-the-Flap、Sound Book、Magnetic Book、配件安装、QC与安全测试。" },
+        { name: "出口包装与全球交付", desc: "包装、装箱、托盘、仓储、集装箱装柜、全球出货。" },
       ],
     },
     quality: {
@@ -224,14 +220,12 @@ const contentDict: Record<Lang, ContentType> = {
       title: "コンセプトからグローバル配送まで",
       subtitle: "エンジニアリング、サンプリング、生産、品質保証、国際物流を一貫サポート",
       steps: [
-        { name: "エンジニアリング＆設計", desc: "構造評価、製造可能性分析、材料・コスト最適化。" },
-        { name: "サンプリング＆試作", desc: "白サンプル、カラー校正、機能サンプル、承認プロセス。" },
-        { name: "オフセット＆デジタル印刷", desc: "カラーマネジメント、特色、表面加工、工程管理。" },
-        { name: "抜型＆製本", desc: "製本、貼り合わせ、特殊形状加工、複雑構造成型。" },
-        { name: "手作業組立", desc: "手作業組立、モジュール取付、付属品とセット梱包。" },
-        { name: "品質保証", desc: "受入検査、工程内検査、完成品検査、機能テスト。" },
-        { name: "梱包", desc: "小売包装、輸送保護、プラスチック削減対策。" },
-        { name: "グローバル物流", desc: "出荷計画、書類作成、物流調整、配送追跡。" },
+        { name: "プリプレス＆校正", desc: "ファイル受領、プリフライトチェック、CTP製版、校正刷り、ホワイトダミー。" },
+        { name: "精密印刷", desc: "印刷、カラーマネジメント、色校正と工程管理。" },
+        { name: "高級表面加工", desc: "PP加工、スポットUV、箔押し、エンボス/デボス、特殊テクスチャ。" },
+        { name: "抜型＆製本", desc: "異形抜型、窓開け、差し込みページ、折り、丁合、糸かがり、上製本、並製本、ボードブックなど。" },
+        { name: "インタラクティブ組立＆品質管理", desc: "ポップアップ、めくり仕掛け、サウンドブック、マグネットブック、部品取付、QCと安全テスト。" },
+        { name: "梱包＆グローバル納品", desc: "梱包、箱詰め、パレタイズ、倉庫保管、コンテナ積載、グローバル出荷。" },
       ],
     },
     quality: {
@@ -773,14 +767,12 @@ export default function HomePage() {
             <div className="w-full lg:w-[70%] h-[45vh] lg:h-[75vh] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl flex-shrink-0 group ring-1 ring-white/5">
               {content.capabilities.steps.map((s, i) => {
                 const processImages = [
-                  "/process-illustrations/Gemini_Generated_Image_h4tdnmh4tdnmh4td.webp", // 0: Design
-                  "/process-illustrations/Gemini_Generated_Image_38tvxi38tvxi38tv.webp", // 1: Prototyping/Prep
-                  "/process-illustrations/Gemini_Generated_Image_3i7d4v3i7d4v3i7d.webp", // 2: Printing
-                  "/process-illustrations/Gemini_Generated_Image_4nzn934nzn934nzn.webp", // 3: Die-cutting
-                  "/process-illustrations/Gemini_Generated_Image_1zhoul1zhoul1zho.webp", // 4: Assembly/Binding
-                  "/process-illustrations/Gemini_Generated_Image_rrrvparrrvparrrv.webp", // 5: QC
-                  "/process-illustrations/Gemini_Generated_Image_t02tdut02tdut02t.webp", // 6: Packaging
-                  "/real-factory/truck-loading.jpg", // 7: Logistics
+                  "/process-illustrations/process-01.webp", // 0: Prepress & Proofing
+                  "/process-illustrations/process-02.webp", // 1: Precision Printing
+                  "/process-illustrations/process-03.webp", // 2: Premium Finishing
+                  "/process-illustrations/process-04.webp", // 3: Die-Cutting & Bookmaking
+                  "/process-illustrations/process-05.webp", // 4: Interactive Assembly & QC
+                  "/process-illustrations/process-06.webp", // 5: Packing & Global Fulfillment
                 ];
                 const picSrc = processImages[i % processImages.length];
                 const isActive = activeProcess === i;

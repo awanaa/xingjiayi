@@ -23,13 +23,12 @@ const contentDict = fn();
 
 // 图片映射(按索引)
 const processImgs = [
-  "/process-illustrations/Gemini_Generated_Image_h4tdnmh4tdnmh4td.webp",
-  "/process-illustrations/Gemini_Generated_Image_38tvxi38tvxi38tv.webp",
-  "/process-illustrations/Gemini_Generated_Image_3i7d4v3i7d4v3i7d.webp",
-  "/process-illustrations/Gemini_Generated_Image_4nzn934nzn934nzn.webp",
-  "/process-illustrations/Gemini_Generated_Image_1zhoul1zhoul1zho.webp",
-  "/process-illustrations/Gemini_Generated_Image_rrrvparrrvparrrv.webp",
-  "/process-illustrations/Gemini_Generated_Image_t02tdut02tdut02t.webp",
+  "/process-illustrations/process-01.webp",
+  "/process-illustrations/process-02.webp",
+  "/process-illustrations/process-03.webp",
+  "/process-illustrations/process-04.webp",
+  "/process-illustrations/process-05.webp",
+  "/process-illustrations/process-06.webp",
 ];
 
 const qualityImgs = [
