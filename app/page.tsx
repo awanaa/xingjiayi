@@ -764,7 +764,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Cinematic Display */}
-            <div className="w-full lg:w-[70%] h-[45vh] lg:h-[75vh] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl flex-shrink-0 group ring-1 ring-white/5">
+            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-2xl flex-shrink-0 group ring-1 ring-white/5">
               {content.capabilities.steps.map((s, i) => {
                 const processImages = [
                   "/process-illustrations/process-01.webp", // 0: Prepress & Proofing
@@ -870,7 +870,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Side: Full-Bleed Cinematic Window (Aligned with Section 3) */}
-            <div className="w-full lg:w-[70%] h-[45vh] lg:h-[75vh] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.quality.modules.map((mod, i) => {
                 const realPicsQuality = [
                   "color-management.jpg", // 0: 色彩管理 (Ink/Color)
@@ -949,7 +949,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Side: Full-Bleed Cinematic Window */}
-            <div className="w-full lg:w-[70%] h-[45vh] lg:h-[75vh] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.sustainability.items.map((item, i) => {
                  const realPicsSustainability = [
                   "fsc-paper.jpg", // 0: FSC Paper
