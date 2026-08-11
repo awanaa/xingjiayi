@@ -100,7 +100,6 @@ const contentDict: Record<Lang, ContentType> = {
         "In-process Control",
         "Functional Testing",
         "Final Inspection",
-        "Traceability",
       ],
     },
     sustainability: {
@@ -165,7 +164,7 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "品质融入每一个环节",
       subtitle: "从原材料检验到成品出运，系统性质量管理覆盖全流程",
-      modules: ["色彩管理", "来料检验", "过程控制", "功能测试", "成品检验", "全程追溯"],
+      modules: ["色彩管理", "来料检验", "过程控制", "功能测试", "成品检验"],
     },
     sustainability: {
       title: "更优质的材料 更智能的生产",
@@ -231,7 +230,7 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "すべての工程に組み込まれた品質",
       subtitle: "原材料検査から最終出荷まで、体系的な品質管理を実施",
-      modules: ["カラーマネジメント", "受入検査", "工程内管理", "機能テスト", "最終検査", "トレーサビリティ"],
+      modules: ["カラーマネジメント", "受入検査", "工程内管理", "機能テスト", "最終検査"],
     },
     sustainability: {
       title: "より良い素材。よりスマートな生産",
@@ -297,7 +296,7 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "모든 단계에 통합된 품질",
       subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리.",
-      modules: ["색상 관리", "수입 검사", "공정 제어", "기능 테스트", "완제품 검사", "전체 추적 가능성"],
+      modules: ["색상 관리", "수입 검사", "공정 제어", "기능 테스트", "완제품 검사"],
     },
     sustainability: {
       title: "더 나은 재료, 더 스마트한 생산",
@@ -865,12 +864,11 @@ export default function HomePage() {
             <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.quality.modules.map((mod, i) => {
                 const realPicsQuality = [
-                  "color-management.jpg", // 0: 色彩管理 (Ink/Color)
-                  "IMG_5110.JPG", // 1: 来料 (Paper stacks)
-                  "IMG_5141.JPG", // 2: 过程控制 (Smart factory machines)
-                  "IMG_5183.JPG", // 3: 功能测试
-                  "IMG_5133.JPG", // 4: 成品检验 (Inspecting books)
-                  "truck-loading.jpg", // 5: 全程追溯 (Tracking/Boxes)
+                  "01.png", // 0: 色彩管理
+                  "02.png", // 1: 来料检验
+                  "03.png", // 2: 过程控制
+                  "04.png", // 3: 功能测试
+                  "05.png", // 4: 成品检验
                 ];
                 const picSrc = `/real-factory/${realPicsQuality[i % realPicsQuality.length]}`;
                 const isActive = activeQuality === i;
