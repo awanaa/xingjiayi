@@ -1022,24 +1022,7 @@ export default function HomePage() {
             Delivering precision manufacturing and seamless logistics across North America, Europe, and Asia-Pacific.
           </p>
 
-          <div className="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar max-w-full pb-2 md:pb-0">
-            {[
-              { region: "North America Hub", city: "New York", coord: "40.71° N, 74.00° W" },
-              { region: "Europe Hub", city: "London", coord: "51.50° N, 0.12° W" },
-              { region: "Asia Pacific HQ", city: "Shanghai", coord: "31.23° N, 121.47° E" },
-              { region: "East Asia Hub", city: "Tokyo", coord: "35.67° N, 139.65° E" },
-            ].map((node, i) => (
-              <div key={i} className="group flex flex-col gap-1.5 backdrop-blur-xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.06] hover:border-gold-500/30 transition-all duration-500 shadow-2xl p-5 rounded-2xl shrink-0 min-w-[160px] md:min-w-[180px] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/0 via-gold-500/0 to-gold-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="text-gold-500 text-[10px] uppercase tracking-widest font-bold mb-1">{node.region}</span>
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-2 h-2 rounded-full bg-gold-500 animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
-                  <span className="text-white font-bold text-lg tracking-wide">{node.city}</span>
-                </div>
-                <span className="text-white/40 font-mono text-[10px] tracking-widest">{node.coord}</span>
-              </div>
-            ))}
-          </div>
+
         </div>
       </section>
 

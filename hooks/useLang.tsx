@@ -28,8 +28,28 @@ export function LangProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem("site-lang") as Lang | null;
-    if (saved === "en" || saved === "zh" || saved === "ja") {
+    if (saved === "en" || saved === "zh" || saved === "ja" || saved === "ko") {
       setLangState(saved);
+    } else {
+      fetch("https://get.geojs.io/v1/ip/country.json")
+        .then(res => res.json())
+        .then(data => {
+          const country = data.country;
+          let newLang: Lang = "en";
+          if (["CN", "TW", "HK", "MO", "SG"].includes(country)) {
+            newLang = "zh";
+          } else if (country === "JP") {
+            newLang = "ja";
+          } else if (country === "KR") {
+            newLang = "ko";
+          }
+          setLangState(newLang);
+          localStorage.setItem("site-lang", newLang);
+        })
+        .catch(() => {
+          setLangState("en");
+          localStorage.setItem("site-lang", "en");
+        });
     }
   }, []);
 
