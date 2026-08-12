@@ -939,17 +939,17 @@ export default function HomePage() {
             </div>
 
             {/* Right Side: Full-Bleed Cinematic Window */}
-            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            <div className="w-full lg:w-[70%] aspect-square lg:aspect-square relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.sustainability.items.map((item, i) => {
                  const realPicsSustainability = [
-                  "fsc-paper.jpg", // 0: FSC Paper
-                  "IMG_5112.JPG", // 1: Recycled materials
-                  "IMG_5256.JPG", // 2: Soy/Water inks
-                  "automated-production.jpg", // 3: Automated production waste reduction
-                  "IMG_5143.JPG", // 4: Waste reduction
-                  "IMG_5141.JPG", // 5: Smart production
+                  "01.png", // 0: FSC Paper
+                  "02.png", // 1: Recycled materials
+                  "03.png", // 2: Soy/Water inks
+                  "04.png", // 3: Automated production waste reduction
+                  "05.png", // 4: Waste reduction
+                  "06.png", // 5: Smart production
                  ];
-                 const picSrc = `/real-factory/${realPicsSustainability[i % realPicsSustainability.length]}`;
+                 const picSrc = `/eco/${realPicsSustainability[i % realPicsSustainability.length]}`;
                  const isActive = activeSustainability === i;
                  return (
                    <div 
