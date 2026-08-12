@@ -44,8 +44,8 @@ interface ContentType {
   trust: { title: string; subtitle: string };
   featured: { title: string; subtitle: string; categories: { name: string; desc: string }[] };
   capabilities: { title: string; subtitle: string; steps: { name: string; desc: string }[] };
-  quality: { title: string; subtitle: string; modules: string[] };
-  sustainability: { title: string; subtitle: string; items: string[] };
+  quality: { title: string; subtitle: string; modules: { name: string; image?: string }[] };
+  sustainability: { title: string; subtitle: string; items: { name: string; image?: string }[] };
   global: { title: string; subtitle: string; regions: string[] };
   cta: { title: string; subtitle: string; buttonPrimary: string; buttonSecondary: string };
 }
@@ -95,23 +95,23 @@ const contentDict: Record<Lang, ContentType> = {
       title: "Quality Built into Every Step",
       subtitle: "Systematic quality management from raw material inspection to final shipment",
       modules: [
-        "Color Management",
-        "Incoming Inspection",
-        "In-process Control",
-        "Functional Testing",
-        "Final Inspection",
+        { name: "Incoming Inspection", image: "/real-factory/02.png" },
+        { name: "Color Management", image: "/real-factory/01.png" },
+        { name: "In-process Control", image: "/real-factory/03.png" },
+        { name: "Functional Testing", image: "/real-factory/04.png" },
+        { name: "Final Inspection", image: "/real-factory/05.png" },
       ],
     },
     sustainability: {
       title: "Better Materials. Smarter Production",
       subtitle: "Responsible material choices and practical production improvements to reduce waste",
       items: [
-        "FSC®-certified paper",
-        "Recycled & biodegradable materials",
-        "Soy-based & water-based inks",
-        "Automated production waste reduction",
-        "Waste reduction programs",
-        "Energy-efficient production",
+        { name: "FSC®-certified paper", image: "/eco/01.png" },
+        { name: "Recycled & biodegradable materials", image: "/eco/02.png" },
+        { name: "Soy-based & water-based inks", image: "/eco/03.png" },
+        { name: "Automated production waste reduction", image: "/eco/04.png" },
+        { name: "Waste reduction programs", image: "/eco/05.png" },
+        { name: "Energy-efficient production", image: "/eco/06.png" },
       ],
     },
     global: {
@@ -164,18 +164,24 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "品质融入每一个环节",
       subtitle: "从原材料检验到成品出运，系统性质量管理覆盖全流程",
-      modules: ["色彩管理", "来料检验", "过程控制", "功能测试", "成品检验"],
+      modules: [
+        { name: "来料检验", image: "/real-factory/02.png" },
+        { name: "色彩管理", image: "/real-factory/01.png" },
+        { name: "过程控制", image: "/real-factory/03.png" },
+        { name: "功能测试", image: "/real-factory/04.png" },
+        { name: "成品检验", image: "/real-factory/05.png" },
+      ],
     },
     sustainability: {
       title: "更优质的材料 更智能的生产",
       subtitle: "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
       items: [
-        "FSC® 认证纸张",
-        "再生与可降解材料",
-        "大豆基与水性油墨",
-        "自动化生产减少损耗",
-        "废弃物减量计划",
-        "节能高效生产",
+        { name: "FSC® 认证纸张", image: "/eco/01.png" },
+        { name: "再生与可降解材料", image: "/eco/02.png" },
+        { name: "大豆基与水性油墨", image: "/eco/03.png" },
+        { name: "自动化生产减少损耗", image: "/eco/04.png" },
+        { name: "废弃物减量计划", image: "/eco/05.png" },
+        { name: "节能高效生产", image: "/eco/06.png" },
       ],
     },
     global: {
@@ -230,18 +236,24 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "すべての工程に組み込まれた品質",
       subtitle: "原材料検査から最終出荷まで、体系的な品質管理を実施",
-      modules: ["カラーマネジメント", "受入検査", "工程内管理", "機能テスト", "最終検査"],
+      modules: [
+        { name: "受入検査", image: "/real-factory/02.png" },
+        { name: "カラーマネジメント", image: "/real-factory/01.png" },
+        { name: "工程内管理", image: "/real-factory/03.png" },
+        { name: "機能テスト", image: "/real-factory/04.png" },
+        { name: "最終検査", image: "/real-factory/05.png" },
+      ],
     },
     sustainability: {
       title: "より良い素材。よりスマートな生産",
       subtitle: "責任ある素材選択と実践的な生産改善による廃棄物削減",
       items: [
-        "FSC® 認証紙",
-        "再生・生分解性素材",
-        "大豆・水性インク",
-        "自動化生産によるロス削減",
-        "廃棄物削減プログラム",
-        "省エネ生産",
+        { name: "FSC® 認証紙", image: "/eco/01.png" },
+        { name: "再生・生分解性素材", image: "/eco/02.png" },
+        { name: "大豆・水性インク", image: "/eco/03.png" },
+        { name: "自動化生産によるロス削減", image: "/eco/04.png" },
+        { name: "廃棄物削減プログラム", image: "/eco/05.png" },
+        { name: "省エネ生産", image: "/eco/06.png" },
       ],
     },
     global: {
@@ -296,18 +308,24 @@ const contentDict: Record<Lang, ContentType> = {
     quality: {
       title: "모든 단계에 통합된 품질",
       subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리.",
-      modules: ["색상 관리", "수입 검사", "공정 제어", "기능 테스트", "완제품 검사"],
+      modules: [
+        { name: "수입 검사", image: "/real-factory/02.png" },
+        { name: "색상 관리", image: "/real-factory/01.png" },
+        { name: "공정 제어", image: "/real-factory/03.png" },
+        { name: "기능 테스트", image: "/real-factory/04.png" },
+        { name: "완제품 검사", image: "/real-factory/05.png" },
+      ],
     },
     sustainability: {
       title: "더 나은 재료, 더 스마트한 생산",
       subtitle: "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다.",
       items: [
-        "FSC® 인증 종이",
-        "재생 및 생분해성 재료",
-        "대두 및 수성 잉크",
-        "자동화 생산을 통한 손실 감소",
-        "폐기물 감축 프로그램",
-        "에너지 효율적인 생산",
+        { name: "FSC® 인증 종이", image: "/eco/01.png" },
+        { name: "재생 및 생분해성 재료", image: "/eco/02.png" },
+        { name: "대두 및 수성 잉크", image: "/eco/03.png" },
+        { name: "자동화 생산을 통한 손실 감소", image: "/eco/04.png" },
+        { name: "폐기물 감축 프로그램", image: "/eco/05.png" },
+        { name: "에너지 효율적인 생산", image: "/eco/06.png" },
       ],
     },
     global: {
@@ -407,12 +425,18 @@ function cmsToContent(cms: SiteContent, lang: string): ContentType {
     quality: {
       title: L(cms.quality?.title, ""),
       subtitle: L(cms.quality?.subtitle, ""),
-      modules: (cms.quality?.modules || []).map((m) => L(m.name, "")),
+      modules: (cms.quality?.modules || []).map((m) => ({
+        name: L(m.name, ""),
+        image: m.image || "",
+      })),
     },
     sustainability: {
       title: L(cms.sustainability?.title, ""),
       subtitle: L(cms.sustainability?.subtitle, ""),
-      items: (cms.sustainability?.items || []).map((it) => L(it.name, "")),
+      items: (cms.sustainability?.items || []).map((it) => ({
+        name: L(it.name, ""),
+        image: it.image || "",
+      })),
     },
     global: {
       title: "",
@@ -852,7 +876,7 @@ export default function HomePage() {
                       <h3 className={`text-base md:text-lg tracking-wide transition-all duration-500 ${
                         isActive ? "text-white font-bold translate-x-2" : "text-white/70 font-medium group-hover:text-white translate-x-0"
                       }`}>
-                        {mod}
+                        {mod.name}
                       </h3>
                     </div>
                   );
@@ -870,7 +894,7 @@ export default function HomePage() {
                   "04.png", // 3: 功能测试
                   "05.png", // 4: 成品检验
                 ];
-                const picSrc = `/real-factory/${realPicsQuality[i % realPicsQuality.length]}`;
+                const picSrc = mod.image || `/real-factory/${realPicsQuality[i % realPicsQuality.length]}`;
                 const isActive = activeQuality === i;
                 
                 return (
@@ -880,7 +904,7 @@ export default function HomePage() {
                    >
                      <OptimizedImage
                        src={picSrc}
-                       alt={mod}
+                       alt={mod.name}
                        fill
                        className={`w-full h-full object-contain transition-transform duration-[20s] ease-linear ${isActive ? "scale-105" : "scale-100"}`}
                        priority={i === 0}
@@ -930,7 +954,7 @@ export default function HomePage() {
                     >
                       <span className={"text-base md:text-lg tracking-wide transition-all duration-500 " +
                         (isActive ? "text-white font-bold translate-x-2" : "text-white/70 font-medium group-hover:text-white translate-x-0")}>
-                        {item}
+                        {item.name}
                       </span>
                     </div>
                   );
@@ -949,7 +973,7 @@ export default function HomePage() {
                   "05.png", // 4: Waste reduction
                   "06.png", // 5: Smart production
                  ];
-                 const picSrc = `/eco/${realPicsSustainability[i % realPicsSustainability.length]}`;
+                 const picSrc = item.image || `/eco/${realPicsSustainability[i % realPicsSustainability.length]}`;
                  const isActive = activeSustainability === i;
                  return (
                    <div 
@@ -958,7 +982,7 @@ export default function HomePage() {
                    >
                      <OptimizedImage
                        src={picSrc}
-                       alt={item}
+                       alt={item.name}
                        fill
                        className={"w-full h-full object-contain transition-transform duration-[20s] ease-linear " + (isActive ? "scale-105" : "scale-100")}
                      />
