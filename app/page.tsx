@@ -882,7 +882,7 @@ export default function HomePage() {
                        src={picSrc}
                        alt={mod}
                        fill
-                       className={`w-full h-full object-cover transition-transform duration-[20s] ease-linear ${isActive ? "scale-105" : "scale-100"}`}
+                       className={`w-full h-full object-contain transition-transform duration-[20s] ease-linear ${isActive ? "scale-105" : "scale-100"}`}
                        priority={i === 0}
                      />
                    </div>
@@ -960,7 +960,7 @@ export default function HomePage() {
                        src={picSrc}
                        alt={item}
                        fill
-                       className={"w-full h-full object-cover transition-transform duration-[20s] ease-linear " + (isActive ? "scale-105" : "scale-100")}
+                       className={"w-full h-full object-contain transition-transform duration-[20s] ease-linear " + (isActive ? "scale-105" : "scale-100")}
                      />
                    </div>
                  );
