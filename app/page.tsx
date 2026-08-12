@@ -814,9 +814,9 @@ export default function HomePage() {
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
-          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-20 pt-8 md:pt-0">
+          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-16 pt-8 md:pt-0">
             {/* Left Side: Control Panel */}
-            <div className="w-full lg:w-[35%] flex flex-col justify-center relative z-20">
+            <div className="w-full lg:w-[40%] flex flex-col justify-center relative z-20">
               <div className="mb-8 md:mb-12 pl-2">
                 <span className="text-gold-500 text-xs tracking-widest uppercase font-semibold">
                   Quality & Compliance
@@ -860,8 +860,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Side: Full-Bleed Cinematic Window (Aligned with Section 3) */}
-            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            {/* Right Side: Cinematic Window (4:3 原图比例，不裁剪) */}
+            <div className="w-full lg:w-[52%] aspect-[4/3] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.quality.modules.map((mod, i) => {
                 const realPicsQuality = [
                   "01.png", // 0: 色彩管理
@@ -899,9 +899,9 @@ export default function HomePage() {
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
-          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-20 pt-8 md:pt-0">
+          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-16 pt-8 md:pt-0">
             {/* Left Side: Control Panel */}
-            <div className="w-full lg:w-[35%] flex flex-col justify-center relative z-20">
+            <div className="w-full lg:w-[40%] flex flex-col justify-center relative z-20">
               <div className="mb-8 md:mb-12 pl-2">
                 <span className="text-emerald-500 text-xs tracking-widest uppercase font-semibold">
                   Sustainability
@@ -938,8 +938,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Side: Full-Bleed Cinematic Window */}
-            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            {/* Right Side: Cinematic Window (4:3 原图比例，不裁剪) */}
+            <div className="w-full lg:w-[52%] aspect-[4/3] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.sustainability.items.map((item, i) => {
                  const realPicsSustainability = [
                   "01.png", // 0: FSC Paper
