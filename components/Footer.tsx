@@ -23,13 +23,18 @@ export default function Footer({ dark = false }: { dark?: boolean }) {
             </div>
           </div>
           <p className={`${tSec} text-sm leading-relaxed`}>
-            {lang === "zh"
-              ? "专注于高端儿童纸艺产品的研发与生产，服务全球知名出版品牌。"
-              : lang === "ja"
-                ? "高級児童紙工芸製品の研究開発と製造に特化し、世界中の有名出版社にサービスを提供しています。"
-                : lang === "ko"
-                  ? "프리미엄 아동용 페이퍼 크래프트 제품 연구 개발 및 생산에 전념하며, 글로벌 유명 출판 브랜드에 서비스를 제공합니다."
-                  : "Specializing in premium children's paper craft products, serving world-renowned publishing brands."}
+            {lang === "zh" ? (
+              <>
+                <span className="block">专注于高端儿童纸艺产品的研发生产</span>
+                <span className="block">服务全球知名出版企业</span>
+              </>
+            ) : lang === "ja" ? (
+              "高級児童紙工芸製品の研究開発と製造に特化し、世界中の有名出版社にサービスを提供しています。"
+            ) : lang === "ko" ? (
+              "프리미엄 아동용 페이퍼 크래프트 제품 연구 개발 및 생산에 전념하며, 글로벌 유명 출판 브랜드에 서비스를 제공합니다."
+            ) : (
+              "Specializing in premium children's paper craft products, serving world-renowned publishing brands."
+            )}
           </p>
         </div>
 

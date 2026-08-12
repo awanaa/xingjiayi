@@ -80,26 +80,26 @@ export default function IntelligentPlant() {
 
   const t0 = {
     en: {
-      heroOver: "Since 2005",
+      heroOver: "Since 2001",
       heroTitle: "Where Precision",
       heroAccent: "Meets Production",
-      heroDesc: "Step inside our 20,000m² smart facility — 50%+ automation rate, 24/7 climate control, and a team of 300+ master craftsmen turning raw sheets into award-winning books.",
+      heroDesc: "Step inside our 20,000m² smart facility — 50%+ automation rate, 24/7 climate control, and a team of 250+ master craftsmen turning raw sheets into award-winning books.",
       scroll: "Scroll to explore",
       stats: [
-        { end: 50, suffix: "%+", label: "Automation Rate" },
+        { end: 50, suffix: "%+", label: "Automation" },
         { end: 24, suffix: "/7", label: "Climate Control" },
-        { end: 20, suffix: "k m²", label: "Workshop Area" },
-        { end: 300, suffix: "+", label: "Team Members" },
+        { end: 20, suffix: "k m²", label: "Production Area" },
+        { end: 250, suffix: "+", label: "Team Members" },
       ],
       processTitle: "Production Process",
       processSub: "From raw material to finished book — every step quality-controlled",
       steps: [
-        { title: "Design & Prepress", desc: "Structural design, file prep, CTP plate-making", img: "/real-factory/DSC00178.JPG" },
-        { title: "Printing", desc: "Heidelberg offset / UV / digital on premium stock", img: "/real-factory/IMG_5121.JPG" },
-        { title: "Die-Cutting", desc: "High-precision automated cutting & creasing", img: "/real-factory/IMG_5271.JPG" },
-        { title: "Surface & Binding", desc: "Foil stamping, lamination, hand-assembly", img: "/real-factory/IMG_5132.JPG" },
-        { title: "QC Inspection", desc: "EN71 / ASTM / ISO — full quality gate checks", img: "/real-factory/IMG_5133.JPG" },
-        { title: "Warehouse & Dispatch", desc: "Stereo warehouse, global logistics", img: "/real-factory/truck-loading.jpg" },
+        { title: "Design & Prepress", desc: "Structural design, file prep, CTP plate-making", img: "/process-illustrations/process-01.webp" },
+        { title: "Printing", desc: "Heidelberg offset / UV / digital on premium stock", img: "/process-illustrations/process-02.webp" },
+        { title: "Die-Cutting", desc: "High-precision automated cutting & creasing", img: "/process-illustrations/process-03.webp" },
+        { title: "Surface & Binding", desc: "Foil stamping, lamination, hand-assembly", img: "/process-illustrations/process-04.webp" },
+        { title: "QC Inspection", desc: "EN71 / ASTM / ISO — full quality gate checks", img: "/process-illustrations/process-05.webp" },
+        { title: "Warehouse & Dispatch", desc: "Stereo warehouse, global logistics", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "Our Equipment",
       equipSub: "German precision, Japanese efficiency — the tools behind the craft",
@@ -113,26 +113,26 @@ export default function IntelligentPlant() {
       ctaBtn: "Get in Touch",
     },
     zh: {
-      heroOver: "始于2005",
+      heroOver: "始于2001",
       heroTitle: "精密与效率",
       heroAccent: "在此交汇",
-      heroDesc: "走进星嘉艺20,000平方米智慧工厂——50%+自动化率、24小时恒温恒湿、300+工匠团队，每一本好书的诞生，都从这里开始。",
+      heroDesc: "走进星嘉艺20,000平方米智慧工厂——50%+自动化率、24小时恒温恒湿、250+工匠团队，每一本好书的诞生，都从这里开始。",
       scroll: "向下探索",
       stats: [
         { end: 50, suffix: "%+", label: "自动化率" },
         { end: 24, suffix: "小时", label: "恒温控制" },
-        { end: 20, suffix: "k m²", label: "车间面积" },
-        { end: 300, suffix: "+", label: "工匠团队" },
+        { end: 20, suffix: "k m²", label: "生产面积" },
+        { end: 250, suffix: "+", label: "工匠团队" },
       ],
       processTitle: "生产流程",
       processSub: "从原材料到成品书——每一步严格品控",
       steps: [
-        { title: "设计与制版", desc: "结构设计、文件处理、CTP制版", img: "/real-factory/DSC00178.JPG" },
-        { title: "印刷", desc: "海德堡胶印/UV/数码印刷", img: "/real-factory/IMG_5121.JPG" },
-        { title: "模切", desc: "高精度自动模切压痕", img: "/real-factory/IMG_5271.JPG" },
-        { title: "表面与装订", desc: "烫金、裱糊、手工组装", img: "/real-factory/IMG_5132.JPG" },
-        { title: "质检", desc: "EN71 / ASTM / ISO 全检", img: "/real-factory/IMG_5133.JPG" },
-        { title: "仓储与发货", desc: "立体仓管理，全球物流", img: "/real-factory/truck-loading.jpg" },
+        { title: "设计与制版", desc: "结构设计、文件处理、CTP制版", img: "/process-illustrations/process-01.webp" },
+        { title: "印刷", desc: "海德堡胶印/UV/数码印刷", img: "/process-illustrations/process-02.webp" },
+        { title: "模切", desc: "高精度自动模切压痕", img: "/process-illustrations/process-03.webp" },
+        { title: "表面与装订", desc: "烫金、裱糊、手工组装", img: "/process-illustrations/process-04.webp" },
+        { title: "质检", desc: "EN71 / ASTM / ISO 全检", img: "/process-illustrations/process-05.webp" },
+        { title: "仓储与发货", desc: "立体仓管理，全球物流", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "核心设备",
       equipSub: "德国精度、日本效率——匠艺背后的硬实力",
@@ -146,26 +146,26 @@ export default function IntelligentPlant() {
       ctaBtn: "联系我们",
     },
     ja: {
-      heroOver: "2005年創業",
+      heroOver: "2001年創業",
       heroTitle: "精密と効率が",
       heroAccent: "交差する場所",
-      heroDesc: "20,000m²のスマート工場——50%超の自動化率、24時間温度管理、300+の熟練職人。すべての良書はここから始まります。",
+      heroDesc: "20,000m²のスマート工場——50%超の自動化率、24時間温度管理、250+の熟練職人。すべての良書はここから始まります。",
       scroll: "スクロール",
       stats: [
         { end: 50, suffix: "%+", label: "自動化率" },
         { end: 24, suffix: "時間", label: "温度管理" },
-        { end: 20, suffix: "k m²", label: "工場面積" },
-        { end: 300, suffix: "+", label: "熟練職人" },
+        { end: 20, suffix: "k m²", label: "生産面積" },
+        { end: 250, suffix: "+", label: "熟練職人" },
       ],
       processTitle: "生産フロー",
       processSub: "原材料から完成品まで——すべての工程を厳格に品質管理",
       steps: [
-        { title: "設計・製版", desc: "構造設計、ファイル処理、CTP製版", img: "/real-factory/DSC00178.JPG" },
-        { title: "印刷", desc: "ハイデルベルグ オフセット/UV/デジタル印刷", img: "/real-factory/IMG_5121.JPG" },
-        { title: "抜き加工", desc: "高精度自動抜型加工", img: "/real-factory/IMG_5271.JPG" },
-        { title: "表面・製本", desc: "箔押し、ラミネート、手組み", img: "/real-factory/IMG_5132.JPG" },
-        { title: "品質検査", desc: "EN71 / ASTM / ISO 全数検査", img: "/real-factory/IMG_5133.JPG" },
-        { title: "保管・出荷", desc: "立体倉庫、グローバル物流", img: "/real-factory/truck-loading.jpg" },
+        { title: "設計・製版", desc: "構造設計、ファイル処理、CTP製版", img: "/process-illustrations/process-01.webp" },
+        { title: "印刷", desc: "ハイデルベルグ オフセット/UV/デジタル印刷", img: "/process-illustrations/process-02.webp" },
+        { title: "抜き加工", desc: "高精度自動抜型加工", img: "/process-illustrations/process-03.webp" },
+        { title: "表面・製本", desc: "箔押し、ラミネート、手組み", img: "/process-illustrations/process-04.webp" },
+        { title: "品質検査", desc: "EN71 / ASTM / ISO 全数検査", img: "/process-illustrations/process-05.webp" },
+        { title: "保管・出荷", desc: "立体倉庫、グローバル物流", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "主要設備",
       equipSub: "ドイツの精度、日本の効率——ものづくりを支える力",
@@ -179,26 +179,26 @@ export default function IntelligentPlant() {
       ctaBtn: "お問い合わせ",
     },
     ko: {
-      heroOver: "2005년 설립",
+      heroOver: "2001년 설립",
       heroTitle: "정밀함과 효율성이",
       heroAccent: "교차하는 곳",
-      heroDesc: "20,000m² 규모의 스마트 공장——50% 이상의 자동화율, 24시간 온도 제어, 300명 이상의 숙련된 장인. 모든 훌륭한 책은 이곳에서 시작됩니다.",
+      heroDesc: "20,000m² 규모의 스마트 공장——50% 이상의 자동화율, 24시간 온도 제어, 250명 이상의 숙련된 장인. 모든 훌륭한 책은 이곳에서 시작됩니다.",
       scroll: "스크롤하여 탐색",
       stats: [
         { end: 50, suffix: "%+", label: "자동화율" },
         { end: 24, suffix: "시간", label: "온도 제어" },
-        { end: 20, suffix: "k m²", label: "공장 면적" },
-        { end: 300, suffix: "+", label: "숙련된 장인" },
+        { end: 20, suffix: "k m²", label: "생산 면적" },
+        { end: 250, suffix: "+", label: "숙련된 장인" },
       ],
       processTitle: "생산 공정",
       processSub: "원자재부터 완제품까지——모든 공정을 엄격하게 품질 관리합니다.",
       steps: [
-        { title: "설계 및 제판", desc: "구조 설계, 파일 처리, CTP 제판", img: "/real-factory/DSC00178.JPG" },
-        { title: "인쇄", desc: "하이델베르그 오프셋/UV/디지털 인쇄", img: "/real-factory/IMG_5121.JPG" },
-        { title: "다이 커팅", desc: "고정밀 자동 다이 커팅", img: "/real-factory/IMG_5271.JPG" },
-        { title: "표면 및 제본", desc: "금박, 라미네이팅, 수작업 조립", img: "/real-factory/IMG_5132.JPG" },
-        { title: "품질 검사", desc: "EN71 / ASTM / ISO 전수 검사", img: "/real-factory/IMG_5133.JPG" },
-        { title: "창고 및 배송", desc: "입체 창고 관리, 글로벌 물류", img: "/real-factory/truck-loading.jpg" },
+        { title: "설계 및 제판", desc: "구조 설계, 파일 처리, CTP 제판", img: "/process-illustrations/process-01.webp" },
+        { title: "인쇄", desc: "하이델베르그 오프셋/UV/디지털 인쇄", img: "/process-illustrations/process-02.webp" },
+        { title: "다이 커팅", desc: "고정밀 자동 다이 커팅", img: "/process-illustrations/process-03.webp" },
+        { title: "표면 및 제본", desc: "금박, 라미네이팅, 수작업 조립", img: "/process-illustrations/process-04.webp" },
+        { title: "품질 검사", desc: "EN71 / ASTM / ISO 전수 검사", img: "/process-illustrations/process-05.webp" },
+        { title: "창고 및 배송", desc: "입체 창고 관리, 글로벌 물류", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "핵심 설비",
       equipSub: "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘",
@@ -213,7 +213,7 @@ export default function IntelligentPlant() {
     },
   }[lang as "en" | "zh" | "ja" | "ko"] || {
     /* Fallback to EN if undefined */
-    heroOver: "Since 2005", heroTitle: "Where Precision", heroAccent: "Meets Efficiency", heroDesc: "", scroll: "Scroll", stats: [], processTitle: "", processSub: "", steps: [], equipTitle: "", equipSub: "", equipItems: [], certTitle: "", ctaTitle: "", ctaDesc: "", ctaBtn: ""
+    heroOver: "Since 2001", heroTitle: "Where Precision", heroAccent: "Meets Efficiency", heroDesc: "", scroll: "Scroll", stats: [], processTitle: "", processSub: "", steps: [], equipTitle: "", equipSub: "", equipItems: [], certTitle: "", ctaTitle: "", ctaDesc: "", ctaBtn: ""
   };
 
   // ── CMS 数据优先，硬编码为 fallback ──
@@ -277,7 +277,7 @@ export default function IntelligentPlant() {
               {t.heroOver}
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.9] mt-6 mb-6">
+          <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-6 mb-6 ${lang === 'en' ? 'tracking-tight leading-[0.9]' : 'tracking-normal leading-tight'}`}>
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
@@ -382,16 +382,32 @@ export default function IntelligentPlant() {
       </section>
 
       {/* ═══ CERTIFICATIONS STRIP ═══ */}
-      <section className="py-20 px-6 border-t border-white/[0.04]">
+      <section className="py-20 px-6 border-t border-white/[0.04] bg-[#0f0f0f]">
         <div className="max-w-6xl mx-auto text-center">
-          <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-8 block">{t.certTitle}</span>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {(t.certifications || []).map((cert, i) => (
-              <div key={i} className="group flex flex-col items-center gap-2">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg border border-white/[0.08] p-2 bg-white/[0.03] flex items-center justify-center hover:border-gold-500/30 transition-all duration-300">
-                  <OptimizedImage src={cert.src} alt={cert.name} wrapperClassName="w-full h-full" className={`w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 ${cert.invert ? 'invert' : ''}`} />
-                </div>
-                <span className="text-[9px] md:text-[10px] text-white/30 tracking-wider">{cert.name}</span>
+          <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-12 block">{t.certTitle}</span>
+          
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+            {[
+              { name: "Disney", src: "/certificate/Disney_logo.png" },
+              { name: "Walmart", src: "/certificate/Walmart.png" },
+              { name: "Target", src: "/certificate/Target.png" },
+              { name: "Costco", src: "/certificate/Costco.png" },
+              { name: "ISO 9001", src: "/certificate/ISO_9001-2015.png" },
+              { name: "ISO 14001", src: "/certificate/iso14001.png", scale: "scale-[1.3]" },
+              { name: "SCAN", src: "/certifications/scan.jpg", scale: "scale-[1.8]" },
+              { name: "SMETA", src: "/certifications/smeta-.png", scale: "scale-[1.8]" },
+              { name: "Universal", src: "/certifications/universal.png", scale: "scale-[2.1]" },
+              { name: "中国环境标志", src: "/certifications/china10.png", scale: "scale-[1.8]" },
+              { name: "FSC", src: "/certifications/fsc-new.png", scale: "scale-125" },
+              { name: "EXPERT", src: "/certifications/expert.jpg", scale: "scale-125" },
+            ].map((cert, i) => (
+              <div key={i} className="flex items-center justify-center w-28 h-14 md:w-36 md:h-16 bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-2 md:p-3 overflow-hidden">
+                <OptimizedImage 
+                  src={cert.src} 
+                  alt={cert.name} 
+                  wrapperClassName="w-full h-full flex items-center justify-center" 
+                  className={`w-full h-full object-contain mix-blend-multiply ${cert.scale || ""}`} 
+                />
               </div>
             ))}
           </div>
@@ -414,17 +430,17 @@ export default function IntelligentPlant() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]" />
           
           {/* Precise Address Text Box (instead of coordinate beacon) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none mt-10 md:mt-0">
+          <div className="absolute top-[35%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
              <div className="w-4 h-4 rounded-full bg-gold-500 shadow-[0_0_20px_#D4A84B] mb-2" />
-             <div className="text-gold-400/90 font-mono text-xs tracking-widest backdrop-blur-md bg-black/60 px-5 py-2 rounded-full border border-gold-500/20 shadow-2xl text-center">
-               深圳市宝安区石岩镇<br className="md:hidden" />甫鱼石威祥工业区星嘉艺大厦1-6楼
+             <div className="text-gold-400/90 font-mono text-xs tracking-widest backdrop-blur-md bg-black/60 px-5 py-2 rounded-full border border-gold-500/20 shadow-2xl text-center whitespace-nowrap">
+               深圳市宝安区石岩街道水田社区 嘉业大厦1-6楼
              </div>
           </div>
         </div>
         
         <div className="absolute inset-0 bg-gradient-to-r from-gold-500/5 to-transparent pointer-events-none" />
         
-        <div className="relative z-20 max-w-3xl mx-auto text-center mt-32 md:mt-40">
+        <div className="relative z-20 max-w-3xl mx-auto text-center mt-56 md:mt-64">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight drop-shadow-lg text-white">{t.ctaTitle}</h2>
           <p className="text-white/60 text-lg mb-10 font-light drop-shadow-md">{t.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-30">

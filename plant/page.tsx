@@ -227,7 +227,7 @@ export default function PlantPage() {
                 <div className="group relative h-[400px] overflow-hidden rounded-2xl bg-[#1a1a1a] border border-white/5 flex flex-col justify-end p-8">
                   <div className="absolute inset-0 w-full h-full">
                     <img 
-                      src={`/exhibit-0${i + 1}.jpg`} 
+                      src={`/process-illustrations/process-0${i + 1}.webp`} 
                       alt={step.title}
                       className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 ease-out"
                     />

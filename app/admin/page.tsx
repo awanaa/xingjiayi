@@ -720,7 +720,7 @@ export default function AdminPage() {
         return (
           <div className="space-y-12">
             <Section title="智能工厂 首屏 (Hero)">
-              <LocaleRow label="顶部徽章 (如 始于2005)" value={content.plant!.heroOver} onChange={(v: LocaleString) => updateSectionState("plant", "heroOver", v)} />
+              <LocaleRow label="顶部徽章 (如 始于2001)" value={content.plant!.heroOver} onChange={(v: LocaleString) => updateSectionState("plant", "heroOver", v)} />
               <LocaleRow label="主标题" value={content.plant!.heroTitle} onChange={(v: LocaleString) => updateSectionState("plant", "heroTitle", v)} />
               <LocaleRow label="强调词 (金色渐变)" value={content.plant!.heroAccent} onChange={(v: LocaleString) => updateSectionState("plant", "heroAccent", v)} />
               <LocaleRow label="副标题描述" value={content.plant!.heroDesc} onChange={(v: LocaleString) => updateSectionState("plant", "heroDesc", v)} isTextArea />

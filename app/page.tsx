@@ -939,7 +939,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Side: Full-Bleed Cinematic Window */}
-            <div className="w-full lg:w-[70%] aspect-square lg:aspect-square relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            <div className="w-full lg:w-[70%] aspect-video lg:aspect-video relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.sustainability.items.map((item, i) => {
                  const realPicsSustainability = [
                   "01.png", // 0: FSC Paper
@@ -996,11 +996,11 @@ export default function HomePage() {
           
           <div className="hidden md:flex flex-col text-right gap-4 opacity-70 mt-2">
             <div className="flex flex-col">
-              <span className="text-white font-mono text-xl">15+</span>
+              <span className="text-white font-mono text-xl">30+</span>
               <span className="text-white/70 text-[9px] uppercase tracking-[0.2em]">Countries</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-mono text-xl">30+</span>
+              <span className="text-white font-mono text-xl">100+</span>
               <span className="text-white/70 text-[9px] uppercase tracking-[0.2em]">Partners</span>
             </div>
           </div>
