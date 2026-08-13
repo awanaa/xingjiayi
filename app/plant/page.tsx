@@ -325,7 +325,6 @@ export default function IntelligentPlant() {
               {lang === "zh" ? "生产流程" : lang === "ja" ? "生産フロー" : "Process"}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">{t.processTitle}</h2>
-            <p className="text-white/40 text-sm md:text-base">{t.processSub}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -386,7 +385,7 @@ export default function IntelligentPlant() {
         <div className="max-w-6xl mx-auto text-center">
           <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-12 block">{t.certTitle}</span>
           
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 justify-items-center w-full max-w-fit mx-auto">
             {[
               { name: "Disney", src: "/certificate/Disney_logo.png" },
               { name: "Walmart", src: "/certificate/Walmart.png" },
@@ -419,21 +418,21 @@ export default function IntelligentPlant() {
         <div className="absolute inset-0 bg-[#0a0a0a]">
           {/* Precise Google Maps Embed with Dark Mode CSS Filter */}
           <iframe 
-            src="https://maps.google.com/maps?q=深圳市宝安区石岩镇甫鱼石威祥工业区&t=m&z=15&output=embed&iwloc=near" 
-            className="w-full h-full opacity-60 pointer-events-none filter invert-[90%] hue-rotate-180 grayscale-[50%] contrast-125"
+            src="https://maps.google.com/maps?q=广东省深圳市宝安区石岩镇宝石南路18号星嘉艺大厦&t=m&z=15&output=embed&iwloc=near" 
+            className="w-full h-full opacity-80 pointer-events-none filter invert-[90%] hue-rotate-180 grayscale-[50%] contrast-125"
             frameBorder="0" 
             scrolling="no" 
             marginHeight={0} 
             marginWidth={0}
           />
           {/* Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-[#0a0a0a]" />
           
           {/* Precise Address Text Box (instead of coordinate beacon) */}
           <div className="absolute top-[35%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
              <div className="w-4 h-4 rounded-full bg-gold-500 shadow-[0_0_20px_#D4A84B] mb-2" />
              <div className="text-gold-400/90 font-mono text-xs tracking-widest backdrop-blur-md bg-black/60 px-5 py-2 rounded-full border border-gold-500/20 shadow-2xl text-center whitespace-nowrap">
-               深圳市宝安区石岩街道水田社区 嘉业大厦1-6楼
+               广东省深圳市宝安区石岩镇宝石南路18号星嘉艺大厦
              </div>
           </div>
         </div>
@@ -445,7 +444,7 @@ export default function IntelligentPlant() {
           <p className="text-white/60 text-lg mb-10 font-light drop-shadow-md">{t.ctaDesc}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-30">
             <a
-              href="https://www.google.com/maps/search/?api=1&query=深圳市宝安区石岩镇甫鱼石威祥工业区"
+              href={lang === 'zh' ? "https://ditu.amap.com/search?query=广东省深圳市宝安区石岩镇宝石南路18号星嘉艺大厦" : "https://www.google.com/maps/search/?api=1&query=广东省深圳市宝安区石岩镇宝石南路18号星嘉艺大厦"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-[#0a0a0a] rounded-full px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-500 hover:scale-105 group w-full sm:w-auto"

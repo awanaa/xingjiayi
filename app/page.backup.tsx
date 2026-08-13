@@ -103,7 +103,7 @@ const contentDict: Record<Lang, ContentType> = {
       ],
     },
     sustainability: {
-      title: "Better Materials\nSmarter Production",
+      title: "Better Materials. Smarter Production",
       subtitle: "Responsible material choices and practical production improvements to reduce waste",
       items: [
         { name: "FSC®-certified paper", image: "/eco/01.png" },
@@ -173,7 +173,7 @@ const contentDict: Record<Lang, ContentType> = {
       ],
     },
     sustainability: {
-      title: "更优质的材料\n更智能的生产",
+      title: "更优质的材料 更智能的生产",
       subtitle: "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
       items: [
         { name: "FSC® 认证纸张", image: "/eco/01.png" },
@@ -245,7 +245,7 @@ const contentDict: Record<Lang, ContentType> = {
       ],
     },
     sustainability: {
-      title: "より良い素材\nよりスマートな生産",
+      title: "より良い素材。よりスマートな生産",
       subtitle: "責任ある素材選択と実践的な生産改善による廃棄物削減",
       items: [
         { name: "FSC® 認証紙", image: "/eco/01.png" },
@@ -271,17 +271,17 @@ const contentDict: Record<Lang, ContentType> = {
   ko: {
     hero: {
       title: "동화를 현실로 만듭니다",
-      subtitle: "전 세계 출판사 및 브랜드를 위한 프리미엄 도서 제작, 복잡한 페이퍼 엔지니어링 및 신뢰할 수 있는 글로벌 배송",
+      subtitle: "전 세계 출판사 및 브랜드를 위한 프리미엄 도서 제작, 복잡한 페이퍼 엔지니어링 및 신뢰할 수 있는 글로벌 배송.",
       ctaPrimary: "포트폴리오 탐색",
       ctaSecondary: "프로젝트 시작하기",
     },
     trust: {
       title: "글로벌 출판을 위한 구축",
-      subtitle: "컨셉에서 배송까지 출판사, 소매업체, 크리에이티브 브랜드를 지원하는 신뢰할 수 있는 제조 파트너입니다",
+      subtitle: "컨셉에서 배송까지 출판사, 소매업체, 크리에이티브 브랜드를 지원하는 신뢰할 수 있는 제조 파트너입니다.",
     },
     featured: {
       title: "아이디어를 탁월한 제품으로",
-      subtitle: "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요",
+      subtitle: "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요.",
       categories: [
         { name: "보드북", desc: "조기 독서를 위해 설계된 내구성 있는 FSC 인증 보드입니다." },
         { name: "팝업북 및 조작북", desc: "풀탭, 휠, 팝업 등 복잡한 3D 종이 구조를 포함합니다." },
@@ -293,7 +293,7 @@ const contentDict: Record<Lang, ContentType> = {
     },
     capabilities: {
       title: "우수한 제품에서 글로벌 배송까지",
-      subtitle: "엔지니어링 디자인, 샘플링, 생산, 품질 보증 및 국제 물류를 지원하는 통합 팀입니다",
+      subtitle: "엔지니어링 디자인, 샘플링, 생산, 품질 보증 및 국제 물류를 지원하는 통합 팀입니다.",
       steps: [
         { name: "엔지니어링 디자인", desc: "구조 평가, 제조 가능성 제안, 재료 및 비용 최적화." },
         { name: "샘플링 및 프로토타입", desc: "백색 샘플, 컬러 샘플, 기능 샘플 및 고객 확인 프로세스." },
@@ -307,7 +307,7 @@ const contentDict: Record<Lang, ContentType> = {
     },
     quality: {
       title: "모든 단계에 통합된 품질",
-      subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리",
+      subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리.",
       modules: [
         { name: "수입 검사", image: "/real-factory/02.png" },
         { name: "색상 관리", image: "/real-factory/01.png" },
@@ -317,8 +317,8 @@ const contentDict: Record<Lang, ContentType> = {
       ],
     },
     sustainability: {
-      title: "더 나은 재료\n더 스마트한 생산",
-      subtitle: "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다",
+      title: "더 나은 재료, 더 스마트한 생산",
+      subtitle: "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다.",
       items: [
         { name: "FSC® 인증 종이", image: "/eco/01.png" },
         { name: "재생 및 생분해성 재료", image: "/eco/02.png" },
@@ -329,13 +329,13 @@ const contentDict: Record<Lang, ContentType> = {
       ],
     },
     global: {
-      title: "현지 전문 지식. 글로벌 배송",
-      subtitle: "전 세계 파트너에게 전담 지역 지원 및 효율적인 물류 서비스를 제공합니다",
+      title: "현지 전문 지식. 글로벌 배송.",
+      subtitle: "전 세계 파트너에게 전담 지역 지원 및 효율적인 물류 서비스를 제공합니다.",
       regions: ["북미", "유럽", "아시아 태평양"],
     },
     cta: {
       title: "새로운 프로젝트 아이디어가 있으신가요?",
-      subtitle: "컨셉, 아트워크 또는 제품 사양을 당사 팀과 공유하여 전문 솔루션을 받으세요",
+      subtitle: "컨셉, 아트워크 또는 제품 사양을 당사 팀과 공유하여 전문 솔루션을 받으세요.",
       buttonPrimary: "프로젝트 시작하기",
       buttonSecondary: "샘플 요청",
     },
@@ -923,14 +923,14 @@ export default function HomePage() {
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
-          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-8 lg:gap-12 pt-8 md:pt-0">
+          <div className="flex flex-col lg:flex-row h-full max-h-[800px] items-center gap-10 lg:gap-16 pt-8 md:pt-0">
             {/* Left Side: Control Panel */}
-            <div className="w-full lg:w-[38%] flex flex-col justify-center relative z-20">
+            <div className="w-full lg:w-[40%] flex flex-col justify-center relative z-20">
               <div className="mb-8 md:mb-12 pl-2">
                 <span className="text-emerald-500 text-xs tracking-widest uppercase font-semibold">
                   Sustainability
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold mt-2 text-white tracking-tight whitespace-pre-line">
+                <h2 className="text-3xl md:text-5xl font-bold mt-2 text-white tracking-tight">
                   {content.sustainability.title}
                 </h2>
                 <p className="text-white/70 text-sm md:text-base mt-4 font-light leading-relaxed">
@@ -947,30 +947,23 @@ export default function HomePage() {
                     <div
                       key={i}
                       onMouseEnter={() => setActiveSustainability(i)}
-                      className={`group relative flex items-center py-3.5 px-6 rounded-r-2xl cursor-pointer transition-all duration-500 ${
-                        isActive 
+                      className={"group relative flex items-center py-3.5 px-6 rounded-r-2xl cursor-pointer transition-all duration-500 " +
+                        (isActive 
                           ? "bg-gradient-to-r from-emerald-500/10 to-transparent border-l-2 border-emerald-500" 
-                          : "hover:bg-white/[0.03] border-l-2 border-transparent"
-                      }`}
+                          : "hover:bg-white/[0.03] border-l-2 border-transparent")}
                     >
-                      <span className={`font-mono text-sm tracking-widest w-10 transition-colors duration-500 ${
-                        isActive ? "text-emerald-500 font-bold" : "text-white/70/40 font-medium group-hover:text-emerald-500/70"
-                      }`}>
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className={`text-base md:text-lg tracking-wide transition-all duration-500 ${
-                        isActive ? "text-white font-bold translate-x-2" : "text-white/70 font-medium group-hover:text-white translate-x-0"
-                      }`}>
+                      <span className={"text-base md:text-lg tracking-wide transition-all duration-500 " +
+                        (isActive ? "text-white font-bold translate-x-2" : "text-white/70 font-medium group-hover:text-white translate-x-0")}>
                         {item.name}
-                      </h3>
+                      </span>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Right Side: Cinematic Window */}
-            <div className="w-full lg:w-[58%] aspect-[4/3] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
+            {/* Right Side: Cinematic Window (4:3 原图比例，不裁剪) */}
+            <div className="w-full lg:w-[52%] aspect-[4/3] relative rounded-2xl overflow-hidden bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex-shrink-0 group ring-1 ring-white/5">
               {content.sustainability.items.map((item, i) => {
                  const realPicsSustainability = [
                   "01.png", // 0: FSC Paper

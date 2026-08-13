@@ -91,7 +91,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
         Icon: Award,
       },
       {
-        end: 98, suffix: "%",
+        end: 99, suffix: "%",
         label: lang === "zh" ? "准时交付率" : lang === "ja" ? "納品率" : "On-time Delivery",
         desc: lang === "zh" ? "稳定的项目管控与物流协同。" : lang === "ja" ? "安定したプロジェクト管理と物流。" : "Consistent, reliable project management and logistics.",
         Icon: Clock,
@@ -122,8 +122,8 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
               key={idx}
               className="bg-white/[0.04] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border border-white/[0.06] hover:bg-white/[0.08] transition-colors duration-300 h-full"
             >
-              {/* 图标圈 — 淡化处理，不与金色数字抢视觉权重 */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/[0.03] flex items-center justify-center mb-4 sm:mb-6 text-white/30 flex-shrink-0">
+              {/* 图标圈 — 改为金色 */}
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/[0.03] flex items-center justify-center mb-4 sm:mb-6 text-gold-500 flex-shrink-0">
                 <card.Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
               </div>
               {/* 跳动金色数字 — 核心视觉焦点 */}

@@ -61,10 +61,10 @@ export default function ClientPortal() {
       desc: "From sample confirmation to final delivery, we provide end-to-end support for every project. Here's what you can expect when working with us.",
       scroll: "Scroll to explore",
       stats: [
-        { end: 300, suffix: "+", label: "Global Clients" },
-        { end: 98, suffix: "%", label: "On-Time Delivery" },
+        { end: 100, suffix: "+", label: "Global Clients" },
+        { end: 99, suffix: "%", label: "On-Time Delivery" },
         { end: 24, suffix: "h", label: "Response Time" },
-        { end: 20, suffix: "+", label: "Years of Craft" },
+        { end: 25, suffix: "+", label: "Years of Craft" },
       ],
       servicesTitle: "What We Offer",
       servicesSub: "Six pillars of support — from the first sample to the final mile",
@@ -109,13 +109,13 @@ export default function ClientPortal() {
       over: "客户服务",
       title: "您的纸艺工程",
       accent: "长期合作伙伴",
-      desc: "从打样确认到最终交付，我们为每个项目提供端到端支持。以下是与我们合作时您可以期待的服务。",
+      desc: "从打样确认到最终交付，我们为每个项目提供端到端支持",
       scroll: "向下探索",
       stats: [
-        { end: 300, suffix: "+", label: "全球客户" },
-        { end: 98, suffix: "%", label: "准时交付率" },
+        { end: 100, suffix: "+", label: "全球客户" },
+        { end: 99, suffix: "%", label: "准时交付率" },
         { end: 24, suffix: "h", label: "快速响应" },
-        { end: 20, suffix: "+", label: "行业经验" },
+        { end: 25, suffix: "+", label: "行业经验" },
       ],
       servicesTitle: "我们能为您做什么",
       servicesSub: "六大服务支柱——从第一份样品到最后一公里",
@@ -163,10 +163,10 @@ export default function ClientPortal() {
       desc: "サンプル確認から最終納品まで、プロジェクトを完全サポート。",
       scroll: "スクロール",
       stats: [
-        { end: 300, suffix: "+", label: "グローバル顧客" },
-        { end: 98, suffix: "%", label: "納期順守率" },
+        { end: 100, suffix: "+", label: "グローバル顧客" },
+        { end: 99, suffix: "%", label: "納期順守率" },
         { end: 24, suffix: "h", label: "レスポンス" },
-        { end: 20, suffix: "+", label: "年の実績" },
+        { end: 25, suffix: "+", label: "年の実績" },
       ],
       servicesTitle: "サービス内容",
       servicesSub: "サンプルから最終納品まで、6つの柱でサポート",
@@ -231,9 +231,9 @@ export default function ClientPortal() {
               {content.over}
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.9] mt-8 mb-6">
-            <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{content.title}</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{content.accent}</span>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>
+            {content.title}
+            <span className="block mt-4 md:mt-6 text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600">{content.accent}</span>
           </h1>
           <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {content.desc}

@@ -128,9 +128,9 @@ export default function AboutUs() {
     },
     zh: {
       heroSub: "始于 2001",
-      heroTitle: "纸艺匠心，",
+      heroTitle: "纸艺匠心 ",
       heroAccent: "折叠童年奇境",
-      heroDesc: "全球知名的儿童图书",
+      heroDesc: "全球知名的儿童图书、教育套装及高端纸艺工程制造企业",
       scroll: "探索我们的故事",
       profileTitle: "企业全貌",
       stats: [
@@ -157,15 +157,15 @@ export default function AboutUs() {
       ],
       timelineTitle: "发展历程",
       milestones: [
-        { year: "2001", event: "星嘉艺于深圳正式成立，开启纸艺制造之路。" },
-        { year: "2008", event: "通过 ISO9001 认证，实现质量管理标准化。" },
-        { year: "2010", event: "产品首次成功出口欧美市场，开启全球化布局。" },
-        { year: "2012", event: "通过 Disney FAMA 认证，正式进入国际顶级 IP 供应链。" },
-        { year: "2014-2016", event: "陆续通过 Walmart、Target、Costco 等国际巨头严苛审核。" },
-        { year: "2018", event: "荣获 ISO14001 环境管理体系认证，践行绿色制造。" },
-        { year: "2019", event: "全面启动员工持股计划。" },
-        { year: "2020-2022", event: "完成智能制造。" },
-        { year: "2024-2025", event: "引入新一代MES和ERP系统，完成数字化工厂改造。" },
+        { year: "2001", event: "星嘉艺于深圳正式成立，开启纸艺制造之路" },
+        { year: "2008", event: "通过 ISO9001 认证，实现质量管理标准化" },
+        { year: "2010", event: "产品首次成功出口欧美市场，开启全球化布局" },
+        { year: "2012", event: "通过 Disney FAMA 审核，正式进入国际顶级 IP 供应链" },
+        { year: "2014-2016", event: "通过 Walmart、Target、Costco 等国际巨头严苛审核" },
+        { year: "2018", event: "荣获 ISO14001 环境管理体系认证，践行绿色制造" },
+        { year: "2019", event: "全面启动员工持股计划" },
+        { year: "2020-2022", event: "全面引入全自动生产线，逐步实现智能制造" },
+        { year: "2024-2025", event: "引入新一代MES和ERP系统，完成数字化工厂改造" },
       ],
       certTitle: "全球信任与资质",
       ctaTitle: "准备好开启新项目了吗？",
@@ -379,7 +379,7 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto text-center">
           <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-12 block">{t.certTitle}</span>
           
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 justify-items-center w-full max-w-fit mx-auto">
             {[
               { name: "Disney", src: "/certificate/Disney_logo.png" },
               { name: "Walmart", src: "/certificate/Walmart.png" },
