@@ -623,8 +623,20 @@ export default function HomePage() {
 
         {/* Content Layer — centered vertically & horizontally */}
         <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto pt-20 md:pt-24">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-[1.1] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            {content.hero.title}
+          {/* Gold badge — same style as About hero */}
+          <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400 font-medium uppercase border border-gold-500/30 rounded-full px-5 py-2 backdrop-blur-sm bg-black/20 mb-8 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            {lang === 'zh'
+              ? '高端纸艺工程'
+              : lang === 'ja'
+                ? 'プレミアム紙工芸'
+                : lang === 'ko'
+                  ? '프리미엄 종이 공예'
+                  : 'Premium Paper Engineering'}
+          </span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600">
+              {content.hero.title}
+            </span>
           </h1>
           <p className="text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {content.hero.subtitle}
