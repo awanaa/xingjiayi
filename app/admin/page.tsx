@@ -4,14 +4,6 @@ import type { SiteContent, LocaleString } from "@/lib/cms";
 
 const defaultLocale: LocaleString = { en: "", zh: "", ja: "", ko: "" };
 
-const fillArray = <T,>(arr: T[] | undefined, len: number, factory: () => T): T[] => {
-  const result = [...(arr || [])];
-  while (result.length < len) {
-    result.push(factory());
-  }
-  return result;
-};
-
 const defaultContent: SiteContent = {
   hero: { title: defaultLocale, subtitle: defaultLocale, ctaPrimary: defaultLocale, ctaSecondary: defaultLocale },
   trust: { title: defaultLocale, subtitle: defaultLocale },
@@ -31,30 +23,6 @@ const defaultContent: SiteContent = {
     certifications: [],
   },
   gallery: { folders: [], categories: [] },
-};
-
-const fillPlantSteps = (arr: any[] | undefined, len: number) => {
-  const result = [...(arr || [])];
-  while (result.length < len) {
-    result.push({ title: defaultLocale, desc: defaultLocale, img: "" });
-  }
-  return result;
-};
-
-const fillPlantEquips = (arr: any[] | undefined, len: number) => {
-  const result = [...(arr || [])];
-  while (result.length < len) {
-    result.push({ title: defaultLocale, desc: defaultLocale, img: "" });
-  }
-  return result;
-};
-
-const fillPlantStats = (arr: any[] | undefined, len: number) => {
-  const result = [...(arr || [])];
-  while (result.length < len) {
-    result.push({ value: "", suffix: "", label: defaultLocale });
-  }
-  return result;
 };
 
 const DEFAULT_CATEGORY_NAMES: Record<string, string> = {
@@ -93,26 +61,26 @@ const mergeDefaults = (data: any): SiteContent => {
     featured: {
       ...defaultContent.featured,
       ...safeData.featured,
-      categories: fillArray(safeData.featured?.categories, 6, () => ({ name: defaultLocale, desc: defaultLocale, image: "" })),
+      categories: safeData.featured?.categories || [],
     },
     capabilities: {
       ...defaultContent.capabilities,
       ...safeData.capabilities,
-      steps: fillArray(safeData.capabilities?.steps, 8, () => ({ name: defaultLocale, desc: defaultLocale, image: "" })),
+      steps: safeData.capabilities?.steps || [],
     },
     quality: {
       ...defaultContent.quality,
       ...safeData.quality,
-      modules: fillArray(safeData.quality?.modules, 6, () => ({ name: defaultLocale, image: "" })),
+      modules: safeData.quality?.modules || [],
     },
     sustainability: {
       ...defaultContent.sustainability,
       ...safeData.sustainability,
-      items: fillArray(safeData.sustainability?.items, 6, () => ({ name: defaultLocale, image: "" })),
+      items: safeData.sustainability?.items || [],
     },
     cta: safeData.cta || defaultContent.cta,
-    certifications: fillArray(safeData.certifications, 12, () => ({ name: defaultLocale, src: "", invert: false, scale: "" })),
-    trustNumbers: fillArray(safeData.trustNumbers, 4, () => ({ value: "", suffix: "", label: defaultLocale, desc: defaultLocale })),
+    certifications: safeData.certifications || [],
+    trustNumbers: safeData.trustNumbers || [],
     plant: {
       ...defaultContent.plant,
       ...(safeData.plant || {}),
@@ -129,10 +97,10 @@ const mergeDefaults = (data: any): SiteContent => {
       ctaTitle: safeData.plant?.ctaTitle || defaultLocale,
       ctaDesc: safeData.plant?.ctaDesc || defaultLocale,
       ctaBtn: safeData.plant?.ctaBtn || defaultLocale,
-      stats: fillPlantStats(safeData.plant?.stats, 4),
-      steps: fillPlantSteps(safeData.plant?.steps, 6),
-      equipItems: fillPlantEquips(safeData.plant?.equipItems, 2),
-      certifications: fillArray(safeData.plant?.certifications, 6, () => ({ name: defaultLocale, src: "", invert: false, scale: "" })),
+      stats: safeData.plant?.stats || [],
+      steps: safeData.plant?.steps || [],
+      equipItems: safeData.plant?.equipItems || [],
+      certifications: safeData.plant?.certifications || [],
     },
     gallery: (() => {
       const g = safeData.gallery || { folders: [] };
@@ -532,7 +500,7 @@ export default function AdminPage() {
     setSaving(true);
     setSaveMessage("");
     try {
-      // 保存前清理空壳条目：CMS 打开时 fillArray 会补空输入框，空条目（所有语言都空）不应写回服务器
+      // 保存前清理空壳条目：空条目（所有语言都空）不应写回服务器
       const clean = JSON.parse(JSON.stringify(content));
       const isEmptyLocale = (l: any) => !l || (!l.en && !l.zh && !l.ja && !l.ko);
       const isBlankItem = (it: any) => {
