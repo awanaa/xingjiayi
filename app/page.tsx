@@ -129,7 +129,7 @@ const contentDict: Record<Lang, ContentType> = {
   zh: {
     hero: {
       title: "让童话故事跃然纸上",
-      subtitle: "为全球出版商和品牌提供高端图书制造、复杂纸艺工程以及可靠的全球交付",
+      subtitle: "为全球\n出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
       ctaPrimary: "探索我们的作品",
       ctaSecondary: "开启新项目",
     },
@@ -608,7 +608,7 @@ export default function HomePage() {
           </div>
           
           {/* Gradient overlay — light touch so the video stays visible, bottom blends into page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/60 via-[#141414]/35 to-[#141414]/80 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/75 via-[#141414]/50 to-[#141414]/85 z-10 pointer-events-none" />
           {/* Subtle vignette to keep focus on center */}
           <div
             className="absolute inset-0 z-10 pointer-events-none"
@@ -623,10 +623,10 @@ export default function HomePage() {
 
         {/* Content Layer — centered vertically & horizontally */}
         <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto pt-20 md:pt-24">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-[1.1] drop-shadow-sm">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-[1.1] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {content.hero.title}
           </h1>
-          <p className="text-lg md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-sm">
+          <p className="text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {content.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
