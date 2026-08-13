@@ -95,8 +95,8 @@ const contentDict: Record<Lang, ContentType> = {
       title: "Quality Built into Every Step",
       subtitle: "Systematic quality management from raw material inspection to final shipment",
       modules: [
-        { name: "Incoming Inspection", image: "/real-factory/02.png" },
-        { name: "Color Management", image: "/real-factory/01.png" },
+        { name: "Color Management", image: "/real-factory/02.png" },
+        { name: "Incoming Inspection", image: "/real-factory/01.png" },
         { name: "In-process Control", image: "/real-factory/03.png" },
         { name: "Functional Testing", image: "/real-factory/04.png" },
         { name: "Final Inspection", image: "/real-factory/05.png" },
@@ -129,7 +129,7 @@ const contentDict: Record<Lang, ContentType> = {
   zh: {
     hero: {
       title: "让童话故事跃然纸上",
-      subtitle: "为全球\n出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
+      subtitle: "为全球出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
       ctaPrimary: "探索我们的作品",
       ctaSecondary: "开启新项目",
     },
@@ -165,8 +165,8 @@ const contentDict: Record<Lang, ContentType> = {
       title: "品质融入每一个环节",
       subtitle: "从原材料检验到成品出运，系统性质量管理覆盖全流程",
       modules: [
-        { name: "来料检验", image: "/real-factory/02.png" },
-        { name: "色彩管理", image: "/real-factory/01.png" },
+        { name: "色彩管理", image: "/real-factory/02.png" },
+        { name: "来料检验", image: "/real-factory/01.png" },
         { name: "过程控制", image: "/real-factory/03.png" },
         { name: "功能测试", image: "/real-factory/04.png" },
         { name: "成品检验", image: "/real-factory/05.png" },
@@ -237,8 +237,8 @@ const contentDict: Record<Lang, ContentType> = {
       title: "すべての工程に組み込まれた品質",
       subtitle: "原材料検査から最終出荷まで、体系的な品質管理を実施",
       modules: [
-        { name: "受入検査", image: "/real-factory/02.png" },
-        { name: "カラーマネジメント", image: "/real-factory/01.png" },
+        { name: "カラーマネジメント", image: "/real-factory/02.png" },
+        { name: "受入検査", image: "/real-factory/01.png" },
         { name: "工程内管理", image: "/real-factory/03.png" },
         { name: "機能テスト", image: "/real-factory/04.png" },
         { name: "最終検査", image: "/real-factory/05.png" },
@@ -309,8 +309,8 @@ const contentDict: Record<Lang, ContentType> = {
       title: "모든 단계에 통합된 품질",
       subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리",
       modules: [
-        { name: "수입 검사", image: "/real-factory/02.png" },
-        { name: "색상 관리", image: "/real-factory/01.png" },
+        { name: "색상 관리", image: "/real-factory/02.png" },
+        { name: "수입 검사", image: "/real-factory/01.png" },
         { name: "공정 제어", image: "/real-factory/03.png" },
         { name: "기능 테스트", image: "/real-factory/04.png" },
         { name: "완제품 검사", image: "/real-factory/05.png" },
@@ -633,7 +633,7 @@ export default function HomePage() {
                   ? '프리미엄 종이 공예'
                   : 'Premium Paper Engineering'}
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] ${lang === 'zh' ? 'mb-6' : 'mb-8'} drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]`}>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600">
               {content.hero.title}
             </span>
@@ -705,7 +705,7 @@ export default function HomePage() {
 
       <section
         data-index={3}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pb-0 px-6 overflow-hidden"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pb-0 px-6 overflow-hidden bg-black"
       >
         <div className="max-w-7xl w-full">
           <div className="text-center mb-4 md:mb-8">
@@ -753,9 +753,9 @@ export default function HomePage() {
 
       <section
         data-index={4}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0 bg-black"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-white/[0.02] pointer-events-none" />
+        
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
@@ -846,7 +846,7 @@ export default function HomePage() {
 
       <section
         data-index={5}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0 bg-black"
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
@@ -931,7 +931,7 @@ export default function HomePage() {
 
       <section
         data-index={6}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen overflow-hidden flex flex-col py-12 md:pt-24 md:pb-0 bg-black"
       >
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
           
@@ -1016,7 +1016,7 @@ export default function HomePage() {
       {/* Section 6: Global Presence — Ultra Premium Cinematic (Light Theme) */}
       <section
         data-index={7}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center overflow-hidden"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center overflow-hidden bg-black"
       >
         {/* Background Text / Typography */}
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full text-center z-0 pointer-events-none select-none">
@@ -1070,7 +1070,7 @@ export default function HomePage() {
 {/* Section 7: CTA + Footer */}
       <section
         data-index={8}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center"
+        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center bg-black"
       >
         {/* Main Content centered in remaining vertical space */}
         <div className="flex-1 w-full flex flex-col items-center justify-center px-6">

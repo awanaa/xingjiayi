@@ -94,12 +94,12 @@ export default function IntelligentPlant() {
       processTitle: "Production Process",
       processSub: "From raw material to finished book — every step quality-controlled",
       steps: [
-        { title: "Design & Prepress", desc: "Structural design, file prep, CTP plate-making", img: "/process-illustrations/process-01.webp" },
-        { title: "Printing", desc: "Heidelberg offset / UV / digital on premium stock", img: "/process-illustrations/process-02.webp" },
-        { title: "Die-Cutting", desc: "High-precision automated cutting & creasing", img: "/process-illustrations/process-03.webp" },
-        { title: "Surface & Binding", desc: "Foil stamping, lamination, hand-assembly", img: "/process-illustrations/process-04.webp" },
-        { title: "QC Inspection", desc: "EN71 / ASTM / ISO — full quality gate checks", img: "/process-illustrations/process-05.webp" },
-        { title: "Warehouse & Dispatch", desc: "Stereo warehouse, global logistics", img: "/process-illustrations/process-06.webp" },
+        { subTitle: "Prepress & Proofing", title: "Design & Prepress", desc: "Structural design, file prep, CTP plate-making", img: "/process-illustrations/process-01.webp" },
+        { subTitle: "Precision Printing", title: "Printing", desc: "Heidelberg offset / UV / digital on premium stock", img: "/process-illustrations/process-02.webp" },
+        { subTitle: "Premium Finishing", title: "Die-Cutting", desc: "High-precision automated cutting & creasing", img: "/process-illustrations/process-03.webp" },
+        { subTitle: "Die-Cutting & Binding", title: "Surface & Binding", desc: "Foil stamping, lamination, hand-assembly", img: "/process-illustrations/process-04.webp" },
+        { subTitle: "Manual Assembly & QC", title: "QC Inspection", desc: "EN71 / ASTM / ISO — full quality gate checks", img: "/process-illustrations/process-05.webp" },
+        { subTitle: "Packaging & Global Delivery", title: "Warehouse & Dispatch", desc: "Stereo warehouse, global logistics", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "Our Equipment",
       equipSub: "German precision, Japanese efficiency — the tools behind the craft",
@@ -127,12 +127,12 @@ export default function IntelligentPlant() {
       processTitle: "生产流程",
       processSub: "从原材料到成品书——每一步严格品控",
       steps: [
-        { title: "设计与制版", desc: "结构设计、文件处理、CTP制版", img: "/process-illustrations/process-01.webp" },
-        { title: "印刷", desc: "海德堡胶印/UV/数码印刷", img: "/process-illustrations/process-02.webp" },
-        { title: "模切", desc: "高精度自动模切压痕", img: "/process-illustrations/process-03.webp" },
-        { title: "表面与装订", desc: "烫金、裱糊、手工组装", img: "/process-illustrations/process-04.webp" },
-        { title: "质检", desc: "EN71 / ASTM / ISO 全检", img: "/process-illustrations/process-05.webp" },
-        { title: "仓储与发货", desc: "立体仓管理，全球物流", img: "/process-illustrations/process-06.webp" },
+        { subTitle: "印前和打样", title: "设计与制版", desc: "结构设计、文件处理、CTP制版", img: "/process-illustrations/process-01.webp" },
+        { subTitle: "精密印刷", title: "印刷", desc: "海德堡胶印/UV/数码印刷", img: "/process-illustrations/process-02.webp" },
+        { subTitle: "高端表面处理", title: "模切", desc: "高精度自动模切压痕", img: "/process-illustrations/process-03.webp" },
+        { subTitle: "模切和装订", title: "表面与装订", desc: "烫金、裱糊、手工组装", img: "/process-illustrations/process-04.webp" },
+        { subTitle: "手工组装和质检", title: "质检", desc: "EN71 / ASTM / ISO 全检", img: "/process-illustrations/process-05.webp" },
+        { subTitle: "包装仓储和全球交付", title: "仓储与发货", desc: "立体仓管理，全球物流", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "核心设备",
       equipSub: "德国精度、日本效率——匠艺背后的硬实力",
@@ -160,12 +160,12 @@ export default function IntelligentPlant() {
       processTitle: "生産フロー",
       processSub: "原材料から完成品まで——すべての工程を厳格に品質管理",
       steps: [
-        { title: "設計・製版", desc: "構造設計、ファイル処理、CTP製版", img: "/process-illustrations/process-01.webp" },
-        { title: "印刷", desc: "ハイデルベルグ オフセット/UV/デジタル印刷", img: "/process-illustrations/process-02.webp" },
-        { title: "抜き加工", desc: "高精度自動抜型加工", img: "/process-illustrations/process-03.webp" },
-        { title: "表面・製本", desc: "箔押し、ラミネート、手組み", img: "/process-illustrations/process-04.webp" },
-        { title: "品質検査", desc: "EN71 / ASTM / ISO 全数検査", img: "/process-illustrations/process-05.webp" },
-        { title: "保管・出荷", desc: "立体倉庫、グローバル物流", img: "/process-illustrations/process-06.webp" },
+        { subTitle: "プリプレス＆校正", title: "設計・製版", desc: "構造設計、ファイル処理、CTP製版", img: "/process-illustrations/process-01.webp" },
+        { subTitle: "精密印刷", title: "印刷", desc: "ハイデルベルグ オフセット/UV/デジタル印刷", img: "/process-illustrations/process-02.webp" },
+        { subTitle: "高級表面加工", title: "抜き加工", desc: "高精度自動抜型加工", img: "/process-illustrations/process-03.webp" },
+        { subTitle: "抜型＆製本", title: "表面・製本", desc: "箔押し、ラミネート、手組み", img: "/process-illustrations/process-04.webp" },
+        { subTitle: "インタラクティブ組立＆品質管理", title: "品質検査", desc: "EN71 / ASTM / ISO 全数検査", img: "/process-illustrations/process-05.webp" },
+        { subTitle: "梱包＆グローバル納品", title: "保管・出荷", desc: "立体倉庫、グローバル物流", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "主要設備",
       equipSub: "ドイツの精度、日本の効率——ものづくりを支える力",
@@ -193,12 +193,12 @@ export default function IntelligentPlant() {
       processTitle: "생산 공정",
       processSub: "원자재부터 완제품까지——모든 공정을 엄격하게 품질 관리합니다.",
       steps: [
-        { title: "설계 및 제판", desc: "구조 설계, 파일 처리, CTP 제판", img: "/process-illustrations/process-01.webp" },
-        { title: "인쇄", desc: "하이델베르그 오프셋/UV/디지털 인쇄", img: "/process-illustrations/process-02.webp" },
-        { title: "다이 커팅", desc: "고정밀 자동 다이 커팅", img: "/process-illustrations/process-03.webp" },
-        { title: "표면 및 제본", desc: "금박, 라미네이팅, 수작업 조립", img: "/process-illustrations/process-04.webp" },
-        { title: "품질 검사", desc: "EN71 / ASTM / ISO 전수 검사", img: "/process-illustrations/process-05.webp" },
-        { title: "창고 및 배송", desc: "입체 창고 관리, 글로벌 물류", img: "/process-illustrations/process-06.webp" },
+        { subTitle: "인쇄 전 및 교정", title: "설계 및 제판", desc: "구조 설계, 파일 처리, CTP 제판", img: "/process-illustrations/process-01.webp" },
+        { subTitle: "정밀 인쇄", title: "인쇄", desc: "하이델베르그 오프셋/UV/디지털 인쇄", img: "/process-illustrations/process-02.webp" },
+        { subTitle: "고급 표면 처리", title: "다이 커팅", desc: "고정밀 자동 다이 커팅", img: "/process-illustrations/process-03.webp" },
+        { subTitle: "다이 커팅 및 제본", title: "표면 및 제본", desc: "금박, 라미네이팅, 수작업 조립", img: "/process-illustrations/process-04.webp" },
+        { subTitle: "수작업 조립 및 품질 검사", title: "품질 검사", desc: "EN71 / ASTM / ISO 전수 검사", img: "/process-illustrations/process-05.webp" },
+        { subTitle: "포장 및 글로벌 배송", title: "창고 및 배송", desc: "입체 창고 관리, 글로벌 물류", img: "/process-illustrations/process-06.webp" },
       ],
       equipTitle: "핵심 설비",
       equipSub: "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘",
@@ -238,7 +238,7 @@ export default function IntelligentPlant() {
         stats: (cms.stats || []).map((s) => ({ end: Number(s.value) || 0, suffix: s.suffix || "", label: L(s.label, "") })),
         processTitle: L(cms.processTitle, ""),
         processSub: L(cms.processSub, ""),
-        steps: (cms.steps || []).map((s) => ({ title: L(s.title, ""), desc: L(s.desc, ""), img: s.img || "" })),
+        steps: (cms.steps || []).map((s) => ({ subTitle: (s as any).subTitle ? L((s as any).subTitle, "") : "", title: L(s.title, ""), desc: L(s.desc, ""), img: s.img || "" })),
         equipTitle: L(cms.equipTitle, ""),
         equipSub: L(cms.equipSub, ""),
         equipItems: (cms.equipItems || []).map((e) => ({ title: L(e.title, ""), desc: L(e.desc, ""), img: e.img || "" })),
@@ -277,7 +277,7 @@ export default function IntelligentPlant() {
               {t.heroOver}
             </span>
           </div>
-          <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-6 mb-6 ${lang === 'en' ? 'tracking-tight leading-[0.9]' : 'tracking-normal leading-tight'}`}>
+          <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-6 mb-6 ${lang === 'en' ? 'tracking-tight leading-[0.9]' : 'tracking-normal leading-[1.1]'}`}>
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
@@ -331,14 +331,30 @@ export default function IntelligentPlant() {
             {t.steps.map((step, i) => (
               <div
                 key={i}
-                className={`group relative h-72 md:h-80 rounded-2xl overflow-hidden border border-white/[0.06] transition-all duration-700 ease-out ${
+                className={`group relative rounded-2xl overflow-hidden border border-white/[0.06] transition-all duration-700 ease-out bg-[#0a0a0a] ${
                   processIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <OptimizedImage src={step.img} alt="" wrapperClassName="absolute inset-0" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                <div className="absolute top-4 left-4">
+                {/* Image naturally dictates the height of the card */}
+                <OptimizedImage 
+                  src={step.img} 
+                  alt={step.subTitle || step.title} 
+                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" 
+                />
+                
+                {/* Subtle gradient behind text for readability */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                
+                {/* Text Layout - Only the main title */}
+                <div className="absolute bottom-5 left-5 right-5 z-10 flex flex-col justify-end pointer-events-none">
+                  <div className="text-white font-bold text-lg md:text-xl tracking-wider drop-shadow-md">
+                    {step.subTitle || t0.steps[i]?.subTitle || step.title}
+                  </div>
+                </div>
+
+                {/* Number Badge */}
+                <div className="absolute top-4 left-4 z-10">
                   <span className="text-[10px] tracking-[0.2em] text-gold-400/70 uppercase bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-white/[0.06]">
                     {String(i + 1).padStart(2, "0")}
                   </span>

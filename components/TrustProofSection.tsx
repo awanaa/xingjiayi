@@ -100,7 +100,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
   };
 
   return (
-    <section data-index={dataIndex} className="snap-section snap-start relative min-h-screen sm:h-screen w-full flex flex-col items-center justify-start overflow-hidden">
+    <section data-index={dataIndex} className="snap-section snap-start relative min-h-screen sm:h-screen w-full flex flex-col items-center justify-start overflow-hidden bg-black">
       {topContent && <div className="w-full shrink-0">{topContent}</div>}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center justify-center h-full pt-28 pb-16 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 flex-1">
         {/* 标题区 */}
@@ -120,7 +120,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
           {content.cards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white/[0.04] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border border-white/[0.06] hover:bg-white/[0.08] transition-colors duration-300 h-full"
+              className="bg-white/[0.02] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border border-white/[0.04] hover:bg-white/[0.04] transition-colors duration-300 h-full"
             >
               {/* 图标圈 — 改为金色 */}
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/[0.03] flex items-center justify-center mb-4 sm:mb-6 text-gold-500 flex-shrink-0">
