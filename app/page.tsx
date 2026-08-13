@@ -608,7 +608,7 @@ export default function HomePage() {
           </div>
           
           {/* Gradient overlay — light touch so the video stays visible, bottom blends into page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/45 via-[#141414]/20 to-[#141414]/70 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/60 via-[#141414]/35 to-[#141414]/80 z-10 pointer-events-none" />
           {/* Subtle vignette to keep focus on center */}
           <div
             className="absolute inset-0 z-10 pointer-events-none"

@@ -343,10 +343,6 @@ export default function IntelligentPlant() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-lg md:text-xl font-bold mb-1">{step.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
-                </div>
               </div>
             ))}
           </div>
