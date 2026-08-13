@@ -638,7 +638,7 @@ export default function HomePage() {
               {content.hero.title}
             </span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+          <p className="text-lg md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] whitespace-pre-line">
             {content.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
