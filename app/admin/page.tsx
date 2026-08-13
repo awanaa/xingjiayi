@@ -532,10 +532,32 @@ export default function AdminPage() {
     setSaving(true);
     setSaveMessage("");
     try {
+      // 保存前清理空壳条目：CMS 打开时 fillArray 会补空输入框，空条目（所有语言都空）不应写回服务器
+      const clean = JSON.parse(JSON.stringify(content));
+      const isEmptyLocale = (l: any) => !l || (!l.en && !l.zh && !l.ja && !l.ko);
+      const isBlankItem = (it: any) => {
+        if (!it) return true;
+        const name = it.name || it.title || it.label || {};
+        const desc = it.desc || {};
+        const value = it.value;
+        const hasText = !isEmptyLocale(name) || !isEmptyLocale(desc) || (typeof value === "string" && value !== "") || (it.src && it.src !== "");
+        return !hasText;
+      };
+      const cleanArr = (arr: any[] | undefined) => (arr || []).filter((it) => !isBlankItem(it));
+      if (clean.capabilities?.steps) clean.capabilities.steps = cleanArr(clean.capabilities.steps);
+      if (clean.quality?.modules) clean.quality.modules = cleanArr(clean.quality.modules);
+      if (clean.featured?.categories) clean.featured.categories = cleanArr(clean.featured.categories);
+      if (clean.sustainability?.items) clean.sustainability.items = cleanArr(clean.sustainability.items);
+      if (clean.certifications) clean.certifications = cleanArr(clean.certifications);
+      if (clean.trustNumbers) clean.trustNumbers = cleanArr(clean.trustNumbers);
+      if (clean.plant?.steps) clean.plant.steps = cleanArr(clean.plant.steps);
+      if (clean.plant?.stats) clean.plant.stats = cleanArr(clean.plant.stats);
+      if (clean.plant?.equipItems) clean.plant.equipItems = cleanArr(clean.plant.equipItems);
+      if (clean.plant?.certifications) clean.plant.certifications = cleanArr(clean.plant.certifications);
       const res = await fetch("/api/admin/content", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(content),
+        body: JSON.stringify(clean),
       });
       if (res.ok) {
         setSaveMessage("已保存 ✓");
