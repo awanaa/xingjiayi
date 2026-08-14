@@ -167,7 +167,7 @@ export default function AboutUs() {
         { year: "2020-2022", event: "全面引入全自动生产线，逐步实现智能制造" },
         { year: "2024-2025", event: "引入新一代MES和ERP系统，完成数字化工厂改造" },
       ],
-      certTitle: "全球信任与资质",
+      certTitle: "资质认证",
       ctaTitle: "准备好开启新项目了吗？",
       ctaDesc: "将您的创意交给世界级的制造合作伙伴。",
       ctaBtn: "联系我们",
