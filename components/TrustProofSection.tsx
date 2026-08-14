@@ -120,7 +120,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
           {content.cards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white/[0.02] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border border-white/[0.04] hover:bg-white/[0.04] transition-colors duration-300 h-full"
+              className="bg-white/[0.02] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center border border-white/[0.04] hover:bg-white/[0.04] hover:border-gold-500/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] transition-all duration-300 h-full cursor-default"
             >
               {/* 图标圈 — 改为金色 */}
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/[0.03] flex items-center justify-center mb-4 sm:mb-6 text-gold-500 flex-shrink-0">
