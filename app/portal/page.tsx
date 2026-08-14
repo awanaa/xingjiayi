@@ -226,7 +226,7 @@ export default function ClientPortal() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-4 py-1.5 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.5em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-5 py-1.5 backdrop-blur-sm">
               <Sparkles className="w-3 h-3" />
               {content.over}
             </span>
