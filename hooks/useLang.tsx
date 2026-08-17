@@ -11,7 +11,7 @@ interface LangContextType {
 function getInitialLang(): Lang {
   if (typeof window === "undefined") return "zh";
   const saved = localStorage.getItem("site-lang") as Lang | null;
-  if (saved === "en" || saved === "zh" || saved === "ja") return saved;
+  if (saved === "en" || saved === "zh" || saved === "ja" || saved === "ko") return saved;
   // Default to Chinese for China-based company
   return "zh";
 }

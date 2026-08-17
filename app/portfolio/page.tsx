@@ -22,15 +22,15 @@ interface FolderData { key: string; images: GalleryImage[]; }
 const TYPE_ORDER = ["yo","custom","soundlight","paperback","boardbook","cards","toys","hardcover","stickers"];
 
 const typeMeta: Record<string, { icon: React.ReactNode; label: Record<string,string>; desc: Record<string,string> }> = {
-  yo: { icon: <Gift className="w-5 h-5" />, label: { en:"YO Series", zh:"YO类", ja:"YOシリーズ" }, desc: { en:"Signature YO series products.", zh:"特色 YO 系列产品。", ja:"特徴的なYOシリーズ製品。" } },
-  custom: { icon: <Settings2 className="w-5 h-5" />, label: { en:"Custom Special Binding", zh:"匠心特装定制", ja:"匠の特装カスタム" }, desc: { en:"Custom special binding crafted to your specifications.", zh:"匠心特装，精工细作，满足个性化定制需求。", ja:"匠の技による特装・オーダーメイド製品。" } },
-  soundlight: { icon: <Volume2 className="w-5 h-5" />, label: { en:"Sound & Light Books", zh:"声光互动书册", ja:"サウンド＆ライト絵本" }, desc: { en:"Interactive books with built-in sound & light modules.", zh:"内置声光模块的互动书册，点亮阅读乐趣。", ja:"サウンド＆ライトモジュール内蔵のインタラクティブ絵本。" } },
-  paperback: { icon: <BookOpen className="w-5 h-5" />, label: { en:"Paperback Books", zh:"平装书刊书籍", ja:"並製本・書籍" }, desc: { en:"Paperback books with integrated printing & binding.", zh:"平装书刊书籍，印刷装订一体化。", ja:"印刷・製本を一貫生産する並製本。" } },
-  boardbook: { icon: <BookText className="w-5 h-5" />, label: { en:"Board Books", zh:"板纸对裱童书", ja:"ボードブック" }, desc: { en:"Durable board books made with laminated paperboard.", zh:"厚纸板对裱工艺，耐翻耐玩。", ja:"厚紙ラミネート製の丈夫なボードブック。" } },
-  cards: { icon: <Puzzle className="w-5 h-5" />, label: { en:"Educational Cards", zh:"益智卡牌卡册", ja:"知育カード" }, desc: { en:"Educational cards & card books for learning through play.", zh:"益智卡牌卡册，寓教于乐。", ja:"遊びながら学べる知育カード＆カードブック。" } },
-  toys: { icon: <Hand className="w-5 h-5" />, label: { en:"Educational Toys", zh:"益智玩具类", ja:"知育玩具" }, desc: { en:"Educational toys that spark creativity.", zh:"益智玩具，启发思维。", ja:"創造力を育む知育玩具。" } },
-  hardcover: { icon: <Gem className="w-5 h-5" />, label: { en:"Hardcover Books", zh:"精装图书画册", ja:"ハードカバー図書" }, desc: { en:"Premium hardcover books with exquisite binding.", zh:"精装图书画册，装帧考究。", ja:"装丁にこだわった上質なハードカバー図書。" } },
-  stickers: { icon: <Sparkles className="w-5 h-5" />, label: { en:"Sticker Books", zh:"趣味贴纸书系", ja:"シール絵本" }, desc: { en:"Fun sticker books full of playful activities.", zh:"趣味贴纸书系，玩趣十足。", ja:"楽しいシール遊びがいっぱいのシール絵本。" } },
+  yo: { icon: <Gift className="w-5 h-5" />, label: { en:"YO Series", zh:"YO类", ja:"YOシリーズ", ko:"YO 시리즈" }, desc: { en:"Signature YO series products.", zh:"特色 YO 系列产品。", ja:"特徴的なYOシリーズ製品。", ko:"시그니처 YO 시리즈 제품." } },
+  custom: { icon: <Settings2 className="w-5 h-5" />, label: { en:"Custom Special Binding", zh:"匠心特装定制", ja:"匠の特装カスタム", ko:"장인 맞춤 특장" }, desc: { en:"Custom special binding crafted to your specifications.", zh:"匠心特装，精工细作，满足个性化定制需求。", ja:"匠の技による特装・オーダーメイド製品。", ko:"고객 요구에 맞춰 장인 정신으로 제작하는 맞춤 특장 제품." } },
+  soundlight: { icon: <Volume2 className="w-5 h-5" />, label: { en:"Sound & Light Books", zh:"声光互动书册", ja:"サウンド＆ライト絵本", ko:"음성·조명 인터랙티브 북" }, desc: { en:"Interactive books with built-in sound & light modules.", zh:"内置声光模块的互动书册，点亮阅读乐趣。", ja:"サウンド＆ライトモジュール内蔵のインタラクティブ絵本。", ko:"사운드·라이트 모듈을 내장한 인터랙티브 북으로 독서의 즐거움을 더합니다." } },
+  paperback: { icon: <BookOpen className="w-5 h-5" />, label: { en:"Paperback Books", zh:"平装书刊书籍", ja:"並製本・書籍", ko:"무선제본 서적" }, desc: { en:"Paperback books with integrated printing & binding.", zh:"平装书刊书籍，印刷装订一体化。", ja:"印刷・製本を一貫生産する並製本。", ko:"인쇄·제본 일관 생산하는 무선제본 서적." } },
+  boardbook: { icon: <BookText className="w-5 h-5" />, label: { en:"Board Books", zh:"板纸对裱童书", ja:"ボードブック", ko:"보드북" }, desc: { en:"Durable board books made with laminated paperboard.", zh:"厚纸板对裱工艺，耐翻耐玩。", ja:"厚紙ラミネート製の丈夫なボードブック。", ko:"두꺼운 판지 접합 공법으로 오래 사용해도 튼튼한 보드북." } },
+  cards: { icon: <Puzzle className="w-5 h-5" />, label: { en:"Educational Cards", zh:"益智卡牌卡册", ja:"知育カード", ko:"교육용 카드·카드북" }, desc: { en:"Educational cards & card books for learning through play.", zh:"益智卡牌卡册，寓教于乐。", ja:"遊びながら学べる知育カード＆カードブック。", ko:"놀이로 배우는 교육용 카드 및 카드북." } },
+  toys: { icon: <Hand className="w-5 h-5" />, label: { en:"Educational Toys", zh:"益智玩具类", ja:"知育玩具", ko:"교육용 장난감" }, desc: { en:"Educational toys that spark creativity.", zh:"益智玩具，启发思维。", ja:"創造力を育む知育玩具。", ko:"창의력을 키우는 교육용 장난감." } },
+  hardcover: { icon: <Gem className="w-5 h-5" />, label: { en:"Hardcover Books", zh:"精装图书画册", ja:"ハードカバー図書", ko:"양장 도서·화집" }, desc: { en:"Premium hardcover books with exquisite binding.", zh:"精装图书画册，装帧考究。", ja:"装丁にこだわった上質なハードカバー図書。", ko:"정교한 제본의 프리미엄 양장 도서·화집." } },
+  stickers: { icon: <Sparkles className="w-5 h-5" />, label: { en:"Sticker Books", zh:"趣味贴纸书系", ja:"シール絵本", ko:"스티커 북" }, desc: { en:"Fun sticker books full of playful activities.", zh:"趣味贴纸书系，玩趣十足。", ja:"楽しいシール遊びがいっぱいのシール絵本。", ko:"재미 가득한 스티커 놀이 북." } },
 };
 
 // =============================================================================
@@ -124,9 +124,9 @@ export default function PortfolioPage() {
   const t = (m: Record<string, string>) => m[lang] ?? m.en ?? "";
 
   const labels: Record<string, Record<string, string>> = {
-    title: { en: "Product Gallery", zh: "产品展示", ja: "製品カタログ" },
-    all: { en: "All Products", zh: "全部产品", ja: "全製品" },
-    quote: { en: "Request Quote", zh: "获取报价", ja: "見積り依頼" },
+    title: { en: "Product Gallery", zh: "产品展示", ja: "製品カタログ", ko: "제품 카탈로그" },
+    all: { en: "All Products", zh: "全部产品", ja: "全製品", ko: "전체 제품" },
+    quote: { en: "Request Quote", zh: "获取报价", ja: "見積り依頼", ko: "견적 문의" },
   };
 
   // 标题分两段渲染(后半段金色高亮)，随语言切换
@@ -134,6 +134,7 @@ export default function PortfolioPage() {
     en: ["Product", "Gallery"],
     zh: ["产品", "展示"],
     ja: ["製品", "カタログ"],
+    ko: ["제품", "카탈로그"],
   };
   const titleNow = titleParts[lang] || titleParts.en;
 
@@ -180,7 +181,7 @@ export default function PortfolioPage() {
               <div key="__others__" id="cat-others">
                 <div className="flex items-center gap-2 mb-5">
                   <span className="text-gold-400 w-5 h-5 flex items-center justify-center"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" /></svg></span>
-                  <h2 className="text-lg font-semibold">{lang === "zh" ? "其他" : lang === "ja" ? "その他" : "Other"}</h2>
+                  <h2 className="text-lg font-semibold">{lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other"}</h2>
                   <span className="text-xs text-white/30 font-mono">{othersGroup.length}</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
@@ -443,7 +444,7 @@ function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, all
             return (
               <button key={key} data-chip={key} onClick={() => setActiveFilter(key)} className={`shrink-0 px-3 py-1.5 text-sm rounded-md font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${isHidden ? "sr-only focus:not-sr-only focus:absolute" : ""} ${activeFilter === key ? "bg-gold-500/10 text-gold-500" : "text-white/50 hover:text-white hover:bg-white/[0.06]"}`}>
                 {meta && <span className="w-3.5 h-3.5 flex items-center">{meta.icon}</span>}
-                <span className="hidden sm:inline">{meta ? t(meta.label).split(" ")[0] : catNames[key] || (lang === "zh" ? "其他" : "Other")}</span>
+                <span className="hidden sm:inline">{meta ? t(meta.label).split(" ")[0] : catNames[key] || (lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other")}</span>
                 <span className="text-xs opacity-40">{count}</span>
               </button>
             );
@@ -464,7 +465,7 @@ function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, all
               return (
                 <button key={key} onClick={() => { setActiveFilter(key); setShowPop(false); }} className={`w-full text-left px-3 py-2 rounded text-sm flex items-center gap-2 ${isActive ? "bg-gold-500/10 text-gold-500 font-medium" : "text-white/60 hover:bg-white/[0.05]"}`}>
                   {meta && <span className="w-4 h-4 flex items-center text-inherit">{meta.icon}</span>}
-                  <span className="flex-1">{meta ? t(meta.label) : catNames[key] || (lang === "zh" ? "其他" : "Other")}</span>
+                  <span className="flex-1">{meta ? t(meta.label) : catNames[key] || (lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other")}</span>
                   <span className="text-xs text-white/30">{count}</span>
                 </button>
               );
