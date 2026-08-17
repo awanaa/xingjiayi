@@ -31,3 +31,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ÁÙÊ±½âÑ¹Ä¿Â¼
+temp_docx/
