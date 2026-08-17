@@ -2528,32 +2528,8 @@
     ],
     "categories": [
       {
-        "key": "yo",
-        "name": "YO类"
-      },
-      {
-        "key": "custom",
-        "name": "匠心特装定制"
-      },
-      {
-        "key": "soundlight",
-        "name": "声光互动书册"
-      },
-      {
-        "key": "paperback",
-        "name": "平装书刊书籍"
-      },
-      {
         "key": "boardbook",
         "name": "板纸对裱童书"
-      },
-      {
-        "key": "cards",
-        "name": "益智卡牌卡册"
-      },
-      {
-        "key": "toys",
-        "name": "益智玩具类"
       },
       {
         "key": "hardcover",
@@ -2562,6 +2538,30 @@
       {
         "key": "stickers",
         "name": "趣味贴纸书系"
+      },
+      {
+        "key": "cards",
+        "name": "益智卡牌卡册"
+      },
+      {
+        "key": "custom",
+        "name": "匠心特装定制"
+      },
+      {
+        "key": "toys",
+        "name": "益智玩具类"
+      },
+      {
+        "key": "soundlight",
+        "name": "声光互动书册"
+      },
+      {
+        "key": "yo",
+        "name": "YO类"
+      },
+      {
+        "key": "paperback",
+        "name": "平装书刊书籍"
       }
     ]
   }
