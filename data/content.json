@@ -814,7 +814,7 @@
             "category": "custom"
           },
           {
-            "src": "/product-gallery/20210924-产品图片/IMG_9929小 .jpg",
+            "src": "/product-gallery/20210924-产品图片/IMG_9929小_.jpg",
             "name": "IMG_9929小 .jpg",
             "sizeKB": 1967.8,
             "category": "custom"
@@ -1479,19 +1479,19 @@
         "key": "gifs",
         "images": [
           {
-            "src": "/product-gallery/gifs/Happy Birthday,Elli!.gif",
+            "src": "/product-gallery/gifs/Happy_Birthday_Elli_.gif",
             "name": "Happy Birthday,Elli!.gif",
             "sizeKB": 942.7,
             "category": "soundlight"
           },
           {
-            "src": "/product-gallery/gifs/What Do you Want to Have.gif",
+            "src": "/product-gallery/gifs/What_Do_you_Want_to_Have.gif",
             "name": "What Do you Want to Have.gif",
             "sizeKB": 5631.9,
             "category": "boardbook"
           },
           {
-            "src": "/product-gallery/gifs/What Do you Want to Ride.gif",
+            "src": "/product-gallery/gifs/What_Do_you_Want_to_Ride.gif",
             "name": "What Do you Want to Ride.gif",
             "sizeKB": 1412.3,
             "category": "toys"
