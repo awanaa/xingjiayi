@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Cpu, ThermometerSnowflake, Layers, Factory,
-  PenTool, Printer, Scissors, Wind,
+  PenTool, Printer, Scissors, Wind, Thermometer, Droplets, Activity,
   ShieldCheck, Truck, ChevronDown, ArrowUpRight
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
@@ -314,7 +314,7 @@ export default function IntelligentPlant() {
       </section>
 
       {/* ═══ PRODUCTION PROCESS — 6 photo cards ═══ */}
-      <section ref={processRef} className="relative py-32 px-6 border-t border-white/[0.04]">
+      <section ref={processRef} className="relative py-32 px-6 border-t border-white/[0.04] bg-black">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] left-[-10%] w-[60%] aspect-square rounded-full bg-gold-500/8 blur-3xl" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[60%] aspect-square rounded-full bg-gold-500/5 blur-3xl" />
@@ -365,30 +365,117 @@ export default function IntelligentPlant() {
         </div>
       </section>
 
-      {/* ═══ EQUIPMENT SHOWCASE — split-screen ═══ */}
+      {/* ═══ EQUIPMENT SHOWCASE — Dark Theme (Adapted Screenshot Style) ═══ */}
       <section className="py-32 px-6 border-t border-white/[0.04] bg-[#060606]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-4 block">
               {lang === "zh" ? "核心设备" : lang === "ja" ? "主要設備" : "Equipment"}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">{t.equipTitle}</h2>
-            <p className="text-white/40 text-sm md:text-base">{t.equipSub}</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+              {lang === "zh" ? "制造技术与核心设备" : lang === "ja" ? "製造技術と主要設備" : "Manufacturing Technology"}
+            </h2>
+            <p className="text-white/40 text-base md:text-lg">
+              {lang === "zh" ? "集成工艺 · 顶尖设备 · 卓越品质" : lang === "ja" ? "統合されたプロセス。高度な設備。卓越した結果。" : "Integrated processes. Advanced equipment. Exceptional results."}
+            </p>
           </div>
 
-          {t.equipItems.map((item, i) => (
-            <div key={i} className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-16 items-center mb-20 last:mb-0`}>
-              <div className="w-full md:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06]">
-                <OptimizedImage src={item.img} alt="" wrapperClassName="w-full h-full" className="w-full h-full object-cover" />
+          <div className="flex flex-col gap-8 md:gap-12">
+            {[
+              {
+                num: "01",
+                title: lang === "zh" ? "5色 LED-UV 胶印" : lang === "ja" ? "5色 LED-UV オフセット印刷" : "5-Color LED-UV Offset Printing",
+                bullets: lang === "zh" 
+                  ? ["5色 LED-UV，色彩鲜艳一致", "快速固化，大幅提升生产效率", "低VOC环保油墨，绿色生产"]
+                  : lang === "ja" 
+                    ? ["鮮やかで一貫した色のための5色LED-UV", "高い生産性のための高速硬化", "より環境に優しい未来のための低VOCインク"]
+                    : ["5-color LED-UV for vivid, consistent color", "Fast curing for higher productivity", "Low VOC inks for a greener future"],
+                img: "/equipment/01.png"
+              },
+              {
+                num: "02",
+                title: lang === "zh" ? "全自动 UV 上光" : lang === "ja" ? "全自動 UV ニスコーティング" : "Automatic UV Varnishing",
+                bullets: lang === "zh"
+                  ? ["全面或局部局部UV，高端表面质感", "高光、哑光及特殊触感效果", "在线品质缺陷检测"]
+                  : lang === "ja"
+                    ? ["プレミアムな仕上がりのための全面またはスポットUV", "高光沢、マット、および触感効果", "インライン品質検査"]
+                    : ["Full or spot UV for premium finish", "High gloss, matte, and tactile effects", "Inline quality inspection"],
+                img: "/equipment/02.png"
+              },
+              {
+                num: "03",
+                title: lang === "zh" ? "全自动纸板书生产线" : lang === "ja" ? "全自動ボードブック生産ライン" : "Automated Board Book Production",
+                bullets: lang === "zh"
+                  ? ["全自动化纸板书装订流水线", "对位精准，装订牢固", "安全耐用，专为儿童设计"]
+                  : lang === "ja"
+                    ? ["完全自動化されたボードブックライン", "正確な位置合わせと強力な製本", "小さな手のための耐久性のある本"]
+                    : ["Fully automated board book line", "Accurate alignment and strong binding", "Durable books built for little hands"],
+                img: "/equipment/03.png"
+              },
+              {
+                num: "04",
+                title: lang === "zh" ? "高精度模切" : lang === "ja" ? "高精度ダイカット" : "Precision Die-Cutting",
+                bullets: lang === "zh"
+                  ? ["高速运转，高精度模切成型", "边缘光洁无毛刺，形状完美", "轻松应对复杂结构与开窗设计"]
+                  : lang === "ja"
+                    ? ["高速、高精度のダイカット", "きれいなエッジ、完璧な形状", "複雑なデザインや窓に最適"]
+                    : ["High-speed, high-precision die-cutting", "Clean edges, perfect shapes", "Ideal for complex designs and windows"],
+                img: "/equipment/04.png"
+              },
+              {
+                num: "05",
+                title: lang === "zh" ? "恒温恒湿生产车间" : lang === "ja" ? "気候制御された製造環境" : "Climate-Controlled Manufacturing Environment",
+                bullets: lang === "zh"
+                  ? ["全厂区空调与气候控制系统", "全年保持稳定的温度与湿度", "避免纸张变形，确保品质一致性"]
+                  : lang === "ja"
+                    ? ["全工場空調および気候制御施設", "年間を通じて安定した温度と湿度", "品質を保護し、一貫性を確保"]
+                    : ["Whole factory climate-controlled facility", "Stable temperature & humidity year-round", "Protects quality and ensures consistency"],
+                img: "/equipment/05.png",
+                icons: [
+                  { Icon: Thermometer, label: lang === "zh" ? "温度控制" : "Temperature Control" },
+                  { Icon: Droplets, label: lang === "zh" ? "湿度控制" : "Humidity Control" },
+                  { Icon: Wind, label: lang === "zh" ? "空气质量管理" : "Air Quality Management" },
+                  { Icon: Activity, label: lang === "zh" ? "全天候监控" : "24/7 System Monitoring" }
+                ]
+              }
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col md:flex-row items-center gap-6 md:gap-0 group">
+                {/* Image Section - Alternates left/right based on index */}
+                <div className={`w-full md:w-1/2 relative flex items-center justify-center min-h-[350px] md:min-h-[450px] ${i % 2 !== 0 ? 'md:order-2 md:pl-12' : 'md:order-1 md:pr-12'}`}>
+                   {/* We wrap the image in a slight padding and remove mix-blend-multiply since it's dark theme */}
+                   <OptimizedImage src={item.img} alt={item.title} fill className="object-contain p-6 drop-shadow-2xl transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                
+                {/* Text Section */}
+                <div className={`w-full md:w-1/2 py-8 md:px-12 flex flex-col justify-center ${i % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                  <span className="text-3xl md:text-4xl font-black text-gold-500 mb-2 font-mono tracking-wider">{item.num}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight whitespace-pre-line">{item.title}</h3>
+                  <ul className="space-y-4">
+                    {item.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold-500/50 mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(212,175,75,0.4)]" />
+                        <span className="text-white/60 text-base md:text-lg leading-relaxed">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* 5th item special icons (Climate-Controlled) */}
+                  {item.icons && (
+                    <div className="grid grid-cols-4 gap-2 mt-10 pt-8 border-t border-white/[0.06]">
+                      {item.icons.map((iconData, idx) => (
+                        <div key={idx} className="flex flex-col items-center text-center gap-3">
+                          <iconData.Icon className="w-6 h-6 md:w-8 md:h-8 text-gold-400" strokeWidth={1.5} />
+                          <span className="text-[10px] sm:text-xs text-white/50 font-medium leading-tight px-1">
+                            {iconData.label.split(' ').map((word, wi) => <React.Fragment key={wi}>{word}<br/></React.Fragment>)}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="w-full md:w-1/2">
-                <span className="text-xs tracking-[0.2em] text-gold-400/60 uppercase mb-3 block">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">{item.title}</h3>
-                <p className="text-white/40 text-base leading-relaxed">{item.desc}</p>
-                <div className="mt-6 h-[2px] w-16 bg-gold-500/40" />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

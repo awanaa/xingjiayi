@@ -106,7 +106,7 @@ export default function ClientPortal() {
       ctaBtn2: "Get a Quote",
     },
     zh: {
-      over: "客户服务",
+      over: "客 户 服 务",
       title: "您的纸艺工程",
       accent: "长期合作伙伴",
       desc: "从打样确认到最终交付，我们为每个项目提供端到端支持",
