@@ -26,6 +26,10 @@ export async function PUT(req: NextRequest) {
     saveContent(body);
     return NextResponse.json({ ok: true });
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (message.startsWith("CMS_GIT_CONFLICT")) {
+      return NextResponse.json({ ok: false, error: message }, { status: 409 });
+    }
     return NextResponse.json({ ok: false, error: "Bad Request" }, { status: 400 });
   }
 }

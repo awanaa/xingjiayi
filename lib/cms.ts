@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { execSync } from "node:child_process";
 
 // --- Type Definitions ---
 export type LocaleString = {
@@ -215,6 +216,53 @@ export function saveContent(data: SiteContent): void {
   fs.writeFileSync(tmpFile, JSON.stringify(data, null, 2), "utf8");
   fs.renameSync(tmpFile, CONTENT_FILE);
   contentCache = data;
+  syncContentToGit();
+}
+
+/**
+ * content.json 双向同步：保存后自动 commit -> pull --rebase（合并远端改动）-> push。
+ * 同一处两边同时改动时 git 报冲突，本地数据保留、远端保留，抛错由 API 层返回 409 提示人工合并。
+ */
+function syncContentToGit(): void {
+  const repoDir = path.resolve(path.dirname(CONTENT_FILE), "..");
+  const run = (cmd: string): string =>
+    execSync(cmd, {
+      cwd: repoDir,
+      encoding: "utf8",
+      timeout: 90000,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  try {
+    try {
+      run(`git add data/content.json`);
+      run(`git commit -m "CMS: 内容保存 ${new Date().toISOString().slice(0, 19)}"`);
+    } catch {
+      // nothing to commit：内容与上次提交一致，忽略
+    }
+    try {
+      run(`git pull --rebase --autostash origin main`);
+      run(`git push origin main`);
+    } catch (e) {
+      const msg = String(e);
+      if (/CONFLICT|could not apply|rebase in progress|autostash/i.test(msg)) {
+        try {
+          run(`git rebase --abort`);
+        } catch {
+          /* 不在 rebase 状态则忽略 */
+        }
+        throw new Error(
+          `CMS_GIT_CONFLICT: 本次保存已写入本地，但与远端同一处同时改动，git 检测到冲突；两版均已保留（本地=已保存内容，远端=origin/main）。请人工合并后推送。`
+        );
+      }
+      console.error("[CMS-GIT] pull/push 失败(仅记录, 保存已成功):", msg.slice(0, 300));
+    }
+    // 刷新内存缓存：pull 可能带回远端改动，避免读到旧数据
+    if (fs.existsSync(CONTENT_FILE)) {
+      contentCache = JSON.parse(fs.readFileSync(CONTENT_FILE, "utf8")) as SiteContent;
+    }
+  } catch (e) {
+    console.error("[CMS-GIT] 同步异常:", e);
+  }
 }
 
 // --- Authentication & Sessions ---
