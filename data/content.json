@@ -1,0 +1,1915 @@
+{
+  "hero": {
+    "title": {
+      "en": "Bringing Children's Stories to Life",
+      "zh": "让童话故事跃然纸上",
+      "ja": "子供たちの物語に命を吹き込む",
+      "ko": "동화를 현실로 만듭니다"
+    },
+    "subtitle": {
+      "en": "Premium book manufacturing, complex paper engineering and reliable global delivery for publishers and brands",
+      "zh": "为全球出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
+      "ja": "出版社やブランド向けのプレミアムな絵本製造、複雑なペーパーエンジニアリング、信頼性の高いグローバル配送",
+      "ko": "전 세계 출판사 및 브랜드를 위한 프리미엄 도서 제작, 복잡한 페이퍼 엔지니어링 및 신뢰할 수 있는 글로벌 배송."
+    },
+    "ctaPrimary": {
+      "en": "Explore Our Work",
+      "zh": "探索我们的作品",
+      "ja": "作品を見る",
+      "ko": "포트폴리오 탐색"
+    },
+    "ctaSecondary": {
+      "en": "Start a Project",
+      "zh": "开启新项目",
+      "ja": "プロジェクトを始める",
+      "ko": "프로젝트 시작하기"
+    }
+  },
+  "trust": {
+    "title": {
+      "en": "Built for Global Publishing",
+      "zh": "为全球出版而生",
+      "ja": "グローバル出版のために構築",
+      "ko": "글로벌 출판을 위한 구축"
+    },
+    "subtitle": {
+      "en": "A trusted manufacturing partner supporting publishers, retailers and creative brands from concept to delivery",
+      "zh": "值得信赖的制造合作伙伴，从概念到交付全程支持出版商、零售商和创意品牌",
+      "ja": "出版社、小売業者、クリエイティブブランドをコンセプトから配送までサポートする信頼の製造パートナー",
+      "ko": "컨셉에서 배송까지 출판사, 소매업체, 크리에이티브 브랜드를 지원하는 신뢰할 수 있는 제조 파트너입니다."
+    }
+  },
+  "featured": {
+    "title": {
+      "en": "Ideas Engineered into Exceptional Products",
+      "zh": "将创意转化为卓越产品",
+      "ja": "アイデアを卓越した製品へ",
+      "ko": "아이디어를 탁월한 제품으로"
+    },
+    "subtitle": {
+      "en": "Explore how we combine paper engineering, printing, binding and hand assembly to deliver distinctive publishing products",
+      "zh": "探索我们如何将纸艺工程、印刷、装订与手工组装相结合，打造独具特色的出版产品",
+      "ja": "ペーパーエンジニアリング、印刷、製本、手作業による組立を組み合わせた差別化された出版製品を提供",
+      "ko": "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요."
+    },
+    "categories": [
+      {
+        "name": {
+          "en": "Board Books",
+          "zh": "纸板书",
+          "ja": "ボードブック",
+          "ko": "보드북"
+        },
+        "desc": {
+          "en": "Durable, FSC-certified paperboard books for early learning.",
+          "zh": "耐用FSC认证纸板，专为早期阅读设计。",
+          "ja": "耐久性に優れたFSC認証紙を使用した知育絵本。",
+          "ko": "조기 독서를 위해 설계된 내구성 있는 FSC 인증 보드입니다."
+        },
+        "image": "/products/prod-01.webp"
+      },
+      {
+        "name": {
+          "en": "Novelty & Pop-up",
+          "zh": "立体书与机关书",
+          "ja": "仕掛け絵本",
+          "ko": "팝업북 및 조작북"
+        },
+        "desc": {
+          "en": "Complex 3D paper mechanics with tabs, wheels, and pop-ups.",
+          "zh": "包含拉页、转盘、弹起等复杂3D纸艺结构。",
+          "ja": "タブ、回転盤、飛び出す立体ペーパー構造。",
+          "ko": "풀탭, 휠, 팝업 등 복잡한 3D 종이 구조를 포함합니다."
+        },
+        "image": "/products/prod-02.webp"
+      },
+      {
+        "name": {
+          "en": "Sound & Electronic",
+          "zh": "发声书与电子书",
+          "ja": "サウンド＆電子絵本",
+          "ko": "사운드 및 전자북"
+        },
+        "desc": {
+          "en": "CE-certified sound modules, lights, and interactive electronics.",
+          "zh": "CE认证发声模块、LED灯及互动电子元件。",
+          "ja": "CE認証の音声モジュール、LED、インタラクティブ電子部品。",
+          "ko": "CE 인증 사운드 모듈, LED 및 대화형 전자 부품."
+        },
+        "image": "/products/prod-03.webp"
+      },
+      {
+        "name": {
+          "en": "Activity Kits",
+          "zh": "活动套装",
+          "ja": "アクティビティキット",
+          "ko": "액티비티 키트"
+        },
+        "desc": {
+          "en": "Multi-component sets combining books, puzzles, crafts, and toys.",
+          "zh": "书+拼图+手工+玩具的多组件综合套装。",
+          "ja": "本、パズル、工作、おもちゃを組み合わせたマルチコンポーネントセット。",
+          "ko": "도서 + 퍼즐 + 공예 + 장난감이 결합된 멀티 컴포넌트 세트입니다."
+        },
+        "image": "/products/prod-04.webp"
+      },
+      {
+        "name": {
+          "en": "Boxed Sets",
+          "zh": "礼盒套装",
+          "ja": "ボックスセット",
+          "ko": "박스 세트"
+        },
+        "desc": {
+          "en": "Premium gift sets with coordinated components for special editions.",
+          "zh": "精品礼品组合套装，包含协调搭配的多种组件。",
+          "ja": "特別編集版のためのプレミアムギフトセット。",
+          "ko": "조화로운 여러 구성 요소를 포함하는 프리미엄 선물 세트입니다."
+        },
+        "image": "/products/prod-05.webp"
+      },
+      {
+        "name": {
+          "en": "Licensed Products",
+          "zh": "授权产品",
+          "ja": "ライセンス製品",
+          "ko": "라이선스 제품"
+        },
+        "desc": {
+          "en": "IP-branded books and kits meeting global compliance standards.",
+          "zh": "IP品牌图书与套装，满足全球合规标准。",
+          "ja": "IPブランドの絵本とキット、グローバルコンプライアンス基準準拠。",
+          "ko": "글로벌 규정 준수 기준을 충족하는 IP 브랜드 도서 및 키트입니다."
+        },
+        "image": "/products/prod-06.webp"
+      }
+    ]
+  },
+  "capabilities": {
+    "title": {
+      "en": "From Concept to Global Delivery",
+      "zh": "从卓越产品到全球交付",
+      "ja": "コンセプトからグローバル配送まで",
+      "ko": "우수한 제품에서 글로벌 배송까지"
+    },
+    "subtitle": {
+      "en": "One integrated team supporting engineering, sampling, production, quality assurance and international delivery",
+      "zh": "一体化团队支持工程设计、打样、生产、质量保证与国际物流",
+      "ja": "エンジニアリング、サンプリング、生産、品質保証、国際物流を一貫サポート",
+      "ko": "엔지니어링 디자인, 샘플링, 생산, 품질 보증 및 국제 물류를 지원하는 통합 팀입니다."
+    },
+    "steps": [
+      {
+        "name": {
+          "en": "Prepress & Proofing",
+          "zh": "印前与打样",
+          "ja": "プリプレス＆校正",
+          "ko": "프리프레스 & 교정"
+        },
+        "desc": {
+          "en": "File receiving, preflight checks, CTP plate-making, proofing & white dummy.",
+          "zh": "文件接收、印前检查、CTP制版、打样、White Dummy。",
+          "ja": "ファイル受領、プリフライトチェック、CTP製版、校正刷り、ホワイトダミー。",
+          "ko": "파일 수령, 프리플라이트 체크, CTP 제판, 교정 인쇄, 화이트 더미."
+        },
+        "image": "/process-illustrations/process-01.webp"
+      },
+      {
+        "name": {
+          "en": "Precision Printing",
+          "zh": "精密印刷",
+          "ja": "精密印刷",
+          "ko": "정밀 인쇄"
+        },
+        "desc": {
+          "en": "Printing, color management, color approval & process control.",
+          "zh": "印刷、色彩管理、看色与过程控制。",
+          "ja": "印刷、カラーマネジメント、色校正と工程管理。",
+          "ko": "인쇄, 컬러 매니지먼트, 색상 승인 및 공정 관리."
+        },
+        "image": "/process-illustrations/process-02.webp"
+      },
+      {
+        "name": {
+          "en": "Premium Finishing",
+          "zh": "高端表面处理",
+          "ja": "高級表面加工",
+          "ko": "프리미엄 후가공"
+        },
+        "desc": {
+          "en": "Lamination, Spot UV, foil stamping, embossing/debossing & special textures.",
+          "zh": "覆膜、Spot UV、烫金、压凹凸、特殊纹理。",
+          "ja": "PP加工、スポットUV、箔押し、エンボス/デボス、特殊テクスチャ。",
+          "ko": "코팅, 스팟 UV, 금박, 엠보싱/디보싱 및 특수 질감."
+        },
+        "image": "/process-illustrations/process-03.webp"
+      },
+      {
+        "name": {
+          "en": "Die-Cutting & Bookmaking",
+          "zh": "模切与装订",
+          "ja": "抜型＆製本",
+          "ko": "다이컷 & 제본"
+        },
+        "desc": {
+          "en": "Custom die-cutting, window patches, label pages, folding, collating, thread-sewing, hardcover, paperback & board books.",
+          "zh": "异形模切、开窗、标签页、折页、配页、锁线、精装、平装、Board Book等。",
+          "ja": "異形抜型、窓開け、差し込みページ、折り、丁合、糸かがり、上製本、並製本、ボードブックなど。",
+          "ko": "이형 다이컷, 창 개봉, 라벨 페이지, 접지, 정합, 실 제본, 하드커버, 소프트커버, 보드북 등."
+        },
+        "image": "/process-illustrations/process-04.webp"
+      },
+      {
+        "name": {
+          "en": "Interactive Assembly & QC",
+          "zh": "手工组装与质检",
+          "ja": "インタラクティブ組立＆品質管理",
+          "ko": "인터랙티브 조립 & QC"
+        },
+        "desc": {
+          "en": "Pop-up, lift-the-flap, sound books, magnetic books, accessory installation, QC & safety testing.",
+          "zh": "Pop-up、Lift-the-Flap、Sound Book、Magnetic Book、配件安装、QC与安全测试。",
+          "ja": "ポップアップ、めくり仕掛け、サウンドブック、マグネットブック、部品取付、QCと安全テスト。",
+          "ko": "팝업북, 플랩북, 사운드북, 마그네틱북, 부속품 설치, QC 및 안전 테스트."
+        },
+        "image": "/process-illustrations/process-05.webp"
+      },
+      {
+        "name": {
+          "en": "Packing & Global Fulfillment",
+          "zh": "出口包装与全球交付",
+          "ja": "梱包＆グローバル納品",
+          "ko": "포장 & 글로벌 물류"
+        },
+        "desc": {
+          "en": "Packing, cartoning, palletizing, warehousing, container loading & global shipping.",
+          "zh": "包装、装箱、托盘、仓储、集装箱装柜、全球出货。",
+          "ja": "梱包、箱詰め、パレタイズ、倉庫保管、コンテナ積載、グローバル出荷。",
+          "ko": "포장, 박스 포장, 팔레타이징, 창고 보관, 컨테이너 적재 및 글로벌 출하."
+        },
+        "image": "/process-illustrations/process-06.webp"
+      }
+    ]
+  },
+  "quality": {
+    "title": {
+      "en": "Quality Built into Every Step",
+      "zh": "品质融入每一个环节",
+      "ja": "すべての工程に組み込まれた品質",
+      "ko": "모든 단계에 통합된 품질"
+    },
+    "subtitle": {
+      "en": "Systematic quality management from raw material inspection to final shipment",
+      "zh": "从原材料检验到成品出运，系统性质量管理覆盖全流程",
+      "ja": "原材料検査から最終出荷まで、体系的な品質管理を実施",
+      "ko": "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리."
+    },
+    "modules": [
+      {
+        "name": {
+          "en": "Incoming Inspection",
+          "zh": "色彩管理来料检验",
+          "ja": "受入検査",
+          "ko": "수입 검사"
+        },
+        "image": "/uploads/1786689354625-emmfzm.png"
+      },
+      {
+        "name": {
+          "en": "Color Management",
+          "zh": "色彩管理",
+          "ja": "カラーマネジメント",
+          "ko": "색상 관리"
+        },
+        "image": "/uploads/1786689370689-jc2e26.png"
+      },
+      {
+        "name": {
+          "en": "In-process Control",
+          "zh": "过程控制",
+          "ja": "工程内管理",
+          "ko": "공정 제어"
+        },
+        "image": "/real-factory/03.png"
+      },
+      {
+        "name": {
+          "en": "Functional Testing",
+          "zh": "功能测试",
+          "ja": "機能テスト",
+          "ko": "기능 테스트"
+        },
+        "image": "/real-factory/04.png"
+      },
+      {
+        "name": {
+          "en": "Final Inspection",
+          "zh": "成品检验",
+          "ja": "最終検査",
+          "ko": "완제품 검사"
+        },
+        "image": "/real-factory/05.png"
+      }
+    ]
+  },
+  "sustainability": {
+    "title": {
+      "en": "Better Materials. Smarter Production",
+      "zh": "更优质的材料 更智能的生产",
+      "ja": "より良い素材。よりスマートな生産",
+      "ko": "더 나은 재료, 더 스마트한 생산"
+    },
+    "subtitle": {
+      "en": "Responsible material choices and practical production improvements to reduce waste",
+      "zh": "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
+      "ja": "責任ある素材選択と実践的な生産改善による廃棄物削減",
+      "ko": "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다."
+    },
+    "items": [
+      {
+        "name": {
+          "en": "FSC®-certified paper",
+          "zh": "FSC® 认证纸张",
+          "ja": "FSC® 認証紙",
+          "ko": "FSC® 인증 종이"
+        },
+        "image": "/eco/01.png"
+      },
+      {
+        "name": {
+          "en": "Recycled & biodegradable materials",
+          "zh": "再生与可降解材料",
+          "ja": "再生・生分解性素材",
+          "ko": "재생 및 생분해성 재료"
+        },
+        "image": "/eco/02.png"
+      },
+      {
+        "name": {
+          "en": "Soy-based & water-based inks",
+          "zh": "大豆基与水性油墨",
+          "ja": "大豆・水性インク",
+          "ko": "대두 및 수성 잉크"
+        },
+        "image": "/eco/03.png"
+      },
+      {
+        "name": {
+          "en": "Automated production waste reduction",
+          "zh": "自动化生产减少损耗",
+          "ja": "自動化生産によるロス削減",
+          "ko": "자동화 생산을 통한 손실 감소"
+        },
+        "image": "/eco/04.png"
+      },
+      {
+        "name": {
+          "en": "Waste reduction programs",
+          "zh": "废弃物减量计划",
+          "ja": "廃棄物削減プログラム",
+          "ko": "폐기물 감축 프로그램"
+        },
+        "image": "/eco/05.png"
+      },
+      {
+        "name": {
+          "en": "Energy-efficient production",
+          "zh": "节能高效生产",
+          "ja": "省エネ生産",
+          "ko": "에너지 효율적인 생산"
+        },
+        "image": "/eco/06.png"
+      }
+    ]
+  },
+  "cta": {
+    "title": {
+      "en": "Have a Project in Mind?",
+      "zh": "有新项目想法？",
+      "ja": "プロジェクトのアイデアはありますか？",
+      "ko": "새로운 프로젝트 아이디어가 있으신가요?"
+    },
+    "subtitle": {
+      "en": "Share your concept, artwork or product specifications with our team",
+      "zh": "分享您的概念、图稿或产品规格，我们的团队将为您提供专业方案",
+      "ja": "コンセプト、アートワーク、製品仕様を当社のチームと共有してください",
+      "ko": "컨셉, 아트워크 또는 제품 사양을 당사 팀과 공유하여 전문 솔루션을 받으세요."
+    },
+    "buttonPrimary": {
+      "en": "Start a Project",
+      "zh": "开启新项目",
+      "ja": "プロジェクトを始める",
+      "ko": "프로젝트 시작하기"
+    },
+    "buttonSecondary": {
+      "en": "Request Samples",
+      "zh": "申请样品",
+      "ja": "サンプルをリクエスト",
+      "ko": "샘플 요청"
+    }
+  },
+  "certifications": [
+    {
+      "name": {
+        "en": "Disney",
+        "zh": "Disney",
+        "ja": "Disney",
+        "ko": "Disney"
+      },
+      "src": "/certificate/Disney_logo.png",
+      "invert": true
+    },
+    {
+      "name": {
+        "en": "Walmart",
+        "zh": "Walmart",
+        "ja": "Walmart",
+        "ko": "Walmart"
+      },
+      "src": "/certificate/Walmart.png"
+    },
+    {
+      "name": {
+        "en": "Target",
+        "zh": "Target",
+        "ja": "Target",
+        "ko": "Target"
+      },
+      "src": "/certificate/Target.png"
+    },
+    {
+      "name": {
+        "en": "Costco",
+        "zh": "Costco",
+        "ja": "Costco",
+        "ko": "Costco"
+      },
+      "src": "/certificate/Costco.png"
+    },
+    {
+      "name": {
+        "en": "ISO 9001",
+        "zh": "ISO 9001",
+        "ja": "ISO 9001",
+        "ko": "ISO 9001"
+      },
+      "src": "/certificate/ISO_9001-2015.png"
+    },
+    {
+      "name": {
+        "en": "ISO 14001",
+        "zh": "ISO 14001",
+        "ja": "ISO 14001",
+        "ko": "ISO 14001"
+      },
+      "src": "/certificate/iso14001.png",
+      "scale": "scale-[1.3]"
+    },
+    {
+      "name": {
+        "en": "SCAN",
+        "zh": "SCAN",
+        "ja": "SCAN",
+        "ko": "SCAN"
+      },
+      "src": "/certifications/scan.jpg",
+      "scale": "scale-[1.8]"
+    },
+    {
+      "name": {
+        "en": "SMETA",
+        "zh": "SMETA",
+        "ja": "SMETA",
+        "ko": "SMETA"
+      },
+      "src": "/certifications/smeta-.png",
+      "scale": "scale-[1.8]"
+    },
+    {
+      "name": {
+        "en": "Universal",
+        "zh": "Universal",
+        "ja": "Universal",
+        "ko": "Universal"
+      },
+      "src": "/certifications/universal.png",
+      "invert": true,
+      "scale": "scale-[2.1]"
+    },
+    {
+      "name": {
+        "en": "中国环境标志",
+        "zh": "中国环境标志",
+        "ja": "中国环境标志",
+        "ko": "中国环境标志"
+      },
+      "src": "/certifications/china10.png",
+      "scale": "scale-[1.8]"
+    },
+    {
+      "name": {
+        "en": "FSC",
+        "zh": "FSC",
+        "ja": "FSC",
+        "ko": "FSC"
+      },
+      "src": "/certifications/fsc-new.png",
+      "scale": "scale-125"
+    },
+    {
+      "name": {
+        "en": "EXPERT",
+        "zh": "EXPERT",
+        "ja": "EXPERT",
+        "ko": "EXPERT"
+      },
+      "src": "/certifications/expert.jpg",
+      "scale": "scale-125"
+    }
+  ],
+  "trustNumbers": [
+    {
+      "value": "25",
+      "suffix": "+",
+      "label": {
+        "en": "Years of Excellence",
+        "zh": "年卓越经验",
+        "ja": "年の卓越した実績",
+        "ko": "년의 탁월한 경험"
+      },
+      "desc": {
+        "en": "Serving global publishers since 2001",
+        "zh": "自2001年起服务全球出版商",
+        "ja": "2001年から世界の出版社にサービス",
+        "ko": "2001년부터 세계 출판사 서비스"
+      }
+    },
+    {
+      "value": "100",
+      "suffix": "+",
+      "label": {
+        "en": "Countries Served",
+        "zh": "服务国家/地区",
+        "ja": "対応国・地域",
+        "ko": "서비스 국가"
+      },
+      "desc": {
+        "en": "Delivering to publishers worldwide",
+        "zh": "向全球出版商交付",
+        "ja": "世界中の出版社に配送",
+        "ko": "전 세계 출판사에 배송"
+      }
+    },
+    {
+      "value": "500",
+      "suffix": "+",
+      "label": {
+        "en": "Projects Every Year",
+        "zh": "每年完成项目",
+        "ja": "毎年完了プロジェクト",
+        "ko": "매년 완료 프로젝트"
+      },
+      "desc": {
+        "en": "From board books to complex pop-ups",
+        "zh": "从纸板书到复杂立体书",
+        "ja": "ボードブックから複雑な仕掛け絵本まで",
+        "ko": "보드북부터 복잡한 팝업북까지"
+      }
+    },
+    {
+      "value": "99",
+      "suffix": "%",
+      "label": {
+        "en": "On-time Delivery",
+        "zh": "准时交付率",
+        "ja": "納期順守率",
+        "ko": "정시 납품률"
+      },
+      "desc": {
+        "en": "Consistent, reliable production schedules",
+        "zh": "稳定可靠的生产排期",
+        "ja": "安定した信頼性の高い生産スケジュール",
+        "ko": "안정적이고 신뢰할 수 있는 생산 일정"
+      }
+    }
+  ],
+  "gallery": {
+    "folders": [
+      {
+        "key": "2020-04-14__产品照片",
+        "images": [
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7710.jpg",
+            "name": "IMG_7710.jpg",
+            "sizeKB": 8622,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7714.jpg",
+            "name": "IMG_7714.jpg",
+            "sizeKB": 5038.4,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7719.jpg",
+            "name": "IMG_7719.jpg",
+            "sizeKB": 4048.4,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7723.jpg",
+            "name": "IMG_7723.jpg",
+            "sizeKB": 4977,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7724.jpg",
+            "name": "IMG_7724.jpg",
+            "sizeKB": 5499.5,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7725.jpg",
+            "name": "IMG_7725.jpg",
+            "sizeKB": 5466,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7726.jpg",
+            "name": "IMG_7726.jpg",
+            "sizeKB": 2988.2,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_77266.jpg",
+            "name": "IMG_77266.jpg",
+            "sizeKB": 5207.9,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2020-04-14__产品照片/IMG_7732.jpg",
+            "name": "IMG_7732.jpg",
+            "sizeKB": 10387.9,
+            "category": "hardcover"
+          }
+        ]
+      },
+      {
+        "key": "20210924-产品图片",
+        "images": [
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9832小.jpg",
+            "name": "IMG_9832小.jpg",
+            "sizeKB": 1822.4,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9838小.jpg",
+            "name": "IMG_9838小.jpg",
+            "sizeKB": 1283.5,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9840小.jpg",
+            "name": "IMG_9840小.jpg",
+            "sizeKB": 1703.5,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9845小.jpg",
+            "name": "IMG_9845小.jpg",
+            "sizeKB": 1653.6,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9846小.jpg",
+            "name": "IMG_9846小.jpg",
+            "sizeKB": 1679.4,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9851小.jpg",
+            "name": "IMG_9851小.jpg",
+            "sizeKB": 1321.7,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9854小.jpg",
+            "name": "IMG_9854小.jpg",
+            "sizeKB": 2435.8,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9856小.jpg",
+            "name": "IMG_9856小.jpg",
+            "sizeKB": 1056.6,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9859小.jpg",
+            "name": "IMG_9859小.jpg",
+            "sizeKB": 1077.1,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9862小.jpg",
+            "name": "IMG_9862小.jpg",
+            "sizeKB": 1496.8,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9872小.jpg",
+            "name": "IMG_9872小.jpg",
+            "sizeKB": 1772.5,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9876小.jpg",
+            "name": "IMG_9876小.jpg",
+            "sizeKB": 1586.3,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9878小.jpg",
+            "name": "IMG_9878小.jpg",
+            "sizeKB": 1783.5,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9881小.jpg",
+            "name": "IMG_9881小.jpg",
+            "sizeKB": 1963.2,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9884小.jpg",
+            "name": "IMG_9884小.jpg",
+            "sizeKB": 1697,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9900小.jpg",
+            "name": "IMG_9900小.jpg",
+            "sizeKB": 1962.9,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9901小.jpg",
+            "name": "IMG_9901小.jpg",
+            "sizeKB": 1880.5,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9902小.jpg",
+            "name": "IMG_9902小.jpg",
+            "sizeKB": 3361.4,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9905小.jpg",
+            "name": "IMG_9905小.jpg",
+            "sizeKB": 2494.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9906小.jpg",
+            "name": "IMG_9906小.jpg",
+            "sizeKB": 2524.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9907小.jpg",
+            "name": "IMG_9907小.jpg",
+            "sizeKB": 2784.6,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9912小.jpg",
+            "name": "IMG_9912小.jpg",
+            "sizeKB": 3255.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9914小.jpg",
+            "name": "IMG_9914小.jpg",
+            "sizeKB": 1437.4,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9918小.jpg",
+            "name": "IMG_9918小.jpg",
+            "sizeKB": 1149.2,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9919小.jpg",
+            "name": "IMG_9919小.jpg",
+            "sizeKB": 1518.3,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9923.JPG",
+            "name": "IMG_9923.JPG",
+            "sizeKB": 3321.2,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9929小 .jpg",
+            "name": "IMG_9929小 .jpg",
+            "sizeKB": 1967.8,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9931小.jpg",
+            "name": "IMG_9931小.jpg",
+            "sizeKB": 1570.5,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9933小.jpg",
+            "name": "IMG_9933小.jpg",
+            "sizeKB": 1728,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9938小.jpg",
+            "name": "IMG_9938小.jpg",
+            "sizeKB": 1429.8,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9943小.jpg",
+            "name": "IMG_9943小.jpg",
+            "sizeKB": 1304.6,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9945小.jpg",
+            "name": "IMG_9945小.jpg",
+            "sizeKB": 3969.8,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9949小.jpg",
+            "name": "IMG_9949小.jpg",
+            "sizeKB": 2443.8,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9954小.jpg",
+            "name": "IMG_9954小.jpg",
+            "sizeKB": 3297,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9955小.jpg",
+            "name": "IMG_9955小.jpg",
+            "sizeKB": 1224.1,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9956小.jpg",
+            "name": "IMG_9956小.jpg",
+            "sizeKB": 1131.3,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9958小.jpg",
+            "name": "IMG_9958小.jpg",
+            "sizeKB": 1527.5,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9959小.jpg",
+            "name": "IMG_9959小.jpg",
+            "sizeKB": 1849.1,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9960小.jpg",
+            "name": "IMG_9960小.jpg",
+            "sizeKB": 1382.4,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9962小.jpg",
+            "name": "IMG_9962小.jpg",
+            "sizeKB": 2452.8,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9970小.jpg",
+            "name": "IMG_9970小.jpg",
+            "sizeKB": 2316.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/IMG_9974小.jpg",
+            "name": "IMG_9974小.jpg",
+            "sizeKB": 2341.3,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20210924-产品图片/扣图、.png",
+            "name": "扣图、.png",
+            "sizeKB": 8890.1,
+            "category": "toys"
+          }
+        ]
+      },
+      {
+        "key": "20220513产品图片",
+        "images": [
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7440.png",
+            "name": "_DSC7440.png",
+            "sizeKB": 7734.5,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7441.png",
+            "name": "_DSC7441.png",
+            "sizeKB": 11621,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7445.png",
+            "name": "_DSC7445.png",
+            "sizeKB": 2471.5,
+            "category": "paperback"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7446.png",
+            "name": "_DSC7446.png",
+            "sizeKB": 8997.6,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7447.png",
+            "name": "_DSC7447.png",
+            "sizeKB": 10220.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7448.png",
+            "name": "_DSC7448.png",
+            "sizeKB": 3225.9,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7450.png",
+            "name": "_DSC7450.png",
+            "sizeKB": 6284.5,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7451.png",
+            "name": "_DSC7451.png",
+            "sizeKB": 9610.8,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7452.png",
+            "name": "_DSC7452.png",
+            "sizeKB": 7440.5,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7453.png",
+            "name": "_DSC7453.png",
+            "sizeKB": 12178.9,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7455.png",
+            "name": "_DSC7455.png",
+            "sizeKB": 5259.3,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7456.png",
+            "name": "_DSC7456.png",
+            "sizeKB": 12414.2,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7457.png",
+            "name": "_DSC7457.png",
+            "sizeKB": 6793.3,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7458.png",
+            "name": "_DSC7458.png",
+            "sizeKB": 8295.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7459.png",
+            "name": "_DSC7459.png",
+            "sizeKB": 14320,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7460.png",
+            "name": "_DSC7460.png",
+            "sizeKB": 12787.2,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7461.png",
+            "name": "_DSC7461.png",
+            "sizeKB": 10263.3,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7462.png",
+            "name": "_DSC7462.png",
+            "sizeKB": 13796.4,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7463.png",
+            "name": "_DSC7463.png",
+            "sizeKB": 9750.9,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7464.png",
+            "name": "_DSC7464.png",
+            "sizeKB": 9358.8,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7465.png",
+            "name": "_DSC7465.png",
+            "sizeKB": 9884.7,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20220513产品图片/_DSC7466.png",
+            "name": "_DSC7466.png",
+            "sizeKB": 16355.9,
+            "category": "boardbook"
+          }
+        ]
+      },
+      {
+        "key": "20240111产品图片",
+        "images": [
+          {
+            "src": "/product-gallery/20240111产品图片/1.png",
+            "name": "1.png",
+            "sizeKB": 14051.6,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/10.png",
+            "name": "10.png",
+            "sizeKB": 16777.2,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/11.png",
+            "name": "11.png",
+            "sizeKB": 16792.9,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/12.png",
+            "name": "12.png",
+            "sizeKB": 16469.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/13.png",
+            "name": "13.png",
+            "sizeKB": 10146.3,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/14.png",
+            "name": "14.png",
+            "sizeKB": 15172.4,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/15.png",
+            "name": "15.png",
+            "sizeKB": 8118.5,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/16.png",
+            "name": "16.png",
+            "sizeKB": 10084.6,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/17.png",
+            "name": "17.png",
+            "sizeKB": 10658,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/18.png",
+            "name": "18.png",
+            "sizeKB": 6255.4,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/2.png",
+            "name": "2.png",
+            "sizeKB": 14189.1,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/3.png",
+            "name": "3.png",
+            "sizeKB": 14761.9,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/4.png",
+            "name": "4.png",
+            "sizeKB": 17540.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/5.png",
+            "name": "5.png",
+            "sizeKB": 16648.1,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/6.png",
+            "name": "6.png",
+            "sizeKB": 9344.3,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/7.png",
+            "name": "7.png",
+            "sizeKB": 13850.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/8.png",
+            "name": "8.png",
+            "sizeKB": 4675.6,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/20240111产品图片/9.png",
+            "name": "9.png",
+            "sizeKB": 20026,
+            "category": "toys"
+          }
+        ]
+      },
+      {
+        "key": "20240330跨越中秋产品照片",
+        "images": [
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/1.jpg",
+            "name": "1.jpg",
+            "sizeKB": 1065.2,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/2.jpg",
+            "name": "2.jpg",
+            "sizeKB": 3608.6,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/3.jpg",
+            "name": "3.jpg",
+            "sizeKB": 3686.3,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/4.jpg",
+            "name": "4.jpg",
+            "sizeKB": 6691.4,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/5.jpg",
+            "name": "5.jpg",
+            "sizeKB": 3395.5,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/20240330跨越中秋产品照片/6.jpg",
+            "name": "6.jpg",
+            "sizeKB": 4330.1,
+            "category": "custom"
+          }
+        ]
+      },
+      {
+        "key": "20251025产品拍照",
+        "images": [
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3644.png",
+            "name": "IMG_3644.png",
+            "sizeKB": 5281.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3645.png",
+            "name": "IMG_3645.png",
+            "sizeKB": 5443.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3652.png",
+            "name": "IMG_3652.png",
+            "sizeKB": 5824.2,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3654.png",
+            "name": "IMG_3654.png",
+            "sizeKB": 4547.3,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3655.png",
+            "name": "IMG_3655.png",
+            "sizeKB": 4487.4,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/20251025产品拍照/IMG_3658.png",
+            "name": "IMG_3658.png",
+            "sizeKB": 5275,
+            "category": "boardbook"
+          }
+        ]
+      },
+      {
+        "key": "children_books",
+        "images": [
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_101110.jpg",
+            "name": "IMG_20180605_101110.jpg",
+            "sizeKB": 2488.4,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104549.jpg",
+            "name": "IMG_20180605_104549.jpg",
+            "sizeKB": 1432.9,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104604.jpg",
+            "name": "IMG_20180605_104604.jpg",
+            "sizeKB": 1504,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104618.jpg",
+            "name": "IMG_20180605_104618.jpg",
+            "sizeKB": 1868.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104629.jpg",
+            "name": "IMG_20180605_104629.jpg",
+            "sizeKB": 1809.8,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104716.jpg",
+            "name": "IMG_20180605_104716.jpg",
+            "sizeKB": 1693.3,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104809.jpg",
+            "name": "IMG_20180605_104809.jpg",
+            "sizeKB": 1570.2,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_104930.jpg",
+            "name": "IMG_20180605_104930.jpg",
+            "sizeKB": 1462.4,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_105428.jpg",
+            "name": "IMG_20180605_105428.jpg",
+            "sizeKB": 1483.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_105844.jpg",
+            "name": "IMG_20180605_105844.jpg",
+            "sizeKB": 1595.6,
+            "category": "yo"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_105857.jpg",
+            "name": "IMG_20180605_105857.jpg",
+            "sizeKB": 1573.4,
+            "category": "yo"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_110057.jpg",
+            "name": "IMG_20180605_110057.jpg",
+            "sizeKB": 1886.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_110538.jpg",
+            "name": "IMG_20180605_110538.jpg",
+            "sizeKB": 1759.4,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_110549.jpg",
+            "name": "IMG_20180605_110549.jpg",
+            "sizeKB": 1572.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_110630.jpg",
+            "name": "IMG_20180605_110630.jpg",
+            "sizeKB": 1377.2,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_110828.jpg",
+            "name": "IMG_20180605_110828.jpg",
+            "sizeKB": 1429.8,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_111107.jpg",
+            "name": "IMG_20180605_111107.jpg",
+            "sizeKB": 2455.5,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_111155.jpg",
+            "name": "IMG_20180605_111155.jpg",
+            "sizeKB": 1863.1,
+            "category": "yo"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_111316.jpg",
+            "name": "IMG_20180605_111316.jpg",
+            "sizeKB": 1330.6,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/children_books/IMG_20180605_111326.jpg",
+            "name": "IMG_20180605_111326.jpg",
+            "sizeKB": 1582.6,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180525101811.jpg",
+            "name": "微信图片_20180525101811.jpg",
+            "sizeKB": 107.1,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180525102337.jpg",
+            "name": "微信图片_20180525102337.jpg",
+            "sizeKB": 113.1,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180525102347.jpg",
+            "name": "微信图片_20180525102347.jpg",
+            "sizeKB": 84.4,
+            "category": "soundlight"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164212.jpg",
+            "name": "微信图片_20180608164212.jpg",
+            "sizeKB": 115.6,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164225.jpg",
+            "name": "微信图片_20180608164225.jpg",
+            "sizeKB": 248.4,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164229.jpg",
+            "name": "微信图片_20180608164229.jpg",
+            "sizeKB": 127.7,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164242.jpg",
+            "name": "微信图片_20180608164242.jpg",
+            "sizeKB": 91.1,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164246.jpg",
+            "name": "微信图片_20180608164246.jpg",
+            "sizeKB": 84.6,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608164259.jpg",
+            "name": "微信图片_20180608164259.jpg",
+            "sizeKB": 142.5,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/children_books/微信图片_20180608165824.jpg",
+            "name": "微信图片_20180608165824.jpg",
+            "sizeKB": 84,
+            "category": "soundlight"
+          }
+        ]
+      },
+      {
+        "key": "crafts",
+        "images": [
+          {
+            "src": "/product-gallery/crafts/IMG_20180514_143423.jpg",
+            "name": "IMG_20180514_143423.jpg",
+            "sizeKB": 393.6,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/crafts/IMG_20180605_095814.jpg",
+            "name": "IMG_20180605_095814.jpg",
+            "sizeKB": 682.9,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/crafts/IMG_20180605_101132.jpg",
+            "name": "IMG_20180605_101132.jpg",
+            "sizeKB": 268.9,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/crafts/IMG_20180605_104646.jpg",
+            "name": "IMG_20180605_104646.jpg",
+            "sizeKB": 524.1,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/crafts/IMG_20180605_105911.jpg",
+            "name": "IMG_20180605_105911.jpg",
+            "sizeKB": 471,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/crafts/IMG_20180605_110820.jpg",
+            "name": "IMG_20180605_110820.jpg",
+            "sizeKB": 390.3,
+            "category": "boardbook"
+          }
+        ]
+      },
+      {
+        "key": "gifs",
+        "images": [
+          {
+            "src": "/product-gallery/gifs/Happy Birthday,Elli!.gif",
+            "name": "Happy Birthday,Elli!.gif",
+            "sizeKB": 942.7,
+            "category": "soundlight"
+          },
+          {
+            "src": "/product-gallery/gifs/What Do you Want to Have.gif",
+            "name": "What Do you Want to Have.gif",
+            "sizeKB": 5631.9,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/gifs/What Do you Want to Ride.gif",
+            "name": "What Do you Want to Ride.gif",
+            "sizeKB": 1412.3,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/gifs/自然拼读魔术卡.gif",
+            "name": "自然拼读魔术卡.gif",
+            "sizeKB": 2428.6,
+            "category": "cards"
+          }
+        ]
+      },
+      {
+        "key": "hardcover_books",
+        "images": [
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_101334.jpg",
+            "name": "IMG_20180605_101334.jpg",
+            "sizeKB": 1997.4,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_101400.jpg",
+            "name": "IMG_20180605_101400.jpg",
+            "sizeKB": 2376.5,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_101446.jpg",
+            "name": "IMG_20180605_101446.jpg",
+            "sizeKB": 2235.3,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_101533.jpg",
+            "name": "IMG_20180605_101533.jpg",
+            "sizeKB": 1838.3,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_101709.jpg",
+            "name": "IMG_20180605_101709.jpg",
+            "sizeKB": 2615.5,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/IMG_20180605_111350.jpg",
+            "name": "IMG_20180605_111350.jpg",
+            "sizeKB": 1854.3,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/微信图片_20180525102359.jpg",
+            "name": "微信图片_20180525102359.jpg",
+            "sizeKB": 103.7,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/微信图片_20180605153731.jpg",
+            "name": "微信图片_20180605153731.jpg",
+            "sizeKB": 1870.3,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/微信图片_20180605153739.jpg",
+            "name": "微信图片_20180605153739.jpg",
+            "sizeKB": 1068.1,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/hardcover_books/微信图片_20180605153744.jpg",
+            "name": "微信图片_20180605153744.jpg",
+            "sizeKB": 2292.3,
+            "category": "hardcover"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "key": "yo",
+        "name": "YO类"
+      },
+      {
+        "key": "custom",
+        "name": "匠心特装定制"
+      },
+      {
+        "key": "soundlight",
+        "name": "声光互动书册"
+      },
+      {
+        "key": "paperback",
+        "name": "平装书刊书籍"
+      },
+      {
+        "key": "boardbook",
+        "name": "板纸对裱童书"
+      },
+      {
+        "key": "cards",
+        "name": "益智卡牌卡册"
+      },
+      {
+        "key": "toys",
+        "name": "益智玩具类"
+      },
+      {
+        "key": "hardcover",
+        "name": "精装图书画册"
+      },
+      {
+        "key": "stickers",
+        "name": "趣味贴纸书系"
+      }
+    ]
+  },
+  "plant": {
+    "heroOver": {
+      "en": "Since 2001",
+      "zh": "始于2001",
+      "ja": "2001年創業",
+      "ko": "2001년 설립"
+    },
+    "heroTitle": {
+      "en": "Where Precision",
+      "zh": "精密与效率",
+      "ja": "精密と効率が",
+      "ko": "정밀함과 효율성이"
+    },
+    "heroAccent": {
+      "en": "Meets Production",
+      "zh": "在此交汇",
+      "ja": "交差する場所",
+      "ko": "교차하는 곳"
+    },
+    "heroDesc": {
+      "en": "Step inside our 20,000m² smart facility — 50%+ automation rate, 24/7 climate control, and a team of 250+ master craftsmen turning raw sheets into award-winning books.",
+      "zh": "走进星嘉艺20,000平方米智慧工厂——50%+自动化率、24小时恒温恒湿、250+工匠团队，每一本好书的诞生，都从这里开始。",
+      "ja": "20,000m²のスマート工場——50%超の自動化率、24時間温度管理、250+の熟練職人。すべての良書はここから始まります。",
+      "ko": "20,000m² 규모의 스마트 공장——50% 이상의 자동화율, 24시간 온도 제어, 250명 이상의 숙련된 장인. 모든 훌륭한 책은 이곳에서 시작됩니다."
+    },
+    "scroll": {
+      "en": "Scroll to explore",
+      "zh": "向下探索",
+      "ja": "スクロール",
+      "ko": "스크롤하여 탐색"
+    },
+    "stats": [
+      {
+        "value": "50",
+        "suffix": "%+",
+        "label": {
+          "en": "Automation Rate",
+          "zh": "自动化率",
+          "ja": "自動化率",
+          "ko": "자동화율"
+        }
+      },
+      {
+        "value": "24",
+        "suffix": "/7",
+        "label": {
+          "en": "Climate Control",
+          "zh": "恒温控制",
+          "ja": "温度管理",
+          "ko": "온도 제어"
+        }
+      },
+      {
+        "value": "20",
+        "suffix": "k m²",
+        "label": {
+          "en": "Production Area",
+          "zh": "生产面积",
+          "ja": "生産面積",
+          "ko": "생산 면적"
+        }
+      },
+      {
+        "value": "250",
+        "suffix": "+",
+        "label": {
+          "en": "Team Members",
+          "zh": "工匠团队",
+          "ja": "熟練職人",
+          "ko": "숙련된 장인"
+        }
+      }
+    ],
+    "processTitle": {
+      "en": "Production Process",
+      "zh": "生产流程",
+      "ja": "生産フロー",
+      "ko": "생산 공정"
+    },
+    "processSub": {
+      "en": "",
+      "zh": "",
+      "ja": "",
+      "ko": ""
+    },
+    "steps": [
+      {
+        "title": {
+          "en": "Design & Prepress",
+          "zh": "设计与制版",
+          "ja": "設計・製版",
+          "ko": "설계 및 제판"
+        },
+        "desc": {
+          "en": "Structural design, file prep, CTP plate-making",
+          "zh": "结构设计、文件处理、CTP制版",
+          "ja": "構造設計、ファイル処理、CTP製版",
+          "ko": "구조 설계, 파일 처리, CTP 제판"
+        },
+        "img": "/process-illustrations/process-01.webp"
+      },
+      {
+        "title": {
+          "en": "Printing",
+          "zh": "精密印刷",
+          "ja": "印刷",
+          "ko": "인쇄"
+        },
+        "desc": {
+          "en": "Heidelberg offset / UV / digital on premium stock",
+          "zh": "LED-UV高端印刷",
+          "ja": "ハイデルベルグ オフセット/UV/デジタル印刷",
+          "ko": "하이델베르그 오프셋/UV/디지털 인쇄"
+        },
+        "img": "/process-illustrations/process-02.webp"
+      },
+      {
+        "title": {
+          "en": "Die-Cutting",
+          "zh": "模切",
+          "ja": "抜き加工",
+          "ko": "다이 커팅"
+        },
+        "desc": {
+          "en": "High-precision automated cutting & creasing",
+          "zh": "高精度自动模切压痕",
+          "ja": "高精度自動抜型加工",
+          "ko": "고정밀 자동 다이 커팅"
+        },
+        "img": "/process-illustrations/process-03.webp"
+      },
+      {
+        "title": {
+          "en": "Surface & Binding",
+          "zh": "表面与装订",
+          "ja": "表面・製本",
+          "ko": "표면 및 제본"
+        },
+        "desc": {
+          "en": "Foil stamping, lamination, hand-assembly",
+          "zh": "烫金、裱糊、手工组装",
+          "ja": "箔押し、ラミネート、手組み",
+          "ko": "금박, 라미네이팅, 수작업 조립"
+        },
+        "img": "/process-illustrations/process-04.webp"
+      },
+      {
+        "title": {
+          "en": "QC Inspection",
+          "zh": "质检",
+          "ja": "品質検査",
+          "ko": "품질 검사"
+        },
+        "desc": {
+          "en": "EN71 / ASTM / ISO — full quality gate checks",
+          "zh": "EN71 / ASTM / ISO 全检",
+          "ja": "EN71 / ASTM / ISO 全数検査",
+          "ko": "EN71 / ASTM / ISO 전수 검사"
+        },
+        "img": "/process-illustrations/process-05.webp"
+      },
+      {
+        "title": {
+          "en": "Warehouse & Dispatch",
+          "zh": "仓储与发货",
+          "ja": "保管・出荷",
+          "ko": "창고 및 배송"
+        },
+        "desc": {
+          "en": "Stereo warehouse, global logistics",
+          "zh": "立体仓管理，全球物流",
+          "ja": "立体倉庫、グローバル物流",
+          "ko": "입체 창고 관리, 글로벌 물류"
+        },
+        "img": "/process-illustrations/process-06.webp"
+      }
+    ],
+    "equipTitle": {
+      "en": "Our Equipment",
+      "zh": "核心设备",
+      "ja": "主要設備",
+      "ko": "핵심 설비"
+    },
+    "equipSub": {
+      "en": "German precision, Japanese efficiency — the tools behind the craft",
+      "zh": "德国精度、日本效率——匠艺背后的硬实力",
+      "ja": "ドイツの精度、日本の効率——ものづくりを支える力",
+      "ko": "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘"
+    },
+    "equipItems": [
+      {
+        "title": {
+          "en": "Automated Laminating Machines",
+          "zh": "全自动过胶机",
+          "ja": "自動ラミネート・糊付け機",
+          "ko": "자동 라미네이팅 기계"
+        },
+        "desc": {
+          "en": "High-precision lamination and gluing for smooth, durable finishes",
+          "zh": "高精度覆膜与过胶工艺，确保表面平整耐用",
+          "ja": "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現",
+          "ko": "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장"
+        },
+        "img": "/real-factory/IMG_5121.JPG"
+      },
+      {
+        "title": {
+          "en": "Automated Die-Cutting Lines",
+          "zh": "自动模切生产线",
+          "ja": "自動抜型ライン",
+          "ko": "자동 다이 커팅 라인"
+        },
+        "desc": {
+          "en": "CNC-controlled cutting, creasing, and embossing in one pass",
+          "zh": "CNC数控裁切、压痕、压凸一次完成",
+          "ja": "CNC裁断、罫線、エンボスを一貫処理",
+          "ko": "CNC 절단, 크리징, 엠보싱 원스톱 처리"
+        },
+        "img": "/real-factory/IMG_5271.JPG"
+      }
+    ],
+    "certTitle": {
+      "en": "Certifications",
+      "zh": "资质认证",
+      "ja": "認証資格",
+      "ko": "인증 및 자격"
+    },
+    "ctaTitle": {
+      "en": "See It in Action",
+      "zh": "实地探访",
+      "ja": "工場見学",
+      "ko": "공장 견학"
+    },
+    "ctaDesc": {
+      "en": "Schedule a virtual tour or visit our Shenzhen facility",
+      "zh": "预约参观深圳工厂，亲眼见证自动化的力量",
+      "ja": "スマート工場をぜひご覧ください",
+      "ko": "스마트 공장을 방문하여 자동화의 힘을 직접 확인하십시오"
+    },
+    "ctaBtn": {
+      "en": "Get in Touch",
+      "zh": "联系我们",
+      "ja": "お問い合わせ",
+      "ko": "문의하기"
+    },
+    "certifications": [
+      {
+        "name": {
+          "en": "ISO 9001",
+          "zh": "ISO 9001",
+          "ja": "ISO 9001",
+          "ko": "ISO 9001"
+        },
+        "src": "/certificate/ISO_9001-2015.png"
+      },
+      {
+        "name": {
+          "en": "ISO 14001",
+          "zh": "ISO 14001",
+          "ja": "ISO 14001",
+          "ko": "ISO 14001"
+        },
+        "src": "/certificate/iso14001.png"
+      },
+      {
+        "name": {
+          "en": "Disney FAMA",
+          "zh": "Disney FAMA",
+          "ja": "Disney FAMA",
+          "ko": "Disney FAMA"
+        },
+        "src": "/certificate/Disney_logo.png",
+        "invert": true
+      },
+      {
+        "name": {
+          "en": "Walmart",
+          "zh": "Walmart",
+          "ja": "Walmart",
+          "ko": "Walmart"
+        },
+        "src": "/certificate/Walmart.png"
+      },
+      {
+        "name": {
+          "en": "Target",
+          "zh": "Target",
+          "ja": "Target",
+          "ko": "Target"
+        },
+        "src": "/certificate/Target.png"
+      },
+      {
+        "name": {
+          "en": "Costco",
+          "zh": "Costco",
+          "ja": "Costco",
+          "ko": "Costco"
+        },
+        "src": "/certificate/Costco.png"
+      }
+    ]
+  }
+}

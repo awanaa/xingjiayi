@@ -22,7 +22,9 @@ yarn-error.log*
 .env
 
 # CMS runtime data (auth hash, sessions, editable content)
-/data/
+# 注意: data/content.json 已纳入 git 版本管理（双向同步），不再忽略
+/data/*
+!/data/content.json
 /public/uploads/
 
 
