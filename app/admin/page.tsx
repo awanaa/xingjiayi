@@ -26,14 +26,15 @@ const defaultContent: SiteContent = {
 };
 
 const DEFAULT_CATEGORY_NAMES: Record<string, string> = {
-  boardbook: "纸板书",
-  hardcover: "精装书",
-  mechanism: "机关书",
-  popup: "立体书",
-  touch: "触摸书",
-  sound: "发声书",
-  magnetic: "磁性拼图",
-  giftbox: "精品包装",
+  yo: "YO类",
+  custom: "匠心特装定制",
+  soundlight: "声光互动书册",
+  paperback: "平装书刊书籍",
+  boardbook: "板纸对裱童书",
+  cards: "益智卡牌卡册",
+  toys: "益智玩具类",
+  hardcover: "精装图书画册",
+  stickers: "趣味贴纸书系",
   uncategorized: "未分类",
 };
 

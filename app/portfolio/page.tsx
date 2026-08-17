@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from
 import {
   X, ChevronRight, ChevronLeft, DollarSign,
   Image as ImageIcon, Play, BookOpen, BookText, Gift, Sparkles,
-  Hand, Volume2, Puzzle, Settings2,
+  Hand, Volume2, Puzzle, Settings2, Gem,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -19,17 +19,18 @@ import { useLang } from "../../hooks/useLang";
 interface GalleryImage { src: string; name: string; sizeKB: number; category: string; }
 interface FolderData { key: string; images: GalleryImage[]; }
 
-const TYPE_ORDER = ["boardbook","hardcover","mechanism","touch","sound","giftbox"];
+const TYPE_ORDER = ["yo","custom","soundlight","paperback","boardbook","cards","toys","hardcover","stickers"];
 
 const typeMeta: Record<string, { icon: React.ReactNode; label: Record<string,string>; desc: Record<string,string> }> = {
-  boardbook: { icon: <BookText className="w-5 h-5" />, label: { en:"Board Books", zh:"纸板书", ja:"厚紙絵本" }, desc: { en:"Durable board books with thick paper pages.", zh:"厚纸板对裱工艺的耐用纸板书。", ja:"厚紙のページを持つ耐久性のある絵本。" } },
-  hardcover: { icon: <BookOpen className="w-5 h-5" />, label: { en:"Hardcover Books", zh:"精装书", ja:"ハードカバー" }, desc: { en:"Premium hardcover books with durable binding.", zh:"高档精装图书，耐用装订。", ja:"高級ハードカバー本。" } },
-  mechanism: { icon: <Settings2 className="w-5 h-5" />, label: { en:"Mechanism Books", zh:"机关书", ja:"仕掛け絵本" }, desc: { en:"Interactive books with moving paper mechanisms.", zh:"内置推拉、转动等纸艺机关的互动图书。", ja:"仕掛けがあるインタラクティブな絵本。" } },
-  popup: { icon: <Sparkles className="w-5 h-5" />, label: { en:"Pop-up Books", zh:"立体书", ja:"飛び出す絵本" }, desc: { en:"3D pop-up books with intricate paper engineering.", zh:"精密纸艺工程打造的立体图书。", ja:"精巧な紙工学による3Dポップアップ絵本。" } },
-  touch: { icon: <Hand className="w-5 h-5" />, label: { en:"Touch & Feel Books", zh:"触摸书", ja:"感触絵本" }, desc: { en:"Sensory books with textured surfaces.", zh:"触感材质的感官体验书。", ja:"テクスチャー加工の感触絵本。" } },
-  sound: { icon: <Volume2 className="w-5 h-5" />, label: { en:"Sound Books", zh:"发声书", ja:"音声絵本" }, desc: { en:"Books with built-in sound modules.", zh:"内置发声模块的有声图书。", ja:"内蔵サウンドモジュールの音声絵本。" } },
-  magnetic: { icon: <Puzzle className="w-5 h-5" />, label: { en:"Magnetic Puzzles", zh:"磁性拼图", ja:"マグネットパズル" }, desc: { en:"Educational magnetic puzzles and games.", zh:"磁性拼图及益智游戏。", ja:"紙と遊びを組み合わせた磁気パズル。" } },
-  giftbox: { icon: <Gift className="w-5 h-5" />, label: { en:"Gift Boxes", zh:"精品包装", ja:"ギフト包装" }, desc: { en:"Premium gift boxes and custom presentation cases.", zh:"高档礼品盒及定制展示盒。", ja:"高級ギフトボックス。" } },
+  yo: { icon: <Gift className="w-5 h-5" />, label: { en:"YO Series", zh:"YO类", ja:"YOシリーズ" }, desc: { en:"Signature YO series products.", zh:"特色 YO 系列产品。", ja:"特徴的なYOシリーズ製品。" } },
+  custom: { icon: <Settings2 className="w-5 h-5" />, label: { en:"Custom Special Binding", zh:"匠心特装定制", ja:"匠の特装カスタム" }, desc: { en:"Custom special binding crafted to your specifications.", zh:"匠心特装，精工细作，满足个性化定制需求。", ja:"匠の技による特装・オーダーメイド製品。" } },
+  soundlight: { icon: <Volume2 className="w-5 h-5" />, label: { en:"Sound & Light Books", zh:"声光互动书册", ja:"サウンド＆ライト絵本" }, desc: { en:"Interactive books with built-in sound & light modules.", zh:"内置声光模块的互动书册，点亮阅读乐趣。", ja:"サウンド＆ライトモジュール内蔵のインタラクティブ絵本。" } },
+  paperback: { icon: <BookOpen className="w-5 h-5" />, label: { en:"Paperback Books", zh:"平装书刊书籍", ja:"並製本・書籍" }, desc: { en:"Paperback books with integrated printing & binding.", zh:"平装书刊书籍，印刷装订一体化。", ja:"印刷・製本を一貫生産する並製本。" } },
+  boardbook: { icon: <BookText className="w-5 h-5" />, label: { en:"Board Books", zh:"板纸对裱童书", ja:"ボードブック" }, desc: { en:"Durable board books made with laminated paperboard.", zh:"厚纸板对裱工艺，耐翻耐玩。", ja:"厚紙ラミネート製の丈夫なボードブック。" } },
+  cards: { icon: <Puzzle className="w-5 h-5" />, label: { en:"Educational Cards", zh:"益智卡牌卡册", ja:"知育カード" }, desc: { en:"Educational cards & card books for learning through play.", zh:"益智卡牌卡册，寓教于乐。", ja:"遊びながら学べる知育カード＆カードブック。" } },
+  toys: { icon: <Hand className="w-5 h-5" />, label: { en:"Educational Toys", zh:"益智玩具类", ja:"知育玩具" }, desc: { en:"Educational toys that spark creativity.", zh:"益智玩具，启发思维。", ja:"創造力を育む知育玩具。" } },
+  hardcover: { icon: <Gem className="w-5 h-5" />, label: { en:"Hardcover Books", zh:"精装图书画册", ja:"ハードカバー図書" }, desc: { en:"Premium hardcover books with exquisite binding.", zh:"精装图书画册，装帧考究。", ja:"装丁にこだわった上質なハードカバー図書。" } },
+  stickers: { icon: <Sparkles className="w-5 h-5" />, label: { en:"Sticker Books", zh:"趣味贴纸书系", ja:"シール絵本" }, desc: { en:"Fun sticker books full of playful activities.", zh:"趣味贴纸书系，玩趣十足。", ja:"楽しいシール遊びがいっぱいのシール絵本。" } },
 };
 
 // =============================================================================
@@ -90,7 +91,7 @@ export default function PortfolioPage() {
 
   const allImages = React.useMemo(() => folders.flatMap((f) => f.images), [folders]);
 
-  const MIN_STANDALONE = 4;
+  const MIN_STANDALONE = 1;
 
   const displayTypes = React.useMemo(() => {
     if (activeFilter === "all") {
@@ -102,7 +103,7 @@ export default function PortfolioPage() {
   const computeOthers = (groups: Record<string, GalleryImage[]>) => {
     const others: GalleryImage[] = [];
     for (const key of Object.keys(groups)) {
-      if (key === "uncategorized" || key === "popup" || key === "magnetic" || (groups[key]?.length ?? 0) < MIN_STANDALONE) {
+      if (key === "uncategorized" || (groups[key]?.length ?? 0) < MIN_STANDALONE) {
         others.push(...(groups[key] ?? []));
       }
     }
