@@ -45,6 +45,7 @@ export default function PortfolioPage() {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [folders, setFolders] = useState<FolderData[]>([]);
   const [catNames, setCatNames] = useState<Record<string, string>>({});
+  const [typeOrder, setTypeOrder] = useState<string[]>(TYPE_ORDER);
   const [loading, setLoading] = useState(true);
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
 
@@ -57,8 +58,10 @@ export default function PortfolioPage() {
           setFolders(data.gallery.folders);
           if (Array.isArray(data.gallery.categories)) {
             const names: Record<string, string> = {};
-            data.gallery.categories.forEach((c: { key: string; name: string }) => { if (c?.key) names[c.key] = c.name || c.key; });
+            const order: string[] = [];
+            data.gallery.categories.forEach((c: { key: string; name: string }) => { if (c?.key) { names[c.key] = c.name || c.key; order.push(c.key); } });
             setCatNames(names);
+            if (order.length > 0) setTypeOrder(order);
           }
           setLoading(false);
         } else {
@@ -95,10 +98,10 @@ export default function PortfolioPage() {
 
   const displayTypes = React.useMemo(() => {
     if (activeFilter === "all") {
-      return TYPE_ORDER.filter((t) => (typeGroups[t]?.length ?? 0) >= MIN_STANDALONE);
+      return typeOrder.filter((t) => (typeGroups[t]?.length ?? 0) >= MIN_STANDALONE);
     }
     return [activeFilter];
-  }, [activeFilter, typeGroups]);
+  }, [activeFilter, typeGroups, typeOrder]);
 
   const computeOthers = (groups: Record<string, GalleryImage[]>) => {
     const others: GalleryImage[] = [];
@@ -170,6 +173,7 @@ export default function PortfolioPage() {
         catNames={catNames}
         hasOthers={hasOthers}
         othersCount={othersGroup?.length ?? 0}
+        typeOrder={typeOrder}
       />
 
       {/* ===== GALLERY ===== */}
@@ -366,115 +370,50 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
 }
 
 // =============================================================================
-// FILTER BAR
+// FILTER BAR (Horizontal Scroll UX)
 // =============================================================================
 
-function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, typeGroups, catNames, hasOthers, othersCount }: {
+function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, typeGroups, catNames, hasOthers, othersCount, typeOrder }: {
   activeFilter: string; setActiveFilter: (f: string) => void; lang: string;
   t: (m: Record<string,string>) => string; labels: Record<string,Record<string,string>>;
-  allImages: any[]; typeGroups: Record<string,any[]>; catNames: Record<string,string>; hasOthers: boolean; othersCount: number;
+  allImages: any[]; typeGroups: Record<string,any[]>; catNames: Record<string,string>; hasOthers: boolean; othersCount: number; typeOrder: string[];
 }) {
-  const rowRef = useRef<HTMLDivElement>(null);
-  const moreRef = useRef<HTMLButtonElement>(null);
-  const popRef = useRef<HTMLDivElement>(null);
-  const [hiddenKeys, setHiddenKeys] = useState<string[]>([]);
-  const [showPop, setShowPop] = useState(false);
-  const [measured, setMeasured] = useState(false);
-
   const allKeys = React.useMemo(() => {
     const k: string[] = ["all"];
-    for (const t of TYPE_ORDER) if ((typeGroups[t]?.length ?? 0) > 0) k.push(t);
+    for (const t of typeOrder) if ((typeGroups[t]?.length ?? 0) > 0) k.push(t);
     if (hasOthers) k.push("__others__");
     return k;
-  }, [typeGroups, hasOthers]);
-
-  const measure = useCallback(() => {
-    const row = rowRef.current;
-    if (!row) return;
-    const chips = Array.from(row.querySelectorAll("[data-chip]")) as HTMLElement[];
-    const more = row.querySelector("[data-more]") as HTMLElement;
-    if (!chips.length || !more) return;
-    const gap = 8;
-    const moreW = more.offsetWidth || 48;
-    const containerW = row.clientWidth;
-    const maxW = containerW - moreW - gap - 4;
-    const h: string[] = [];
-    let used = 0;
-    let overflow = false;
-    for (const chip of chips) {
-      const w = chip.offsetWidth;
-      const total = used + w + (used > 0 ? gap : 0);
-      if (total > maxW) overflow = true;
-      if (overflow) { const key = chip.getAttribute("data-chip") || ""; if (key) h.push(key); }
-      else used = total;
-    }
-    setHiddenKeys(h);
-    setMeasured(true);
-  }, []);
-
-  useLayoutEffect(() => {
-    measure();
-    const ro = new ResizeObserver(measure);
-    if (rowRef.current) ro.observe(rowRef.current);
-    return () => ro.disconnect();
-  }, [measure]);
-
-  useEffect(() => {
-    if (!showPop) return;
-    const handler = (e: MouseEvent) => {
-      if (popRef.current && !popRef.current.contains(e.target as Node) && moreRef.current && !moreRef.current.contains(e.target as Node))
-        setShowPop(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [showPop]);
+  }, [typeGroups, hasOthers, typeOrder]);
 
   return (
-    <div className="sticky top-0 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-5 py-2.5 flex items-center gap-2" style={{ visibility: measured ? "visible" : "hidden" }}>
-        <div ref={rowRef} className="flex items-center gap-1.5 overflow-hidden flex-1">
-          <button data-chip="all" onClick={() => setActiveFilter("all")} className={`shrink-0 px-3.5 py-1.5 text-sm rounded-md font-medium transition-colors whitespace-nowrap ${activeFilter === "all" ? "bg-gold-500 text-white" : "text-white/50 hover:text-white hover:bg-white/[0.06]"}`}>
+    <div className="sticky top-16 md:top-18 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-5">
+        <div className="flex flex-wrap items-center gap-2 py-3">
+          <button onClick={() => setActiveFilter("all")} className={`px-4 py-2 text-sm rounded-full font-medium transition-colors flex items-center gap-1.5 ${activeFilter === "all" ? "bg-gold-500 text-white" : "bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08]"}`}>
             {labels.all[lang]}
-            <span className="ml-1 text-xs opacity-50">{allImages.length}</span>
+            <span className="text-[10px] opacity-60 bg-black/20 px-1.5 py-0.5 rounded-full">{allImages.length}</span>
           </button>
+          
           {allKeys.filter(k => k !== "all").map((key) => {
             const meta = key === "__others__" ? null : typeMeta[key];
-            const isHidden = hiddenKeys.includes(key);
             const count = key === "__others__" ? othersCount : typeGroups[key]?.length ?? 0;
             return (
-              <button key={key} data-chip={key} onClick={() => setActiveFilter(key)} className={`shrink-0 px-3 py-1.5 text-sm rounded-md font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${isHidden ? "sr-only focus:not-sr-only focus:absolute" : ""} ${activeFilter === key ? "bg-gold-500/10 text-gold-500" : "text-white/50 hover:text-white hover:bg-white/[0.06]"}`}>
-                {meta && <span className="w-3.5 h-3.5 flex items-center">{meta.icon}</span>}
-                <span className="hidden sm:inline">{meta ? t(meta.label).split(" ")[0] : catNames[key] || (lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other")}</span>
-                <span className="text-xs opacity-40">{count}</span>
+              <button 
+                key={key} 
+                onClick={() => setActiveFilter(key)} 
+                className={`px-4 py-2 text-sm rounded-full font-medium transition-colors flex items-center gap-2 ${activeFilter === key ? "bg-gold-500/15 text-gold-500 border border-gold-500/30" : "bg-white/[0.04] text-white/60 border border-transparent hover:text-white hover:bg-white/[0.08]"}`}
+              >
+                {meta && <span className="w-4 h-4 flex items-center opacity-80">{meta.icon}</span>}
+                <span>{meta ? t(meta.label).split(" ")[0] : catNames[key] || (lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other")}</span>
+                <span className="text-[10px] opacity-60 bg-black/20 px-1.5 py-0.5 rounded-full">{count}</span>
               </button>
             );
           })}
-          <button data-more ref={moreRef} onClick={() => setShowPop(!showPop)} className={`shrink-0 px-2.5 py-1.5 text-sm rounded-md font-mono font-bold transition-colors ${hiddenKeys.length === 0 ? "opacity-0 pointer-events-none" : ""} ${showPop ? "bg-gold-500/10 text-gold-500" : "text-white/40 hover:text-white hover:bg-white/[0.06]"}`}>
-            +{hiddenKeys.length}
-          </button>
         </div>
       </div>
-      {/* Dropdown */}
-      {showPop && (
-        <div ref={popRef} className="absolute left-5 top-full mt-1 z-50 min-w-[200px] bg-[#1a1a1a] border border-white/[0.08] rounded-lg shadow-lg overflow-hidden shadow-black/50">
-          <div className="p-1 space-y-0.5">
-            {allKeys.filter(k => k !== "all").map((key) => {
-              const meta = key === "__others__" ? null : typeMeta[key];
-              const isActive = activeFilter === key;
-              const count = key === "__others__" ? othersCount : typeGroups[key]?.length ?? 0;
-              return (
-                <button key={key} onClick={() => { setActiveFilter(key); setShowPop(false); }} className={`w-full text-left px-3 py-2 rounded text-sm flex items-center gap-2 ${isActive ? "bg-gold-500/10 text-gold-500 font-medium" : "text-white/60 hover:bg-white/[0.05]"}`}>
-                  {meta && <span className="w-4 h-4 flex items-center text-inherit">{meta.icon}</span>}
-                  <span className="flex-1">{meta ? t(meta.label) : catNames[key] || (lang === "zh" ? "其他" : lang === "ja" ? "その他" : lang === "ko" ? "기타" : "Other")}</span>
-                  <span className="text-xs text-white/30">{count}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
+
 
 
