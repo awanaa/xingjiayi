@@ -96,3 +96,113 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "Upload failed" }, { status: 500 });
   }
 }
+
+// 删除图片：移除 content.json 条目 + 删除物理文件
+function safePublicPath(src: string): string | null {
+  // 只允许 /uploads/ 与 /product-gallery/ 下的资源，防止路径穿越
+  if (!src || typeof src !== "string") return null;
+  if (!src.startsWith("/uploads/") && !src.startsWith("/product-gallery/")) return null;
+  if (src.includes("..")) return null;
+  return path.join(process.cwd(), "public", src.replace(/^\//, ""));
+}
+
+export async function DELETE(req: NextRequest) {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("cms_session")?.value;
+  if (!token || !verifySession(token)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+  try {
+    const body = await req.json();
+    const src = (body?.src || "") as string;
+    if (!src) {
+      return NextResponse.json({ ok: false, error: "Missing src" }, { status: 400 });
+    }
+
+    const content = getContent() as any;
+    const gallery: GalleryData = content?.gallery || { folders: [], categories: [] };
+    let removed = false;
+    const newFolders = (gallery.folders || [])
+      .map((f: any) => ({ ...f, images: (f.images || []).filter((img: any) => {
+        if (img.src === src) { removed = true; return false; }
+        return true;
+      }) }))
+      .filter((f: any) => (f.images || []).length > 0);
+
+    if (!removed) {
+      return NextResponse.json({ ok: false, error: "Image not found" }, { status: 404 });
+    }
+
+    // 删除物理文件（尽力而为，失败不影响条目移除）
+    const filePath = safePublicPath(src);
+    if (filePath) {
+      try {
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+      } catch { /* ignore */ }
+    }
+
+    gallery.folders = newFolders;
+    content.gallery = gallery;
+    saveContent(content);
+    return NextResponse.json({ ok: true, removed: src });
+  } catch (error) {
+    return NextResponse.json({ ok: false, error: "Delete failed" }, { status: 500 });
+  }
+}
+
+// 移动图片到其他分类：更新条目 category 并搬到目标文件夹（含新建）
+export async function PATCH(req: NextRequest) {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("cms_session")?.value;
+  if (!token || !verifySession(token)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+  try {
+    const body = await req.json();
+    const src = (body?.src || "") as string;
+    const category = (body?.category || "") as string;
+    if (!src || !category) {
+      return NextResponse.json({ ok: false, error: "Missing src or category" }, { status: 400 });
+    }
+
+    const content = getContent() as any;
+    const gallery: GalleryData = content?.gallery || { folders: [], categories: [] };
+    if (!gallery.categories) gallery.categories = [];
+
+    let movedImg: any = null;
+    let moved = false;
+    const newFolders = (gallery.folders || [])
+      .map((f: any) => {
+        const hit = (f.images || []).find((img: any) => img.src === src);
+        if (hit) {
+          moved = true;
+          movedImg = { ...hit, category };
+          return { ...f, images: (f.images || []).filter((img: any) => img.src !== src) };
+        }
+        return f;
+      })
+      .filter((f: any) => (f.images || []).length > 0);
+
+    if (!moved || !movedImg) {
+      return NextResponse.json({ ok: false, error: "Image not found" }, { status: 404 });
+    }
+
+    // 分类不存在则自动追加
+    if (!gallery.categories.some((c: any) => c.key === category)) {
+      gallery.categories.push({ key: category, name: DEFAULT_CATEGORY_NAMES[category] || category });
+    }
+    let target = newFolders.find((f: any) => f.key === category);
+    if (!target) {
+      target = { key: category, images: [] };
+      newFolders.push(target);
+    }
+    target.images.push(movedImg);
+
+    gallery.folders = newFolders;
+    content.gallery = gallery;
+    saveContent(content);
+    return NextResponse.json({ ok: true, moved: src, category });
+  } catch (error) {
+    return NextResponse.json({ ok: false, error: "Move failed" }, { status: 500 });
+  }
+}

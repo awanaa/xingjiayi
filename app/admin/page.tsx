@@ -212,10 +212,110 @@ const ArraySection = ({ title, subtitle, onTitleChange, onSubtitleChange, items,
 
 const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onContentChange: (c: SiteContent) => void }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [failedFiles, setFailedFiles] = useState<File[]>([]);
+  const [failedDetail, setFailedDetail] = useState<string[]>([]);
   const [category, setCategory] = useState("boardbook");
   const [uploading, setUploading] = useState(false);
   const [uploadMsg, setUploadMsg] = useState("");
+  const [opMsg, setOpMsg] = useState("");
+  const [busySrc, setBusySrc] = useState("");
   const [newCatName, setNewCatName] = useState("");
+
+  const refreshContent = async () => {
+    try {
+      const res = await fetch("/api/admin/content");
+      if (res.ok) {
+        const fresh = await res.json();
+        onContentChange(mergeDefaults(fresh));
+      }
+    } catch { /* ignore */ }
+  };
+
+  const uploadFiles = async (files: File[], cat: string) => {
+    if (files.length === 0) {
+      setUploadMsg("请先选择图片");
+      return;
+    }
+    setUploading(true);
+    setUploadMsg("");
+    setFailedDetail([]);
+    const formData = new FormData();
+    files.forEach((f) => formData.append("files", f));
+    formData.append("category", cat);
+    try {
+      const res = await fetch("/api/admin/gallery", { method: "POST", body: formData });
+      const data = await res.json();
+      if (data.ok) {
+        // 按文件名匹配后端报错，保留失败文件供一键重传
+        const errNames = (data.errors || []).map((e: string) => e.split(":")[0].trim());
+        const remaining = files.filter((f) => errNames.includes(f.name));
+        setFailedFiles(remaining);
+        setFailedDetail(data.errors || []);
+        if (data.count > 0) {
+          setUploadMsg(`✅ 成功上传 ${data.count} 张 (${catName(cat)})${data.errors?.length ? `，${data.errors.length} 张失败` : ""}`);
+        } else {
+          setUploadMsg(`上传失败：${data.errors?.length || 0} 张全部未通过`);
+        }
+        if (data.errors?.length === 0) setSelectedFiles([]);
+        await refreshContent();
+      } else {
+        setUploadMsg(`上传失败: ${data.error || "未知错误"}`);
+      }
+    } catch {
+      setUploadMsg("上传异常，请重试");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const moveImage = async (src: string, to: string) => {
+    if (busySrc) return;
+    setBusySrc(src);
+    setOpMsg("");
+    try {
+      const res = await fetch("/api/admin/gallery", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ src, category: to }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setOpMsg("已移动到新分类 ✓");
+        await refreshContent();
+      } else {
+        setOpMsg(`移动失败: ${data.error || "未知错误"}`);
+        await refreshContent();
+      }
+    } catch {
+      setOpMsg("移动异常，请重试");
+    } finally {
+      setBusySrc("");
+    }
+  };
+
+  const deleteImage = async (src: string) => {
+    if (!window.confirm("确定删除这张图片？文件将被永久删除，不可恢复。")) return;
+    setBusySrc(src);
+    setOpMsg("");
+    try {
+      const res = await fetch("/api/admin/gallery", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ src }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setOpMsg("已删除 ✓");
+        await refreshContent();
+      } else {
+        setOpMsg(`删除失败: ${data.error || "未知错误"}`);
+      }
+    } catch {
+      setOpMsg("删除异常，请重试");
+    } finally {
+      setBusySrc("");
+    }
+  };
 
   const folders = content.gallery?.folders || [];
   const categories = content.gallery?.categories || [];
@@ -259,39 +359,13 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
   const handleFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files ? Array.from(e.target.files) : [];
     setSelectedFiles(files);
+    setFailedFiles([]);
+    setFailedDetail([]);
     setUploadMsg("");
   };
 
   const handleUpload = async () => {
-    if (selectedFiles.length === 0) {
-      setUploadMsg("请先选择图片");
-      return;
-    }
-    setUploading(true);
-    setUploadMsg("");
-    const formData = new FormData();
-    selectedFiles.forEach((f) => formData.append("files", f));
-    formData.append("category", category);
-    try {
-      const res = await fetch("/api/admin/gallery", { method: "POST", body: formData });
-      const data = await res.json();
-      if (data.ok) {
-        setUploadMsg(`✅ 成功上传 ${data.count} 张 (${catName(category)})${data.errors?.length ? `，${data.errors.length} 张失败` : ""}`);
-        setSelectedFiles([]);
-        // 重新拉取最新 content 以刷新图库列表
-        const contentRes = await fetch("/api/admin/content");
-        if (contentRes.ok) {
-          const fresh = await contentRes.json();
-          onContentChange(mergeDefaults(fresh));
-        }
-      } else {
-        setUploadMsg(`上传失败: ${data.error || "未知错误"}`);
-      }
-    } catch {
-      setUploadMsg("上传异常，请重试");
-    } finally {
-      setUploading(false);
-    }
+    await uploadFiles(selectedFiles, category);
   };
 
   return (
@@ -376,10 +450,28 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
           </div>
         )}
         {uploadMsg && <p className={`mt-4 text-sm font-medium ${uploadMsg.startsWith("✅") ? "text-green-400" : "text-red-400"}`}>{uploadMsg}</p>}
+        {failedDetail.length > 0 && (
+          <div className="mt-3 p-3 border border-red-900/50 rounded bg-red-950/30">
+            <p className="text-sm font-medium text-red-400 mb-2">失败明细（{failedDetail.length} 张）：</p>
+            <ul className="text-xs text-red-300/90 space-y-1 max-h-40 overflow-y-auto font-mono">
+              {failedDetail.map((e, i) => <li key={i}>❌ {e}</li>)}
+            </ul>
+            {failedFiles.length > 0 && (
+              <button
+                onClick={async () => { await uploadFiles(failedFiles, category); }}
+                disabled={uploading}
+                className="mt-3 bg-red-800/60 hover:bg-red-700/60 text-red-100 border border-red-700/50 px-4 py-1.5 rounded text-sm font-medium transition-colors disabled:opacity-50"
+              >
+                {uploading ? "重传中..." : `🔄 一键重传失败文件 (${failedFiles.length})`}
+              </button>
+            )}
+          </div>
+        )}
       </Section>
 
       <Section title="产品展示图库">
-        <p className="text-sm text-neutral-500 mb-4">图片按分类分组展示。可修改图片分类、名称或移除条目，修改后记得保存。</p>
+        <p className="text-sm text-neutral-500 mb-2">图片按分类分组展示。<span className="text-[#d4a84b]">切换分类下拉即立即移动保存</span>；删除会同时移除文件，不可恢复。</p>
+        {opMsg && <p className="mb-4 text-sm font-medium text-[#d4a84b]">{opMsg}</p>}
         {folders.map((folder, folderIdx) => (
           <div key={folderIdx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
             <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {catName(folder.key)}</h4>
@@ -391,8 +483,9 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
                   <div className="mt-2 space-y-1">
                     <select
                       value={img.category || ""}
-                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, category: e.target.value } : im) } : f), categories } as any })}
-                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-1.5 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+                      disabled={busySrc === img.src}
+                      onChange={(e) => moveImage(img.src, e.target.value)}
+                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-1.5 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all disabled:opacity-50"
                     >
                       {categories.map((c) => (
                         <option key={c.key} value={c.key}>{catName(c.key)}</option>
@@ -407,10 +500,11 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
                     />
                   </div>
                   <button
-                    onClick={() => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.filter((_, ii) => ii !== imgIdx) } : f), categories } as any })}
-                    className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => deleteImage(img.src)}
+                    disabled={busySrc === img.src}
+                    className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-40"
                   >
-                    移除
+                    {busySrc === img.src ? "..." : "删除"}
                   </button>
                 </div>
               ))}
