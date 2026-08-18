@@ -156,7 +156,7 @@ export default function PortfolioPage() {
 
       {/* ===== HERO ===== */}
       <div className="max-w-7xl mx-auto px-5 pt-36 pb-8">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
           {titleNow[0]} <span className="text-gold-500">{titleNow[1]}</span>
         </h1>
       </div>

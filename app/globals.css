@@ -20,6 +20,8 @@
   --radius-pill: 9999px;
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --font-sans: var(--font-inter), var(--font-noto), 'Helvetica Neue', Arial, sans-serif;
+  /* 标题专用字体：Noto Sans SC 优先，中英文同族统一 */
+  --font-display: var(--font-noto), var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
 }
 
 @layer base {
@@ -36,6 +38,11 @@
     font-family: var(--font-sans);
     background-color: var(--color-surface-base);
     color: var(--color-text-secondary);
+  }
+
+  /* 统一所有页面的主标题/副标题字体（h1-h6 + .font-display） */
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
   }
 
   ::selection {

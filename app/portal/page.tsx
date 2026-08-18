@@ -226,16 +226,16 @@ export default function ClientPortal() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.5em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-5 py-1.5 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.5em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-5 py-1.5 backdrop-blur-sm mb-8">
               <Sparkles className="w-3 h-3" />
               {content.over}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>
             {content.title}
             <span className="block mt-4 md:mt-6 text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600">{content.accent}</span>
           </h1>
-          <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white/50 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {content.desc}
           </p>
         </div>

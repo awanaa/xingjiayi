@@ -287,11 +287,11 @@ export default function AboutUs() {
               {t.heroSub}
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[1] mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1] mb-6">
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {t.heroDesc}
           </p>
         </div>

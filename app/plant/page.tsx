@@ -273,15 +273,15 @@ export default function IntelligentPlant() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-4 py-1.5 backdrop-blur-sm">
+            <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-4 py-1.5 backdrop-blur-sm mb-8">
               {t.heroOver}
             </span>
           </div>
-          <h1 className={`text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-6 mb-6 ${lang === 'en' ? 'tracking-tight leading-[0.9]' : 'tracking-normal leading-[1.1]'}`}>
+          <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 ${lang === 'en' ? 'tracking-tight leading-[0.9]' : 'tracking-normal leading-[1.1]'}`}>
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
-          <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white/50 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {t.heroDesc}
           </p>
         </div>
@@ -438,16 +438,25 @@ export default function IntelligentPlant() {
                   { Icon: Activity, label: lang === "zh" ? "全天候监控" : "24/7 System Monitoring" }
                 ]
               }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center gap-6 md:gap-0 group">
+            ].map((item, i) => {
+              // 每条间距都不同（更紧密）：左图行用 pr-*，右图行用 pl-*，数值逐条变化制造错落感
+              const gaps = ["md:pr-1", "md:pl-3", "md:pr-2", "md:pl-4", "md:pr-2"];
+              const gap = gaps[i % gaps.length];
+              // 图片占比 > 文字占比，且每条比例微错落（横向长方形容器）
+              const imgWidths = ["md:w-[60%]", "md:w-[57%]", "md:w-[62%]", "md:w-[58%]", "md:w-[60%]"];
+              const textWidths = ["md:w-[40%]", "md:w-[43%]", "md:w-[38%]", "md:w-[42%]", "md:w-[40%]"];
+              const imgW = imgWidths[i % imgWidths.length];
+              const textW = textWidths[i % textWidths.length];
+              return (
+              <div key={i} className="flex flex-col md:flex-row items-center gap-4 md:gap-5 group">
                 {/* Image Section - Alternates left/right based on index */}
-                <div className={`w-full md:w-1/2 relative flex items-center justify-center min-h-[350px] md:min-h-[450px] ${i % 2 !== 0 ? 'md:order-2 md:pl-12' : 'md:order-1 md:pr-12'}`}>
+                <div className={`w-full ${imgW} relative flex items-center justify-center min-h-[260px] md:min-h-[330px] ${i % 2 !== 0 ? 'md:order-2 ' + gap : 'md:order-1 ' + gap}`}>
                    {/* We wrap the image in a slight padding and remove mix-blend-multiply since it's dark theme */}
-                   <OptimizedImage src={item.img} alt={item.title} fill className="object-contain p-6 drop-shadow-2xl transition-transform duration-700 group-hover:scale-105" />
+                   <OptimizedImage src={item.img} alt={item.title} fill className="object-contain p-2 drop-shadow-2xl transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 
                 {/* Text Section */}
-                <div className={`w-full md:w-1/2 py-8 md:px-12 flex flex-col justify-center ${i % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                <div className={`w-full ${textW} py-3 md:px-4 flex flex-col justify-center ${i % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
                   <span className="text-3xl md:text-4xl font-black text-gold-500 mb-2 font-mono tracking-wider">{item.num}</span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight whitespace-pre-line">{item.title}</h3>
                   <ul className="space-y-4">
@@ -474,7 +483,8 @@ export default function IntelligentPlant() {
                   )}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
