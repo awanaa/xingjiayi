@@ -153,9 +153,19 @@ export interface GalleryCategory {
   name: string;
 }
 
+/** 同一本书/同一产品的多图组：封面 + 组内全部图，点击封面可浏览整组 */
+export interface GalleryGroup {
+  id: string;
+  category: string;
+  name: string;
+  cover: string;
+  images: string[];
+}
+
 export interface GalleryData {
   folders: GalleryFolder[];
   categories: GalleryCategory[];
+  groups?: GalleryGroup[];
 }
 
 export interface SiteContent {

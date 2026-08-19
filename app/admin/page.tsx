@@ -322,7 +322,8 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
   const catName = (key: string) => categories.find((c) => c.key === key)?.name || DEFAULT_CATEGORY_NAMES[key] || key;
 
   const updateGallery = (g: { folders: { key: string; images: any[] }[]; categories: { key: string; name: string }[] }) => {
-    onContentChange({ ...content, gallery: g as any });
+    // 保留 groups 字段（组结构不进 folders，避免被覆盖丢失）
+    onContentChange({ ...content, gallery: { ...(content.gallery || {}), ...g } as any });
   };
 
   const addCategory = () => {
@@ -472,6 +473,23 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       <Section title="产品展示图库">
         <p className="text-sm text-neutral-500 mb-2">图片按分类分组展示。<span className="text-[#d4a84b]">切换分类下拉即立即移动保存</span>；删除会同时移除文件，不可恢复。</p>
         {opMsg && <p className="mb-4 text-sm font-medium text-[#d4a84b]">{opMsg}</p>}
+
+        {(content.gallery?.groups?.length ?? 0) > 0 && (
+          <div className="p-5 border border-[#d4a84b]/30 rounded bg-[#d4a84b]/[0.04] mb-6">
+            <h4 className="text-sm font-bold text-[#d4a84b] mb-1">📚 产品组（同一本书/同一产品的多图合集）</h4>
+            <p className="text-xs text-neutral-500 mb-4">共 {(content.gallery?.groups || []).length} 组，{(content.gallery?.groups || []).reduce((a: number, g: any) => a + (g.images?.length || 0), 0)} 张图。组内图片在前台以「封面 + N」形式展示，点击可浏览整组。当前版本组结构只读，如需调整请联系开发。</p>
+            <div className="grid grid-cols-3 md:grid-cols-8 gap-3">
+              {(content.gallery?.groups || []).map((g: any, gi: number) => (
+                <div key={gi} className="p-2 border border-neutral-800 rounded bg-neutral-900 relative">
+                  {g.cover ? <img src={g.cover} alt="" className="w-full h-16 object-cover rounded bg-neutral-800" /> : <div className="w-full h-16 bg-neutral-800 rounded" />}
+                  <div className="absolute top-3 right-3 bg-black/70 text-[#d4a84b] text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-[#d4a84b]/40">+{g.images?.length - 1}</div>
+                  <p className="mt-1.5 text-[10px] text-neutral-400 truncate text-center">{catName(g.category)} · {g.images?.length}张</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {folders.map((folder, folderIdx) => (
           <div key={folderIdx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
             <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {catName(folder.key)}</h4>

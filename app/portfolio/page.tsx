@@ -18,6 +18,7 @@ import { useLang } from "../../hooks/useLang";
 
 interface GalleryImage { src: string; name: string; sizeKB: number; category: string; }
 interface FolderData { key: string; images: GalleryImage[]; }
+interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; }
 
 const TYPE_ORDER = ["yo","custom","soundlight","paperback","boardbook","cards","toys","hardcover","stickers"];
 
@@ -44,6 +45,8 @@ export default function PortfolioPage() {
   const [selectedCatKey, setSelectedCatKey] = useState<string | null>(null);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [folders, setFolders] = useState<FolderData[]>([]);
+  const [groups, setGroups] = useState<GalleryGroup[]>([]);
+  const [lightboxImages, setLightboxImages] = useState<GalleryImage[]>([]);
   const [catNames, setCatNames] = useState<Record<string, string>>({});
   const [typeOrder, setTypeOrder] = useState<string[]>(TYPE_ORDER);
   const [loading, setLoading] = useState(true);
@@ -56,6 +59,7 @@ export default function PortfolioPage() {
       .then((data) => {
         if (data && data.gallery && Array.isArray(data.gallery.folders)) {
           setFolders(data.gallery.folders);
+          if (Array.isArray(data.gallery.groups)) setGroups(data.gallery.groups);
           if (Array.isArray(data.gallery.categories)) {
             const names: Record<string, string> = {};
             const order: string[] = [];
@@ -92,16 +96,35 @@ export default function PortfolioPage() {
     return groups;
   }, [folders]);
 
+  // 组内图转标准图对象（灯箱复用）
+  const groupImages = useCallback((g: GalleryGroup): GalleryImage[] =>
+    g.images.map(src => ({ src, name: decodeURIComponent(src.split("/").pop() || ""), sizeKB: 0, category: g.category })), []);
+
+  // 每个分类的展示单元数 = 散图 + 组
+  const unitCounts = React.useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const k of Object.keys(typeGroups)) c[k] = typeGroups[k].length;
+    for (const g of groups) c[g.category] = (c[g.category] || 0) + 1;
+    return c;
+  }, [typeGroups, groups]);
+
+  // 每个分类的组列表
+  const groupByCat = React.useMemo(() => {
+    const m: Record<string, GalleryGroup[]> = {};
+    for (const g of groups) (m[g.category] = m[g.category] || []).push(g);
+    return m;
+  }, [groups]);
+
   const allImages = React.useMemo(() => folders.flatMap((f) => f.images), [folders]);
 
   const MIN_STANDALONE = 1;
 
   const displayTypes = React.useMemo(() => {
     if (activeFilter === "all") {
-      return typeOrder.filter((t) => (typeGroups[t]?.length ?? 0) >= MIN_STANDALONE);
+      return typeOrder.filter((t) => (unitCounts[t] ?? 0) >= MIN_STANDALONE);
     }
     return [activeFilter];
-  }, [activeFilter, typeGroups, typeOrder]);
+  }, [activeFilter, unitCounts, typeOrder]);
 
   const computeOthers = (groups: Record<string, GalleryImage[]>) => {
     const others: GalleryImage[] = [];
@@ -123,6 +146,21 @@ export default function PortfolioPage() {
   useEffect(() => { document.body.style.overflow = selectedImage ? "hidden" : "unset"; }, [selectedImage]);
 
   const handleImgError = useCallback((src: string) => setImageErrors((p) => new Set(p).add(src)), []);
+
+  // 打开散图（灯箱在分类内浏览）
+  const openImage = useCallback((img: GalleryImage) => {
+    setLightboxImages(typeGroups[img.category] ?? [img]);
+    setSelectedImage(img);
+    setSelectedCatKey(img.category);
+  }, [typeGroups]);
+
+  // 打开组（灯箱浏览组内全部图，从封面开始）
+  const openGroup = useCallback((g: GalleryGroup) => {
+    const imgs = groupImages(g);
+    setLightboxImages(imgs);
+    setSelectedImage(imgs[0]);
+    setSelectedCatKey(g.category);
+  }, [groupImages]);
 
   const t = (m: Record<string, string>) => m[lang] ?? m.en ?? "";
 
@@ -169,7 +207,9 @@ export default function PortfolioPage() {
         t={t}
         labels={labels}
         allImages={allImages}
+        totalUnits={allImages.length + groups.length}
         typeGroups={typeGroups}
+        groupCounts={unitCounts}
         catNames={catNames}
         hasOthers={hasOthers}
         othersCount={othersGroup?.length ?? 0}
@@ -194,7 +234,7 @@ export default function PortfolioPage() {
                       key={`others-${i}`}
                       img={img}
                       isError={imageErrors.has(img.src)}
-                      onSelect={() => { setSelectedImage(img); setSelectedCatKey(img.category); }}
+                      onSelect={() => openImage(img)}
                       onError={() => handleImgError(img.src)}
                     />
                   ))}
@@ -203,22 +243,33 @@ export default function PortfolioPage() {
             );
           }
           const images = typeGroups[type];
-          if (!images?.length) return null;
+          const catGroups = groupByCat[type] ?? [];
+          if (!images?.length && !catGroups.length) return null;
           const meta = typeMeta[type];
+          const unitCount = (images?.length ?? 0) + catGroups.length;
           return (
             <div key={type} id={`cat-${type}`}>
               <div className="flex items-center gap-2 mb-5">
                 {meta && <span className="text-gold-400 w-5 h-5 flex items-center justify-center">{meta.icon}</span>}
                 <h2 className="text-lg font-semibold">{meta ? t(meta.label) : catNames[type] || type}</h2>
-                <span className="text-xs text-white/30 font-mono">{images.length}</span>
+                <span className="text-xs text-white/30 font-mono">{unitCount}</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                {images.map((img, i) => (
+                {catGroups.map((g) => (
+                  <GroupCard
+                    key={g.id}
+                    group={g}
+                    isError={imageErrors.has(g.cover)}
+                    onSelect={() => openGroup(g)}
+                    onError={() => handleImgError(g.cover)}
+                  />
+                ))}
+                {(images ?? []).map((img, i) => (
                   <FigureCard
                     key={`${type}-${i}`}
                     img={img}
                     isError={imageErrors.has(img.src)}
-                    onSelect={() => { setSelectedImage(img); setSelectedCatKey(type); }}
+                    onSelect={() => openImage(img)}
                     onError={() => handleImgError(img.src)}
                   />
                 ))}
@@ -234,9 +285,9 @@ export default function PortfolioPage() {
       <Lightbox
         image={selectedImage}
         catKey={selectedCatKey}
-        images={selectedCatKey ? typeGroups[selectedCatKey] ?? [] : []}
+        images={lightboxImages}
         lang={lang} t={t} labels={labels}
-        onClose={() => { setSelectedImage(null); setSelectedCatKey(null); }}
+        onClose={() => { setSelectedImage(null); setSelectedCatKey(null); setLightboxImages([]); }}
         onQuote={() => setShowQuoteForm(true)}
         onNavigate={(img: GalleryImage) => setSelectedImage(img)}
       />
@@ -283,6 +334,54 @@ function FigureCard({ img, isError, onSelect, onError }: {
         {img.src.toLowerCase().endsWith(".gif") && (
           <div className="absolute top-2 left-2 bg-black/50 rounded-full px-2 py-0.5 text-[10px] text-white flex items-center gap-1">
             <Play className="w-2.5 h-2.5" /> GIF
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
+// =============================================================================
+// GROUP CARD（组封面：同一本书的多图，点开浏览整组）
+// =============================================================================
+
+function GroupCard({ group, isError, onSelect, onError }: {
+  group: GalleryGroup; isError: boolean; onSelect: () => void; onError: () => void;
+}) {
+  const extra = group.images.length - 1;
+  return (
+    <div
+      role="button" tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => { if (e.key === "Enter") onSelect(); }}
+      className="group cursor-pointer overflow-hidden rounded-lg bg-white/[0.03] border border-gold-500/15 transition-all duration-300 hover:shadow-md hover:shadow-gold-500/10 hover:-translate-y-0.5 aspect-[4/3]"
+    >
+      <div className="relative overflow-hidden bg-white/[0.02] w-full h-full">
+        {isError ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white/30 gap-2">
+            <ImageIcon className="w-8 h-8" />
+            <span className="text-[10px] px-2 text-center">{group.name}</span>
+          </div>
+        ) : (
+          <img
+            src={group.cover}
+            alt={group.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={onError}
+          />
+        )}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+        {/* 组标识 */}
+        <div className="absolute top-2 left-2 bg-gold-500/90 rounded-full px-2 py-0.5 text-[10px] font-medium text-white flex items-center gap-1">
+          <ImageIcon className="w-2.5 h-2.5" />
+          {group.name}
+        </div>
+        {/* +N 角标 */}
+        {extra > 0 && (
+          <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur rounded-full px-2.5 py-1 text-xs font-semibold text-gold-400 border border-gold-500/30">
+            +{extra}
           </div>
         )}
       </div>
@@ -373,17 +472,17 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
 // FILTER BAR (Horizontal Scroll UX)
 // =============================================================================
 
-function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, typeGroups, catNames, hasOthers, othersCount, typeOrder }: {
+function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, allImages, totalUnits, typeGroups, groupCounts, catNames, hasOthers, othersCount, typeOrder }: {
   activeFilter: string; setActiveFilter: (f: string) => void; lang: string;
   t: (m: Record<string,string>) => string; labels: Record<string,Record<string,string>>;
-  allImages: any[]; typeGroups: Record<string,any[]>; catNames: Record<string,string>; hasOthers: boolean; othersCount: number; typeOrder: string[];
+  allImages: any[]; totalUnits: number; typeGroups: Record<string,any[]>; groupCounts: Record<string,number>; catNames: Record<string,string>; hasOthers: boolean; othersCount: number; typeOrder: string[];
 }) {
   const allKeys = React.useMemo(() => {
     const k: string[] = ["all"];
-    for (const t of typeOrder) if ((typeGroups[t]?.length ?? 0) > 0) k.push(t);
+    for (const t of typeOrder) if ((groupCounts[t] ?? 0) > 0) k.push(t);
     if (hasOthers) k.push("__others__");
     return k;
-  }, [typeGroups, hasOthers, typeOrder]);
+  }, [groupCounts, hasOthers, typeOrder]);
 
   return (
     <div className="sticky top-16 md:top-18 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/[0.06]">
@@ -391,12 +490,12 @@ function CategoryFilterBar({ activeFilter, setActiveFilter, lang, t, labels, all
         <div className="flex flex-wrap items-center gap-2 py-3">
           <button onClick={() => setActiveFilter("all")} className={`px-4 py-2 text-sm rounded-full font-medium transition-colors flex items-center gap-1.5 ${activeFilter === "all" ? "bg-gold-500 text-white" : "bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08]"}`}>
             {labels.all[lang]}
-            <span className="text-[10px] opacity-60 bg-black/20 px-1.5 py-0.5 rounded-full">{allImages.length}</span>
+            <span className="text-[10px] opacity-60 bg-black/20 px-1.5 py-0.5 rounded-full">{totalUnits}</span>
           </button>
           
           {allKeys.filter(k => k !== "all").map((key) => {
             const meta = key === "__others__" ? null : typeMeta[key];
-            const count = key === "__others__" ? othersCount : typeGroups[key]?.length ?? 0;
+            const count = key === "__others__" ? othersCount : groupCounts[key] ?? typeGroups[key]?.length ?? 0;
             return (
               <button 
                 key={key} 
