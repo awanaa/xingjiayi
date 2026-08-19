@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef, useLayoutEffect } from "react";
+import Image from "next/image";
 import {
   X, ChevronRight, ChevronLeft, DollarSign,
   Image as ImageIcon, Play, BookOpen, BookText, Gift, Sparkles,
@@ -394,6 +395,13 @@ function GroupCard({ group, isError, onSelect, onError }: {
 // LIGHTBOX
 // =============================================================================
 
+// 预加载 next/image 优化后的 URL（与组件渲染参数一致，切图秒开）
+function preloadImg(src: string) {
+  if (typeof window === "undefined") return;
+  const img = new window.Image();
+  img.src = `/_next/image?url=${encodeURIComponent(src)}&w=1200&q=82`;
+}
+
 function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, onNavigate }: {
   image: GalleryImage | null; catKey: string | null; images: GalleryImage[];
   lang: string; t: (m: Record<string,string>) => string; labels: Record<string,Record<string,string>>;
@@ -406,6 +414,12 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
   const goPrev = useCallback(() => { if (currentIdx > 0) onNavigate(images[currentIdx - 1]); }, [currentIdx, images, onNavigate]);
   const goNext = useCallback(() => { if (currentIdx < images.length - 1) onNavigate(images[currentIdx + 1]); }, [currentIdx, images, onNavigate]);
 
+  // 预加载相邻图片 → 切换零等待
+  useEffect(() => {
+    if (currentIdx > 0) preloadImg(images[currentIdx - 1].src);
+    if (currentIdx < images.length - 1) preloadImg(images[currentIdx + 1].src);
+  }, [currentIdx, images]);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -416,15 +430,28 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
     return () => document.removeEventListener("keydown", handler);
   }, [onClose, goPrev, goNext]);
 
+  // 触摸滑动切换（手机/平板）
+  const touchX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    touchX.current = null;
+    if (dx < -50) goNext();
+    else if (dx > 50) goPrev();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="absolute inset-0 bg-black/90" onClick={onClose} />
       <button onClick={onClose} className="absolute top-5 right-5 z-20 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors">
         <X className="w-5 h-5" />
       </button>
-      <div className="absolute top-5 left-5 z-20 text-xs text-white/40 font-mono bg-white/10 px-3 py-1.5 rounded-full">
-        {currentIdx + 1} / {images.length}
-      </div>
+      {images.length > 1 && (
+        <div className="absolute top-5 left-5 z-20 text-xs text-white/40 font-mono bg-white/10 px-3 py-1.5 rounded-full">
+          {currentIdx + 1} / {images.length}
+        </div>
+      )}
       {currentIdx > 0 && (
         <button onClick={goPrev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white">
           <ChevronLeft className="w-6 h-6" />
@@ -437,7 +464,9 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
       )}
       <div className="relative w-full max-w-6xl max-h-[90vh] flex flex-col md:flex-row items-center gap-6 z-10 px-6">
         <div className="w-full md:w-3/5 flex items-center justify-center">
-          <img src={image.src} alt={image.name} className="max-w-full max-h-[80vh] object-contain rounded-lg" />
+          <div className="relative w-full h-[60vh] md:h-[78vh]">
+            <Image src={image.src} alt={image.name} fill sizes="(max-width: 768px) 100vw, 60vw" className="object-contain" quality={82} />
+          </div>
         </div>
         <div className="w-full md:w-2/5 space-y-5">
           {meta && (
@@ -453,10 +482,6 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
             </>
           )}
           {!meta && <h3 className="text-xl font-semibold text-white">{image.name}</h3>}
-          <div className="flex gap-2 text-xs text-white/30 font-mono">
-            {image.sizeKB > 0 && <span className="bg-white/5 px-2.5 py-1 rounded">{Number(image.sizeKB).toLocaleString()} KB</span>}
-            <span className="bg-white/5 px-2.5 py-1 rounded">{image.src.split(".").pop()?.toUpperCase() || "—"}</span>
-          </div>
           <button onClick={(e) => { e.stopPropagation(); onQuote(); }} className="w-full bg-gold-500 hover:bg-gold-400 text-white font-medium py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
             <DollarSign className="w-4 h-4" />
             {labels.quote[lang]}
@@ -464,6 +489,19 @@ function Lightbox({ image, catKey, images, lang, t, labels, onClose, onQuote, on
           </button>
         </div>
       </div>
+      {/* 底部缩略图条：一眼看全组图，点谁看谁 */}
+      {images.length > 1 && (
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 max-w-[92vw]">
+          <div className="flex items-center gap-1.5 overflow-x-auto px-1.5 py-1.5 bg-black/60 backdrop-blur rounded-xl border border-white/10" style={{ scrollbarWidth: "thin" }}>
+            {images.map((img, i) => (
+              <button key={img.src + i} onClick={() => onNavigate(img)}
+                className={`relative shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all ${i === currentIdx ? "ring-2 ring-gold-500 opacity-100" : "opacity-50 hover:opacity-90"}`}>
+                <Image src={img.src} alt="" fill sizes="64px" className="object-cover" quality={75} />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
