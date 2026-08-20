@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 写入 gallery 数据（追加到 category 同名文件夹，不存在则新建）
+    // 写入 gallery 数据（追加到主文件夹；分类只是图片条目的属性，前台按 category 分组展示）
     if (uploaded.length > 0) {
       const content = getContent() as any;
       const gallery: GalleryData = content?.gallery || { folders: [], categories: [] };
@@ -81,12 +81,13 @@ export async function POST(req: NextRequest) {
       if (!gallery.categories.some((c: any) => c.key === category)) {
         gallery.categories.push({ key: category, name: DEFAULT_CATEGORY_NAMES[category] || category });
       }
-      let folder = gallery.folders.find((f) => f.key === category);
-      if (!folder) {
-        folder = { key: category, images: [] };
-        gallery.folders.push(folder);
+      // 主文件夹 = 第一个文件夹（不存在则新建「图库」）
+      let mainFolder = gallery.folders[0];
+      if (!mainFolder) {
+        mainFolder = { key: "图库", images: [] };
+        gallery.folders.push(mainFolder);
       }
-      folder.images.push(...uploaded);
+      mainFolder.images.push(...uploaded);
       content.gallery = gallery;
       saveContent(content);
     }
@@ -150,7 +151,7 @@ export async function DELETE(req: NextRequest) {
   }
 }
 
-// 移动图片到其他分类：更新条目 category 并搬到目标文件夹（含新建）
+// 移动图片到其他分类：只更新 category 字段（folder 保持主文件夹平铺结构，前台按 category 分组）
 export async function PATCH(req: NextRequest) {
   const cookieStore = await cookies();
   const token = cookieStore.get("cms_session")?.value;
@@ -169,21 +170,17 @@ export async function PATCH(req: NextRequest) {
     const gallery: GalleryData = content?.gallery || { folders: [], categories: [] };
     if (!gallery.categories) gallery.categories = [];
 
-    let movedImg: any = null;
     let moved = false;
-    const newFolders = (gallery.folders || [])
-      .map((f: any) => {
-        const hit = (f.images || []).find((img: any) => img.src === src);
-        if (hit) {
+    (gallery.folders || []).forEach((f: any) => {
+      (f.images || []).forEach((img: any) => {
+        if (img.src === src) {
+          img.category = category;
           moved = true;
-          movedImg = { ...hit, category };
-          return { ...f, images: (f.images || []).filter((img: any) => img.src !== src) };
         }
-        return f;
-      })
-      .filter((f: any) => (f.images || []).length > 0);
+      });
+    });
 
-    if (!moved || !movedImg) {
+    if (!moved) {
       return NextResponse.json({ ok: false, error: "Image not found" }, { status: 404 });
     }
 
@@ -191,18 +188,47 @@ export async function PATCH(req: NextRequest) {
     if (!gallery.categories.some((c: any) => c.key === category)) {
       gallery.categories.push({ key: category, name: DEFAULT_CATEGORY_NAMES[category] || category });
     }
-    let target = newFolders.find((f: any) => f.key === category);
-    if (!target) {
-      target = { key: category, images: [] };
-      newFolders.push(target);
-    }
-    target.images.push(movedImg);
-
-    gallery.folders = newFolders;
     content.gallery = gallery;
     saveContent(content);
     return NextResponse.json({ ok: true, moved: src, category });
   } catch (error) {
     return NextResponse.json({ ok: false, error: "Move failed" }, { status: 500 });
+  }
+}
+
+// 重排散图顺序：body { srcs: string[] } 全量散图顺序（主文件夹内按 srcs 顺序重排）
+export async function PUT(req: NextRequest) {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("cms_session")?.value;
+  if (!token || !verifySession(token)) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+  try {
+    const body = await req.json();
+    const srcs = Array.isArray(body?.srcs) ? body.srcs.filter((s: unknown) => typeof s === "string") : [];
+    if (srcs.length === 0) {
+      return NextResponse.json({ ok: false, error: "Missing srcs" }, { status: 400 });
+    }
+
+    const content = getContent() as any;
+    const gallery: GalleryData = content?.gallery || { folders: [] };
+    const mainFolder = gallery.folders?.[0];
+    if (!mainFolder || !Array.isArray(mainFolder.images)) {
+      return NextResponse.json({ ok: false, error: "No main folder" }, { status: 404 });
+    }
+
+    // srcs 必须与主文件夹图片一一对应（全量）
+    const curSrcs = mainFolder.images.map((i: any) => i.src);
+    if (curSrcs.length !== srcs.length || !srcs.every((s: string) => curSrcs.includes(s))) {
+      return NextResponse.json({ ok: false, error: "srcs 必须包含主文件夹全部图片" }, { status: 400 });
+    }
+    const bySrc = new Map(mainFolder.images.map((i: any) => [i.src, i]));
+    mainFolder.images = srcs.map((s: string) => bySrc.get(s)!);
+
+    content.gallery = gallery;
+    saveContent(content);
+    return NextResponse.json({ ok: true, reordered: mainFolder.images.length });
+  } catch (error) {
+    return NextResponse.json({ ok: false, error: "Reorder failed" }, { status: 500 });
   }
 }

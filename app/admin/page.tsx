@@ -211,6 +211,10 @@ const ArraySection = ({ title, subtitle, onTitleChange, onSubtitleChange, items,
 );
 
 const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onContentChange: (c: SiteContent) => void }) => {
+  type CategoryType = { key: string; name: string };
+  type ImageType = { src: string; name?: string; category?: string; sizeKB?: number };
+  type FolderType = { key: string; images: ImageType[] };
+  type GroupType = { id: string; category: string; name: string; cover: string; images: string[] };
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [failedFiles, setFailedFiles] = useState<File[]>([]);
   const [failedDetail, setFailedDetail] = useState<string[]>([]);
@@ -220,17 +224,29 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
   const [opMsg, setOpMsg] = useState("");
   const [busySrc, setBusySrc] = useState("");
   const [newCatName, setNewCatName] = useState("");
-
+  // A. Drag & Drop Sorting for Scattered Images
+  const [draggedSrc, setDraggedSrc] = useState<string | null>(null);
+  // B. Group Creation
+  const [selectedImageSrcs, setSelectedImageSrcs] = useState<Set<string>>(new Set());
+  const [newGroupName, setNewGroupName] = useState("");
+  const [newGroupCat, setNewGroupCat] = useState("boardbook");
+  const [newGroupCover, setNewGroupCover] = useState("");
+  // B. Group Editing
+  const [editingGroupId, setEditingGroupId] = useState<string | null>(null);
+  const [editGroupName, setEditGroupName] = useState("");
+  const [editGroupCat, setEditGroupCat] = useState("");
+  const [editGroupImages, setEditGroupImages] = useState<string[]>([]);
+  const [draggedGroupImg, setDraggedGroupImg] = useState<string | null>(null);
+  // C. 安全改进：仅更新 gallery 字段
   const refreshContent = async () => {
     try {
       const res = await fetch("/api/admin/content");
       if (res.ok) {
         const fresh = await res.json();
-        onContentChange(mergeDefaults(fresh));
+        onContentChange({ ...content, gallery: fresh.gallery || content.gallery } as any);
       }
     } catch { /* ignore */ }
   };
-
   const uploadFiles = async (files: File[], cat: string) => {
     if (files.length === 0) {
       setUploadMsg("请先选择图片");
@@ -246,7 +262,6 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       const res = await fetch("/api/admin/gallery", { method: "POST", body: formData });
       const data = await res.json();
       if (data.ok) {
-        // 按文件名匹配后端报错，保留失败文件供一键重传
         const errNames = (data.errors || []).map((e: string) => e.split(":")[0].trim());
         const remaining = files.filter((f) => errNames.includes(f.name));
         setFailedFiles(remaining);
@@ -267,7 +282,6 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       setUploading(false);
     }
   };
-
   const moveImage = async (src: string, to: string) => {
     if (busySrc) return;
     setBusySrc(src);
@@ -292,7 +306,6 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       setBusySrc("");
     }
   };
-
   const deleteImage = async (src: string) => {
     if (!window.confirm("确定删除这张图片？文件将被永久删除，不可恢复。")) return;
     setBusySrc(src);
@@ -316,16 +329,20 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       setBusySrc("");
     }
   };
-
-  const folders = content.gallery?.folders || [];
-  const categories = content.gallery?.categories || [];
+  const folders: FolderType[] = content.gallery?.folders || [];
+  const categories: CategoryType[] = content.gallery?.categories || [];
+  const groups: GroupType[] = content.gallery?.groups || [];
+  
   const catName = (key: string) => categories.find((c) => c.key === key)?.name || DEFAULT_CATEGORY_NAMES[key] || key;
-
-  const updateGallery = (g: { folders: { key: string; images: any[] }[]; categories: { key: string; name: string }[] }) => {
-    // 保留 groups 字段（组结构不进 folders，避免被覆盖丢失）
+  
+  const allImages: ImageType[] = folders.flatMap(f => f.images || []);
+  const allCatKeys = Array.from(new Set([
+    ...categories.map(c => c.key),
+    ...allImages.map(img => img.category || "uncategorized")
+  ]));
+  const updateGallery = (g: { folders?: FolderType[]; categories?: CategoryType[]; groups?: GroupType[] }) => {
     onContentChange({ ...content, gallery: { ...(content.gallery || {}), ...g } as any });
   };
-
   const addCategory = () => {
     const name = newCatName.trim();
     if (!name) return;
@@ -337,14 +354,11 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
     });
     setNewCatName("");
   };
-
   const renameCategory = (key: string, name: string) => {
     updateGallery({ folders, categories: categories.map((c) => (c.key === key ? { ...c, name } : c)) });
   };
-
   const removeCategory = (key: string) => {
     const target = key === "uncategorized" ? null : "uncategorized";
-    // 该分类下的图片移到未分类，同时删除该分类文件夹
     const newFolders = folders
       .map((f) => ({
         ...f,
@@ -356,7 +370,6 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
       categories: categories.filter((c) => c.key !== key),
     });
   };
-
   const handleFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files ? Array.from(e.target.files) : [];
     setSelectedFiles(files);
@@ -364,11 +377,194 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
     setFailedDetail([]);
     setUploadMsg("");
   };
-
   const handleUpload = async () => {
     await uploadFiles(selectedFiles, category);
   };
-
+  // --- A. 散图排序逻辑 ---
+  const handleReorderScattered = async (newSrcs: string[]) => {
+    const newImages = newSrcs.map(src => allImages.find(i => i.src === src)).filter((i): i is ImageType => Boolean(i));
+    const newFolders = [...folders];
+    if (newFolders.length > 0) {
+      newFolders[0] = { ...newFolders[0], images: newImages };
+    } else {
+      newFolders.push({ key: "main", images: newImages });
+    }
+    onContentChange({ ...content, gallery: { ...content.gallery, folders: newFolders } } as any);
+    try {
+      const res = await fetch("/api/admin/gallery", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ srcs: newSrcs })
+      });
+      if (res.ok) await refreshContent();
+    } catch {
+      setOpMsg("排序保存失败");
+    }
+  };
+  const moveScatteredUp = (src: string, cat: string) => {
+    const catImages = allImages.filter(i => (i.category || "uncategorized") === cat);
+    const idx = catImages.findIndex(i => i.src === src);
+    if (idx > 0) {
+      const prevSrc = catImages[idx - 1].src;
+      const newSrcs = allImages.map(i => i.src);
+      const i1 = newSrcs.indexOf(src);
+      const i2 = newSrcs.indexOf(prevSrc);
+      [newSrcs[i1], newSrcs[i2]] = [newSrcs[i2], newSrcs[i1]];
+      handleReorderScattered(newSrcs);
+    }
+  };
+  const moveScatteredDown = (src: string, cat: string) => {
+    const catImages = allImages.filter(i => (i.category || "uncategorized") === cat);
+    const idx = catImages.findIndex(i => i.src === src);
+    if (idx >= 0 && idx < catImages.length - 1) {
+      const nextSrc = catImages[idx + 1].src;
+      const newSrcs = allImages.map(i => i.src);
+      const i1 = newSrcs.indexOf(src);
+      const i2 = newSrcs.indexOf(nextSrc);
+      [newSrcs[i1], newSrcs[i2]] = [newSrcs[i2], newSrcs[i1]];
+      handleReorderScattered(newSrcs);
+    }
+  };
+  const dropScattered = (targetSrc: string) => {
+    if (!draggedSrc || draggedSrc === targetSrc) return;
+    const newSrcs = allImages.map(i => i.src);
+    const srcIdx = newSrcs.indexOf(draggedSrc);
+    const tgtIdx = newSrcs.indexOf(targetSrc);
+    if (srcIdx === -1 || tgtIdx === -1) return;
+    
+    newSrcs.splice(srcIdx, 1);
+    const insertIdx = newSrcs.indexOf(targetSrc);
+    newSrcs.splice(insertIdx, 0, draggedSrc);
+    
+    handleReorderScattered(newSrcs);
+    setDraggedSrc(null);
+  };
+  // --- B. 组建及管理逻辑 ---
+  const toggleImageSelection = (src: string) => {
+    const newSet = new Set(selectedImageSrcs);
+    if (newSet.has(src)) newSet.delete(src);
+    else newSet.add(src);
+    setSelectedImageSrcs(newSet);
+    if (!newSet.has(newGroupCover)) setNewGroupCover("");
+  };
+  const handleCreateGroup = async () => {
+    const srcs = Array.from(selectedImageSrcs);
+    if (srcs.length === 0) return;
+    const cover = newGroupCover || srcs[0];
+    if (!newGroupName.trim()) { setOpMsg("请输入组名称"); return; }
+    
+    setOpMsg("创建组中...");
+    try {
+      const res = await fetch("/api/admin/groups", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: newGroupName, category: newGroupCat, cover, srcs })
+      });
+      if (res.ok) {
+        setSelectedImageSrcs(new Set());
+        setNewGroupName("");
+        setNewGroupCover("");
+        setOpMsg("建组成功 ✓");
+        await refreshContent();
+      } else {
+        setOpMsg("建组失败");
+      }
+    } catch {
+      setOpMsg("建组异常");
+    }
+  };
+  const moveGroup = async (id: string, direction: 'left' | 'right') => {
+    const idx = groups.findIndex(g => g.id === id);
+    if (idx === -1) return;
+    if (direction === 'left' && idx === 0) return;
+    if (direction === 'right' && idx === groups.length - 1) return;
+    
+    const newIds = groups.map(g => g.id);
+    const swapIdx = direction === 'left' ? idx - 1 : idx + 1;
+    [newIds[idx], newIds[swapIdx]] = [newIds[swapIdx], newIds[idx]];
+    
+    const newGroups = [...groups];
+    [newGroups[idx], newGroups[swapIdx]] = [newGroups[swapIdx], newGroups[idx]];
+    onContentChange({ ...content, gallery: { ...content.gallery, groups: newGroups } } as any);
+    try {
+      await fetch("/api/admin/groups", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: newIds })
+      });
+      await refreshContent();
+    } catch {}
+  };
+  const deleteGroup = async (id: string, count: number) => {
+    if (!window.confirm(`确定删除该组？组内 ${count} 张图将回到散图区。`)) return;
+    setOpMsg("");
+    try {
+      const res = await fetch("/api/admin/groups", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+      });
+      if (res.ok) {
+        setOpMsg("已删除组 ✓");
+        await refreshContent();
+      } else {
+        setOpMsg("删除组失败");
+      }
+    } catch {
+      setOpMsg("删除异常");
+    }
+  };
+  const saveGroupEdit = async () => {
+    if (!editingGroupId) return;
+    setOpMsg("保存组中...");
+    try {
+      const res = await fetch("/api/admin/groups", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          id: editingGroupId, 
+          name: editGroupName, 
+          category: editGroupCat, 
+          images: editGroupImages 
+        })
+      });
+      if (res.ok) {
+        setEditingGroupId(null);
+        setOpMsg("组保存成功 ✓");
+        await refreshContent();
+      } else {
+        setOpMsg("保存失败");
+      }
+    } catch {
+      setOpMsg("保存异常");
+    }
+  };
+  const setGroupCoverInstant = async (id: string, coverSrc: string) => {
+    const newGroups = groups.map(g => g.id === id ? { ...g, cover: coverSrc } : g);
+    onContentChange({ ...content, gallery: { ...content.gallery, groups: newGroups } } as any);
+    
+    try {
+      await fetch("/api/admin/groups", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, cover: coverSrc })
+      });
+      await refreshContent();
+    } catch {}
+  };
+  const dropGroupImg = (targetSrc: string) => {
+    if (!draggedGroupImg || draggedGroupImg === targetSrc) return;
+    const newImgs = [...editGroupImages];
+    const srcIdx = newImgs.indexOf(draggedGroupImg);
+    const tgtIdx = newImgs.indexOf(targetSrc);
+    if (srcIdx === -1 || tgtIdx === -1) return;
+    
+    newImgs.splice(srcIdx, 1);
+    const insertIdx = newImgs.indexOf(targetSrc);
+    newImgs.splice(insertIdx, 0, draggedGroupImg);
+    setEditGroupImages(newImgs);
+    setDraggedGroupImg(null);
+  };
   return (
     <div className="space-y-8">
       <Section title="分类管理">
@@ -410,7 +606,6 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
           </button>
         </div>
       </Section>
-
       <Section title="批量上传图片">
         <p className="text-sm text-neutral-500 mb-4">可一次选择多张图片（JPG/PNG/WebP/GIF/SVG，单张 ≤5MB，最多 50 张），上传后自动归入所选分类并在下方图库中显示。</p>
         <div className="flex flex-wrap items-end gap-4">
@@ -469,67 +664,224 @@ const GalleryTab = ({ content, onContentChange }: { content: SiteContent; onCont
           </div>
         )}
       </Section>
-
       <Section title="产品展示图库">
         <p className="text-sm text-neutral-500 mb-2">图片按分类分组展示。<span className="text-[#d4a84b]">切换分类下拉即立即移动保存</span>；删除会同时移除文件，不可恢复。</p>
         {opMsg && <p className="mb-4 text-sm font-medium text-[#d4a84b]">{opMsg}</p>}
-
-        {(content.gallery?.groups?.length ?? 0) > 0 && (
+        {/* B. 建组操作条 */}
+        {selectedImageSrcs.size > 0 && (
+          <div className="p-4 border border-[#d4a84b] bg-[#d4a84b]/10 rounded mb-6 flex flex-col gap-3 sticky top-4 z-20 shadow-xl backdrop-blur-sm">
+            <div className="flex items-center justify-between">
+              <h4 className="text-sm font-bold text-[#d4a84b]">已选中 {selectedImageSrcs.size} 张图片，创建组卡片</h4>
+              <button onClick={() => { setSelectedImageSrcs(new Set()); setNewGroupCover(""); }} className="text-xs text-neutral-400 hover:text-white">取消选中</button>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <input 
+                type="text" 
+                value={newGroupName} 
+                onChange={e => setNewGroupName(e.target.value)} 
+                placeholder="组名称 (必需)" 
+                className="bg-neutral-900 border border-[#d4a84b]/50 rounded px-3 py-1.5 text-sm text-white focus:border-[#d4a84b] focus:outline-none"
+              />
+              <select 
+                value={newGroupCat} 
+                onChange={e => setNewGroupCat(e.target.value)}
+                className="bg-neutral-900 border border-[#d4a84b]/50 rounded px-3 py-1.5 text-sm text-white focus:border-[#d4a84b] focus:outline-none"
+              >
+                {categories.map((c) => (
+                  <option key={c.key} value={c.key}>{catName(c.key)}</option>
+                ))}
+              </select>
+              <button 
+                onClick={handleCreateGroup} 
+                disabled={!newGroupName.trim()}
+                className="bg-[#d4a84b] text-black font-bold px-4 py-1.5 rounded text-sm disabled:opacity-50 hover:bg-[#c29639] transition-colors"
+              >
+                创建组
+              </button>
+            </div>
+            <div className="mt-2">
+              <p className="text-xs text-neutral-400 mb-2">点击缩略图选择封面（带金色边框）</p>
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {Array.from(selectedImageSrcs).map(src => (
+                  <img 
+                    key={src} 
+                    src={src} 
+                    alt="" 
+                    onClick={() => setNewGroupCover(src)}
+                    className={`w-12 h-12 object-cover rounded cursor-pointer border-2 ${newGroupCover === src || (!newGroupCover && src === Array.from(selectedImageSrcs)[0]) ? 'border-[#d4a84b]' : 'border-transparent'}`} 
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        {/* B. 组列表区（可管理） */}
+        {groups.length > 0 && (
           <div className="p-5 border border-[#d4a84b]/30 rounded bg-[#d4a84b]/[0.04] mb-6">
-            <h4 className="text-sm font-bold text-[#d4a84b] mb-1">📚 产品组（同一本书/同一产品的多图合集）</h4>
-            <p className="text-xs text-neutral-500 mb-4">共 {(content.gallery?.groups || []).length} 组，{(content.gallery?.groups || []).reduce((a: number, g: any) => a + (g.images?.length || 0), 0)} 张图。组内图片在前台以「封面 + N」形式展示，点击可浏览整组。当前版本组结构只读，如需调整请联系开发。</p>
-            <div className="grid grid-cols-3 md:grid-cols-8 gap-3">
-              {(content.gallery?.groups || []).map((g: any, gi: number) => (
-                <div key={gi} className="p-2 border border-neutral-800 rounded bg-neutral-900 relative">
-                  {g.cover ? <img src={g.cover} alt="" className="w-full h-16 object-cover rounded bg-neutral-800" /> : <div className="w-full h-16 bg-neutral-800 rounded" />}
-                  <div className="absolute top-3 right-3 bg-black/70 text-[#d4a84b] text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-[#d4a84b]/40">+{g.images?.length - 1}</div>
-                  <p className="mt-1.5 text-[10px] text-neutral-400 truncate text-center">{catName(g.category)} · {g.images?.length}张</p>
+            <h4 className="text-sm font-bold text-[#d4a84b] mb-1">📚 产品组卡片</h4>
+            <p className="text-xs text-neutral-500 mb-4">共 {groups.length} 组，包含 {groups.reduce((a: number, g: GroupType) => a + (g.images?.length || 0), 0)} 张图。</p>
+            
+            <div className="space-y-4">
+              {groups.map((g: GroupType) => (
+                <div key={g.id} className="border border-neutral-800 rounded bg-neutral-900 overflow-hidden">
+                  <div className="p-3 flex items-center gap-4 group/groupcard relative">
+                    <div className="relative w-20 h-20 shrink-0">
+                      <img src={g.cover || g.images?.[0]} alt="" className="w-full h-full object-cover rounded bg-neutral-800" />
+                      <div className="absolute -top-2 -right-2 bg-black text-[#d4a84b] text-xs font-bold px-2 py-0.5 rounded-full border border-[#d4a84b]/40 shadow-md">
+                        +{g.images?.length > 0 ? g.images.length - 1 : 0}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="text-sm font-bold text-white">{g.name}</h5>
+                      <p className="text-xs text-neutral-400 mt-1">{catName(g.category)} · {g.images?.length || 0} 张</p>
+                    </div>
+                    
+                    <div className="opacity-0 group-hover/groupcard:opacity-100 transition-opacity flex items-center gap-2 pr-2">
+                      <button onClick={() => moveGroup(g.id, 'left')} className="p-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded" title="前移">←</button>
+                      <button onClick={() => moveGroup(g.id, 'right')} className="p-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded" title="后移">→</button>
+                      <button onClick={() => {
+                        setEditingGroupId(g.id);
+                        setEditGroupName(g.name);
+                        setEditGroupCat(g.category);
+                        setEditGroupImages(g.images || []);
+                      }} className="p-1.5 bg-blue-900/30 hover:bg-blue-800/50 text-blue-400 rounded text-xs px-3 ml-2">编辑</button>
+                      <button onClick={() => deleteGroup(g.id, g.images?.length || 0)} className="p-1.5 bg-red-900/30 hover:bg-red-800/50 text-red-400 rounded text-xs px-3">删除</button>
+                    </div>
+                  </div>
+                  
+                  {editingGroupId === g.id && (
+                    <div className="p-4 bg-neutral-950 border-t border-neutral-800 space-y-4">
+                      <div className="flex flex-wrap gap-3">
+                        <input 
+                          type="text" 
+                          value={editGroupName} 
+                          onChange={e => setEditGroupName(e.target.value)}
+                          className="bg-neutral-900 border border-neutral-700 rounded px-3 py-1.5 text-sm text-white focus:border-[#d4a84b] focus:outline-none flex-1"
+                        />
+                        <select 
+                          value={editGroupCat} 
+                          onChange={e => setEditGroupCat(e.target.value)}
+                          className="bg-neutral-900 border border-neutral-700 rounded px-3 py-1.5 text-sm text-white focus:border-[#d4a84b] focus:outline-none w-48"
+                        >
+                          {categories.map((c) => (
+                            <option key={c.key} value={c.key}>{catName(c.key)}</option>
+                          ))}
+                        </select>
+                        <button onClick={saveGroupEdit} className="bg-[#d4a84b] text-black px-4 py-1.5 rounded text-sm font-bold hover:bg-[#c29639]">保存更改</button>
+                        <button onClick={() => setEditingGroupId(null)} className="bg-neutral-800 text-white px-4 py-1.5 rounded text-sm hover:bg-neutral-700">取消</button>
+                      </div>
+                      
+                      <div>
+                        <p className="text-xs text-neutral-400 mb-2">组内图片 (拖拽排序，点击设封面，右上角移除)</p>
+                        <div className="flex flex-wrap gap-2">
+                          {editGroupImages.map(src => (
+                            <div 
+                              key={src}
+                              draggable
+                              onDragStart={() => setDraggedGroupImg(src)}
+                              onDragOver={(e) => e.preventDefault()}
+                              onDrop={(e) => { e.preventDefault(); dropGroupImg(src); }}
+                              className={`relative w-16 h-16 group/img cursor-grab active:cursor-grabbing border-2 ${g.cover === src ? 'border-[#d4a84b]' : (draggedGroupImg === src ? 'opacity-50 border-dashed border-neutral-500' : 'border-transparent')}`}
+                            >
+                              <img 
+                                src={src} 
+                                alt="" 
+                                onClick={() => setGroupCoverInstant(g.id, src)}
+                                className="w-full h-full object-cover rounded bg-neutral-800 cursor-pointer" 
+                              />
+                              {editGroupImages.length > 1 && (
+                                <button 
+                                  onClick={() => setEditGroupImages(editGroupImages.filter(s => s !== src))}
+                                  className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] opacity-0 group-hover/img:opacity-100 shadow-sm"
+                                >
+                                  ✕
+                                </button>
+                              )}
+                              {g.cover === src && (
+                                <div className="absolute bottom-0 inset-x-0 bg-[#d4a84b]/90 text-black text-[9px] text-center font-bold">封面</div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         )}
-
-        {folders.map((folder, folderIdx) => (
-          <div key={folderIdx} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
-            <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {catName(folder.key)}</h4>
-            <p className="text-xs text-neutral-500 mb-4">{folder.images?.length || 0} 张图片</p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-              {(folder.images || []).map((img, imgIdx) => (
-                <div key={imgIdx} className="p-2 border border-neutral-800 rounded bg-neutral-900 relative group">
-                  {img.src ? <img src={img.src} alt="" className="w-full h-20 object-cover rounded bg-neutral-800" /> : <div className="w-full h-20 bg-neutral-800 rounded" />}
-                  <div className="mt-2 space-y-1">
-                    <select
-                      value={img.category || ""}
-                      disabled={busySrc === img.src}
-                      onChange={(e) => moveImage(img.src, e.target.value)}
-                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-1.5 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all disabled:opacity-50"
-                    >
-                      {categories.map((c) => (
-                        <option key={c.key} value={c.key}>{catName(c.key)}</option>
-                      ))}
-                    </select>
-                    <input
-                      type="text"
-                      value={img.name || ""}
-                      onChange={(e) => onContentChange({ ...content, gallery: { folders: folders.map((f, fi) => fi === folderIdx ? { ...f, images: f.images.map((im, ii) => ii === imgIdx ? { ...im, name: e.target.value } : im) } : f), categories } as any })}
-                      placeholder="名称"
-                      className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
-                    />
-                  </div>
-                  <button
-                    onClick={() => deleteImage(img.src)}
-                    disabled={busySrc === img.src}
-                    className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-40"
+        {/* A. 散图网格区 */}
+        {allCatKeys.map((catKey) => {
+          const catImages = allImages.filter(img => (img.category || "uncategorized") === catKey);
+          if (catImages.length === 0) return null;
+          return (
+            <div key={catKey} className="p-5 border border-neutral-800 rounded bg-neutral-900/50 mb-6 shadow-inner">
+              <h4 className="text-sm font-bold text-[#d4a84b] mb-2 uppercase">分类: {catName(catKey)}</h4>
+              <p className="text-xs text-neutral-500 mb-4">{catImages.length} 张图片</p>
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+                {catImages.map((img) => (
+                  <div 
+                    key={img.src} 
+                    draggable
+                    onDragStart={() => setDraggedSrc(img.src)}
+                    onDragOver={(e) => { e.preventDefault(); }}
+                    onDrop={(e) => { e.preventDefault(); dropScattered(img.src); }}
+                    className={`p-2 border rounded relative group transition-all ${draggedSrc === img.src ? 'opacity-50 border-[#d4a84b]' : 'border-neutral-800 bg-neutral-900 hover:border-neutral-600'}`}
                   >
-                    {busySrc === img.src ? "..." : "删除"}
-                  </button>
-                </div>
-              ))}
+                    <input 
+                      type="checkbox"
+                      checked={selectedImageSrcs.has(img.src)}
+                      onChange={() => toggleImageSelection(img.src)}
+                      className="absolute top-3 left-3 z-20 w-4 h-4 accent-[#d4a84b] cursor-pointer"
+                    />
+                    
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                       <button onClick={() => moveScatteredUp(img.src, catKey)} className="bg-black/70 text-white rounded px-1.5 py-0.5 text-xs hover:text-[#d4a84b]">↑</button>
+                       <button onClick={() => moveScatteredDown(img.src, catKey)} className="bg-black/70 text-white rounded px-1.5 py-0.5 text-xs hover:text-[#d4a84b]">↓</button>
+                    </div>
+                    <img src={img.src} alt="" className="w-full h-20 object-cover rounded bg-neutral-800" />
+                    
+                    <div className="mt-2 space-y-1 relative z-10">
+                      <select
+                        value={img.category || "uncategorized"}
+                        disabled={busySrc === img.src}
+                        onChange={(e) => moveImage(img.src, e.target.value)}
+                        className="w-full bg-neutral-800 border border-neutral-700 rounded px-1.5 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all disabled:opacity-50"
+                      >
+                        {categories.map((c) => (
+                          <option key={c.key} value={c.key}>{catName(c.key)}</option>
+                        ))}
+                      </select>
+                      <input
+                        type="text"
+                        value={img.name || ""}
+                        onChange={(e) => {
+                          const newFolders = folders.map(f => ({
+                            ...f,
+                            images: f.images.map(im => im.src === img.src ? { ...im, name: e.target.value } : im)
+                          }));
+                          onContentChange({ ...content, gallery: { ...content.gallery, folders: newFolders } } as any);
+                        }}
+                        placeholder="名称"
+                        className="w-full bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-[11px] text-white focus:border-[#d4a84b] focus:outline-none focus:ring-1 focus:ring-[#d4a84b] transition-all"
+                      />
+                    </div>
+                    
+                    <button
+                      onClick={() => deleteImage(img.src)}
+                      disabled={busySrc === img.src}
+                      className="absolute top-1 right-1 text-[10px] text-red-400 hover:text-red-300 bg-black/70 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-40 z-20"
+                    >
+                      {busySrc === img.src ? "..." : "删除"}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-        {folders.length === 0 && <p className="text-sm text-neutral-500">暂无图片，请先批量上传。</p>}
+          );
+        })}
+        {allCatKeys.length === 0 && <p className="text-sm text-neutral-500">暂无图片，请先批量上传。</p>}
       </Section>
     </div>
   );
