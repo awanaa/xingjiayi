@@ -928,12 +928,6 @@
         "key": "2026-08-20__图库",
         "images": [
           {
-            "src": "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp",
-            "name": "image114.jpg",
-            "sizeKB": 39,
-            "category": "custom"
-          },
-          {
             "src": "/product-gallery/2026-08-20__产品图库/custom-TOP-image161.webp",
             "name": "image161.jpg",
             "sizeKB": 93,
@@ -1766,12 +1760,7 @@
             "name": "IMG_9959小.jpg",
             "sizeKB": 234,
             "category": "stickers"
-          }
-        ]
-      },
-      {
-        "key": "hardcover",
-        "images": [
+          },
           {
             "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image147.webp",
             "name": "image147.jpg",
@@ -1783,23 +1772,6 @@
             "name": "image139.jpg",
             "sizeKB": 10,
             "category": "hardcover"
-          }
-        ]
-      },
-      {
-        "key": "custom",
-        "images": [
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
-            "name": "image113.jpg",
-            "sizeKB": 24,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto16.webp",
-            "name": "hdphoto16.jpg",
-            "sizeKB": 27,
-            "category": "custom"
           }
         ]
       }
@@ -2151,6 +2123,17 @@
         "images": [
           "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9945小.webp",
           "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9949小.webp"
+        ]
+      },
+      {
+        "id": "custom-5",
+        "category": "custom",
+        "name": "匠心特装定制·组05",
+        "cover": "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto16.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp"
         ]
       }
     ],
