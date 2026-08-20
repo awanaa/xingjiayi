@@ -1702,30 +1702,6 @@
             "category": "stickers"
           },
           {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image42.webp",
-            "name": "image42.jpg",
-            "sizeKB": 34,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image43.webp",
-            "name": "image43.jpg",
-            "sizeKB": 40,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image44.webp",
-            "name": "image44.jpg",
-            "sizeKB": 42,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
-            "name": "image45.jpg",
-            "sizeKB": 62,
-            "category": "stickers"
-          },
-          {
             "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image46.webp",
             "name": "image46.jpg",
             "sizeKB": 20,
@@ -2122,6 +2098,18 @@
           "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
           "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto16.webp",
           "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp"
+        ]
+      },
+      {
+        "id": "stickers-mt0z2iyvv9q",
+        "category": "stickers",
+        "name": "1",
+        "cover": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
+          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image42.webp",
+          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image43.webp",
+          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image44.webp"
         ]
       }
     ],
