@@ -21,7 +21,7 @@ interface GalleryImage { src: string; name: string; sizeKB: number; category: st
 interface FolderData { key: string; images: GalleryImage[]; }
 interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; }
 
-const TYPE_ORDER = ["yo","custom","soundlight","paperback","boardbook","cards","toys","hardcover","stickers"];
+const TYPE_ORDER = ["custom","boardbook","cards","toys","hardcover","stickers"];
 
 const typeMeta: Record<string, { icon: React.ReactNode; label: Record<string,string>; desc: Record<string,string> }> = {
   yo: { icon: <Gift className="w-5 h-5" />, label: { en:"YO Series", zh:"YO类", ja:"YOシリーズ", ko:"YO 시리즈" }, desc: { en:"Signature YO series products.", zh:"特色 YO 系列产品。", ja:"特徴的なYOシリーズ製品。", ko:"시그니처 YO 시리즈 제품." } },
