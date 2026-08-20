@@ -19,7 +19,7 @@ import { useLang } from "../../hooks/useLang";
 
 interface GalleryImage { src: string; name: string; sizeKB: number; category: string; }
 interface FolderData { key: string; images: GalleryImage[]; }
-interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; }
+interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; trailing?: string[]; }
 
 const TYPE_ORDER = ["custom","boardbook","cards","toys","hardcover","stickers"];
 
@@ -163,6 +163,21 @@ export default function PortfolioPage() {
     setSelectedCatKey(g.category);
   }, [groupImages]);
 
+  // 打开组后跟随图（trailing：卡片后面平铺的图，灯箱只浏览跟随图）
+  const openTrailing = useCallback((g: GalleryGroup) => {
+    if (!g.trailing?.length) return;
+    const imgs = g.trailing.map((src) => ({ src, name: decodeURIComponent(src.split("/").pop() || ""), sizeKB: 0, category: g.category }));
+    setLightboxImages(imgs);
+    setSelectedImage(imgs[0]);
+    setSelectedCatKey(g.category);
+  }, []);
+
+  // 组后跟随图的显示名（去前缀、去扩展名）
+  const trailName = useCallback((src: string) => {
+    const n = decodeURIComponent(src.split("/").pop() || "");
+    return n.replace(/^boardbook-TOP-/, "").replace(/\.[^.]+$/, "");
+  }, []);
+
   const t = (m: Record<string, string>) => m[lang] ?? m.en ?? "";
 
   const labels: Record<string, Record<string, string>> = {
@@ -257,13 +272,23 @@ export default function PortfolioPage() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                 {catGroups.map((g) => (
-                  <GroupCard
-                    key={g.id}
-                    group={g}
-                    isError={imageErrors.has(g.cover)}
-                    onSelect={() => openGroup(g)}
-                    onError={() => handleImgError(g.cover)}
-                  />
+                  <React.Fragment key={g.id}>
+                    <GroupCard
+                      group={g}
+                      isError={imageErrors.has(g.cover)}
+                      onSelect={() => openGroup(g)}
+                      onError={() => handleImgError(g.cover)}
+                    />
+                    {g.trailing?.map((src, ti) => (
+                      <FigureCard
+                        key={`${g.id}-tr-${ti}`}
+                        img={{ src, name: trailName(src), sizeKB: 0, category: g.category }}
+                        isError={imageErrors.has(src)}
+                        onSelect={() => openTrailing(g)}
+                        onError={() => handleImgError(src)}
+                      />
+                    ))}
+                  </React.Fragment>
                 ))}
                 {(images ?? []).map((img, i) => (
                   <FigureCard
