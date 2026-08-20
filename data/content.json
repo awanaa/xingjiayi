@@ -988,12 +988,6 @@
             "category": "boardbook"
           },
           {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
-            "name": "image113.jpg",
-            "sizeKB": 24,
-            "category": "boardbook"
-          },
-          {
             "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image131.webp",
             "name": "image131.jpg",
             "sizeKB": 10,
@@ -1795,6 +1789,17 @@
             "name": "image139.jpg",
             "sizeKB": 10,
             "category": "hardcover"
+          }
+        ]
+      },
+      {
+        "key": "custom",
+        "images": [
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
+            "name": "image113.jpg",
+            "sizeKB": 24,
+            "category": "custom"
           }
         ]
       }
