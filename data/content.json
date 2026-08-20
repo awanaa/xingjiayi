@@ -897,1639 +897,22 @@
     ]
   },
   "gallery": {
-    "folders": [
-      {
-        "key": "2020-04-14__产品照片",
-        "images": [
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7710.jpg",
-            "name": "IMG_7710.jpg",
-            "sizeKB": 8622,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7714.jpg",
-            "name": "IMG_7714.jpg",
-            "sizeKB": 5038.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7719.jpg",
-            "name": "IMG_7719.jpg",
-            "sizeKB": 4048.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7723.jpg",
-            "name": "IMG_7723.jpg",
-            "sizeKB": 4977,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7724.jpg",
-            "name": "IMG_7724.jpg",
-            "sizeKB": 5499.5,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7725.jpg",
-            "name": "IMG_7725.jpg",
-            "sizeKB": 5466,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7726.jpg",
-            "name": "IMG_7726.jpg",
-            "sizeKB": 2988.2,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_77266.jpg",
-            "name": "IMG_77266.jpg",
-            "sizeKB": 5207.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2020-04-14__产品照片/IMG_7732.jpg",
-            "name": "IMG_7732.jpg",
-            "sizeKB": 10387.9,
-            "category": "hardcover"
-          }
-        ]
-      },
-      {
-        "key": "20210924-产品图片",
-        "images": [
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9832小.jpg",
-            "name": "IMG_9832小.jpg",
-            "sizeKB": 1822.4,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9838小.jpg",
-            "name": "IMG_9838小.jpg",
-            "sizeKB": 1283.5,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9840小.jpg",
-            "name": "IMG_9840小.jpg",
-            "sizeKB": 1703.5,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9845小.jpg",
-            "name": "IMG_9845小.jpg",
-            "sizeKB": 1653.6,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9846小.jpg",
-            "name": "IMG_9846小.jpg",
-            "sizeKB": 1679.4,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9851小.jpg",
-            "name": "IMG_9851小.jpg",
-            "sizeKB": 1321.7,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9854小.jpg",
-            "name": "IMG_9854小.jpg",
-            "sizeKB": 2435.8,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9856小.jpg",
-            "name": "IMG_9856小.jpg",
-            "sizeKB": 1056.6,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9859小.jpg",
-            "name": "IMG_9859小.jpg",
-            "sizeKB": 1077.1,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9862小.jpg",
-            "name": "IMG_9862小.jpg",
-            "sizeKB": 1496.8,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9872小.jpg",
-            "name": "IMG_9872小.jpg",
-            "sizeKB": 1772.5,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9876小.jpg",
-            "name": "IMG_9876小.jpg",
-            "sizeKB": 1586.3,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9878小.jpg",
-            "name": "IMG_9878小.jpg",
-            "sizeKB": 1783.5,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9881小.jpg",
-            "name": "IMG_9881小.jpg",
-            "sizeKB": 1963.2,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9884小.jpg",
-            "name": "IMG_9884小.jpg",
-            "sizeKB": 1697,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9900小.jpg",
-            "name": "IMG_9900小.jpg",
-            "sizeKB": 1962.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9901小.jpg",
-            "name": "IMG_9901小.jpg",
-            "sizeKB": 1880.5,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9902小.jpg",
-            "name": "IMG_9902小.jpg",
-            "sizeKB": 3361.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9905小.jpg",
-            "name": "IMG_9905小.jpg",
-            "sizeKB": 2494.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9906小.jpg",
-            "name": "IMG_9906小.jpg",
-            "sizeKB": 2524.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9907小.jpg",
-            "name": "IMG_9907小.jpg",
-            "sizeKB": 2784.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9912小.jpg",
-            "name": "IMG_9912小.jpg",
-            "sizeKB": 3255.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9914小.jpg",
-            "name": "IMG_9914小.jpg",
-            "sizeKB": 1437.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9918小.jpg",
-            "name": "IMG_9918小.jpg",
-            "sizeKB": 1149.2,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9919小.jpg",
-            "name": "IMG_9919小.jpg",
-            "sizeKB": 1518.3,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9923.JPG",
-            "name": "IMG_9923.JPG",
-            "sizeKB": 3321.2,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9929小_.jpg",
-            "name": "IMG_9929小 .jpg",
-            "sizeKB": 1967.8,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9931小.jpg",
-            "name": "IMG_9931小.jpg",
-            "sizeKB": 1570.5,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9933小.jpg",
-            "name": "IMG_9933小.jpg",
-            "sizeKB": 1728,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9938小.jpg",
-            "name": "IMG_9938小.jpg",
-            "sizeKB": 1429.8,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9943小.jpg",
-            "name": "IMG_9943小.jpg",
-            "sizeKB": 1304.6,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9945小.jpg",
-            "name": "IMG_9945小.jpg",
-            "sizeKB": 3969.8,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9949小.jpg",
-            "name": "IMG_9949小.jpg",
-            "sizeKB": 2443.8,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9954小.jpg",
-            "name": "IMG_9954小.jpg",
-            "sizeKB": 3297,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9955小.jpg",
-            "name": "IMG_9955小.jpg",
-            "sizeKB": 1224.1,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9956小.jpg",
-            "name": "IMG_9956小.jpg",
-            "sizeKB": 1131.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9958小.jpg",
-            "name": "IMG_9958小.jpg",
-            "sizeKB": 1527.5,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9959小.jpg",
-            "name": "IMG_9959小.jpg",
-            "sizeKB": 1849.1,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9960小.jpg",
-            "name": "IMG_9960小.jpg",
-            "sizeKB": 1382.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9962小.jpg",
-            "name": "IMG_9962小.jpg",
-            "sizeKB": 2452.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9970小.jpg",
-            "name": "IMG_9970小.jpg",
-            "sizeKB": 2316.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/IMG_9974小.jpg",
-            "name": "IMG_9974小.jpg",
-            "sizeKB": 2341.3,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20210924-产品图片/扣图、.png",
-            "name": "扣图、.png",
-            "sizeKB": 8890.1,
-            "category": "toys"
-          }
-        ]
-      },
-      {
-        "key": "20220513产品图片",
-        "images": [
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7440.png",
-            "name": "_DSC7440.png",
-            "sizeKB": 7734.5,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7441.png",
-            "name": "_DSC7441.png",
-            "sizeKB": 11621,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7445.png",
-            "name": "_DSC7445.png",
-            "sizeKB": 2471.5,
-            "category": "paperback"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7446.png",
-            "name": "_DSC7446.png",
-            "sizeKB": 8997.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7447.png",
-            "name": "_DSC7447.png",
-            "sizeKB": 10220.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7448.png",
-            "name": "_DSC7448.png",
-            "sizeKB": 3225.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7450.png",
-            "name": "_DSC7450.png",
-            "sizeKB": 6284.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7451.png",
-            "name": "_DSC7451.png",
-            "sizeKB": 9610.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7452.png",
-            "name": "_DSC7452.png",
-            "sizeKB": 7440.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7453.png",
-            "name": "_DSC7453.png",
-            "sizeKB": 12178.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7455.png",
-            "name": "_DSC7455.png",
-            "sizeKB": 5259.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7456.png",
-            "name": "_DSC7456.png",
-            "sizeKB": 12414.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7457.png",
-            "name": "_DSC7457.png",
-            "sizeKB": 6793.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7458.png",
-            "name": "_DSC7458.png",
-            "sizeKB": 8295.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7459.png",
-            "name": "_DSC7459.png",
-            "sizeKB": 14320,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7460.png",
-            "name": "_DSC7460.png",
-            "sizeKB": 12787.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7461.png",
-            "name": "_DSC7461.png",
-            "sizeKB": 10263.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7462.png",
-            "name": "_DSC7462.png",
-            "sizeKB": 13796.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7463.png",
-            "name": "_DSC7463.png",
-            "sizeKB": 9750.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7464.png",
-            "name": "_DSC7464.png",
-            "sizeKB": 9358.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7465.png",
-            "name": "_DSC7465.png",
-            "sizeKB": 9884.7,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20220513产品图片/_DSC7466.png",
-            "name": "_DSC7466.png",
-            "sizeKB": 16355.9,
-            "category": "boardbook"
-          }
-        ]
-      },
-      {
-        "key": "20240111产品图片",
-        "images": [
-          {
-            "src": "/product-gallery/20240111产品图片/1.png",
-            "name": "1.png",
-            "sizeKB": 14051.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/10.png",
-            "name": "10.png",
-            "sizeKB": 16777.2,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/11.png",
-            "name": "11.png",
-            "sizeKB": 16792.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/12.png",
-            "name": "12.png",
-            "sizeKB": 16469.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/13.png",
-            "name": "13.png",
-            "sizeKB": 10146.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/14.png",
-            "name": "14.png",
-            "sizeKB": 15172.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/15.png",
-            "name": "15.png",
-            "sizeKB": 8118.5,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/16.png",
-            "name": "16.png",
-            "sizeKB": 10084.6,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/17.png",
-            "name": "17.png",
-            "sizeKB": 10658,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/18.png",
-            "name": "18.png",
-            "sizeKB": 6255.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/2.png",
-            "name": "2.png",
-            "sizeKB": 14189.1,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/3.png",
-            "name": "3.png",
-            "sizeKB": 14761.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/4.png",
-            "name": "4.png",
-            "sizeKB": 17540.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/5.png",
-            "name": "5.png",
-            "sizeKB": 16648.1,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/6.png",
-            "name": "6.png",
-            "sizeKB": 9344.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/7.png",
-            "name": "7.png",
-            "sizeKB": 13850.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/8.png",
-            "name": "8.png",
-            "sizeKB": 4675.6,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/20240111产品图片/9.png",
-            "name": "9.png",
-            "sizeKB": 20026,
-            "category": "toys"
-          }
-        ]
-      },
-      {
-        "key": "20240330跨越中秋产品照片",
-        "images": [
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/1.jpg",
-            "name": "1.jpg",
-            "sizeKB": 1065.2,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/2.jpg",
-            "name": "2.jpg",
-            "sizeKB": 3608.6,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/3.jpg",
-            "name": "3.jpg",
-            "sizeKB": 3686.3,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/4.jpg",
-            "name": "4.jpg",
-            "sizeKB": 6691.4,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/5.jpg",
-            "name": "5.jpg",
-            "sizeKB": 3395.5,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/20240330跨越中秋产品照片/6.jpg",
-            "name": "6.jpg",
-            "sizeKB": 4330.1,
-            "category": "custom"
-          }
-        ]
-      },
-      {
-        "key": "20251025产品拍照",
-        "images": [
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3644.png",
-            "name": "IMG_3644.png",
-            "sizeKB": 5281.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3645.png",
-            "name": "IMG_3645.png",
-            "sizeKB": 5443.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3652.png",
-            "name": "IMG_3652.png",
-            "sizeKB": 5824.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3654.png",
-            "name": "IMG_3654.png",
-            "sizeKB": 4547.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3655.png",
-            "name": "IMG_3655.png",
-            "sizeKB": 4487.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/20251025产品拍照/IMG_3658.png",
-            "name": "IMG_3658.png",
-            "sizeKB": 5275,
-            "category": "boardbook"
-          }
-        ]
-      },
-      {
-        "key": "children_books",
-        "images": [
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_101110.jpg",
-            "name": "IMG_20180605_101110.jpg",
-            "sizeKB": 2488.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104549.jpg",
-            "name": "IMG_20180605_104549.jpg",
-            "sizeKB": 1432.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104604.jpg",
-            "name": "IMG_20180605_104604.jpg",
-            "sizeKB": 1504,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104618.jpg",
-            "name": "IMG_20180605_104618.jpg",
-            "sizeKB": 1868.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104629.jpg",
-            "name": "IMG_20180605_104629.jpg",
-            "sizeKB": 1809.8,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104716.jpg",
-            "name": "IMG_20180605_104716.jpg",
-            "sizeKB": 1693.3,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104809.jpg",
-            "name": "IMG_20180605_104809.jpg",
-            "sizeKB": 1570.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_104930.jpg",
-            "name": "IMG_20180605_104930.jpg",
-            "sizeKB": 1462.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_105428.jpg",
-            "name": "IMG_20180605_105428.jpg",
-            "sizeKB": 1483.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_105844.jpg",
-            "name": "IMG_20180605_105844.jpg",
-            "sizeKB": 1595.6,
-            "category": "yo"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_105857.jpg",
-            "name": "IMG_20180605_105857.jpg",
-            "sizeKB": 1573.4,
-            "category": "yo"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_110057.jpg",
-            "name": "IMG_20180605_110057.jpg",
-            "sizeKB": 1886.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_110538.jpg",
-            "name": "IMG_20180605_110538.jpg",
-            "sizeKB": 1759.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_110549.jpg",
-            "name": "IMG_20180605_110549.jpg",
-            "sizeKB": 1572.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_110630.jpg",
-            "name": "IMG_20180605_110630.jpg",
-            "sizeKB": 1377.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_110828.jpg",
-            "name": "IMG_20180605_110828.jpg",
-            "sizeKB": 1429.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_111107.jpg",
-            "name": "IMG_20180605_111107.jpg",
-            "sizeKB": 2455.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_111155.jpg",
-            "name": "IMG_20180605_111155.jpg",
-            "sizeKB": 1863.1,
-            "category": "yo"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_111316.jpg",
-            "name": "IMG_20180605_111316.jpg",
-            "sizeKB": 1330.6,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/children_books/IMG_20180605_111326.jpg",
-            "name": "IMG_20180605_111326.jpg",
-            "sizeKB": 1582.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180525101811.jpg",
-            "name": "微信图片_20180525101811.jpg",
-            "sizeKB": 107.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180525102337.jpg",
-            "name": "微信图片_20180525102337.jpg",
-            "sizeKB": 113.1,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180525102347.jpg",
-            "name": "微信图片_20180525102347.jpg",
-            "sizeKB": 84.4,
-            "category": "soundlight"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164212.jpg",
-            "name": "微信图片_20180608164212.jpg",
-            "sizeKB": 115.6,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164225.jpg",
-            "name": "微信图片_20180608164225.jpg",
-            "sizeKB": 248.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164229.jpg",
-            "name": "微信图片_20180608164229.jpg",
-            "sizeKB": 127.7,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164242.jpg",
-            "name": "微信图片_20180608164242.jpg",
-            "sizeKB": 91.1,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164246.jpg",
-            "name": "微信图片_20180608164246.jpg",
-            "sizeKB": 84.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608164259.jpg",
-            "name": "微信图片_20180608164259.jpg",
-            "sizeKB": 142.5,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/children_books/微信图片_20180608165824.jpg",
-            "name": "微信图片_20180608165824.jpg",
-            "sizeKB": 84,
-            "category": "soundlight"
-          }
-        ]
-      },
-      {
-        "key": "crafts",
-        "images": [
-          {
-            "src": "/product-gallery/crafts/IMG_20180514_143423.jpg",
-            "name": "IMG_20180514_143423.jpg",
-            "sizeKB": 393.6,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/crafts/IMG_20180605_095814.jpg",
-            "name": "IMG_20180605_095814.jpg",
-            "sizeKB": 682.9,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/crafts/IMG_20180605_101132.jpg",
-            "name": "IMG_20180605_101132.jpg",
-            "sizeKB": 268.9,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/crafts/IMG_20180605_104646.jpg",
-            "name": "IMG_20180605_104646.jpg",
-            "sizeKB": 524.1,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/crafts/IMG_20180605_105911.jpg",
-            "name": "IMG_20180605_105911.jpg",
-            "sizeKB": 471,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/crafts/IMG_20180605_110820.jpg",
-            "name": "IMG_20180605_110820.jpg",
-            "sizeKB": 390.3,
-            "category": "boardbook"
-          }
-        ]
-      },
-      {
-        "key": "gifs",
-        "images": [
-          {
-            "src": "/product-gallery/gifs/Happy_Birthday_Elli_.gif",
-            "name": "Happy Birthday,Elli!.gif",
-            "sizeKB": 942.7,
-            "category": "soundlight"
-          },
-          {
-            "src": "/product-gallery/gifs/What_Do_you_Want_to_Have.gif",
-            "name": "What Do you Want to Have.gif",
-            "sizeKB": 5631.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/gifs/What_Do_you_Want_to_Ride.gif",
-            "name": "What Do you Want to Ride.gif",
-            "sizeKB": 1412.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/gifs/自然拼读魔术卡.gif",
-            "name": "自然拼读魔术卡.gif",
-            "sizeKB": 2428.6,
-            "category": "cards"
-          }
-        ]
-      },
-      {
-        "key": "hardcover_books",
-        "images": [
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_101334.jpg",
-            "name": "IMG_20180605_101334.jpg",
-            "sizeKB": 1997.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_101400.jpg",
-            "name": "IMG_20180605_101400.jpg",
-            "sizeKB": 2376.5,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_101446.jpg",
-            "name": "IMG_20180605_101446.jpg",
-            "sizeKB": 2235.3,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_101533.jpg",
-            "name": "IMG_20180605_101533.jpg",
-            "sizeKB": 1838.3,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_101709.jpg",
-            "name": "IMG_20180605_101709.jpg",
-            "sizeKB": 2615.5,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/IMG_20180605_111350.jpg",
-            "name": "IMG_20180605_111350.jpg",
-            "sizeKB": 1854.3,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/微信图片_20180525102359.jpg",
-            "name": "微信图片_20180525102359.jpg",
-            "sizeKB": 103.7,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/微信图片_20180605153731.jpg",
-            "name": "微信图片_20180605153731.jpg",
-            "sizeKB": 1870.3,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/微信图片_20180605153739.jpg",
-            "name": "微信图片_20180605153739.jpg",
-            "sizeKB": 1068.1,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/hardcover_books/微信图片_20180605153744.jpg",
-            "name": "微信图片_20180605153744.jpg",
-            "sizeKB": 2292.3,
-            "category": "hardcover"
-          }
-        ]
-      },
-      {
-        "key": "2026-08-17__新增产品",
-        "images": [
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto4.png",
-            "name": "hdphoto4.png",
-            "sizeKB": 875.6,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto7.png",
-            "name": "hdphoto7.png",
-            "sizeKB": 142.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto8.png",
-            "name": "hdphoto8.png",
-            "sizeKB": 137.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto9.png",
-            "name": "hdphoto9.png",
-            "sizeKB": 150.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image100.png",
-            "name": "image100.png",
-            "sizeKB": 182.1,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image101.png",
-            "name": "image101.png",
-            "sizeKB": 186.7,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image102.png",
-            "name": "image102.png",
-            "sizeKB": 187.7,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image106.png",
-            "name": "image106.png",
-            "sizeKB": 650.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image114.png",
-            "name": "image114.png",
-            "sizeKB": 617.5,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image161.jpeg",
-            "name": "image161.jpeg",
-            "sizeKB": 461.8,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image51.gif",
-            "name": "image51.gif",
-            "sizeKB": 683.4,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image52.jpeg",
-            "name": "image52.jpeg",
-            "sizeKB": 38.9,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image53.jpeg",
-            "name": "image53.jpeg",
-            "sizeKB": 42.6,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image54.jpeg",
-            "name": "image54.jpeg",
-            "sizeKB": 33.5,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image55.gif",
-            "name": "image55.gif",
-            "sizeKB": 251.8,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image56.jpeg",
-            "name": "image56.jpeg",
-            "sizeKB": 43.7,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image95.png",
-            "name": "image95.png",
-            "sizeKB": 344.9,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image96.png",
-            "name": "image96.png",
-            "sizeKB": 391.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image97.jpeg",
-            "name": "image97.jpeg",
-            "sizeKB": 39.9,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image98.jpeg",
-            "name": "image98.jpeg",
-            "sizeKB": 40.4,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image99.jpeg",
-            "name": "image99.jpeg",
-            "sizeKB": 45.1,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto6.png",
-            "name": "hdphoto6.png",
-            "sizeKB": 420.7,
-            "category": "soundlight"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto14.png",
-            "name": "hdphoto14.png",
-            "sizeKB": 332.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto15.png",
-            "name": "hdphoto15.png",
-            "sizeKB": 251.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto16.png",
-            "name": "hdphoto16.png",
-            "sizeKB": 223.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto19.png",
-            "name": "hdphoto19.png",
-            "sizeKB": 603.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image105.jpeg",
-            "name": "image105.jpeg",
-            "sizeKB": 60.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image107.png",
-            "name": "image107.png",
-            "sizeKB": 250,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image113.jpeg",
-            "name": "image113.jpeg",
-            "sizeKB": 32.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image131.jpeg",
-            "name": "image131.jpeg",
-            "sizeKB": 14.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image132.jpeg",
-            "name": "image132.jpeg",
-            "sizeKB": 30.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image134.jpeg",
-            "name": "image134.jpeg",
-            "sizeKB": 21.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image138.jpeg",
-            "name": "image138.jpeg",
-            "sizeKB": 13.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image139.jpeg",
-            "name": "image139.jpeg",
-            "sizeKB": 14.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image140.jpeg",
-            "name": "image140.jpeg",
-            "sizeKB": 53.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image142.jpeg",
-            "name": "image142.jpeg",
-            "sizeKB": 119.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image143.png",
-            "name": "image143.png",
-            "sizeKB": 403.7,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image144.png",
-            "name": "image144.png",
-            "sizeKB": 370.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image145.png",
-            "name": "image145.png",
-            "sizeKB": 295.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image146.png",
-            "name": "image146.png",
-            "sizeKB": 881,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image147.png",
-            "name": "image147.png",
-            "sizeKB": 181.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image5.png",
-            "name": "image5.png",
-            "sizeKB": 621.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image57.gif",
-            "name": "image57.gif",
-            "sizeKB": 1412.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image58.gif",
-            "name": "image58.gif",
-            "sizeKB": 942.7,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image59.gif",
-            "name": "image59.gif",
-            "sizeKB": 2428.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image60.gif",
-            "name": "image60.gif",
-            "sizeKB": 5631.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image61.jpeg",
-            "name": "image61.jpeg",
-            "sizeKB": 342.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image64.jpeg",
-            "name": "image64.jpeg",
-            "sizeKB": 174.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image65.png",
-            "name": "image65.png",
-            "sizeKB": 921.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image71.png",
-            "name": "image71.png",
-            "sizeKB": 249.3,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image72.jpeg",
-            "name": "image72.jpeg",
-            "sizeKB": 23.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image73.png",
-            "name": "image73.png",
-            "sizeKB": 220.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image74.jpeg",
-            "name": "image74.jpeg",
-            "sizeKB": 26.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image75.png",
-            "name": "image75.png",
-            "sizeKB": 122.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image76.jpeg",
-            "name": "image76.jpeg",
-            "sizeKB": 17.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image77.jpeg",
-            "name": "image77.jpeg",
-            "sizeKB": 15.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image78.jpeg",
-            "name": "image78.jpeg",
-            "sizeKB": 19.4,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image79.gif",
-            "name": "image79.gif",
-            "sizeKB": 305.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image80.gif",
-            "name": "image80.gif",
-            "sizeKB": 1815.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image81.gif",
-            "name": "image81.gif",
-            "sizeKB": 1911.2,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image82.gif",
-            "name": "image82.gif",
-            "sizeKB": 792.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image83.gif",
-            "name": "image83.gif",
-            "sizeKB": 263.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image84.gif",
-            "name": "image84.gif",
-            "sizeKB": 605.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image85.gif",
-            "name": "image85.gif",
-            "sizeKB": 374.8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image86.gif",
-            "name": "image86.gif",
-            "sizeKB": 197.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image87.gif",
-            "name": "image87.gif",
-            "sizeKB": 67.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image88.gif",
-            "name": "image88.gif",
-            "sizeKB": 289.1,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image89.png",
-            "name": "image89.png",
-            "sizeKB": 722.9,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image90.png",
-            "name": "image90.png",
-            "sizeKB": 5320.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image91.png",
-            "name": "image91.png",
-            "sizeKB": 319.5,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image92.png",
-            "name": "image92.png",
-            "sizeKB": 664.6,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto17.png",
-            "name": "hdphoto17.png",
-            "sizeKB": 484.7,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto10.png",
-            "name": "hdphoto10.png",
-            "sizeKB": 1560.9,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto11.png",
-            "name": "hdphoto11.png",
-            "sizeKB": 1100.6,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto12.png",
-            "name": "hdphoto12.png",
-            "sizeKB": 1129,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto13.png",
-            "name": "hdphoto13.png",
-            "sizeKB": 200.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image120.png",
-            "name": "image120.png",
-            "sizeKB": 1004.8,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image121.png",
-            "name": "image121.png",
-            "sizeKB": 1264.7,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image124.gif",
-            "name": "image124.gif",
-            "sizeKB": 176.9,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image125.gif",
-            "name": "image125.gif",
-            "sizeKB": 265.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image126.gif",
-            "name": "image126.gif",
-            "sizeKB": 428,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image127.gif",
-            "name": "image127.gif",
-            "sizeKB": 156.3,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image128.jpeg",
-            "name": "image128.jpeg",
-            "sizeKB": 89.7,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image68.gif",
-            "name": "image68.gif",
-            "sizeKB": 3482.9,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image69.gif",
-            "name": "image69.gif",
-            "sizeKB": 1303,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/hdphoto5.png",
-            "name": "hdphoto5.png",
-            "sizeKB": 1412.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image103.png",
-            "name": "image103.png",
-            "sizeKB": 199.9,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image104.png",
-            "name": "image104.png",
-            "sizeKB": 233.8,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image141.png",
-            "name": "image141.png",
-            "sizeKB": 358.4,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image148.jpeg",
-            "name": "image148.jpeg",
-            "sizeKB": 36.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image149.jpeg",
-            "name": "image149.jpeg",
-            "sizeKB": 46.8,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image150.jpeg",
-            "name": "image150.jpeg",
-            "sizeKB": 500,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image151.png",
-            "name": "image151.png",
-            "sizeKB": 1322.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image152.png",
-            "name": "image152.png",
-            "sizeKB": 671,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image153.png",
-            "name": "image153.png",
-            "sizeKB": 610,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image154.png",
-            "name": "image154.png",
-            "sizeKB": 140.6,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image156.jpeg",
-            "name": "image156.jpeg",
-            "sizeKB": 39.8,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image159.gif",
-            "name": "image159.gif",
-            "sizeKB": 876,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image122.png",
-            "name": "image122.png",
-            "sizeKB": 1036,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image123.png",
-            "name": "image123.png",
-            "sizeKB": 909.5,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image42.png",
-            "name": "image42.png",
-            "sizeKB": 450.6,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image43.png",
-            "name": "image43.png",
-            "sizeKB": 568.7,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image44.png",
-            "name": "image44.png",
-            "sizeKB": 592.9,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image45.png",
-            "name": "image45.png",
-            "sizeKB": 621.6,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image46.png",
-            "name": "image46.png",
-            "sizeKB": 244.8,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image47.png",
-            "name": "image47.png",
-            "sizeKB": 649.1,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image48.png",
-            "name": "image48.png",
-            "sizeKB": 640.4,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-17__新增产品/image49.png",
-            "name": "image49.png",
-            "sizeKB": 604.5,
-            "category": "stickers"
-          }
-        ]
-      }
-    ],
     "categories": [
+      {
+        "key": "custom",
+        "name": "匠心特装定制"
+      },
       {
         "key": "boardbook",
         "name": "板纸对裱童书"
+      },
+      {
+        "key": "cards",
+        "name": "益智卡牌卡册"
+      },
+      {
+        "key": "toys",
+        "name": "益智玩具类"
       },
       {
         "key": "hardcover",
@@ -2538,31 +921,1235 @@
       {
         "key": "stickers",
         "name": "趣味贴纸书系"
-      },
-      {
-        "key": "cards",
-        "name": "益智卡牌卡册"
-      },
-      {
-        "key": "custom",
-        "name": "匠心特装定制"
-      },
-      {
-        "key": "toys",
-        "name": "益智玩具类"
-      },
-      {
-        "key": "soundlight",
-        "name": "声光互动书册"
-      },
-      {
-        "key": "yo",
-        "name": "YO类"
-      },
-      {
-        "key": "paperback",
-        "name": "平装书刊书籍"
       }
-    ]
+    ],
+    "folders": [
+      {
+        "key": "2026-08-20__图库",
+        "images": [
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp",
+            "name": "image114.jpg",
+            "sizeKB": 39,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/custom-TOP-image161.webp",
+            "name": "image161.jpg",
+            "sizeKB": 93,
+            "category": "custom"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180525101811.webp",
+            "name": "微信图片_20180525101811.jpg",
+            "sizeKB": 102,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180525102347.webp",
+            "name": "微信图片_20180525102347.jpg",
+            "sizeKB": 79,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180608165824.webp",
+            "name": "微信图片_20180608165824.jpg",
+            "sizeKB": 84,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto16.webp",
+            "name": "hdphoto16.jpg",
+            "sizeKB": 27,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto19.webp",
+            "name": "hdphoto19.jpg",
+            "sizeKB": 59,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto6.webp",
+            "name": "hdphoto6.jpg",
+            "sizeKB": 38,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image105.webp",
+            "name": "image105.jpg",
+            "sizeKB": 55,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image107.webp",
+            "name": "image107.jpg",
+            "sizeKB": 41,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
+            "name": "image113.jpg",
+            "sizeKB": 24,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image131.webp",
+            "name": "image131.jpg",
+            "sizeKB": 10,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image132.webp",
+            "name": "image132.jpg",
+            "sizeKB": 27,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image134.webp",
+            "name": "image134.jpg",
+            "sizeKB": 15,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image138.webp",
+            "name": "image138.jpg",
+            "sizeKB": 8,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image139.webp",
+            "name": "image139.jpg",
+            "sizeKB": 10,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image140.webp",
+            "name": "image140.jpg",
+            "sizeKB": 28,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image142.webp",
+            "name": "image142.jpg",
+            "sizeKB": 16,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image143.webp",
+            "name": "image143.jpg",
+            "sizeKB": 32,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image144.webp",
+            "name": "image144.jpg",
+            "sizeKB": 51,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image145.webp",
+            "name": "image145.jpg",
+            "sizeKB": 26,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image79.webp",
+            "name": "image79.jpg",
+            "sizeKB": 122,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image80.webp",
+            "name": "image80.jpg",
+            "sizeKB": 1553,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image81.webp",
+            "name": "image81.jpg",
+            "sizeKB": 209,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image82.webp",
+            "name": "image82.jpg",
+            "sizeKB": 197,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image83.webp",
+            "name": "image83.jpg",
+            "sizeKB": 147,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image84.webp",
+            "name": "image84.jpg",
+            "sizeKB": 202,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image85.webp",
+            "name": "image85.jpg",
+            "sizeKB": 62,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image86.webp",
+            "name": "image86.jpg",
+            "sizeKB": 54,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image88.webp",
+            "name": "image88.jpg",
+            "sizeKB": 123,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image89.webp",
+            "name": "image89.jpg",
+            "sizeKB": 45,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image90.webp",
+            "name": "image90.jpg",
+            "sizeKB": 172,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_101110.webp",
+            "name": "IMG_20180605_101110.jpg",
+            "sizeKB": 360,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_105428.webp",
+            "name": "IMG_20180605_105428.jpg",
+            "sizeKB": 83,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110538.webp",
+            "name": "IMG_20180605_110538.jpg",
+            "sizeKB": 230,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110630.webp",
+            "name": "IMG_20180605_110630.jpg",
+            "sizeKB": 115,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110820.webp",
+            "name": "IMG_20180605_110820.jpg",
+            "sizeKB": 135,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110828.webp",
+            "name": "IMG_20180605_110828.jpg",
+            "sizeKB": 154,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_111107.webp",
+            "name": "IMG_20180605_111107.jpg",
+            "sizeKB": 379,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_111326.webp",
+            "name": "IMG_20180605_111326.jpg",
+            "sizeKB": 182,
+            "category": "boardbook"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-自然拼读魔术卡.webp",
+            "name": "自然拼读魔术卡.jpg",
+            "sizeKB": 648,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-hdphoto17.webp",
+            "name": "hdphoto17.jpg",
+            "sizeKB": 38,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_095814.webp",
+            "name": "IMG_20180605_095814.jpg",
+            "sizeKB": 263,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_101132.webp",
+            "name": "IMG_20180605_101132.jpg",
+            "sizeKB": 53,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_104646.webp",
+            "name": "IMG_20180605_104646.jpg",
+            "sizeKB": 199,
+            "category": "cards"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-13.webp",
+            "name": "13.jpg",
+            "sizeKB": 242,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-14.webp",
+            "name": "14.jpg",
+            "sizeKB": 417,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-15.webp",
+            "name": "15.jpg",
+            "sizeKB": 149,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-16.webp",
+            "name": "16.jpg",
+            "sizeKB": 510,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-17.webp",
+            "name": "17.jpg",
+            "sizeKB": 187,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-18.webp",
+            "name": "18.jpg",
+            "sizeKB": 233,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-6.webp",
+            "name": "6.jpg",
+            "sizeKB": 95,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-8.webp",
+            "name": "8.jpg",
+            "sizeKB": 273,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-9.webp",
+            "name": "9.jpg",
+            "sizeKB": 146,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-扣图_.webp",
+            "name": "扣图_.jpg",
+            "sizeKB": 294,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164212.webp",
+            "name": "微信图片_20180608164212.jpg",
+            "sizeKB": 124,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164225.webp",
+            "name": "微信图片_20180608164225.jpg",
+            "sizeKB": 122,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164229.webp",
+            "name": "微信图片_20180608164229.jpg",
+            "sizeKB": 150,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto10.webp",
+            "name": "hdphoto10.jpg",
+            "sizeKB": 112,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto11.webp",
+            "name": "hdphoto11.jpg",
+            "sizeKB": 76,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto12.webp",
+            "name": "hdphoto12.jpg",
+            "sizeKB": 79,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto13.webp",
+            "name": "hdphoto13.jpg",
+            "sizeKB": 24,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto7.webp",
+            "name": "hdphoto7.jpg",
+            "sizeKB": 21,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto8.webp",
+            "name": "hdphoto8.jpg",
+            "sizeKB": 18,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto9.webp",
+            "name": "hdphoto9.jpg",
+            "sizeKB": 20,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image100.webp",
+            "name": "image100.jpg",
+            "sizeKB": 22,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image101.webp",
+            "name": "image101.jpg",
+            "sizeKB": 20,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image102.webp",
+            "name": "image102.jpg",
+            "sizeKB": 21,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image106.webp",
+            "name": "image106.jpg",
+            "sizeKB": 55,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image120.webp",
+            "name": "image120.jpg",
+            "sizeKB": 90,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image121.webp",
+            "name": "image121.jpg",
+            "sizeKB": 144,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image124.webp",
+            "name": "image124.jpg",
+            "sizeKB": 79,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image125.webp",
+            "name": "image125.jpg",
+            "sizeKB": 135,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image126.webp",
+            "name": "image126.jpg",
+            "sizeKB": 149,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image127.webp",
+            "name": "image127.jpg",
+            "sizeKB": 75,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image128.webp",
+            "name": "image128.jpg",
+            "sizeKB": 72,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image68.webp",
+            "name": "image68.jpg",
+            "sizeKB": 946,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image69.webp",
+            "name": "image69.jpg",
+            "sizeKB": 307,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image95.webp",
+            "name": "image95.jpg",
+            "sizeKB": 42,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image96.webp",
+            "name": "image96.jpg",
+            "sizeKB": 40,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image97.webp",
+            "name": "image97.jpg",
+            "sizeKB": 36,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image98.webp",
+            "name": "image98.jpg",
+            "sizeKB": 36,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image99.webp",
+            "name": "image99.jpg",
+            "sizeKB": 37,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105844.webp",
+            "name": "IMG_20180605_105844.jpg",
+            "sizeKB": 192,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105857.webp",
+            "name": "IMG_20180605_105857.jpg",
+            "sizeKB": 120,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105911.webp",
+            "name": "IMG_20180605_105911.jpg",
+            "sizeKB": 179,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_111155.webp",
+            "name": "IMG_20180605_111155.jpg",
+            "sizeKB": 206,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_111316.webp",
+            "name": "IMG_20180605_111316.jpg",
+            "sizeKB": 65,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9914小.webp",
+            "name": "IMG_9914小.jpg",
+            "sizeKB": 110,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9923.JPG.webp",
+            "name": "IMG_9923.JPG.jpg",
+            "sizeKB": 119,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9956小.webp",
+            "name": "IMG_9956小.jpg",
+            "sizeKB": 73,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9960小.webp",
+            "name": "IMG_9960小.jpg",
+            "sizeKB": 126,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9962小.webp",
+            "name": "IMG_9962小.jpg",
+            "sizeKB": 301,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-What_Do_you_Want_to_Ride.webp",
+            "name": "What_Do_you_Want_to_Ride.jpg",
+            "sizeKB": 504,
+            "category": "toys"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180525102337.webp",
+            "name": "微信图片_20180525102337.jpg",
+            "sizeKB": 107,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180525102359.webp",
+            "name": "微信图片_20180525102359.jpg",
+            "sizeKB": 91,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153731.webp",
+            "name": "微信图片_20180605153731.jpg",
+            "sizeKB": 236,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153739.webp",
+            "name": "微信图片_20180605153739.jpg",
+            "sizeKB": 35,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153744.webp",
+            "name": "微信图片_20180605153744.jpg",
+            "sizeKB": 369,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180608164242.webp",
+            "name": "微信图片_20180608164242.jpg",
+            "sizeKB": 79,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180608164246.webp",
+            "name": "微信图片_20180608164246.jpg",
+            "sizeKB": 67,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-hdphoto5.webp",
+            "name": "hdphoto5.jpg",
+            "sizeKB": 105,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image103.webp",
+            "name": "image103.jpg",
+            "sizeKB": 32,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image141.webp",
+            "name": "image141.jpg",
+            "sizeKB": 26,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image148.webp",
+            "name": "image148.jpg",
+            "sizeKB": 31,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image149.webp",
+            "name": "image149.jpg",
+            "sizeKB": 20,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image153.webp",
+            "name": "image153.jpg",
+            "sizeKB": 60,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image154.webp",
+            "name": "image154.jpg",
+            "sizeKB": 21,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image156.webp",
+            "name": "image156.jpg",
+            "sizeKB": 30,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image159.webp",
+            "name": "image159.jpg",
+            "sizeKB": 136,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101334.webp",
+            "name": "IMG_20180605_101334.jpg",
+            "sizeKB": 245,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101400.webp",
+            "name": "IMG_20180605_101400.jpg",
+            "sizeKB": 399,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101446.webp",
+            "name": "IMG_20180605_101446.jpg",
+            "sizeKB": 310,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101533.webp",
+            "name": "IMG_20180605_101533.jpg",
+            "sizeKB": 197,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101709.webp",
+            "name": "IMG_20180605_101709.jpg",
+            "sizeKB": 365,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104549.webp",
+            "name": "IMG_20180605_104549.jpg",
+            "sizeKB": 139,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104604.webp",
+            "name": "IMG_20180605_104604.jpg",
+            "sizeKB": 94,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104618.webp",
+            "name": "IMG_20180605_104618.jpg",
+            "sizeKB": 258,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104629.webp",
+            "name": "IMG_20180605_104629.jpg",
+            "sizeKB": 247,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104716.webp",
+            "name": "IMG_20180605_104716.jpg",
+            "sizeKB": 207,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104930.webp",
+            "name": "IMG_20180605_104930.jpg",
+            "sizeKB": 123,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_110057.webp",
+            "name": "IMG_20180605_110057.jpg",
+            "sizeKB": 251,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_110549.webp",
+            "name": "IMG_20180605_110549.jpg",
+            "sizeKB": 176,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_111350.webp",
+            "name": "IMG_20180605_111350.jpg",
+            "sizeKB": 256,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7710.webp",
+            "name": "IMG_7710.jpg",
+            "sizeKB": 491,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7714.webp",
+            "name": "IMG_7714.jpg",
+            "sizeKB": 187,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7719.webp",
+            "name": "IMG_7719.jpg",
+            "sizeKB": 338,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7723.webp",
+            "name": "IMG_7723.jpg",
+            "sizeKB": 221,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7724.webp",
+            "name": "IMG_7724.jpg",
+            "sizeKB": 277,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7732.webp",
+            "name": "IMG_7732.jpg",
+            "sizeKB": 239,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_9970小.webp",
+            "name": "IMG_9970小.jpg",
+            "sizeKB": 273,
+            "category": "hardcover"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image122.webp",
+            "name": "image122.jpg",
+            "sizeKB": 88,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image123.webp",
+            "name": "image123.jpg",
+            "sizeKB": 82,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image42.webp",
+            "name": "image42.jpg",
+            "sizeKB": 34,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image43.webp",
+            "name": "image43.jpg",
+            "sizeKB": 40,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image44.webp",
+            "name": "image44.jpg",
+            "sizeKB": 42,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
+            "name": "image45.jpg",
+            "sizeKB": 62,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image46.webp",
+            "name": "image46.jpg",
+            "sizeKB": 20,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image47.webp",
+            "name": "image47.jpg",
+            "sizeKB": 45,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image48.webp",
+            "name": "image48.jpg",
+            "sizeKB": 41,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image49.webp",
+            "name": "image49.jpg",
+            "sizeKB": 45,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-IMG_9958小.webp",
+            "name": "IMG_9958小.jpg",
+            "sizeKB": 189,
+            "category": "stickers"
+          },
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-IMG_9959小.webp",
+            "name": "IMG_9959小.jpg",
+            "sizeKB": 234,
+            "category": "stickers"
+          }
+        ]
+      },
+      {
+        "key": "hardcover",
+        "images": [
+          {
+            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image147.webp",
+            "name": "image147.jpg",
+            "sizeKB": 19,
+            "category": "hardcover"
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "boardbook-12",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组12",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-12-image5.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-12-image5.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-12-image57.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-12-image58.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-12-image59.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-12-image60.webp"
+        ],
+        "trailing": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image61.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image64.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image65.webp"
+        ]
+      },
+      {
+        "id": "custom-1",
+        "category": "custom",
+        "name": "匠心特装定制·组01",
+        "cover": "/product-gallery/2026-08-20__产品图库/custom-1-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/custom-1-1.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-1-2.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-1-3.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-1-4.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-1-5.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-1-6.webp"
+        ]
+      },
+      {
+        "id": "custom-2",
+        "category": "custom",
+        "name": "匠心特装定制·组02",
+        "cover": "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9872小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9872小.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9876小.webp"
+        ]
+      },
+      {
+        "id": "custom-3",
+        "category": "custom",
+        "name": "匠心特装定制·组03",
+        "cover": "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9859小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9859小.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9862小.webp"
+        ]
+      },
+      {
+        "id": "custom-4",
+        "category": "custom",
+        "name": "匠心特装定制·组04",
+        "cover": "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9929小_.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9929小_.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9931小.webp",
+          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9933小.webp"
+        ]
+      },
+      {
+        "id": "boardbook-1",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组01",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-1-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-1-1.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-1-image71.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-1-image72.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-1-image73.webp"
+        ]
+      },
+      {
+        "id": "boardbook-2",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组02",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-2-image74.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-2-image74.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-2-image76.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-2-image77.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-2-image78.webp"
+        ]
+      },
+      {
+        "id": "boardbook-3",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组03",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3654.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3654.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3655.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3658.webp"
+        ]
+      },
+      {
+        "id": "boardbook-4",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组04",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3644.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3644.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3645.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3652.webp"
+        ]
+      },
+      {
+        "id": "boardbook-5",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组05",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-5-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-5-1.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-5-2..webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-5-3.webp"
+        ]
+      },
+      {
+        "id": "boardbook-6",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组06",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7457.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7457.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7458.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7459.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7460.webp"
+        ]
+      },
+      {
+        "id": "boardbook-7",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组07",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7450.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7450.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7451.webp"
+        ]
+      },
+      {
+        "id": "boardbook-8",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组08",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7452.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7452.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7453.webp"
+        ]
+      },
+      {
+        "id": "boardbook-9",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组09",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7455.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7455.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7456.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-9-image87.webp"
+        ]
+      },
+      {
+        "id": "boardbook-10",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组10",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7461.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7461.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7462.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7463.webp"
+        ]
+      },
+      {
+        "id": "boardbook-11",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组11",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7464.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7464.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7465.webp"
+        ]
+      },
+      {
+        "id": "boardbook-13",
+        "category": "boardbook",
+        "name": "板纸对裱童书·组13",
+        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-13-image91.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/boardbook-13-image91.webp",
+          "/product-gallery/2026-08-20__产品图库/boardbook-13-image92.webp"
+        ]
+      },
+      {
+        "id": "cards-1",
+        "category": "cards",
+        "name": "益智卡牌卡册·组01",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9918小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9918小.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9919小.webp"
+        ]
+      },
+      {
+        "id": "cards-2",
+        "category": "cards",
+        "name": "益智卡牌卡册·组02",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9832小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9832小.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9838小.webp"
+        ]
+      },
+      {
+        "id": "cards-3",
+        "category": "cards",
+        "name": "益智卡牌卡册·组03",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9840小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9840小.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9845小.webp"
+        ]
+      },
+      {
+        "id": "cards-4",
+        "category": "cards",
+        "name": "益智卡牌卡册·组04",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9846小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9846小.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9851小.webp"
+        ]
+      },
+      {
+        "id": "cards-5",
+        "category": "cards",
+        "name": "益智卡牌卡册·组05",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-5-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-5-1.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-5-IMG_9878小.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-5-IMG_9884小.webp"
+        ]
+      },
+      {
+        "id": "cards-6",
+        "category": "cards",
+        "name": "益智卡牌卡册·组06",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-6-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-6-1.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-6-IMG_9854小.webp"
+        ]
+      },
+      {
+        "id": "cards-7",
+        "category": "cards",
+        "name": "益智卡牌卡册·组07",
+        "cover": "/product-gallery/2026-08-20__产品图库/cards-7-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/cards-7-1.webp",
+          "/product-gallery/2026-08-20__产品图库/cards-7-IMG_9938小.webp"
+        ]
+      },
+      {
+        "id": "hardcover-1",
+        "category": "hardcover",
+        "name": "精装图书画册·组01",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7440.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7440.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7441.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7445.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-1.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-10.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-11.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-12.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-2.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-3.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-4.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-5.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-7.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-image104.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9902小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9905小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9906小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9907小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9912小.webp"
+        ]
+      },
+      {
+        "id": "hardcover-2",
+        "category": "hardcover",
+        "name": "精装图书画册·组02",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7725.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7725.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7726.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_77266.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_9954小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_9955小.webp"
+        ]
+      },
+      {
+        "id": "hardcover-3",
+        "category": "hardcover",
+        "name": "精装图书画册·组03",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-3-1.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-3-1.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-3-image150.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-3-image151.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-3-IMG_9945小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-3-IMG_9949小.webp"
+        ]
+      },
+      {
+        "id": "hardcover-4",
+        "category": "hardcover",
+        "name": "精装图书画册·组04",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7440.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7440.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7441.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7445.webp"
+        ]
+      },
+      {
+        "id": "hardcover-5",
+        "category": "hardcover",
+        "name": "精装图书画册·组05",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9954小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9954小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9955小.webp"
+        ]
+      },
+      {
+        "id": "hardcover-6",
+        "category": "hardcover",
+        "name": "精装图书画册·组06",
+        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9945小.webp",
+        "images": [
+          "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9945小.webp",
+          "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9949小.webp"
+        ]
+      }
+    ],
+    "total": 144,
+    "groupTotal": 30
   }
 }
