@@ -290,13 +290,10 @@ export default function IntelligentPlant() {
         }
         .icon-label {
           font-size: clamp(8px, 1.2vh, 13px) !important;
-          margin-bottom: 0 !important;
+          margin-bottom: clamp(1px, 0.4vh, 4px) !important;
         }
         .icon-sub {
           font-size: clamp(7px, 1vh, 11px) !important;
-        }
-        .equip-card-content .gap-5, .equip-card-content .gap-4, .equip-card-content .gap-3, .equip-card-content .gap-2 {
-          gap: clamp(4px, 1vh, 12px) !important;
         }
         .equip-card-content > .flex-row.mt-1 {
           margin-top: clamp(2px, 0.6vh, 8px) !important;
@@ -558,15 +555,15 @@ export default function IntelligentPlant() {
                  <p className="text-gray-500 text-[9px] md:text-[11px] mb-2 leading-snug whitespace-pre-line">
                    {lang === "zh" ? "高性能五色 LED-UV 印刷，提供稳定的色彩还原\n与高效批量生产能力。" : "High-performance five-color printing with LED-UV\ncuring delivers stable color reproduction and efficient\nproduction."}
                  </p>
-                 <div className="flex flex-row gap-5 mt-1">
-                   <div className="flex items-center gap-2">
+                 <div className="flex flex-row gap-8 mt-1">
+                   <div className="flex items-center gap-3">
                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><PenTool className="w-3.5 h-3.5" /></div>
                      <div>
                        <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "五色印刷" : "5-Color Printing"}</div>
                        <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "一致的色彩还原" : "Consistent color reproduction"}</div>
                      </div>
                    </div>
-                   <div className="flex items-center gap-2">
+                   <div className="flex items-center gap-3">
                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Wind className="w-3.5 h-3.5" /></div>
                      <div>
                        <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "LED-UV 固化" : "LED-UV Curing"}</div>
@@ -598,15 +595,15 @@ export default function IntelligentPlant() {
                  <p className="text-gray-500 text-[9px] md:text-[11px] mb-2 leading-snug whitespace-pre-line">
                    {lang === "zh" ? "全自动 UV 上光提升表面保护与视觉质感，完美满足多种表面整饰的高端需求。" : "Fully automated UV varnishing system enhances\nsurface protection and visual appeal."}
                  </p>
-                 <div className="flex flex-row gap-5 mt-1">
-                   <div className="flex items-center gap-2">
+                 <div className="flex flex-row gap-8 mt-1">
+                   <div className="flex items-center gap-3">
                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Layers className="w-3.5 h-3.5" /></div>
                      <div>
                        <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "全面及局部上光" : "Full & Spot Coating"}</div>
                        <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "灵活的整饰选项" : "Flexible finishing options"}</div>
                      </div>
                    </div>
-                   <div className="flex items-center gap-2">
+                   <div className="flex items-center gap-3">
                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Sparkles className="w-3.5 h-3.5" /></div>
                      <div>
                        <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高级效果" : "Premium Effects"}</div>
@@ -627,12 +624,12 @@ export default function IntelligentPlant() {
                    <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
                      {lang === "zh" ? "高速、高精度自动模切，实现异形结构的精准加工。" : "High-speed, high-precision\ndie-cutting for complex shapes."}
                    </p>
-                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
-                     <div className="flex items-center gap-2">
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-6 mt-1 overflow-visible">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Scissors className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高精度" : "High Precision"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "精准模切" : "Accurate die-cutting"}</div></div>
                      </div>
-                     <div className="flex items-center gap-2">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Activity className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高效率" : "High Efficiency"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "快速生产" : "Fast production"}</div></div>
                      </div>
@@ -648,12 +645,12 @@ export default function IntelligentPlant() {
                    <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
                      {lang === "zh" ? "全自动化生产线，整合各项工艺，实现端到端生产一致性。" : "Fully automated board book\nline integrates gluing."}
                    </p>
-                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
-                     <div className="flex items-center gap-2">
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-6 mt-1 overflow-visible">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Cpu className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "全自动化" : "Full Automation"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "端到端生产" : "End-to-end production"}</div></div>
                      </div>
-                     <div className="flex items-center gap-2">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><ShieldCheck className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "强一致性" : "Strong Consistency"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "稳定质量" : "Stable quality"}</div></div>
                      </div>
@@ -673,12 +670,12 @@ export default function IntelligentPlant() {
                    <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
                      {lang === "zh" ? "塑封、贴标及包装工序自动衔接，保障出货的严谨与高效。" : "Integrated packaging solution\nwith automated labeling."}
                    </p>
-                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
-                     <div className="flex items-center gap-2">
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-6 mt-1 overflow-visible">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Layers className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "塑封" : "Shrink Wrapping"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "紧密整洁" : "Tight & clean"}</div></div>
                      </div>
-                     <div className="flex items-center gap-2">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Truck className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "打包贴标" : "Strapping & Labeling"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "安全准确" : "Secure & accurate"}</div></div>
                      </div>
@@ -694,12 +691,12 @@ export default function IntelligentPlant() {
                    <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
                      {lang === "zh" ? "中央水冷空调系统提供受控生产环境，为高端纸质品印刷保驾护航。" : "Centralized HVAC system ensures\nstable environment."}
                    </p>
-                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
-                     <div className="flex items-center gap-2">
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-6 mt-1 overflow-visible">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Factory className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "6层车间" : "6 Floors"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "受控生产" : "Climate-controlled"}</div></div>
                      </div>
-                     <div className="flex items-center gap-2">
+                     <div className="flex items-center gap-3">
                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><ShieldCheck className="w-3 h-3" /></div>
                        <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "稳定环境" : "Stable Environment"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "支持稳定制造" : "Consistent manufacturing"}</div></div>
                      </div>
