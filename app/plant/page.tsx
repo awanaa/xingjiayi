@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   Cpu, ThermometerSnowflake, Layers, Factory,
   PenTool, Printer, Scissors, Wind, Thermometer, Droplets, Activity,
-  ShieldCheck, Truck, ChevronDown, ArrowUpRight
+  ShieldCheck, Truck, ChevronDown, ArrowUpRight, Sparkles, Target
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import OptimizedImage from "../../components/OptimizedImage";
@@ -256,11 +256,109 @@ export default function IntelligentPlant() {
       };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-gold-500/40 selection:text-white overflow-x-hidden">
-      <Navbar showBackButton lang={lang} onLangChange={setLang} />
+    <div className="h-screen bg-[#0a0a0a] text-white font-sans selection:bg-gold-500/40 selection:text-white overflow-x-hidden overflow-y-scroll snap-y snap-mandatory">
+      <div className="fixed top-0 left-0 w-full z-[100] opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <Navbar showBackButton lang={lang} onLangChange={setLang} />
+      </div>
 
+      <style>{`
+        /* Global Origins */
+        .machine-img {
+          transform-origin: right center;
+        }
+        .machine-img-left {
+          transform-origin: left center;
+        }
+
+        /* ---------------------------------
+           Dynamic Height-Based Scaling (All Screens)
+        --------------------------------- */
+        /* Dynamic Text Scaling using clamp to scale with vh */
+        .equip-card-content h3 {
+          font-size: clamp(12px, 2.2vh, 24px) !important;
+          margin-bottom: clamp(2px, 0.5vh, 6px) !important;
+          line-height: 1.1 !important;
+        }
+        .equip-card-content p {
+          font-size: clamp(8px, 1.3vh, 14px) !important;
+          margin-bottom: clamp(2px, 0.5vh, 6px) !important;
+          line-height: 1.3 !important;
+        }
+        .equip-card-content > div:first-child {
+          margin-bottom: clamp(1px, 0.3vh, 4px) !important;
+          font-size: clamp(8px, 1.2vh, 13px) !important;
+        }
+        .icon-label {
+          font-size: clamp(8px, 1.2vh, 13px) !important;
+          margin-bottom: 0 !important;
+        }
+        .icon-sub {
+          font-size: clamp(7px, 1vh, 11px) !important;
+        }
+        .equip-card-content .gap-5, .equip-card-content .gap-4, .equip-card-content .gap-3, .equip-card-content .gap-2 {
+          gap: clamp(4px, 1vh, 12px) !important;
+        }
+        .equip-card-content > .flex-row.mt-1 {
+          margin-top: clamp(2px, 0.6vh, 8px) !important;
+        }
+        
+        /* Top Banner Text Scaling */
+        .banner-title {
+          font-size: clamp(20px, 4.5vh, 48px) !important;
+          margin-bottom: clamp(2px, 0.8vh, 12px) !important;
+        }
+        .banner-sub {
+          font-size: clamp(11px, 2vh, 20px) !important;
+          margin-bottom: clamp(2px, 0.8vh, 10px) !important;
+          line-height: 1.25 !important;
+        }
+        .banner-icons-wrap {
+          gap: clamp(6px, 1.5vh, 24px) !important;
+          margin-top: 0 !important;
+          padding-top: clamp(4px, 1vh, 12px) !important;
+        }
+        .banner-icons-wrap .w-6, .banner-icons-wrap .w-8 {
+          width: clamp(20px, 3.5vh, 32px) !important;
+          height: clamp(20px, 3.5vh, 32px) !important;
+        }
+        .banner-icon-title {
+          font-size: clamp(9px, 1.3vh, 14px) !important;
+        }
+        .banner-icon-sub {
+          font-size: clamp(8px, 1.1vh, 12px) !important;
+        }
+
+        /* ---------------------------------
+           Short Screens (< 800px)
+        --------------------------------- */
+        @media (max-height: 800px) {
+          /* Image Scaling */
+          .machine-img, .machine-img-left {
+            --tw-scale-x: 0.75 !important;
+            --tw-scale-y: 0.75 !important;
+          }
+        }
+
+        /* ---------------------------------
+           Extremely Short Screens (< 650px)
+        --------------------------------- */
+        @media (max-height: 650px) {
+          .icon-sub {
+            display: none !important; /* Hide tiny subtext completely on very short screens to save space */
+          }
+          
+          /* Image Scaling */
+          .machine-img, .machine-img-left {
+            --tw-scale-x: 0.6 !important;
+            --tw-scale-y: 0.6 !important;
+          }
+        }
+      `}</style>
+
+      
+      
       {/* ═══ HERO — full-screen video ═══ */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <section className="snap-start relative h-screen w-full flex items-center justify-center overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/Premium_Children_s_Book_Factory_Video_opt.mp4" type="video/mp4" />
         </video>
@@ -293,7 +391,7 @@ export default function IntelligentPlant() {
       </section>
 
       {/* ═══ STATS — parallax with video frame ═══ */}
-      <section ref={statsRef} className="relative py-32 px-6 overflow-hidden border-t border-white/[0.04]">
+      <section ref={statsRef} className="snap-start relative min-h-screen flex flex-col justify-center py-32 px-6 overflow-hidden border-t border-white/[0.04]">
         <div className="absolute inset-0">
           <OptimizedImage src="/real-factory/IMG_5141.JPG" alt="" wrapperClassName="absolute inset-0" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
@@ -314,7 +412,7 @@ export default function IntelligentPlant() {
       </section>
 
       {/* ═══ PRODUCTION PROCESS — 6 photo cards ═══ */}
-      <section ref={processRef} className="relative py-32 px-6 border-t border-white/[0.04] bg-black">
+      <section ref={processRef} className="snap-start relative min-h-screen flex flex-col justify-center py-32 px-6 border-t border-white/[0.04] bg-black">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] left-[-10%] w-[60%] aspect-square rounded-full bg-gold-500/8 blur-3xl" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[60%] aspect-square rounded-full bg-gold-500/5 blur-3xl" />
@@ -365,165 +463,257 @@ export default function IntelligentPlant() {
         </div>
       </section>
 
-      {/* ═══ EQUIPMENT SHOWCASE — Dark Theme (Adapted Screenshot Style) ═══ */}
-      <section className="py-32 px-6 border-t border-white/[0.04] bg-[#060606]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-4 block">
-              {lang === "zh" ? "核心设备" : lang === "ja" ? "主要設備" : "Equipment"}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-              {lang === "zh" ? "制造技术与核心设备" : lang === "ja" ? "製造技術と主要設備" : "Manufacturing Technology"}
-            </h2>
-            <p className="text-white/40 text-base md:text-lg">
-              {lang === "zh" ? "集成工艺 · 顶尖设备 · 卓越品质" : lang === "ja" ? "統合されたプロセス。高度な設備。卓越した結果。" : "Integrated processes. Advanced equipment. Exceptional results."}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-8 md:gap-12">
-            {[
-              {
-                num: "01",
-                title: lang === "zh" ? "5色 LED-UV 胶印" : lang === "ja" ? "5色 LED-UV オフセット印刷" : "5-Color LED-UV Offset Printing",
-                bullets: lang === "zh" 
-                  ? ["5色 LED-UV，色彩鲜艳一致", "快速固化，大幅提升生产效率", "低VOC环保油墨，绿色生产"]
-                  : lang === "ja" 
-                    ? ["鮮やかで一貫した色のための5色LED-UV", "高い生産性のための高速硬化", "より環境に優しい未来のための低VOCインク"]
-                    : ["5-color LED-UV for vivid, consistent color", "Fast curing for higher productivity", "Low VOC inks for a greener future"],
-                img: "/equipment/01.png"
-              },
-              {
-                num: "02",
-                title: lang === "zh" ? "全自动 UV 上光" : lang === "ja" ? "全自動 UV ニスコーティング" : "Automatic UV Varnishing",
-                bullets: lang === "zh"
-                  ? ["全面或局部局部UV，高端表面质感", "高光、哑光及特殊触感效果", "在线品质缺陷检测"]
-                  : lang === "ja"
-                    ? ["プレミアムな仕上がりのための全面またはスポットUV", "高光沢、マット、および触感効果", "インライン品質検査"]
-                    : ["Full or spot UV for premium finish", "High gloss, matte, and tactile effects", "Inline quality inspection"],
-                img: "/equipment/02.png"
-              },
-              {
-                num: "03",
-                title: lang === "zh" ? "全自动纸板书生产线" : lang === "ja" ? "全自動ボードブック生産ライン" : "Automated Board Book Production",
-                bullets: lang === "zh"
-                  ? ["全自动化纸板书装订流水线", "对位精准，装订牢固", "安全耐用，专为儿童设计"]
-                  : lang === "ja"
-                    ? ["完全自動化されたボードブックライン", "正確な位置合わせと強力な製本", "小さな手のための耐久性のある本"]
-                    : ["Fully automated board book line", "Accurate alignment and strong binding", "Durable books built for little hands"],
-                img: "/equipment/03.png"
-              },
-              {
-                num: "04",
-                title: lang === "zh" ? "高精度模切" : lang === "ja" ? "高精度ダイカット" : "Precision Die-Cutting",
-                bullets: lang === "zh"
-                  ? ["高速运转，高精度模切成型", "边缘光洁无毛刺，形状完美", "轻松应对复杂结构与开窗设计"]
-                  : lang === "ja"
-                    ? ["高速、高精度のダイカット", "きれいなエッジ、完璧な形状", "複雑なデザインや窓に最適"]
-                    : ["High-speed, high-precision die-cutting", "Clean edges, perfect shapes", "Ideal for complex designs and windows"],
-                img: "/equipment/04.png"
-              },
-              {
-                num: "05",
-                title: lang === "zh" ? "恒温恒湿生产车间" : lang === "ja" ? "気候制御された製造環境" : "Climate-Controlled Manufacturing Environment",
-                bullets: lang === "zh"
-                  ? ["全厂区空调与气候控制系统", "全年保持稳定的温度与湿度", "避免纸张变形，确保品质一致性"]
-                  : lang === "ja"
-                    ? ["全工場空調および気候制御施設", "年間を通じて安定した温度と湿度", "品質を保護し、一貫性を確保"]
-                    : ["Whole factory climate-controlled facility", "Stable temperature & humidity year-round", "Protects quality and ensures consistency"],
-                img: "/equipment/05.png",
-                icons: [
-                  { Icon: Thermometer, label: lang === "zh" ? "温度控制" : "Temperature Control" },
-                  { Icon: Droplets, label: lang === "zh" ? "湿度控制" : "Humidity Control" },
-                  { Icon: Wind, label: lang === "zh" ? "空气质量管理" : "Air Quality Management" },
-                  { Icon: Activity, label: lang === "zh" ? "全天候监控" : "24/7 System Monitoring" }
-                ]
-              }
-            ].map((item, i) => {
-              // 每条间距都不同（更紧密）：左图行用 pr-*，右图行用 pl-*，数值逐条变化制造错落感
-              const gaps = ["md:pr-1", "md:pl-3", "md:pr-2", "md:pl-4", "md:pr-2"];
-              const gap = gaps[i % gaps.length];
-              // 图片占比 > 文字占比，且每条比例微错落（横向长方形容器）
-              const imgWidths = ["md:w-[60%]", "md:w-[57%]", "md:w-[62%]", "md:w-[58%]", "md:w-[60%]"];
-              const textWidths = ["md:w-[40%]", "md:w-[43%]", "md:w-[38%]", "md:w-[42%]", "md:w-[40%]"];
-              const imgW = imgWidths[i % imgWidths.length];
-              const textW = textWidths[i % textWidths.length];
-              return (
-              <div key={i} className="flex flex-col md:flex-row items-center gap-4 md:gap-5 group">
-                {/* Image Section - Alternates left/right based on index */}
-                <div className={`w-full ${imgW} relative flex items-center justify-center min-h-[260px] md:min-h-[330px] ${i % 2 !== 0 ? 'md:order-2 ' + gap : 'md:order-1 ' + gap}`}>
-                   {/* We wrap the image in a slight padding and remove mix-blend-multiply since it's dark theme */}
-                   <OptimizedImage src={item.img} alt={item.title} fill className="object-contain p-2 drop-shadow-2xl transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                
-                {/* Text Section */}
-                <div className={`w-full ${textW} py-3 md:px-4 flex flex-col justify-center ${i % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
-                  <span className="text-3xl md:text-4xl font-black text-gold-500 mb-2 font-mono tracking-wider">{item.num}</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight whitespace-pre-line">{item.title}</h3>
-                  <ul className="space-y-4">
-                    {item.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold-500/50 mt-2.5 flex-shrink-0 shadow-[0_0_8px_rgba(212,175,75,0.4)]" />
-                        <span className="text-white/60 text-base md:text-lg leading-relaxed">{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* 5th item special icons (Climate-Controlled) */}
-                  {item.icons && (
-                    <div className="grid grid-cols-4 gap-2 mt-10 pt-8 border-t border-white/[0.06]">
-                      {item.icons.map((iconData, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center gap-3">
-                          <iconData.Icon className="w-6 h-6 md:w-8 md:h-8 text-gold-400" strokeWidth={1.5} />
-                          <span className="text-[10px] sm:text-xs text-white/50 font-medium leading-tight px-1">
-                            {iconData.label.split(' ').map((word, wi) => <React.Fragment key={wi}>{word}<br/></React.Fragment>)}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ CERTIFICATIONS STRIP ═══ */}
-      <section className="py-20 px-6 border-t border-white/[0.04] bg-[#0f0f0f]">
-        <div className="max-w-6xl mx-auto text-center">
-          <span className="text-[10px] tracking-[0.3em] text-gold-400/60 uppercase font-medium mb-12 block">{t.certTitle}</span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      {/* ═══ EQUIPMENT SHOWCASE — Exact UI Match with Refined (Smaller) Fonts ═══ */}
+      <section className="snap-start relative h-screen w-full flex flex-col bg-[#f8f9fa] text-[#111] overflow-hidden">
+        
+        {/* Top Banner - Exactly 20% height */}
+        <div className="relative w-full h-[20vh] flex-shrink-0 flex flex-col justify-center overflow-hidden bg-[#051119]">
           
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 justify-items-center w-full max-w-fit mx-auto">
-            {[
-              { name: "Disney", src: "/certificate/Disney_logo.png" },
-              { name: "Walmart", src: "/certificate/Walmart.png" },
-              { name: "Target", src: "/certificate/Target.png" },
-              { name: "Costco", src: "/certificate/Costco.png" },
-              { name: "ISO 9001", src: "/certificate/ISO_9001-2015.png" },
-              { name: "ISO 14001", src: "/certificate/iso14001.png", scale: "scale-[1.3]" },
-              { name: "SCAN", src: "/certifications/scan.jpg", scale: "scale-[1.8]" },
-              { name: "SMETA", src: "/certifications/smeta-.png", scale: "scale-[1.8]" },
-              { name: "Universal", src: "/certifications/universal.png", scale: "scale-[2.1]" },
-              { name: "中国环境标志", src: "/certifications/china10.png", scale: "scale-[1.8]" },
-              { name: "FSC", src: "/certifications/fsc-new.png", scale: "scale-125" },
-              { name: "EXPERT", src: "/certifications/expert.jpg", scale: "scale-125" },
-            ].map((cert, i) => (
-              <div key={i} className="flex items-center justify-center w-28 h-14 md:w-36 md:h-16 bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-2 md:p-3 overflow-hidden">
-                <OptimizedImage 
-                  src={cert.src} 
-                  alt={cert.name} 
-                  wrapperClassName="w-full h-full flex items-center justify-center" 
-                  className={`w-full h-full object-contain mix-blend-multiply ${cert.scale || ""}`} 
-                />
+          {/* Background Factory Image - Scaled down by limiting width, positioned right */}
+          <div className="absolute right-0 top-0 w-[100%] md:w-[60%] h-[120%] -top-[10%]">
+            <img 
+              src="/equipment/页首顶部图片.png" 
+              alt="Smart Factory" 
+              className="w-full h-full object-cover object-[100%_45%] opacity-90" 
+              style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 15%, black 45%)', maskImage: 'linear-gradient(to right, transparent 0%, transparent 15%, black 45%)' }} 
+            />
+          </div>
+          
+          {/* Solid background on the left side to completely mask the image behind text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#051119] from-0% via-[#051119] via-[40%] to-transparent z-10 pointer-events-none" />
+          
+          <div className="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-10">
+            <h1 className="banner-title text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 md:mb-3 tracking-tight drop-shadow-lg">
+              SMART FACTORY
+            </h1>
+            <h2 className="banner-sub text-[#0a9396] font-medium text-base md:text-lg lg:text-xl tracking-wide mb-2 leading-snug drop-shadow-md">
+              {lang === "zh" ? <>面向儿童出版物的<br/>先进制造能力</> : <>Advanced Manufacturing<br/>Built for Children's Publishing</>}
+            </h2>
+            
+            <div className="banner-icons-wrap flex flex-row gap-6 md:gap-10 mt-2">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-white/20 flex items-center justify-center text-[#0a9396] bg-black/40 backdrop-blur-sm shadow-lg">
+                  <Cpu className="w-3 h-3 md:w-4 md:h-4" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="banner-icon-title text-white font-bold text-[10px] md:text-xs">{lang === "zh" ? "自动化" : "Automation"}</div>
+                  <div className="banner-icon-sub text-white/50 font-medium text-[8px] md:text-[9px] mt-0.5">{lang === "zh" ? "智能生产" : "Smart production"}</div>
+                </div>
               </div>
-            ))}
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-white/20 flex items-center justify-center text-[#0a9396] bg-black/40 backdrop-blur-sm shadow-lg">
+                  <Target className="w-3 h-3 md:w-4 md:h-4" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="banner-icon-title text-white font-bold text-[10px] md:text-xs">{lang === "zh" ? "精准" : "Precision"}</div>
+                  <div className="banner-icon-sub text-white/50 font-medium text-[8px] md:text-[9px] mt-0.5">{lang === "zh" ? "高品质输出" : "High-quality output"}</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-white/20 flex items-center justify-center text-[#0a9396] bg-black/40 backdrop-blur-sm shadow-lg">
+                  <ShieldCheck className="w-3 h-3 md:w-4 md:h-4" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div className="banner-icon-title text-white font-bold text-[10px] md:text-xs">{lang === "zh" ? "一致性" : "Consistency"}</div>
+                  <div className="banner-icon-sub text-white/50 font-medium text-[8px] md:text-[9px] mt-0.5">{lang === "zh" ? "可靠交付" : "Reliable delivery"}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Equipment Content - Exactly 80% height */}
+        <div className="h-[80vh] w-full max-w-[1600px] mx-auto px-6 md:px-10 py-4 flex flex-col bg-[#f8f9fa]">
+          
+          <div className="mb-3 flex flex-row items-center gap-3 flex-shrink-0">
+            <div className="w-1 h-3.5 bg-[#0a9396]"></div>
+            <h2 className="text-xs md:text-sm font-black tracking-tight text-[#0a9396] uppercase">
+              {lang === "zh" ? "MANUFACTURING TECHNOLOGY" : "MANUFACTURING TECHNOLOGY"}
+            </h2>
+            <span className="text-[10px] text-gray-500 ml-3 hidden md:block border-l border-gray-300 pl-3">
+              {lang === "zh" ? "集成化先进设备，为高效率、高品质的儿童图书制造提供稳定支撑。" : "Integrated advanced equipment for high-efficiency, high-quality production."}
+            </span>
+          </div>
+
+          {/* Cards Grid Container */}
+          <div className="flex-1 flex flex-col gap-4 min-h-0 relative">
+            
+            {/* 01 Card - Row 1 */}
+            <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 items-center min-h-0 relative z-10">
+               <div className="w-[50%] flex flex-col justify-center h-full relative z-20 equip-card-content">
+                 <div className="text-[#0a9396] font-bold text-[9px] md:text-[10px] tracking-widest mb-1 uppercase">01 / {lang === "zh" ? "印刷" : "PRINTING"}</div>
+                 <h3 className="text-base md:text-xl font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">
+                   {lang === "zh" ? "5色 LED-UV 胶印机" : "5-Color LED-UV\nOffset Printing"}
+                 </h3>
+                 <p className="text-gray-500 text-[9px] md:text-[11px] mb-2 leading-snug whitespace-pre-line">
+                   {lang === "zh" ? "高性能五色 LED-UV 印刷，提供稳定的色彩还原\n与高效批量生产能力。" : "High-performance five-color printing with LED-UV\ncuring delivers stable color reproduction and efficient\nproduction."}
+                 </p>
+                 <div className="flex flex-row gap-5 mt-1">
+                   <div className="flex items-center gap-2">
+                     <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><PenTool className="w-3.5 h-3.5" /></div>
+                     <div>
+                       <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "五色印刷" : "5-Color Printing"}</div>
+                       <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "一致的色彩还原" : "Consistent color reproduction"}</div>
+                     </div>
+                   </div>
+                   <div className="flex items-center gap-2">
+                     <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Wind className="w-3.5 h-3.5" /></div>
+                     <div>
+                       <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "LED-UV 固化" : "LED-UV Curing"}</div>
+                       <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "快速后续加工" : "Fast downstream processing"}</div>
+                     </div>
+                   </div>
+                   <div className="flex items-center gap-2 hidden lg:flex">
+                     <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Activity className="w-3.5 h-3.5" /></div>
+                     <div>
+                       <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "生产稳定" : "Production Stability"}</div>
+                       <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "可靠长单输出" : "Reliable long-run output"}</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               {/* Image */}
+               <img src="/equipment/01.png" alt="01" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+            </div>
+
+            {/* 02 Card - Row 2 */}
+            <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 items-center min-h-0 relative z-20">
+               {/* Left aligned image */}
+               <img src="/equipment/02.png" alt="02" className="absolute left-[-2%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-left" />
+               <div className="w-[50%] flex flex-col justify-center h-full relative z-20 equip-card-content ml-auto pl-8">
+                 <div className="text-[#0a9396] font-bold text-[9px] md:text-[10px] tracking-widest mb-1 uppercase">02 / {lang === "zh" ? "表面处理" : "FINISHING"}</div>
+                 <h3 className="text-base md:text-xl font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">
+                   {lang === "zh" ? "全自动 UV 上光" : "Automatic\nUV Varnishing"}
+                 </h3>
+                 <p className="text-gray-500 text-[9px] md:text-[11px] mb-2 leading-snug whitespace-pre-line">
+                   {lang === "zh" ? "全自动 UV 上光提升表面保护与视觉质感，完美满足多种表面整饰的高端需求。" : "Fully automated UV varnishing system enhances\nsurface protection and visual appeal."}
+                 </p>
+                 <div className="flex flex-row gap-5 mt-1">
+                   <div className="flex items-center gap-2">
+                     <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Layers className="w-3.5 h-3.5" /></div>
+                     <div>
+                       <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "全面及局部上光" : "Full & Spot Coating"}</div>
+                       <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "灵活的整饰选项" : "Flexible finishing options"}</div>
+                     </div>
+                   </div>
+                   <div className="flex items-center gap-2">
+                     <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Sparkles className="w-3.5 h-3.5" /></div>
+                     <div>
+                       <div className="text-[10px] md:text-xs font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高级效果" : "Premium Effects"}</div>
+                       <div className="text-[8px] md:text-[9px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "高光、哑光及触感" : "Gloss, matte and tactile"}</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+
+            {/* 03 & 04 Row 3 */}
+            <div className="flex-1 flex flex-row gap-4 min-h-0 relative z-30">
+              {/* 03 */}
+              <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
+                 <div className="w-[65%] flex flex-col justify-center z-20 equip-card-content">
+                   <div className="text-[#0a9396] font-bold text-[8px] md:text-[10px] tracking-widest mb-1 uppercase">03 / {lang === "zh" ? "模切" : "DIE-CUTTING"}</div>
+                   <h3 className="text-sm md:text-lg font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">{lang === "zh" ? "自动模切机" : "Automatic\nDie-Cutting"}</h3>
+                   <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
+                     {lang === "zh" ? "高速、高精度自动模切，实现异形结构的精准加工。" : "High-speed, high-precision\ndie-cutting for complex shapes."}
+                   </p>
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Scissors className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高精度" : "High Precision"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "精准模切" : "Accurate die-cutting"}</div></div>
+                     </div>
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Activity className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "高效率" : "High Efficiency"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "快速生产" : "Fast production"}</div></div>
+                     </div>
+                   </div>
+                 </div>
+                 <img src="/equipment/03.png" alt="03" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[60%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+              </div>
+              {/* 04 */}
+              <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
+                 <div className="w-[65%] flex flex-col justify-center z-20 equip-card-content">
+                   <div className="text-[#0a9396] font-bold text-[8px] md:text-[10px] tracking-widest mb-1 uppercase">04 / {lang === "zh" ? "装订" : "BINDING"}</div>
+                   <h3 className="text-sm md:text-lg font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">{lang === "zh" ? "纸板书生产线" : "Board Book\nLine"}</h3>
+                   <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
+                     {lang === "zh" ? "全自动化生产线，整合各项工艺，实现端到端生产一致性。" : "Fully automated board book\nline integrates gluing."}
+                   </p>
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Cpu className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "全自动化" : "Full Automation"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "端到端生产" : "End-to-end production"}</div></div>
+                     </div>
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><ShieldCheck className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "强一致性" : "Strong Consistency"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "稳定质量" : "Stable quality"}</div></div>
+                     </div>
+                   </div>
+                 </div>
+                 <img src="/equipment/04.png" alt="04" className="absolute right-[0%] top-[50%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+              </div>
+            </div>
+
+            {/* 05 & 06 Row 4 */}
+            <div className="flex-1 flex flex-row gap-4 min-h-0 relative z-40">
+              {/* 05 */}
+              <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
+                 <div className="w-[65%] flex flex-col justify-center z-20 equip-card-content">
+                   <div className="text-[#0a9396] font-bold text-[8px] md:text-[10px] tracking-widest mb-1 uppercase">05 / {lang === "zh" ? "包装" : "PACKAGING"}</div>
+                   <h3 className="text-sm md:text-lg font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">{lang === "zh" ? "自动包装线" : "Automatic\nPackaging"}</h3>
+                   <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
+                     {lang === "zh" ? "塑封、贴标及包装工序自动衔接，保障出货的严谨与高效。" : "Integrated packaging solution\nwith automated labeling."}
+                   </p>
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Layers className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "塑封" : "Shrink Wrapping"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "紧密整洁" : "Tight & clean"}</div></div>
+                     </div>
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Truck className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "打包贴标" : "Strapping & Labeling"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "安全准确" : "Secure & accurate"}</div></div>
+                     </div>
+                   </div>
+                 </div>
+                 <img src="/equipment/包装设备.png" alt="05" className="absolute right-[0%] top-[55%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+              </div>
+              {/* 06 */}
+              <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
+                 <div className="w-[65%] flex flex-col justify-center z-20 equip-card-content">
+                   <div className="text-[#0a9396] font-bold text-[8px] md:text-[10px] tracking-widest mb-1 uppercase">06 / {lang === "zh" ? "环境" : "ENVIRONMENT"}</div>
+                   <h3 className="text-sm md:text-lg font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">{lang === "zh" ? "恒温恒湿车间" : "Climate-Controlled\nManufacturing"}</h3>
+                   <p className="text-gray-500 text-[8px] md:text-[10px] mb-2 leading-snug whitespace-pre-line">
+                     {lang === "zh" ? "中央水冷空调系统提供受控生产环境，为高端纸质品印刷保驾护航。" : "Centralized HVAC system ensures\nstable environment."}
+                   </p>
+                   <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 mt-1 overflow-visible">
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><Factory className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "6层车间" : "6 Floors"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "受控生产" : "Climate-controlled"}</div></div>
+                     </div>
+                     <div className="flex items-center gap-2">
+                       <div className="w-5 h-5 md:w-6 md:h-6 rounded-lg bg-[#0a9396]/10 flex items-center justify-center text-[#0a9396]"><ShieldCheck className="w-3 h-3" /></div>
+                       <div><div className="text-[9px] md:text-[11px] font-bold text-[#111] leading-none mb-1 icon-label">{lang === "zh" ? "稳定环境" : "Stable Environment"}</div><div className="text-[7px] md:text-[8px] text-gray-400 leading-none icon-sub">{lang === "zh" ? "支持稳定制造" : "Consistent manufacturing"}</div></div>
+                     </div>
+                   </div>
+                 </div>
+                 <img src="/equipment/05.png" alt="06" className="absolute right-[0%] top-[65%] -translate-y-1/2 w-[45%] h-[135%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
-
       {/* ═══ CTA ═══ */}
-      <section className="relative py-40 px-6 overflow-hidden">
+      <section className="snap-start relative min-h-screen flex flex-col justify-center py-40 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0a0a]">
           {/* Precise Google Maps Embed with Dark Mode CSS Filter */}
           <iframe 
