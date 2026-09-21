@@ -272,7 +272,7 @@
           "ja": "受入検査",
           "ko": "수입 검사"
         },
-        "image": "/uploads/1786689354625-emmfzm.png"
+        "image": "/uploads/1786689354625-emmfzm.webp"
       },
       {
         "name": {
@@ -281,7 +281,7 @@
           "ja": "カラーマネジメント",
           "ko": "색상 관리"
         },
-        "image": "/uploads/1786689370689-jc2e26.png"
+        "image": "/uploads/1786689370689-jc2e26.webp"
       },
       {
         "name": {
@@ -290,7 +290,7 @@
           "ja": "工程内管理",
           "ko": "공정 제어"
         },
-        "image": "/real-factory/03.png"
+        "image": "/real-factory/03.webp"
       },
       {
         "name": {
@@ -299,7 +299,7 @@
           "ja": "機能テスト",
           "ko": "기능 테스트"
         },
-        "image": "/real-factory/04.png"
+        "image": "/real-factory/04.webp"
       },
       {
         "name": {
@@ -308,7 +308,7 @@
           "ja": "最終検査",
           "ko": "완제품 검사"
         },
-        "image": "/real-factory/05.png"
+        "image": "/real-factory/05.webp"
       }
     ]
   },
@@ -333,7 +333,7 @@
           "ja": "FSC® 認証紙",
           "ko": "FSC® 인증 종이"
         },
-        "image": "/eco/01.png"
+        "image": "/eco/01.webp"
       },
       {
         "name": {
@@ -342,7 +342,7 @@
           "ja": "再生・生分解性素材",
           "ko": "재생 및 생분해성 재료"
         },
-        "image": "/eco/02.png"
+        "image": "/eco/02.webp"
       },
       {
         "name": {
@@ -351,7 +351,7 @@
           "ja": "大豆・水性インク",
           "ko": "대두 및 수성 잉크"
         },
-        "image": "/eco/03.png"
+        "image": "/eco/03.webp"
       },
       {
         "name": {
@@ -360,7 +360,7 @@
           "ja": "自動化生産によるロス削減",
           "ko": "자동화 생산을 통한 손실 감소"
         },
-        "image": "/eco/04.png"
+        "image": "/eco/04.webp"
       },
       {
         "name": {
@@ -369,7 +369,7 @@
           "ja": "廃棄物削減プログラム",
           "ko": "폐기물 감축 프로그램"
         },
-        "image": "/eco/05.png"
+        "image": "/eco/05.webp"
       },
       {
         "name": {
@@ -378,7 +378,7 @@
           "ja": "省エネ生産",
           "ko": "에너지 효율적인 생산"
         },
-        "image": "/eco/06.png"
+        "image": "/eco/06.webp"
       }
     ]
   },
@@ -503,7 +503,7 @@
         "ja": "中国环境标志",
         "ko": "中国环境标志"
       },
-      "src": "/certifications/china10.png",
+      "src": "/certifications/china10.webp",
       "scale": "scale-[1.8]"
     },
     {
@@ -561,7 +561,7 @@
       }
     },
     {
-      "value": "500",
+      "value": "1000",
       "suffix": "+",
       "label": {
         "en": "Projects Every Year",
@@ -796,7 +796,7 @@
           "ja": "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現",
           "ko": "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장"
         },
-        "img": "/real-factory/IMG_5121.JPG"
+        "img": "/real-factory/IMG_5121.webp"
       },
       {
         "title": {
@@ -811,7 +811,7 @@
           "ja": "CNC裁断、罫線、エンボスを一貫処理",
           "ko": "CNC 절단, 크리징, 엠보싱 원스톱 처리"
         },
-        "img": "/real-factory/IMG_5271.JPG"
+        "img": "/real-factory/IMG_5271.webp"
       }
     ],
     "certTitle": {
@@ -897,32 +897,6 @@
     ]
   },
   "gallery": {
-    "categories": [
-      {
-        "key": "custom",
-        "name": "匠心特装定制"
-      },
-      {
-        "key": "boardbook",
-        "name": "板纸对裱童书"
-      },
-      {
-        "key": "cards",
-        "name": "益智卡牌卡册"
-      },
-      {
-        "key": "toys",
-        "name": "益智玩具类"
-      },
-      {
-        "key": "hardcover",
-        "name": "精装图书画册"
-      },
-      {
-        "key": "stickers",
-        "name": "趣味贴纸书系"
-      }
-    ],
     "folders": [
       {
         "key": "2026-08-20__图库",
@@ -1438,7 +1412,7 @@
             "category": "toys"
           },
           {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9923.JPG.webp",
+            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9923.webp",
             "name": "IMG_9923.JPG.jpg",
             "sizeKB": 119,
             "category": "toys"
@@ -1716,392 +1690,31 @@
         ]
       }
     ],
-    "groups": [
+    "categories": [
       {
-        "id": "boardbook-12",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组12",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-12-image5.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-12-image5.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-12-image57.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-12-image58.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-12-image59.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-12-image60.webp"
-        ],
-        "trailing": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image61.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image64.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image65.webp"
-        ]
+        "key": "custom",
+        "name": "匠心特装定制"
       },
       {
-        "id": "custom-1",
-        "category": "custom",
-        "name": "匠心特装定制·组01",
-        "cover": "/product-gallery/2026-08-20__产品图库/custom-1-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/custom-1-1.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-1-2.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-1-3.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-1-4.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-1-5.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-1-6.webp"
-        ]
+        "key": "boardbook",
+        "name": "板纸对裱童书"
       },
       {
-        "id": "custom-2",
-        "category": "custom",
-        "name": "匠心特装定制·组02",
-        "cover": "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9872小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9872小.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-2-IMG_9876小.webp"
-        ]
+        "key": "cards",
+        "name": "益智卡牌卡册"
       },
       {
-        "id": "custom-3",
-        "category": "custom",
-        "name": "匠心特装定制·组03",
-        "cover": "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9859小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9859小.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-3-IMG_9862小.webp"
-        ]
+        "key": "toys",
+        "name": "益智玩具类"
       },
       {
-        "id": "custom-4",
-        "category": "custom",
-        "name": "匠心特装定制·组04",
-        "cover": "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9929小_.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9929小_.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9931小.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-4-IMG_9933小.webp"
-        ]
+        "key": "hardcover",
+        "name": "精装图书画册"
       },
       {
-        "id": "boardbook-1",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组01",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-1-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-1-1.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-1-image71.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-1-image72.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-1-image73.webp"
-        ]
-      },
-      {
-        "id": "boardbook-2",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组02",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-2-image74.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-2-image74.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-2-image76.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-2-image77.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-2-image78.webp"
-        ]
-      },
-      {
-        "id": "boardbook-3",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组03",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3654.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3654.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3655.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-3-IMG_3658.webp"
-        ]
-      },
-      {
-        "id": "boardbook-4",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组04",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3644.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3644.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3645.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-4-IMG_3652.webp"
-        ]
-      },
-      {
-        "id": "boardbook-5",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组05",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-5-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-5-1.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-5-2..webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-5-3.webp"
-        ]
-      },
-      {
-        "id": "boardbook-6",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组06",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7457.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7457.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7458.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7459.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-6-_DSC7460.webp"
-        ]
-      },
-      {
-        "id": "boardbook-7",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组07",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7450.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7450.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-7-_DSC7451.webp"
-        ]
-      },
-      {
-        "id": "boardbook-8",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组08",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7452.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7452.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-8-_DSC7453.webp"
-        ]
-      },
-      {
-        "id": "boardbook-9",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组09",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7455.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7455.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-9-_DSC7456.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-9-image87.webp"
-        ]
-      },
-      {
-        "id": "boardbook-10",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组10",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7461.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7461.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7462.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-10-_DSC7463.webp"
-        ]
-      },
-      {
-        "id": "boardbook-11",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组11",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7464.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7464.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-11-_DSC7465.webp"
-        ]
-      },
-      {
-        "id": "boardbook-13",
-        "category": "boardbook",
-        "name": "板纸对裱童书·组13",
-        "cover": "/product-gallery/2026-08-20__产品图库/boardbook-13-image91.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-13-image91.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-13-image92.webp"
-        ]
-      },
-      {
-        "id": "cards-1",
-        "category": "cards",
-        "name": "益智卡牌卡册·组01",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9918小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9918小.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-1-IMG_9919小.webp"
-        ]
-      },
-      {
-        "id": "cards-2",
-        "category": "cards",
-        "name": "益智卡牌卡册·组02",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9832小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9832小.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-2-IMG_9838小.webp"
-        ]
-      },
-      {
-        "id": "cards-3",
-        "category": "cards",
-        "name": "益智卡牌卡册·组03",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9840小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9840小.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-3-IMG_9845小.webp"
-        ]
-      },
-      {
-        "id": "cards-4",
-        "category": "cards",
-        "name": "益智卡牌卡册·组04",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9846小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9846小.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-4-IMG_9851小.webp"
-        ]
-      },
-      {
-        "id": "cards-5",
-        "category": "cards",
-        "name": "益智卡牌卡册·组05",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-5-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-5-1.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-5-IMG_9878小.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-5-IMG_9884小.webp"
-        ]
-      },
-      {
-        "id": "cards-6",
-        "category": "cards",
-        "name": "益智卡牌卡册·组06",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-6-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-6-1.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-6-IMG_9854小.webp"
-        ]
-      },
-      {
-        "id": "cards-7",
-        "category": "cards",
-        "name": "益智卡牌卡册·组07",
-        "cover": "/product-gallery/2026-08-20__产品图库/cards-7-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/cards-7-1.webp",
-          "/product-gallery/2026-08-20__产品图库/cards-7-IMG_9938小.webp"
-        ]
-      },
-      {
-        "id": "hardcover-1",
-        "category": "hardcover",
-        "name": "精装图书画册·组01",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7440.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7440.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7441.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-_DSC7445.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-1.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-10.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-11.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-12.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-2.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-3.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-4.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-5.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-7.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-image104.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9902小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9905小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9906小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9907小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-1-IMG_9912小.webp"
-        ]
-      },
-      {
-        "id": "hardcover-2",
-        "category": "hardcover",
-        "name": "精装图书画册·组02",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7725.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7725.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_7726.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_77266.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_9954小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-2-IMG_9955小.webp"
-        ]
-      },
-      {
-        "id": "hardcover-3",
-        "category": "hardcover",
-        "name": "精装图书画册·组03",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-3-1.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-3-1.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-3-image150.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-3-image151.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-3-IMG_9945小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-3-IMG_9949小.webp"
-        ]
-      },
-      {
-        "id": "hardcover-4",
-        "category": "hardcover",
-        "name": "精装图书画册·组04",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7440.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7440.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7441.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-4-_DSC7445.webp"
-        ]
-      },
-      {
-        "id": "hardcover-5",
-        "category": "hardcover",
-        "name": "精装图书画册·组05",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9954小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9954小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-5-IMG_9955小.webp"
-        ]
-      },
-      {
-        "id": "hardcover-6",
-        "category": "hardcover",
-        "name": "精装图书画册·组06",
-        "cover": "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9945小.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9945小.webp",
-          "/product-gallery/2026-08-20__产品图库/hardcover-6-IMG_9949小.webp"
-        ]
-      },
-      {
-        "id": "custom-5",
-        "category": "custom",
-        "name": "匠心特装定制·组05",
-        "cover": "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image113.webp",
-          "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto16.webp",
-          "/product-gallery/2026-08-20__产品图库/custom-TOP-image114.webp"
-        ]
-      },
-      {
-        "id": "stickers-mt0z2iyvv9q",
-        "category": "stickers",
-        "name": "趣味贴纸书系-组01",
-        "cover": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image45.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image42.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image43.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image44.webp"
-        ]
-      },
-      {
-        "id": "stickers-mt0z2x28643",
-        "category": "stickers",
-        "name": "趣味贴纸书系-组02",
-        "cover": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image49.webp",
-        "images": [
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image49.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image46.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image47.webp",
-          "/product-gallery/2026-08-20__产品图库/stickers-TOP-image48.webp"
-        ]
+        "key": "stickers",
+        "name": "趣味贴纸书系"
       }
-    ],
-    "total": 144,
-    "groupTotal": 30
+    ]
   }
 }
