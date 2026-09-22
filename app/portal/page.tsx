@@ -226,8 +226,8 @@ export default function ClientPortal() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.5em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-5 py-1.5 backdrop-blur-sm mb-8">
-              <Sparkles className="w-3 h-3" />
+            <span className="inline-flex items-center gap-2 text-xs tracking-[0.25em] text-gold-400 font-semibold uppercase border border-gold-500/40 rounded-full px-5 py-2 backdrop-blur-md bg-black/60 mb-8 shadow-lg">
+              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
               {content.over}
             </span>
           </div>
@@ -235,14 +235,14 @@ export default function ClientPortal() {
             {content.title}
             <span className="block mt-4 md:mt-6 text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600">{content.accent}</span>
           </h1>
-          <p className="text-white/50 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-normal animate-fade-in-up opacity-0 font-display drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {content.desc}
           </p>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
-          <span className="text-[10px] tracking-widest uppercase">{content.scroll}</span>
-          <ChevronDown className="w-4 h-4" />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white animate-bounce cursor-pointer group">
+          <span className="text-xs md:text-sm tracking-widest uppercase font-medium text-white group-hover:text-gold-400 transition-colors drop-shadow-md">{content.scroll}</span>
+          <ChevronDown className="w-5 h-5 text-gold-400 group-hover:translate-y-0.5 transition-transform drop-shadow-md" />
         </div>
       </section>
 

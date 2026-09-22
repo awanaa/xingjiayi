@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   X, ChevronRight, ChevronLeft, DollarSign,
   Image as ImageIcon, Play, BookOpen, BookText, Gift, Sparkles,
-  Hand, Volume2, Puzzle, Settings2, Gem,
+  Hand, Volume2, Puzzle, Settings2, Gem, Layers,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -17,17 +17,18 @@ import { useLang } from "../../hooks/useLang";
 // TYPES
 // =============================================================================
 
-interface GalleryImage { src: string; name: string; sizeKB: number; category: string; }
+interface GalleryImage { src: string; name: string; sizeKB: number; category: string; fit?: "cover" | "contain"; }
 interface FolderData { key: string; images: GalleryImage[]; }
-interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; trailing?: string[]; }
+interface GalleryGroup { id: string; category: string; name: string; cover: string; images: string[]; trailing?: string[]; coverFit?: "cover" | "contain"; imageFits?: ("cover" | "contain")[]; }
 
-const TYPE_ORDER = ["custom","boardbook","cards","toys","hardcover","stickers"];
+const TYPE_ORDER = ["boardbook","custom","craft","cards","toys","hardcover","stickers"];
 
 const typeMeta: Record<string, { icon: React.ReactNode; label: Record<string,string>; desc: Record<string,string> }> = {
   yo: { icon: <Gift className="w-5 h-5" />, label: { en:"YO Series", zh:"YO类", ja:"YOシリーズ", ko:"YO 시리즈" }, desc: { en:"Signature YO series products.", zh:"特色 YO 系列产品。", ja:"特徴的なYOシリーズ製品。", ko:"시그니처 YO 시리즈 제품." } },
   custom: { icon: <Settings2 className="w-5 h-5" />, label: { en:"Custom Special Binding", zh:"匠心特装定制", ja:"匠の特装カスタム", ko:"장인 맞춤 특장" }, desc: { en:"Custom special binding crafted to your specifications.", zh:"匠心特装，精工细作，满足个性化定制需求。", ja:"匠の技による特装・オーダーメイド製品。", ko:"고객 요구에 맞춰 장인 정신으로 제작하는 맞춤 특장 제품." } },
   soundlight: { icon: <Volume2 className="w-5 h-5" />, label: { en:"Sound & Light Books", zh:"声光互动书册", ja:"サウンド＆ライト絵本", ko:"음성·조명 인터랙티브 북" }, desc: { en:"Interactive books with built-in sound & light modules.", zh:"内置声光模块的互动书册，点亮阅读乐趣。", ja:"サウンド＆ライトモジュール内蔵のインタラクティブ絵本。", ko:"사운드·라이트 모듈을 내장한 인터랙티브 북으로 독서의 즐거움을 더합니다." } },
   paperback: { icon: <BookOpen className="w-5 h-5" />, label: { en:"Paperback Books", zh:"平装书刊书籍", ja:"並製本・書籍", ko:"무선제본 서적" }, desc: { en:"Paperback books with integrated printing & binding.", zh:"平装书刊书籍，印刷装订一体化。", ja:"印刷・製本を一貫生産する並製本。", ko:"인쇄·제본 일관 생산하는 무선제본 서적." } },
+  craft: { icon: <Layers className="w-5 h-5" />, label: { en:"Craft Finishing", zh:"工艺展示", ja:"加工・特殊工芸", ko:"후가공·특수 공예" }, desc: { en:"Premium finishing: foil stamping, embossing, glitter, glow-in-the-dark and more.", zh:"光柱镭射烫金、击凸击凹、闪粉、温变夜光等特种工艺展示。", ja:"箔押し・エンボス・グリッター・蓄光など特殊加工の紹介。", ko:"박·형압·글리터·축광 등 특수 후가공 쇼케이스." } },
   boardbook: { icon: <BookText className="w-5 h-5" />, label: { en:"Board Books", zh:"板纸对裱童书", ja:"ボードブック", ko:"보드북" }, desc: { en:"Durable board books made with laminated paperboard.", zh:"厚纸板对裱工艺，耐翻耐玩。", ja:"厚紙ラミネート製の丈夫なボードブック。", ko:"두꺼운 판지 접합 공법으로 오래 사용해도 튼튼한 보드북." } },
   cards: { icon: <Puzzle className="w-5 h-5" />, label: { en:"Educational Cards", zh:"益智卡牌卡册", ja:"知育カード", ko:"교육용 카드·카드북" }, desc: { en:"Educational cards & card books for learning through play.", zh:"益智卡牌卡册，寓教于乐。", ja:"遊びながら学べる知育カード＆カードブック。", ko:"놀이로 배우는 교육용 카드 및 카드북." } },
   toys: { icon: <Hand className="w-5 h-5" />, label: { en:"Educational Toys", zh:"益智玩具类", ja:"知育玩具", ko:"교육용 장난감" }, desc: { en:"Educational toys that spark creativity.", zh:"益智玩具，启发思维。", ja:"創造力を育む知育玩具。", ko:"창의력을 키우는 교육용 장난감." } },
@@ -99,7 +100,7 @@ export default function PortfolioPage() {
 
   // 组内图转标准图对象（灯箱复用）
   const groupImages = useCallback((g: GalleryGroup): GalleryImage[] =>
-    g.images.map(src => ({ src, name: decodeURIComponent(src.split("/").pop() || ""), sizeKB: 0, category: g.category })), []);
+    g.images.map((src, i) => ({ src, name: decodeURIComponent(src.split("/").pop() || ""), sizeKB: 0, category: g.category, fit: g.imageFits?.[i] ?? "cover" })), []);
 
   // 每个分类的展示单元数 = 散图 + 组
   const unitCounts = React.useMemo(() => {
@@ -331,17 +332,23 @@ export default function PortfolioPage() {
 // FIGURE CARD
 // =============================================================================
 
+// =============================================================================
+// FIGURE CARD（散图：单张产品图）
+// 1:1 方形卡 + 智能 fit：图按自身比例自动选 cover（裁满满格）/ contain（完整显示）
+// =============================================================================
+
 function FigureCard({ img, isError, onSelect, onError }: {
   img: GalleryImage; isError: boolean; onSelect: () => void; onError: () => void;
 }) {
+  const fit = img.fit ?? "cover";
   return (
     <div
       role="button" tabIndex={0}
       onClick={onSelect}
       onKeyDown={(e) => { if (e.key === "Enter") onSelect(); }}
-      className="group cursor-pointer overflow-hidden rounded-lg bg-white/[0.03] border border-white/[0.06] transition-all duration-300 hover:shadow-md hover:shadow-gold-500/5 hover:-translate-y-0.5 aspect-[4/3]"
+      className="group cursor-pointer overflow-hidden rounded-lg bg-white/[0.06] border border-white/[0.06] transition-all duration-300 hover:shadow-md hover:shadow-gold-500/5 hover:-translate-y-0.5 aspect-square"
     >
-      <div className="relative overflow-hidden bg-white/[0.02] w-full h-full">
+      <div className="relative overflow-hidden bg-white/[0.06] w-full h-full">
         {isError ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white/30 gap-2">
             <ImageIcon className="w-8 h-8" />
@@ -351,7 +358,7 @@ function FigureCard({ img, isError, onSelect, onError }: {
           <img
             src={img.src}
             alt={img.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`w-full h-full ${fit === "contain" ? "object-contain p-1" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
             loading="lazy"
             onError={onError}
           />
@@ -376,14 +383,15 @@ function GroupCard({ group, isError, onSelect, onError }: {
   group: GalleryGroup; isError: boolean; onSelect: () => void; onError: () => void;
 }) {
   const extra = group.images.length - 1;
+  const fit = group.coverFit ?? "cover";
   return (
     <div
       role="button" tabIndex={0}
       onClick={onSelect}
       onKeyDown={(e) => { if (e.key === "Enter") onSelect(); }}
-      className="group cursor-pointer overflow-hidden rounded-lg bg-white/[0.03] border border-gold-500/15 transition-all duration-300 hover:shadow-md hover:shadow-gold-500/10 hover:-translate-y-0.5 aspect-[4/3]"
+      className="group cursor-pointer overflow-hidden rounded-lg bg-white/[0.06] border border-gold-500/15 transition-all duration-300 hover:shadow-md hover:shadow-gold-500/10 hover:-translate-y-0.5 aspect-square"
     >
-      <div className="relative overflow-hidden bg-white/[0.02] w-full h-full">
+      <div className="relative overflow-hidden bg-white/[0.06] w-full h-full">
         {isError ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white/30 gap-2">
             <ImageIcon className="w-8 h-8" />
@@ -393,7 +401,7 @@ function GroupCard({ group, isError, onSelect, onError }: {
           <img
             src={group.cover}
             alt={group.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`w-full h-full ${fit === "contain" ? "object-contain p-1" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
             loading="lazy"
             onError={onError}
           />

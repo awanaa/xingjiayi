@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
+  ChevronDown,
   Box,
   Printer,
   FileText,
@@ -95,23 +96,23 @@ const contentDict: Record<Lang, ContentType> = {
       title: "Quality Built into Every Step",
       subtitle: "Systematic quality management from raw material inspection to final shipment",
       modules: [
-        { name: "Color Management", image: "/real-factory/02.png" },
-        { name: "Incoming Inspection", image: "/real-factory/01.png" },
-        { name: "In-process Control", image: "/real-factory/03.png" },
-        { name: "Functional Testing", image: "/real-factory/04.png" },
-        { name: "Final Inspection", image: "/real-factory/05.png" },
+        { name: "Color Management", image: "/real-factory/02.webp" },
+        { name: "Incoming Inspection", image: "/real-factory/01.webp" },
+        { name: "In-process Control", image: "/real-factory/03.webp" },
+        { name: "Functional Testing", image: "/real-factory/04.webp" },
+        { name: "Final Inspection", image: "/real-factory/05.webp" },
       ],
     },
     sustainability: {
       title: "Better Materials\nSmarter Production",
       subtitle: "Responsible material choices and practical production improvements to reduce waste",
       items: [
-        { name: "FSC®-certified paper", image: "/eco/01.png" },
-        { name: "Recycled & biodegradable materials", image: "/eco/02.png" },
-        { name: "Soy-based & water-based inks", image: "/eco/03.png" },
-        { name: "Automated production waste reduction", image: "/eco/04.png" },
-        { name: "Waste reduction programs", image: "/eco/05.png" },
-        { name: "Energy-efficient production", image: "/eco/06.png" },
+        { name: "FSC®-certified paper", image: "/eco/01.webp" },
+        { name: "Recycled & biodegradable materials", image: "/eco/02.webp" },
+        { name: "Soy-based & water-based inks", image: "/eco/03.webp" },
+        { name: "Automated production waste reduction", image: "/eco/04.webp" },
+        { name: "Waste reduction programs", image: "/eco/05.webp" },
+        { name: "Energy-efficient production", image: "/eco/06.webp" },
       ],
     },
     global: {
@@ -165,23 +166,23 @@ const contentDict: Record<Lang, ContentType> = {
       title: "品质融入每一个环节",
       subtitle: "从原材料检验到成品出运，系统性质量管理覆盖全流程",
       modules: [
-        { name: "色彩管理", image: "/real-factory/02.png" },
-        { name: "来料检验", image: "/real-factory/01.png" },
-        { name: "过程控制", image: "/real-factory/03.png" },
-        { name: "功能测试", image: "/real-factory/04.png" },
-        { name: "成品检验", image: "/real-factory/05.png" },
+        { name: "色彩管理", image: "/real-factory/02.webp" },
+        { name: "来料检验", image: "/real-factory/01.webp" },
+        { name: "过程控制", image: "/real-factory/03.webp" },
+        { name: "功能测试", image: "/real-factory/04.webp" },
+        { name: "成品检验", image: "/real-factory/05.webp" },
       ],
     },
     sustainability: {
       title: "更优质的材料\n更智能的生产",
       subtitle: "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
       items: [
-        { name: "FSC® 认证纸张", image: "/eco/01.png" },
-        { name: "再生与可降解材料", image: "/eco/02.png" },
-        { name: "大豆基与水性油墨", image: "/eco/03.png" },
-        { name: "自动化生产减少损耗", image: "/eco/04.png" },
-        { name: "废弃物减量计划", image: "/eco/05.png" },
-        { name: "节能高效生产", image: "/eco/06.png" },
+        { name: "FSC® 认证纸张", image: "/eco/01.webp" },
+        { name: "再生与可降解材料", image: "/eco/02.webp" },
+        { name: "大豆基与水性油墨", image: "/eco/03.webp" },
+        { name: "自动化生产减少损耗", image: "/eco/04.webp" },
+        { name: "废弃物减量计划", image: "/eco/05.webp" },
+        { name: "节能高效生产", image: "/eco/06.webp" },
       ],
     },
     global: {
@@ -237,23 +238,23 @@ const contentDict: Record<Lang, ContentType> = {
       title: "すべての工程に組み込まれた品質",
       subtitle: "原材料検査から最終出荷まで、体系的な品質管理を実施",
       modules: [
-        { name: "カラーマネジメント", image: "/real-factory/02.png" },
-        { name: "受入検査", image: "/real-factory/01.png" },
-        { name: "工程内管理", image: "/real-factory/03.png" },
-        { name: "機能テスト", image: "/real-factory/04.png" },
-        { name: "最終検査", image: "/real-factory/05.png" },
+        { name: "カラーマネジメント", image: "/real-factory/02.webp" },
+        { name: "受入検査", image: "/real-factory/01.webp" },
+        { name: "工程内管理", image: "/real-factory/03.webp" },
+        { name: "機能テスト", image: "/real-factory/04.webp" },
+        { name: "最終検査", image: "/real-factory/05.webp" },
       ],
     },
     sustainability: {
       title: "より良い素材\nよりスマートな生産",
       subtitle: "責任ある素材選択と実践的な生産改善による廃棄物削減",
       items: [
-        { name: "FSC® 認証紙", image: "/eco/01.png" },
-        { name: "再生・生分解性素材", image: "/eco/02.png" },
-        { name: "大豆・水性インク", image: "/eco/03.png" },
-        { name: "自動化生産によるロス削減", image: "/eco/04.png" },
-        { name: "廃棄物削減プログラム", image: "/eco/05.png" },
-        { name: "省エネ生産", image: "/eco/06.png" },
+        { name: "FSC® 認証紙", image: "/eco/01.webp" },
+        { name: "再生・生分解性素材", image: "/eco/02.webp" },
+        { name: "大豆・水性インク", image: "/eco/03.webp" },
+        { name: "自動化生産によるロス削減", image: "/eco/04.webp" },
+        { name: "廃棄物削減プログラム", image: "/eco/05.webp" },
+        { name: "省エネ生産", image: "/eco/06.webp" },
       ],
     },
     global: {
@@ -309,23 +310,23 @@ const contentDict: Record<Lang, ContentType> = {
       title: "모든 단계에 통합된 품질",
       subtitle: "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리",
       modules: [
-        { name: "색상 관리", image: "/real-factory/02.png" },
-        { name: "수입 검사", image: "/real-factory/01.png" },
-        { name: "공정 제어", image: "/real-factory/03.png" },
-        { name: "기능 테스트", image: "/real-factory/04.png" },
-        { name: "완제품 검사", image: "/real-factory/05.png" },
+        { name: "색상 관리", image: "/real-factory/02.webp" },
+        { name: "수입 검사", image: "/real-factory/01.webp" },
+        { name: "공정 제어", image: "/real-factory/03.webp" },
+        { name: "기능 테스트", image: "/real-factory/04.webp" },
+        { name: "완제품 검사", image: "/real-factory/05.webp" },
       ],
     },
     sustainability: {
       title: "더 나은 재료\n더 스마트한 생산",
       subtitle: "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다",
       items: [
-        { name: "FSC® 인증 종이", image: "/eco/01.png" },
-        { name: "재생 및 생분해성 재료", image: "/eco/02.png" },
-        { name: "대두 및 수성 잉크", image: "/eco/03.png" },
-        { name: "자동화 생산을 통한 손실 감소", image: "/eco/04.png" },
-        { name: "폐기물 감축 프로그램", image: "/eco/05.png" },
-        { name: "에너지 효율적인 생산", image: "/eco/06.png" },
+        { name: "FSC® 인증 종이", image: "/eco/01.webp" },
+        { name: "재생 및 생분해성 재료", image: "/eco/02.webp" },
+        { name: "대두 및 수성 잉크", image: "/eco/03.webp" },
+        { name: "자동화 생산을 통한 손실 감소", image: "/eco/04.webp" },
+        { name: "폐기물 감축 프로그램", image: "/eco/05.webp" },
+        { name: "에너지 효율적인 생산", image: "/eco/06.webp" },
       ],
     },
     global: {
@@ -352,7 +353,7 @@ const certifications = [
   { name: "SCAN", src: "/certifications/scan.jpg", scale: "scale-[1.8]" },
   { name: "SMETA", src: "/certifications/smeta-.png", scale: "scale-[1.8]" },
   { name: "Universal", src: "/certifications/universal.png", invert: true, scale: "scale-[2.1]" },
-  { name: "中国环境标志", src: "/certifications/china10.png", scale: "scale-[1.8]" },
+  { name: "中国环境标志", src: "/certifications/china10.webp", scale: "scale-[1.8]" },
   { name: "FSC", src: "/certifications/fsc-new.png", scale: "scale-125" },
   { name: "EXPERT", src: "/certifications/expert.jpg", scale: "scale-125" },
 ];
@@ -591,6 +592,8 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="metadata"
+            poster="/hero-video-poster.jpg"
             className={`absolute inset-0 w-full h-full object-cover scale-105 transition-opacity duration-1000 ${showGif ? 'opacity-0' : 'opacity-100'}`}
           >
             <source src="/hero-video-merged.mp4" type="video/mp4" />
@@ -602,6 +605,8 @@ export default function HomePage() {
               <img 
                 src="/book_animation.gif" 
                 alt="Book flip animation"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain brightness-125 contrast-105"
               />
             )}
@@ -624,7 +629,7 @@ export default function HomePage() {
         {/* Content Layer — centered vertically & horizontally */}
         <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto pt-20 md:pt-24">
           {/* Gold badge — same style as About hero */}
-          <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400 font-medium uppercase border border-gold-500/30 rounded-full px-5 py-2 backdrop-blur-sm bg-black/20 mb-8 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+          <span className="inline-block text-xs tracking-[0.25em] text-gold-400 font-semibold uppercase border border-gold-500/40 rounded-full px-5 py-2 backdrop-blur-md bg-black/60 mb-8 shadow-lg">
             {lang === 'zh'
               ? '高端纸艺工程'
               : lang === 'ja'
@@ -638,7 +643,7 @@ export default function HomePage() {
               {content.hero.title}
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] whitespace-pre-line font-display">
+          <p className="text-lg md:text-xl text-white mb-12 max-w-3xl mx-auto font-normal leading-relaxed tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] whitespace-pre-line font-display">
             {content.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
@@ -651,7 +656,7 @@ export default function HomePage() {
             </Link>
             <button
               onClick={() => setShowQuoteForm(true)}
-              className="w-full sm:w-auto border border-gold-500/40 text-white px-10 py-4 rounded-full font-medium hover:bg-gold-500/10 hover:border-gold-500 transition-all duration-300 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="w-full sm:w-auto border-2 border-gold-500/60 text-white bg-black/40 hover:bg-gold-500/20 hover:border-gold-400 px-10 py-4 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {content.hero.ctaSecondary}
             </button>
@@ -659,11 +664,11 @@ export default function HomePage() {
           <div className="h-[2px] w-12 bg-gold-500 mx-auto mt-12 opacity-80" />
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
-            <span className="text-white/30 text-xs tracking-widest uppercase font-light">
-              Scroll
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-bounce cursor-pointer group">
+            <span className="text-xs md:text-sm tracking-widest uppercase font-medium text-white group-hover:text-gold-400 transition-colors drop-shadow-md">
+              {lang === 'zh' ? '向下探索' : lang === 'ja' ? 'スクロールして探索' : lang === 'ko' ? '스크롤하여 탐색' : 'Scroll to Explore'}
             </span>
-            <div className="w-[1px] h-10 bg-gradient-to-b from-gold-500/60 to-transparent" />
+            <ChevronDown className="w-5 h-5 text-gold-400 group-hover:translate-y-0.5 transition-transform drop-shadow-md" />
           </div>
         </div>
       </section>

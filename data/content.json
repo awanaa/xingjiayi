@@ -1,1720 +1,2592 @@
 {
-  "hero": {
-    "title": {
-      "en": "Bringing Children's Stories to Life",
-      "zh": "让童话故事跃然纸上",
-      "ja": "子供たちの物語に命を吹き込む",
-      "ko": "동화를 현실로 만듭니다"
+ "hero": {
+  "title": {
+   "en": "Bringing Children's Stories to Life",
+   "zh": "让童话故事跃然纸上",
+   "ja": "子供たちの物語に命を吹き込む",
+   "ko": "동화를 현실로 만듭니다"
+  },
+  "subtitle": {
+   "en": "Premium book manufacturing, complex paper engineering and reliable global delivery for publishers and brands",
+   "zh": "为全球出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
+   "ja": "出版社やブランド向けのプレミアムな絵本製造、複雑なペーパーエンジニアリング、信頼性の高いグローバル配送",
+   "ko": "전 세계 출판사 및 브랜드를 위한 프리미엄 도서 제작, 복잡한 페이퍼 엔지니어링 및 신뢰할 수 있는 글로벌 배송."
+  },
+  "ctaPrimary": {
+   "en": "Explore Our Work",
+   "zh": "探索我们的作品",
+   "ja": "作品を見る",
+   "ko": "포트폴리오 탐색"
+  },
+  "ctaSecondary": {
+   "en": "Start a Project",
+   "zh": "开启新项目",
+   "ja": "プロジェクトを始める",
+   "ko": "프로젝트 시작하기"
+  }
+ },
+ "trust": {
+  "title": {
+   "en": "Built for Global Publishing",
+   "zh": "为全球出版而生",
+   "ja": "グローバル出版のために構築",
+   "ko": "글로벌 출판을 위한 구축"
+  },
+  "subtitle": {
+   "en": "A trusted manufacturing partner supporting publishers, retailers and creative brands from concept to delivery",
+   "zh": "值得信赖的制造合作伙伴，从概念到交付全程支持出版商、零售商和创意品牌",
+   "ja": "出版社、小売業者、クリエイティブブランドをコンセプトから配送までサポートする信頼の製造パートナー",
+   "ko": "컨셉에서 배송까지 출판사, 소매업체, 크리에이티브 브랜드를 지원하는 신뢰할 수 있는 제조 파트너입니다."
+  }
+ },
+ "featured": {
+  "title": {
+   "en": "Ideas Engineered into Exceptional Products",
+   "zh": "将创意转化为卓越产品",
+   "ja": "アイデアを卓越した製品へ",
+   "ko": "아이디어를 탁월한 제품으로"
+  },
+  "subtitle": {
+   "en": "Explore how we combine paper engineering, printing, binding and hand assembly to deliver distinctive publishing products",
+   "zh": "探索我们如何将纸艺工程、印刷、装订与手工组装相结合，打造独具特色的出版产品",
+   "ja": "ペーパーエンジニアリング、印刷、製本、手作業による組立を組み合わせた差別化された出版製品を提供",
+   "ko": "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요."
+  },
+  "categories": [
+   {
+    "name": {
+     "en": "Board Books",
+     "zh": "纸板书",
+     "ja": "ボードブック",
+     "ko": "보드북"
     },
-    "subtitle": {
-      "en": "Premium book manufacturing, complex paper engineering and reliable global delivery for publishers and brands",
-      "zh": "为全球出版商和品牌提供高端图书制造、\n复杂纸艺工程以及可靠的全球交付",
-      "ja": "出版社やブランド向けのプレミアムな絵本製造、複雑なペーパーエンジニアリング、信頼性の高いグローバル配送",
-      "ko": "전 세계 출판사 및 브랜드를 위한 프리미엄 도서 제작, 복잡한 페이퍼 엔지니어링 및 신뢰할 수 있는 글로벌 배송."
+    "desc": {
+     "en": "Durable, FSC-certified paperboard books for early learning.",
+     "zh": "耐用FSC认证纸板，专为早期阅读设计。",
+     "ja": "耐久性に優れたFSC認証紙を使用した知育絵本。",
+     "ko": "조기 독서를 위해 설계된 내구성 있는 FSC 인증 보드입니다."
     },
-    "ctaPrimary": {
-      "en": "Explore Our Work",
-      "zh": "探索我们的作品",
-      "ja": "作品を見る",
-      "ko": "포트폴리오 탐색"
+    "image": "/products/prod-01.webp"
+   },
+   {
+    "name": {
+     "en": "Novelty & Pop-up",
+     "zh": "立体书与机关书",
+     "ja": "仕掛け絵本",
+     "ko": "팝업북 및 조작북"
     },
-    "ctaSecondary": {
-      "en": "Start a Project",
-      "zh": "开启新项目",
-      "ja": "プロジェクトを始める",
-      "ko": "프로젝트 시작하기"
+    "desc": {
+     "en": "Complex 3D paper mechanics with tabs, wheels, and pop-ups.",
+     "zh": "包含拉页、转盘、弹起等复杂3D纸艺结构。",
+     "ja": "タブ、回転盤、飛び出す立体ペーパー構造。",
+     "ko": "풀탭, 휠, 팝업 등 복잡한 3D 종이 구조를 포함합니다."
+    },
+    "image": "/products/prod-02.webp"
+   },
+   {
+    "name": {
+     "en": "Sound & Electronic",
+     "zh": "发声书与电子书",
+     "ja": "サウンド＆電子絵本",
+     "ko": "사운드 및 전자북"
+    },
+    "desc": {
+     "en": "CE-certified sound modules, lights, and interactive electronics.",
+     "zh": "CE认证发声模块、LED灯及互动电子元件。",
+     "ja": "CE認証の音声モジュール、LED、インタラクティブ電子部品。",
+     "ko": "CE 인증 사운드 모듈, LED 및 대화형 전자 부품."
+    },
+    "image": "/products/prod-03.webp"
+   },
+   {
+    "name": {
+     "en": "Activity Kits",
+     "zh": "活动套装",
+     "ja": "アクティビティキット",
+     "ko": "액티비티 키트"
+    },
+    "desc": {
+     "en": "Multi-component sets combining books, puzzles, crafts, and toys.",
+     "zh": "书+拼图+手工+玩具的多组件综合套装。",
+     "ja": "本、パズル、工作、おもちゃを組み合わせたマルチコンポーネントセット。",
+     "ko": "도서 + 퍼즐 + 공예 + 장난감이 결합된 멀티 컴포넌트 세트입니다."
+    },
+    "image": "/products/prod-04.webp"
+   },
+   {
+    "name": {
+     "en": "Boxed Sets",
+     "zh": "礼盒套装",
+     "ja": "ボックスセット",
+     "ko": "박스 세트"
+    },
+    "desc": {
+     "en": "Premium gift sets with coordinated components for special editions.",
+     "zh": "精品礼品组合套装，包含协调搭配的多种组件。",
+     "ja": "特別編集版のためのプレミアムギフトセット。",
+     "ko": "조화로운 여러 구성 요소를 포함하는 프리미엄 선물 세트입니다."
+    },
+    "image": "/products/prod-05.webp"
+   },
+   {
+    "name": {
+     "en": "Licensed Products",
+     "zh": "授权产品",
+     "ja": "ライセンス製品",
+     "ko": "라이선스 제품"
+    },
+    "desc": {
+     "en": "IP-branded books and kits meeting global compliance standards.",
+     "zh": "IP品牌图书与套装，满足全球合规标准。",
+     "ja": "IPブランドの絵本とキット、グローバルコンプライアンス基準準拠。",
+     "ko": "글로벌 규정 준수 기준을 충족하는 IP 브랜드 도서 및 키트입니다."
+    },
+    "image": "/products/prod-06.webp"
+   }
+  ]
+ },
+ "capabilities": {
+  "title": {
+   "en": "From Concept to Global Delivery",
+   "zh": "从卓越产品到全球交付",
+   "ja": "コンセプトからグローバル配送まで",
+   "ko": "우수한 제품에서 글로벌 배송까지"
+  },
+  "subtitle": {
+   "en": "One integrated team supporting engineering, sampling, production, quality assurance and international delivery",
+   "zh": "一体化团队支持工程设计、打样、生产、质量保证与国际物流",
+   "ja": "エンジニアリング、サンプリング、生産、品質保証、国際物流を一貫サポート",
+   "ko": "엔지니어링 디자인, 샘플링, 생산, 품질 보증 및 국제 물류를 지원하는 통합 팀입니다."
+  },
+  "steps": [
+   {
+    "name": {
+     "en": "Prepress & Proofing",
+     "zh": "印前与打样",
+     "ja": "プリプレス＆校正",
+     "ko": "프리프레스 & 교정"
+    },
+    "desc": {
+     "en": "File receiving, preflight checks, CTP plate-making, proofing & white dummy.",
+     "zh": "文件接收、印前检查、CTP制版、打样、White Dummy。",
+     "ja": "ファイル受領、プリフライトチェック、CTP製版、校正刷り、ホワイトダミー。",
+     "ko": "파일 수령, 프리플라이트 체크, CTP 제판, 교정 인쇄, 화이트 더미."
+    },
+    "image": "/process-illustrations/process-01.webp"
+   },
+   {
+    "name": {
+     "en": "Precision Printing",
+     "zh": "精密印刷",
+     "ja": "精密印刷",
+     "ko": "정밀 인쇄"
+    },
+    "desc": {
+     "en": "Printing, color management, color approval & process control.",
+     "zh": "印刷、色彩管理、看色与过程控制。",
+     "ja": "印刷、カラーマネジメント、色校正と工程管理。",
+     "ko": "인쇄, 컬러 매니지먼트, 색상 승인 및 공정 관리."
+    },
+    "image": "/process-illustrations/process-02.webp"
+   },
+   {
+    "name": {
+     "en": "Premium Finishing",
+     "zh": "高端表面处理",
+     "ja": "高級表面加工",
+     "ko": "프리미엄 후가공"
+    },
+    "desc": {
+     "en": "Lamination, Spot UV, foil stamping, embossing/debossing & special textures.",
+     "zh": "覆膜、Spot UV、烫金、压凹凸、特殊纹理。",
+     "ja": "PP加工、スポットUV、箔押し、エンボス/デボス、特殊テクスチャ。",
+     "ko": "코팅, 스팟 UV, 금박, 엠보싱/디보싱 및 특수 질감."
+    },
+    "image": "/process-illustrations/process-03.webp"
+   },
+   {
+    "name": {
+     "en": "Die-Cutting & Bookmaking",
+     "zh": "模切与装订",
+     "ja": "抜型＆製本",
+     "ko": "다이컷 & 제본"
+    },
+    "desc": {
+     "en": "Custom die-cutting, window patches, label pages, folding, collating, thread-sewing, hardcover, paperback & board books.",
+     "zh": "异形模切、开窗、标签页、折页、配页、锁线、精装、平装、Board Book等。",
+     "ja": "異形抜型、窓開け、差し込みページ、折り、丁合、糸かがり、上製本、並製本、ボードブックなど。",
+     "ko": "이형 다이컷, 창 개봉, 라벨 페이지, 접지, 정합, 실 제본, 하드커버, 소프트커버, 보드북 등."
+    },
+    "image": "/process-illustrations/process-04.webp"
+   },
+   {
+    "name": {
+     "en": "Interactive Assembly & QC",
+     "zh": "手工组装与质检",
+     "ja": "インタラクティブ組立＆品質管理",
+     "ko": "인터랙티브 조립 & QC"
+    },
+    "desc": {
+     "en": "Pop-up, lift-the-flap, sound books, magnetic books, accessory installation, QC & safety testing.",
+     "zh": "Pop-up、Lift-the-Flap、Sound Book、Magnetic Book、配件安装、QC与安全测试。",
+     "ja": "ポップアップ、めくり仕掛け、サウンドブック、マグネットブック、部品取付、QCと安全テスト。",
+     "ko": "팝업북, 플랩북, 사운드북, 마그네틱북, 부속품 설치, QC 및 안전 테스트."
+    },
+    "image": "/process-illustrations/process-05.webp"
+   },
+   {
+    "name": {
+     "en": "Packing & Global Fulfillment",
+     "zh": "出口包装与全球交付",
+     "ja": "梱包＆グローバル納品",
+     "ko": "포장 & 글로벌 물류"
+    },
+    "desc": {
+     "en": "Packing, cartoning, palletizing, warehousing, container loading & global shipping.",
+     "zh": "包装、装箱、托盘、仓储、集装箱装柜、全球出货。",
+     "ja": "梱包、箱詰め、パレタイズ、倉庫保管、コンテナ積載、グローバル出荷。",
+     "ko": "포장, 박스 포장, 팔레타이징, 창고 보관, 컨테이너 적재 및 글로벌 출하."
+    },
+    "image": "/process-illustrations/process-06.webp"
+   }
+  ]
+ },
+ "quality": {
+  "title": {
+   "en": "Quality Built into Every Step",
+   "zh": "品质融入每一个环节",
+   "ja": "すべての工程に組み込まれた品質",
+   "ko": "모든 단계에 통합된 품질"
+  },
+  "subtitle": {
+   "en": "Systematic quality management from raw material inspection to final shipment",
+   "zh": "从原材料检验到成品出运，系统性质量管理覆盖全流程",
+   "ja": "原材料検査から最終出荷まで、体系的な品質管理を実施",
+   "ko": "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리."
+  },
+  "modules": [
+   {
+    "name": {
+     "en": "Incoming Inspection",
+     "zh": "来料检验",
+     "ja": "受入検査",
+     "ko": "수입 검사"
+    },
+    "image": "/uploads/1786689354625-emmfzm.png"
+   },
+   {
+    "name": {
+     "en": "Color Management",
+     "zh": "色彩管理",
+     "ja": "カラーマネジメント",
+     "ko": "색상 관리"
+    },
+    "image": "/uploads/1786689370689-jc2e26.png"
+   },
+   {
+    "name": {
+     "en": "In-process Control",
+     "zh": "过程控制",
+     "ja": "工程内管理",
+     "ko": "공정 제어"
+    },
+    "image": "/real-factory/03.png"
+   },
+   {
+    "name": {
+     "en": "Functional Testing",
+     "zh": "功能测试",
+     "ja": "機能テスト",
+     "ko": "기능 테스트"
+    },
+    "image": "/real-factory/04.png"
+   },
+   {
+    "name": {
+     "en": "Final Inspection",
+     "zh": "成品检验",
+     "ja": "最終検査",
+     "ko": "완제품 검사"
+    },
+    "image": "/real-factory/05.png"
+   }
+  ]
+ },
+ "sustainability": {
+  "title": {
+   "en": "Better Materials. Smarter Production",
+   "zh": "更优质的材料 更智能的生产",
+   "ja": "より良い素材。よりスマートな生産",
+   "ko": "더 나은 재료, 더 스마트한 생산"
+  },
+  "subtitle": {
+   "en": "Responsible material choices and practical production improvements to reduce waste",
+   "zh": "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
+   "ja": "責任ある素材選択と実践的な生産改善による廃棄物削減",
+   "ko": "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다."
+  },
+  "items": [
+   {
+    "name": {
+     "en": "FSC®-certified paper",
+     "zh": "FSC® 认证纸张",
+     "ja": "FSC® 認証紙",
+     "ko": "FSC® 인증 종이"
+    },
+    "image": "/eco/01.png"
+   },
+   {
+    "name": {
+     "en": "Recycled & biodegradable materials",
+     "zh": "再生与可降解材料",
+     "ja": "再生・生分解性素材",
+     "ko": "재생 및 생분해성 재료"
+    },
+    "image": "/eco/02.png"
+   },
+   {
+    "name": {
+     "en": "Soy-based & water-based inks",
+     "zh": "大豆基与水性油墨",
+     "ja": "大豆・水性インク",
+     "ko": "대두 및 수성 잉크"
+    },
+    "image": "/eco/03.png"
+   },
+   {
+    "name": {
+     "en": "Automated production waste reduction",
+     "zh": "自动化生产减少损耗",
+     "ja": "自動化生産によるロス削減",
+     "ko": "자동화 생산을 통한 손실 감소"
+    },
+    "image": "/eco/04.png"
+   },
+   {
+    "name": {
+     "en": "Waste reduction programs",
+     "zh": "废弃物减量计划",
+     "ja": "廃棄物削減プログラム",
+     "ko": "폐기물 감축 프로그램"
+    },
+    "image": "/eco/05.png"
+   },
+   {
+    "name": {
+     "en": "Energy-efficient production",
+     "zh": "节能高效生产",
+     "ja": "省エネ生産",
+     "ko": "에너지 효율적인 생산"
+    },
+    "image": "/eco/06.png"
+   }
+  ]
+ },
+ "cta": {
+  "title": {
+   "en": "Have a Project in Mind?",
+   "zh": "有新项目想法？",
+   "ja": "プロジェクトのアイデアはありますか？",
+   "ko": "새로운 프로젝트 아이디어가 있으신가요?"
+  },
+  "subtitle": {
+   "en": "Share your concept, artwork or product specifications with our team",
+   "zh": "分享您的概念、图稿或产品规格，我们的团队将为您提供专业方案",
+   "ja": "コンセプト、アートワーク、製品仕様を当社のチームと共有してください",
+   "ko": "컨셉, 아트워크 또는 제품 사양을 당사 팀과 공유하여 전문 솔루션을 받으세요."
+  },
+  "buttonPrimary": {
+   "en": "Start a Project",
+   "zh": "开启新项目",
+   "ja": "プロジェクトを始める",
+   "ko": "프로젝트 시작하기"
+  },
+  "buttonSecondary": {
+   "en": "Request Samples",
+   "zh": "申请样品",
+   "ja": "サンプルをリクエスト",
+   "ko": "샘플 요청"
+  }
+ },
+ "certifications": [
+  {
+   "name": {
+    "en": "Disney",
+    "zh": "Disney",
+    "ja": "Disney",
+    "ko": "Disney"
+   },
+   "src": "/certificate/Disney_logo.png",
+   "invert": true
+  },
+  {
+   "name": {
+    "en": "Walmart",
+    "zh": "Walmart",
+    "ja": "Walmart",
+    "ko": "Walmart"
+   },
+   "src": "/certificate/Walmart.png"
+  },
+  {
+   "name": {
+    "en": "Target",
+    "zh": "Target",
+    "ja": "Target",
+    "ko": "Target"
+   },
+   "src": "/certificate/Target.png"
+  },
+  {
+   "name": {
+    "en": "Costco",
+    "zh": "Costco",
+    "ja": "Costco",
+    "ko": "Costco"
+   },
+   "src": "/certificate/Costco.png"
+  },
+  {
+   "name": {
+    "en": "ISO 9001",
+    "zh": "ISO 9001",
+    "ja": "ISO 9001",
+    "ko": "ISO 9001"
+   },
+   "src": "/certificate/ISO_9001-2015.png"
+  },
+  {
+   "name": {
+    "en": "ISO 14001",
+    "zh": "ISO 14001",
+    "ja": "ISO 14001",
+    "ko": "ISO 14001"
+   },
+   "src": "/certificate/iso14001.png",
+   "scale": "scale-[1.3]"
+  },
+  {
+   "name": {
+    "en": "SCAN",
+    "zh": "SCAN",
+    "ja": "SCAN",
+    "ko": "SCAN"
+   },
+   "src": "/certifications/scan.jpg",
+   "scale": "scale-[1.8]"
+  },
+  {
+   "name": {
+    "en": "SMETA",
+    "zh": "SMETA",
+    "ja": "SMETA",
+    "ko": "SMETA"
+   },
+   "src": "/certifications/smeta-.png",
+   "scale": "scale-[1.8]"
+  },
+  {
+   "name": {
+    "en": "Universal",
+    "zh": "Universal",
+    "ja": "Universal",
+    "ko": "Universal"
+   },
+   "src": "/certifications/universal.png",
+   "invert": true,
+   "scale": "scale-[2.1]"
+  },
+  {
+   "name": {
+    "en": "中国环境标志",
+    "zh": "中国环境标志",
+    "ja": "中国环境标志",
+    "ko": "中国环境标志"
+   },
+   "src": "/certifications/china10.png",
+   "scale": "scale-[1.8]"
+  },
+  {
+   "name": {
+    "en": "FSC",
+    "zh": "FSC",
+    "ja": "FSC",
+    "ko": "FSC"
+   },
+   "src": "/certifications/fsc-new.png",
+   "scale": "scale-125"
+  },
+  {
+   "name": {
+    "en": "EXPERT",
+    "zh": "EXPERT",
+    "ja": "EXPERT",
+    "ko": "EXPERT"
+   },
+   "src": "/certifications/expert.jpg",
+   "scale": "scale-125"
+  }
+ ],
+ "trustNumbers": [
+  {
+   "value": "25",
+   "suffix": "+",
+   "label": {
+    "en": "Years of Excellence",
+    "zh": "年卓越经验",
+    "ja": "年の卓越した実績",
+    "ko": "년의 탁월한 경험"
+   },
+   "desc": {
+    "en": "Serving global publishers since 2001",
+    "zh": "自2001年起服务全球出版商",
+    "ja": "2001年から世界の出版社にサービス",
+    "ko": "2001년부터 세계 출판사 서비스"
+   }
+  },
+  {
+   "value": "100",
+   "suffix": "+",
+   "label": {
+    "en": "Countries Served",
+    "zh": "服务国家/地区",
+    "ja": "対応国・地域",
+    "ko": "서비스 국가"
+   },
+   "desc": {
+    "en": "Delivering to publishers worldwide",
+    "zh": "向全球出版商交付",
+    "ja": "世界中の出版社に配送",
+    "ko": "전 세계 출판사에 배송"
+   }
+  },
+  {
+   "value": "1000",
+   "suffix": "+",
+   "label": {
+    "en": "Projects Every Year",
+    "zh": "每年完成项目",
+    "ja": "毎年完了プロジェクト",
+    "ko": "매년 완료 프로젝트"
+   },
+   "desc": {
+    "en": "From board books to complex pop-ups",
+    "zh": "从纸板书到复杂立体书",
+    "ja": "ボードブックから複雑な仕掛け絵本まで",
+    "ko": "보드북부터 복잡한 팝업북까지"
+   }
+  },
+  {
+   "value": "99",
+   "suffix": "%",
+   "label": {
+    "en": "On-time Delivery",
+    "zh": "准时交付率",
+    "ja": "納期順守率",
+    "ko": "정시 납품률"
+   },
+   "desc": {
+    "en": "Consistent, reliable production schedules",
+    "zh": "稳定可靠的生产排期",
+    "ja": "安定した信頼性の高い生産スケジュール",
+    "ko": "안정적이고 신뢰할 수 있는 생산 일정"
+   }
+  }
+ ],
+ "plant": {
+  "heroOver": {
+   "en": "Since 2001",
+   "zh": "始于2001",
+   "ja": "2001年創業",
+   "ko": "2001년 설립"
+  },
+  "heroTitle": {
+   "en": "Where Precision",
+   "zh": "精密与效率",
+   "ja": "精密と効率が",
+   "ko": "정밀함과 효율성이"
+  },
+  "heroAccent": {
+   "en": "Meets Production",
+   "zh": "在此交汇",
+   "ja": "交差する場所",
+   "ko": "교차하는 곳"
+  },
+  "heroDesc": {
+   "en": "Step inside our 20,000m² smart facility — 50%+ automation rate, 24/7 climate control, and a team of 250+ master craftsmen turning raw sheets into award-winning books.",
+   "zh": "走进星嘉艺20,000平方米智慧工厂——50%+自动化率、24小时恒温恒湿、250+工匠团队，每一本好书的诞生，都从这里开始。",
+   "ja": "20,000m²のスマート工場——50%超の自動化率、24時間温度管理、250+の熟練職人。すべての良書はここから始まります。",
+   "ko": "20,000m² 규모의 스마트 공장——50% 이상의 자동화율, 24시간 온도 제어, 250명 이상의 숙련된 장인. 모든 훌륭한 책은 이곳에서 시작됩니다."
+  },
+  "scroll": {
+   "en": "Scroll to explore",
+   "zh": "向下探索",
+   "ja": "スクロール",
+   "ko": "스크롤하여 탐색"
+  },
+  "stats": [
+   {
+    "value": "50",
+    "suffix": "%+",
+    "label": {
+     "en": "Automation Rate",
+     "zh": "自动化率",
+     "ja": "自動化率",
+     "ko": "자동화율"
     }
-  },
-  "trust": {
-    "title": {
-      "en": "Built for Global Publishing",
-      "zh": "为全球出版而生",
-      "ja": "グローバル出版のために構築",
-      "ko": "글로벌 출판을 위한 구축"
-    },
-    "subtitle": {
-      "en": "A trusted manufacturing partner supporting publishers, retailers and creative brands from concept to delivery",
-      "zh": "值得信赖的制造合作伙伴，从概念到交付全程支持出版商、零售商和创意品牌",
-      "ja": "出版社、小売業者、クリエイティブブランドをコンセプトから配送までサポートする信頼の製造パートナー",
-      "ko": "컨셉에서 배송까지 출판사, 소매업체, 크리에이티브 브랜드를 지원하는 신뢰할 수 있는 제조 파트너입니다."
+   },
+   {
+    "value": "24",
+    "suffix": "/7",
+    "label": {
+     "en": "Climate Control",
+     "zh": "恒温控制",
+     "ja": "温度管理",
+     "ko": "온도 제어"
     }
-  },
-  "featured": {
-    "title": {
-      "en": "Ideas Engineered into Exceptional Products",
-      "zh": "将创意转化为卓越产品",
-      "ja": "アイデアを卓越した製品へ",
-      "ko": "아이디어를 탁월한 제품으로"
-    },
-    "subtitle": {
-      "en": "Explore how we combine paper engineering, printing, binding and hand assembly to deliver distinctive publishing products",
-      "zh": "探索我们如何将纸艺工程、印刷、装订与手工组装相结合，打造独具特色的出版产品",
-      "ja": "ペーパーエンジニアリング、印刷、製本、手作業による組立を組み合わせた差別化された出版製品を提供",
-      "ko": "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요."
-    },
-    "categories": [
-      {
-        "name": {
-          "en": "Board Books",
-          "zh": "纸板书",
-          "ja": "ボードブック",
-          "ko": "보드북"
-        },
-        "desc": {
-          "en": "Durable, FSC-certified paperboard books for early learning.",
-          "zh": "耐用FSC认证纸板，专为早期阅读设计。",
-          "ja": "耐久性に優れたFSC認証紙を使用した知育絵本。",
-          "ko": "조기 독서를 위해 설계된 내구성 있는 FSC 인증 보드입니다."
-        },
-        "image": "/products/prod-01.webp"
-      },
-      {
-        "name": {
-          "en": "Novelty & Pop-up",
-          "zh": "立体书与机关书",
-          "ja": "仕掛け絵本",
-          "ko": "팝업북 및 조작북"
-        },
-        "desc": {
-          "en": "Complex 3D paper mechanics with tabs, wheels, and pop-ups.",
-          "zh": "包含拉页、转盘、弹起等复杂3D纸艺结构。",
-          "ja": "タブ、回転盤、飛び出す立体ペーパー構造。",
-          "ko": "풀탭, 휠, 팝업 등 복잡한 3D 종이 구조를 포함합니다."
-        },
-        "image": "/products/prod-02.webp"
-      },
-      {
-        "name": {
-          "en": "Sound & Electronic",
-          "zh": "发声书与电子书",
-          "ja": "サウンド＆電子絵本",
-          "ko": "사운드 및 전자북"
-        },
-        "desc": {
-          "en": "CE-certified sound modules, lights, and interactive electronics.",
-          "zh": "CE认证发声模块、LED灯及互动电子元件。",
-          "ja": "CE認証の音声モジュール、LED、インタラクティブ電子部品。",
-          "ko": "CE 인증 사운드 모듈, LED 및 대화형 전자 부품."
-        },
-        "image": "/products/prod-03.webp"
-      },
-      {
-        "name": {
-          "en": "Activity Kits",
-          "zh": "活动套装",
-          "ja": "アクティビティキット",
-          "ko": "액티비티 키트"
-        },
-        "desc": {
-          "en": "Multi-component sets combining books, puzzles, crafts, and toys.",
-          "zh": "书+拼图+手工+玩具的多组件综合套装。",
-          "ja": "本、パズル、工作、おもちゃを組み合わせたマルチコンポーネントセット。",
-          "ko": "도서 + 퍼즐 + 공예 + 장난감이 결합된 멀티 컴포넌트 세트입니다."
-        },
-        "image": "/products/prod-04.webp"
-      },
-      {
-        "name": {
-          "en": "Boxed Sets",
-          "zh": "礼盒套装",
-          "ja": "ボックスセット",
-          "ko": "박스 세트"
-        },
-        "desc": {
-          "en": "Premium gift sets with coordinated components for special editions.",
-          "zh": "精品礼品组合套装，包含协调搭配的多种组件。",
-          "ja": "特別編集版のためのプレミアムギフトセット。",
-          "ko": "조화로운 여러 구성 요소를 포함하는 프리미엄 선물 세트입니다."
-        },
-        "image": "/products/prod-05.webp"
-      },
-      {
-        "name": {
-          "en": "Licensed Products",
-          "zh": "授权产品",
-          "ja": "ライセンス製品",
-          "ko": "라이선스 제품"
-        },
-        "desc": {
-          "en": "IP-branded books and kits meeting global compliance standards.",
-          "zh": "IP品牌图书与套装，满足全球合规标准。",
-          "ja": "IPブランドの絵本とキット、グローバルコンプライアンス基準準拠。",
-          "ko": "글로벌 규정 준수 기준을 충족하는 IP 브랜드 도서 및 키트입니다."
-        },
-        "image": "/products/prod-06.webp"
-      }
-    ]
-  },
-  "capabilities": {
-    "title": {
-      "en": "From Concept to Global Delivery",
-      "zh": "从卓越产品到全球交付",
-      "ja": "コンセプトからグローバル配送まで",
-      "ko": "우수한 제품에서 글로벌 배송까지"
-    },
-    "subtitle": {
-      "en": "One integrated team supporting engineering, sampling, production, quality assurance and international delivery",
-      "zh": "一体化团队支持工程设计、打样、生产、质量保证与国际物流",
-      "ja": "エンジニアリング、サンプリング、生産、品質保証、国際物流を一貫サポート",
-      "ko": "엔지니어링 디자인, 샘플링, 생산, 품질 보증 및 국제 물류를 지원하는 통합 팀입니다."
-    },
-    "steps": [
-      {
-        "name": {
-          "en": "Prepress & Proofing",
-          "zh": "印前与打样",
-          "ja": "プリプレス＆校正",
-          "ko": "프리프레스 & 교정"
-        },
-        "desc": {
-          "en": "File receiving, preflight checks, CTP plate-making, proofing & white dummy.",
-          "zh": "文件接收、印前检查、CTP制版、打样、White Dummy。",
-          "ja": "ファイル受領、プリフライトチェック、CTP製版、校正刷り、ホワイトダミー。",
-          "ko": "파일 수령, 프리플라이트 체크, CTP 제판, 교정 인쇄, 화이트 더미."
-        },
-        "image": "/process-illustrations/process-01.webp"
-      },
-      {
-        "name": {
-          "en": "Precision Printing",
-          "zh": "精密印刷",
-          "ja": "精密印刷",
-          "ko": "정밀 인쇄"
-        },
-        "desc": {
-          "en": "Printing, color management, color approval & process control.",
-          "zh": "印刷、色彩管理、看色与过程控制。",
-          "ja": "印刷、カラーマネジメント、色校正と工程管理。",
-          "ko": "인쇄, 컬러 매니지먼트, 색상 승인 및 공정 관리."
-        },
-        "image": "/process-illustrations/process-02.webp"
-      },
-      {
-        "name": {
-          "en": "Premium Finishing",
-          "zh": "高端表面处理",
-          "ja": "高級表面加工",
-          "ko": "프리미엄 후가공"
-        },
-        "desc": {
-          "en": "Lamination, Spot UV, foil stamping, embossing/debossing & special textures.",
-          "zh": "覆膜、Spot UV、烫金、压凹凸、特殊纹理。",
-          "ja": "PP加工、スポットUV、箔押し、エンボス/デボス、特殊テクスチャ。",
-          "ko": "코팅, 스팟 UV, 금박, 엠보싱/디보싱 및 특수 질감."
-        },
-        "image": "/process-illustrations/process-03.webp"
-      },
-      {
-        "name": {
-          "en": "Die-Cutting & Bookmaking",
-          "zh": "模切与装订",
-          "ja": "抜型＆製本",
-          "ko": "다이컷 & 제본"
-        },
-        "desc": {
-          "en": "Custom die-cutting, window patches, label pages, folding, collating, thread-sewing, hardcover, paperback & board books.",
-          "zh": "异形模切、开窗、标签页、折页、配页、锁线、精装、平装、Board Book等。",
-          "ja": "異形抜型、窓開け、差し込みページ、折り、丁合、糸かがり、上製本、並製本、ボードブックなど。",
-          "ko": "이형 다이컷, 창 개봉, 라벨 페이지, 접지, 정합, 실 제본, 하드커버, 소프트커버, 보드북 등."
-        },
-        "image": "/process-illustrations/process-04.webp"
-      },
-      {
-        "name": {
-          "en": "Interactive Assembly & QC",
-          "zh": "手工组装与质检",
-          "ja": "インタラクティブ組立＆品質管理",
-          "ko": "인터랙티브 조립 & QC"
-        },
-        "desc": {
-          "en": "Pop-up, lift-the-flap, sound books, magnetic books, accessory installation, QC & safety testing.",
-          "zh": "Pop-up、Lift-the-Flap、Sound Book、Magnetic Book、配件安装、QC与安全测试。",
-          "ja": "ポップアップ、めくり仕掛け、サウンドブック、マグネットブック、部品取付、QCと安全テスト。",
-          "ko": "팝업북, 플랩북, 사운드북, 마그네틱북, 부속품 설치, QC 및 안전 테스트."
-        },
-        "image": "/process-illustrations/process-05.webp"
-      },
-      {
-        "name": {
-          "en": "Packing & Global Fulfillment",
-          "zh": "出口包装与全球交付",
-          "ja": "梱包＆グローバル納品",
-          "ko": "포장 & 글로벌 물류"
-        },
-        "desc": {
-          "en": "Packing, cartoning, palletizing, warehousing, container loading & global shipping.",
-          "zh": "包装、装箱、托盘、仓储、集装箱装柜、全球出货。",
-          "ja": "梱包、箱詰め、パレタイズ、倉庫保管、コンテナ積載、グローバル出荷。",
-          "ko": "포장, 박스 포장, 팔레타이징, 창고 보관, 컨테이너 적재 및 글로벌 출하."
-        },
-        "image": "/process-illustrations/process-06.webp"
-      }
-    ]
-  },
-  "quality": {
-    "title": {
-      "en": "Quality Built into Every Step",
-      "zh": "品质融入每一个环节",
-      "ja": "すべての工程に組み込まれた品質",
-      "ko": "모든 단계에 통합된 품질"
-    },
-    "subtitle": {
-      "en": "Systematic quality management from raw material inspection to final shipment",
-      "zh": "从原材料检验到成品出运，系统性质量管理覆盖全流程",
-      "ja": "原材料検査から最終出荷まで、体系的な品質管理を実施",
-      "ko": "원자재 검사부터 완제품 출하까지 전 공정을 포괄하는 체계적인 품질 관리."
-    },
-    "modules": [
-      {
-        "name": {
-          "en": "Incoming Inspection",
-          "zh": "来料检验",
-          "ja": "受入検査",
-          "ko": "수입 검사"
-        },
-        "image": "/uploads/1786689354625-emmfzm.webp"
-      },
-      {
-        "name": {
-          "en": "Color Management",
-          "zh": "色彩管理",
-          "ja": "カラーマネジメント",
-          "ko": "색상 관리"
-        },
-        "image": "/uploads/1786689370689-jc2e26.webp"
-      },
-      {
-        "name": {
-          "en": "In-process Control",
-          "zh": "过程控制",
-          "ja": "工程内管理",
-          "ko": "공정 제어"
-        },
-        "image": "/real-factory/03.webp"
-      },
-      {
-        "name": {
-          "en": "Functional Testing",
-          "zh": "功能测试",
-          "ja": "機能テスト",
-          "ko": "기능 테스트"
-        },
-        "image": "/real-factory/04.webp"
-      },
-      {
-        "name": {
-          "en": "Final Inspection",
-          "zh": "成品检验",
-          "ja": "最終検査",
-          "ko": "완제품 검사"
-        },
-        "image": "/real-factory/05.webp"
-      }
-    ]
-  },
-  "sustainability": {
-    "title": {
-      "en": "Better Materials. Smarter Production",
-      "zh": "更优质的材料 更智能的生产",
-      "ja": "より良い素材。よりスマートな生産",
-      "ko": "더 나은 재료, 더 스마트한 생산"
-    },
-    "subtitle": {
-      "en": "Responsible material choices and practical production improvements to reduce waste",
-      "zh": "负责任的材料选择和切实可行的生产改进，减少废弃物产生",
-      "ja": "責任ある素材選択と実践的な生産改善による廃棄物削減",
-      "ko": "책임감 있는 재료 선택과 실질적인 생산 개선을 통해 폐기물을 줄입니다."
-    },
-    "items": [
-      {
-        "name": {
-          "en": "FSC®-certified paper",
-          "zh": "FSC® 认证纸张",
-          "ja": "FSC® 認証紙",
-          "ko": "FSC® 인증 종이"
-        },
-        "image": "/eco/01.webp"
-      },
-      {
-        "name": {
-          "en": "Recycled & biodegradable materials",
-          "zh": "再生与可降解材料",
-          "ja": "再生・生分解性素材",
-          "ko": "재생 및 생분해성 재료"
-        },
-        "image": "/eco/02.webp"
-      },
-      {
-        "name": {
-          "en": "Soy-based & water-based inks",
-          "zh": "大豆基与水性油墨",
-          "ja": "大豆・水性インク",
-          "ko": "대두 및 수성 잉크"
-        },
-        "image": "/eco/03.webp"
-      },
-      {
-        "name": {
-          "en": "Automated production waste reduction",
-          "zh": "自动化生产减少损耗",
-          "ja": "自動化生産によるロス削減",
-          "ko": "자동화 생산을 통한 손실 감소"
-        },
-        "image": "/eco/04.webp"
-      },
-      {
-        "name": {
-          "en": "Waste reduction programs",
-          "zh": "废弃物减量计划",
-          "ja": "廃棄物削減プログラム",
-          "ko": "폐기물 감축 프로그램"
-        },
-        "image": "/eco/05.webp"
-      },
-      {
-        "name": {
-          "en": "Energy-efficient production",
-          "zh": "节能高效生产",
-          "ja": "省エネ生産",
-          "ko": "에너지 효율적인 생산"
-        },
-        "image": "/eco/06.webp"
-      }
-    ]
-  },
-  "cta": {
-    "title": {
-      "en": "Have a Project in Mind?",
-      "zh": "有新项目想法？",
-      "ja": "プロジェクトのアイデアはありますか？",
-      "ko": "새로운 프로젝트 아이디어가 있으신가요?"
-    },
-    "subtitle": {
-      "en": "Share your concept, artwork or product specifications with our team",
-      "zh": "分享您的概念、图稿或产品规格，我们的团队将为您提供专业方案",
-      "ja": "コンセプト、アートワーク、製品仕様を当社のチームと共有してください",
-      "ko": "컨셉, 아트워크 또는 제품 사양을 당사 팀과 공유하여 전문 솔루션을 받으세요."
-    },
-    "buttonPrimary": {
-      "en": "Start a Project",
-      "zh": "开启新项目",
-      "ja": "プロジェクトを始める",
-      "ko": "프로젝트 시작하기"
-    },
-    "buttonSecondary": {
-      "en": "Request Samples",
-      "zh": "申请样品",
-      "ja": "サンプルをリクエスト",
-      "ko": "샘플 요청"
+   },
+   {
+    "value": "20",
+    "suffix": "k m²",
+    "label": {
+     "en": "Production Area",
+     "zh": "生产面积",
+     "ja": "生産面積",
+     "ko": "생산 면적"
     }
+   },
+   {
+    "value": "250",
+    "suffix": "+",
+    "label": {
+     "en": "Team Members",
+     "zh": "工匠团队",
+     "ja": "熟練職人",
+     "ko": "숙련된 장인"
+    }
+   }
+  ],
+  "processTitle": {
+   "en": "Production Process",
+   "zh": "生产流程",
+   "ja": "生産フロー",
+   "ko": "생산 공정"
+  },
+  "processSub": {
+   "en": "",
+   "zh": "",
+   "ja": "",
+   "ko": ""
+  },
+  "steps": [
+   {
+    "title": {
+     "en": "Design & Prepress",
+     "zh": "设计与制版",
+     "ja": "設計・製版",
+     "ko": "설계 및 제판"
+    },
+    "desc": {
+     "en": "Structural design, file prep, CTP plate-making",
+     "zh": "结构设计、文件处理、CTP制版",
+     "ja": "構造設計、ファイル処理、CTP製版",
+     "ko": "구조 설계, 파일 처리, CTP 제판"
+    },
+    "img": "/process-illustrations/process-01.webp"
+   },
+   {
+    "title": {
+     "en": "Printing",
+     "zh": "精密印刷",
+     "ja": "印刷",
+     "ko": "인쇄"
+    },
+    "desc": {
+     "en": "Heidelberg offset / UV / digital on premium stock",
+     "zh": "LED-UV高端印刷",
+     "ja": "ハイデルベルグ オフセット/UV/デジタル印刷",
+     "ko": "하이델베르그 오프셋/UV/디지털 인쇄"
+    },
+    "img": "/process-illustrations/process-02.webp"
+   },
+   {
+    "title": {
+     "en": "Die-Cutting",
+     "zh": "模切",
+     "ja": "抜き加工",
+     "ko": "다이 커팅"
+    },
+    "desc": {
+     "en": "High-precision automated cutting & creasing",
+     "zh": "高精度自动模切压痕",
+     "ja": "高精度自動抜型加工",
+     "ko": "고정밀 자동 다이 커팅"
+    },
+    "img": "/process-illustrations/process-03.webp"
+   },
+   {
+    "title": {
+     "en": "Surface & Binding",
+     "zh": "表面与装订",
+     "ja": "表面・製本",
+     "ko": "표면 및 제본"
+    },
+    "desc": {
+     "en": "Foil stamping, lamination, hand-assembly",
+     "zh": "烫金、裱糊、手工组装",
+     "ja": "箔押し、ラミネート、手組み",
+     "ko": "금박, 라미네이팅, 수작업 조립"
+    },
+    "img": "/process-illustrations/process-04.webp"
+   },
+   {
+    "title": {
+     "en": "QC Inspection",
+     "zh": "质检",
+     "ja": "品質検査",
+     "ko": "품질 검사"
+    },
+    "desc": {
+     "en": "EN71 / ASTM / ISO — full quality gate checks",
+     "zh": "EN71 / ASTM / ISO 全检",
+     "ja": "EN71 / ASTM / ISO 全数検査",
+     "ko": "EN71 / ASTM / ISO 전수 검사"
+    },
+    "img": "/process-illustrations/process-05.webp"
+   },
+   {
+    "title": {
+     "en": "Warehouse & Dispatch",
+     "zh": "仓储与发货",
+     "ja": "保管・出荷",
+     "ko": "창고 및 배송"
+    },
+    "desc": {
+     "en": "Stereo warehouse, global logistics",
+     "zh": "立体仓管理，全球物流",
+     "ja": "立体倉庫、グローバル物流",
+     "ko": "입체 창고 관리, 글로벌 물류"
+    },
+    "img": "/process-illustrations/process-06.webp"
+   }
+  ],
+  "equipTitle": {
+   "en": "Our Equipment",
+   "zh": "核心设备",
+   "ja": "主要設備",
+   "ko": "핵심 설비"
+  },
+  "equipSub": {
+   "en": "German precision, Japanese efficiency — the tools behind the craft",
+   "zh": "德国精度、日本效率——匠艺背后的硬实力",
+   "ja": "ドイツの精度、日本の効率——ものづくりを支える力",
+   "ko": "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘"
+  },
+  "equipItems": [
+   {
+    "title": {
+     "en": "Automated Laminating Machines",
+     "zh": "全自动过胶机",
+     "ja": "自動ラミネート・糊付け機",
+     "ko": "자동 라미네이팅 기계"
+    },
+    "desc": {
+     "en": "High-precision lamination and gluing for smooth, durable finishes",
+     "zh": "高精度覆膜与过胶工艺，确保表面平整耐用",
+     "ja": "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現",
+     "ko": "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장"
+    },
+    "img": "/real-factory/IMG_5121.JPG"
+   },
+   {
+    "title": {
+     "en": "Automated Die-Cutting Lines",
+     "zh": "自动模切生产线",
+     "ja": "自動抜型ライン",
+     "ko": "자동 다이 커팅 라인"
+    },
+    "desc": {
+     "en": "CNC-controlled cutting, creasing, and embossing in one pass",
+     "zh": "CNC数控裁切、压痕、压凸一次完成",
+     "ja": "CNC裁断、罫線、エンボスを一貫処理",
+     "ko": "CNC 절단, 크리징, 엠보싱 원스톱 처리"
+    },
+    "img": "/real-factory/IMG_5271.JPG"
+   }
+  ],
+  "certTitle": {
+   "en": "Certifications",
+   "zh": "资质认证",
+   "ja": "認証資格",
+   "ko": "인증 및 자격"
+  },
+  "ctaTitle": {
+   "en": "See It in Action",
+   "zh": "实地探访",
+   "ja": "工場見学",
+   "ko": "공장 견학"
+  },
+  "ctaDesc": {
+   "en": "Schedule a virtual tour or visit our Shenzhen facility",
+   "zh": "预约参观深圳工厂，亲眼见证自动化的力量",
+   "ja": "スマート工場をぜひご覧ください",
+   "ko": "스마트 공장을 방문하여 자동화의 힘을 직접 확인하십시오"
+  },
+  "ctaBtn": {
+   "en": "Get in Touch",
+   "zh": "联系我们",
+   "ja": "お問い合わせ",
+   "ko": "문의하기"
   },
   "certifications": [
-    {
-      "name": {
-        "en": "Disney",
-        "zh": "Disney",
-        "ja": "Disney",
-        "ko": "Disney"
-      },
-      "src": "/certificate/Disney_logo.png",
-      "invert": true
+   {
+    "name": {
+     "en": "ISO 9001",
+     "zh": "ISO 9001",
+     "ja": "ISO 9001",
+     "ko": "ISO 9001"
     },
-    {
-      "name": {
-        "en": "Walmart",
-        "zh": "Walmart",
-        "ja": "Walmart",
-        "ko": "Walmart"
-      },
-      "src": "/certificate/Walmart.png"
+    "src": "/certificate/ISO_9001-2015.png"
+   },
+   {
+    "name": {
+     "en": "ISO 14001",
+     "zh": "ISO 14001",
+     "ja": "ISO 14001",
+     "ko": "ISO 14001"
     },
-    {
-      "name": {
-        "en": "Target",
-        "zh": "Target",
-        "ja": "Target",
-        "ko": "Target"
-      },
-      "src": "/certificate/Target.png"
+    "src": "/certificate/iso14001.png"
+   },
+   {
+    "name": {
+     "en": "Disney FAMA",
+     "zh": "Disney FAMA",
+     "ja": "Disney FAMA",
+     "ko": "Disney FAMA"
     },
-    {
-      "name": {
-        "en": "Costco",
-        "zh": "Costco",
-        "ja": "Costco",
-        "ko": "Costco"
-      },
-      "src": "/certificate/Costco.png"
+    "src": "/certificate/Disney_logo.png",
+    "invert": true
+   },
+   {
+    "name": {
+     "en": "Walmart",
+     "zh": "Walmart",
+     "ja": "Walmart",
+     "ko": "Walmart"
     },
-    {
-      "name": {
-        "en": "ISO 9001",
-        "zh": "ISO 9001",
-        "ja": "ISO 9001",
-        "ko": "ISO 9001"
-      },
-      "src": "/certificate/ISO_9001-2015.png"
+    "src": "/certificate/Walmart.png"
+   },
+   {
+    "name": {
+     "en": "Target",
+     "zh": "Target",
+     "ja": "Target",
+     "ko": "Target"
     },
-    {
-      "name": {
-        "en": "ISO 14001",
-        "zh": "ISO 14001",
-        "ja": "ISO 14001",
-        "ko": "ISO 14001"
-      },
-      "src": "/certificate/iso14001.png",
-      "scale": "scale-[1.3]"
+    "src": "/certificate/Target.png"
+   },
+   {
+    "name": {
+     "en": "Costco",
+     "zh": "Costco",
+     "ja": "Costco",
+     "ko": "Costco"
     },
-    {
-      "name": {
-        "en": "SCAN",
-        "zh": "SCAN",
-        "ja": "SCAN",
-        "ko": "SCAN"
-      },
-      "src": "/certifications/scan.jpg",
-      "scale": "scale-[1.8]"
-    },
-    {
-      "name": {
-        "en": "SMETA",
-        "zh": "SMETA",
-        "ja": "SMETA",
-        "ko": "SMETA"
-      },
-      "src": "/certifications/smeta-.png",
-      "scale": "scale-[1.8]"
-    },
-    {
-      "name": {
-        "en": "Universal",
-        "zh": "Universal",
-        "ja": "Universal",
-        "ko": "Universal"
-      },
-      "src": "/certifications/universal.png",
-      "invert": true,
-      "scale": "scale-[2.1]"
-    },
-    {
-      "name": {
-        "en": "中国环境标志",
-        "zh": "中国环境标志",
-        "ja": "中国环境标志",
-        "ko": "中国环境标志"
-      },
-      "src": "/certifications/china10.webp",
-      "scale": "scale-[1.8]"
-    },
-    {
-      "name": {
-        "en": "FSC",
-        "zh": "FSC",
-        "ja": "FSC",
-        "ko": "FSC"
-      },
-      "src": "/certifications/fsc-new.png",
-      "scale": "scale-125"
-    },
-    {
-      "name": {
-        "en": "EXPERT",
-        "zh": "EXPERT",
-        "ja": "EXPERT",
-        "ko": "EXPERT"
-      },
-      "src": "/certifications/expert.jpg",
-      "scale": "scale-125"
-    }
+    "src": "/certificate/Costco.png"
+   }
+  ]
+ },
+ "gallery": {
+  "categories": [
+   {
+    "key": "boardbook",
+    "name": "板纸对裱童书"
+   },
+   {
+    "key": "custom",
+    "name": "匠心特装定制"
+   },
+   {
+    "key": "craft",
+    "name": "工艺展示"
+   },
+   {
+    "key": "cards",
+    "name": "益智卡牌卡册"
+   },
+   {
+    "key": "toys",
+    "name": "益智玩具类"
+   },
+   {
+    "key": "hardcover",
+    "name": "精装图书画册"
+   },
+   {
+    "key": "stickers",
+    "name": "趣味贴纸书系"
+   }
   ],
-  "trustNumbers": [
-    {
-      "value": "25",
-      "suffix": "+",
-      "label": {
-        "en": "Years of Excellence",
-        "zh": "年卓越经验",
-        "ja": "年の卓越した実績",
-        "ko": "년의 탁월한 경험"
-      },
-      "desc": {
-        "en": "Serving global publishers since 2001",
-        "zh": "自2001年起服务全球出版商",
-        "ja": "2001年から世界の出版社にサービス",
-        "ko": "2001년부터 세계 출판사 서비스"
-      }
-    },
-    {
-      "value": "100",
-      "suffix": "+",
-      "label": {
-        "en": "Countries Served",
-        "zh": "服务国家/地区",
-        "ja": "対応国・地域",
-        "ko": "서비스 국가"
-      },
-      "desc": {
-        "en": "Delivering to publishers worldwide",
-        "zh": "向全球出版商交付",
-        "ja": "世界中の出版社に配送",
-        "ko": "전 세계 출판사에 배송"
-      }
-    },
-    {
-      "value": "1000",
-      "suffix": "+",
-      "label": {
-        "en": "Projects Every Year",
-        "zh": "每年完成项目",
-        "ja": "毎年完了プロジェクト",
-        "ko": "매년 완료 프로젝트"
-      },
-      "desc": {
-        "en": "From board books to complex pop-ups",
-        "zh": "从纸板书到复杂立体书",
-        "ja": "ボードブックから複雑な仕掛け絵本まで",
-        "ko": "보드북부터 복잡한 팝업북까지"
-      }
-    },
-    {
-      "value": "99",
-      "suffix": "%",
-      "label": {
-        "en": "On-time Delivery",
-        "zh": "准时交付率",
-        "ja": "納期順守率",
-        "ko": "정시 납품률"
-      },
-      "desc": {
-        "en": "Consistent, reliable production schedules",
-        "zh": "稳定可靠的生产排期",
-        "ja": "安定した信頼性の高い生産スケジュール",
-        "ko": "안정적이고 신뢰할 수 있는 생산 일정"
-      }
-    }
+  "folders": [
+   {
+    "key": "2026-09-22__图库",
+    "images": [
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-3.webp",
+      "name": "craft-TOP-3",
+      "sizeKB": 147,
+      "category": "craft",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-4.webp",
+      "name": "craft-TOP-4",
+      "sizeKB": 156,
+      "category": "craft",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-5.webp",
+      "name": "craft-TOP-5",
+      "sizeKB": 135,
+      "category": "craft",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-6.webp",
+      "name": "craft-TOP-6",
+      "sizeKB": 412,
+      "category": "craft",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-7.webp",
+      "name": "craft-TOP-7",
+      "sizeKB": 124,
+      "category": "craft",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-击凸_击凹.webp",
+      "name": "craft-TOP-击凸_击凹",
+      "sizeKB": 98,
+      "category": "craft",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/craft-TOP-异形卡片.webp",
+      "name": "craft-TOP-异形卡片",
+      "sizeKB": 146,
+      "category": "craft",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-3.webp",
+      "name": "boardbook-TOP-3",
+      "sizeKB": 131,
+      "category": "boardbook",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-微信图片_20180525101811.webp",
+      "name": "boardbook-TOP-微信图片_20180525101811",
+      "sizeKB": 100,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-微信图片_20180525102347.webp",
+      "name": "boardbook-TOP-微信图片_20180525102347",
+      "sizeKB": 78,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-微信图片_20180608165824.webp",
+      "name": "boardbook-TOP-微信图片_20180608165824",
+      "sizeKB": 84,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-hdphoto19.webp",
+      "name": "boardbook-TOP-hdphoto19",
+      "sizeKB": 58,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image80.webp",
+      "name": "boardbook-TOP-image80",
+      "sizeKB": 274,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image81.webp",
+      "name": "boardbook-TOP-image81",
+      "sizeKB": 134,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image83.webp",
+      "name": "boardbook-TOP-image83",
+      "sizeKB": 156,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image84.webp",
+      "name": "boardbook-TOP-image84",
+      "sizeKB": 219,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image85.webp",
+      "name": "boardbook-TOP-image85",
+      "sizeKB": 67,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image86.webp",
+      "name": "boardbook-TOP-image86",
+      "sizeKB": 57,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image88.webp",
+      "name": "boardbook-TOP-image88",
+      "sizeKB": 128,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image90.webp",
+      "name": "boardbook-TOP-image90",
+      "sizeKB": 177,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image105.webp",
+      "name": "boardbook-TOP-image105",
+      "sizeKB": 54,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image107.webp",
+      "name": "boardbook-TOP-image107",
+      "sizeKB": 40,
+      "category": "boardbook",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image131.webp",
+      "name": "boardbook-TOP-image131",
+      "sizeKB": 10,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image132.webp",
+      "name": "boardbook-TOP-image132",
+      "sizeKB": 26,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image134.webp",
+      "name": "boardbook-TOP-image134",
+      "sizeKB": 15,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image138.webp",
+      "name": "boardbook-TOP-image138",
+      "sizeKB": 8,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image139.webp",
+      "name": "boardbook-TOP-image139",
+      "sizeKB": 10,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image140.webp",
+      "name": "boardbook-TOP-image140",
+      "sizeKB": 27,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image142.webp",
+      "name": "boardbook-TOP-image142",
+      "sizeKB": 15,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image143.webp",
+      "name": "boardbook-TOP-image143",
+      "sizeKB": 32,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image144.webp",
+      "name": "boardbook-TOP-image144",
+      "sizeKB": 51,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image145.webp",
+      "name": "boardbook-TOP-image145",
+      "sizeKB": 25,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-image147.webp",
+      "name": "boardbook-TOP-image147",
+      "sizeKB": 19,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_101110.webp",
+      "name": "boardbook-TOP-IMG_20180605_101110",
+      "sizeKB": 256,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_105428.webp",
+      "name": "boardbook-TOP-IMG_20180605_105428",
+      "sizeKB": 58,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_105844.webp",
+      "name": "boardbook-TOP-IMG_20180605_105844",
+      "sizeKB": 140,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_105857.webp",
+      "name": "boardbook-TOP-IMG_20180605_105857",
+      "sizeKB": 87,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_110538.webp",
+      "name": "boardbook-TOP-IMG_20180605_110538",
+      "sizeKB": 152,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_110630.webp",
+      "name": "boardbook-TOP-IMG_20180605_110630",
+      "sizeKB": 85,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_110820.webp",
+      "name": "boardbook-TOP-IMG_20180605_110820",
+      "sizeKB": 99,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_110828.webp",
+      "name": "boardbook-TOP-IMG_20180605_110828",
+      "sizeKB": 108,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_111107.webp",
+      "name": "boardbook-TOP-IMG_20180605_111107",
+      "sizeKB": 262,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_111155.webp",
+      "name": "boardbook-TOP-IMG_20180605_111155",
+      "sizeKB": 141,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/boardbook-TOP-IMG_20180605_111326.webp",
+      "name": "boardbook-TOP-IMG_20180605_111326",
+      "sizeKB": 119,
+      "category": "boardbook",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/cards-TOP-8.webp",
+      "name": "cards-TOP-8",
+      "sizeKB": 422,
+      "category": "cards",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/cards-TOP-hdphoto17.webp",
+      "name": "cards-TOP-hdphoto17",
+      "sizeKB": 37,
+      "category": "cards",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/cards-TOP-IMG_20180605_095814.webp",
+      "name": "cards-TOP-IMG_20180605_095814",
+      "sizeKB": 166,
+      "category": "cards",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/cards-TOP-IMG_20180605_101132.webp",
+      "name": "cards-TOP-IMG_20180605_101132",
+      "sizeKB": 35,
+      "category": "cards",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/cards-TOP-IMG_20180605_104646.webp",
+      "name": "cards-TOP-IMG_20180605_104646",
+      "sizeKB": 137,
+      "category": "cards",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-1.webp",
+      "name": "toys-TOP-1",
+      "sizeKB": 174,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-2.webp",
+      "name": "toys-TOP-2",
+      "sizeKB": 1018,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-3.webp",
+      "name": "toys-TOP-3",
+      "sizeKB": 332,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-5.webp",
+      "name": "toys-TOP-5",
+      "sizeKB": 72,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-6.webp",
+      "name": "toys-TOP-6",
+      "sizeKB": 530,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-7.webp",
+      "name": "toys-TOP-7",
+      "sizeKB": 75,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-9.webp",
+      "name": "toys-TOP-9",
+      "sizeKB": 107,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-13.webp",
+      "name": "toys-TOP-13",
+      "sizeKB": 178,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-14.webp",
+      "name": "toys-TOP-14",
+      "sizeKB": 312,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-15.webp",
+      "name": "toys-TOP-15",
+      "sizeKB": 116,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-16.webp",
+      "name": "toys-TOP-16",
+      "sizeKB": 347,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-17.webp",
+      "name": "toys-TOP-17",
+      "sizeKB": 148,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-18.webp",
+      "name": "toys-TOP-18",
+      "sizeKB": 72,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-微信图片_20180608164212.webp",
+      "name": "toys-TOP-微信图片_20180608164212",
+      "sizeKB": 123,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-微信图片_20180608164225.webp",
+      "name": "toys-TOP-微信图片_20180608164225",
+      "sizeKB": 121,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-微信图片_20180608164229.webp",
+      "name": "toys-TOP-微信图片_20180608164229",
+      "sizeKB": 149,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-hdphoto7.webp",
+      "name": "toys-TOP-hdphoto7",
+      "sizeKB": 21,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-hdphoto8.webp",
+      "name": "toys-TOP-hdphoto8",
+      "sizeKB": 18,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-hdphoto9.webp",
+      "name": "toys-TOP-hdphoto9",
+      "sizeKB": 19,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-hdphoto10.webp",
+      "name": "toys-TOP-hdphoto10",
+      "sizeKB": 109,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image95.webp",
+      "name": "toys-TOP-image95",
+      "sizeKB": 42,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image96.webp",
+      "name": "toys-TOP-image96",
+      "sizeKB": 40,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image97.webp",
+      "name": "toys-TOP-image97",
+      "sizeKB": 35,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image98.webp",
+      "name": "toys-TOP-image98",
+      "sizeKB": 35,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image99.webp",
+      "name": "toys-TOP-image99",
+      "sizeKB": 36,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image100.webp",
+      "name": "toys-TOP-image100",
+      "sizeKB": 22,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image101.webp",
+      "name": "toys-TOP-image101",
+      "sizeKB": 19,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image102.webp",
+      "name": "toys-TOP-image102",
+      "sizeKB": 21,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image106.webp",
+      "name": "toys-TOP-image106",
+      "sizeKB": 53,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image120.webp",
+      "name": "toys-TOP-image120",
+      "sizeKB": 88,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image121.webp",
+      "name": "toys-TOP-image121",
+      "sizeKB": 141,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image124.webp",
+      "name": "toys-TOP-image124",
+      "sizeKB": 84,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image125.webp",
+      "name": "toys-TOP-image125",
+      "sizeKB": 142,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image126.webp",
+      "name": "toys-TOP-image126",
+      "sizeKB": 161,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image127.webp",
+      "name": "toys-TOP-image127",
+      "sizeKB": 79,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-image128.webp",
+      "name": "toys-TOP-image128",
+      "sizeKB": 71,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_9914小.webp",
+      "name": "toys-TOP-IMG_9914小",
+      "sizeKB": 80,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_9923.webp",
+      "name": "toys-TOP-IMG_9923",
+      "sizeKB": 88,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_9956小.webp",
+      "name": "toys-TOP-IMG_9956小",
+      "sizeKB": 53,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_9960小.webp",
+      "name": "toys-TOP-IMG_9960小",
+      "sizeKB": 89,
+      "category": "toys",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_20180605_105911.webp",
+      "name": "toys-TOP-IMG_20180605_105911",
+      "sizeKB": 132,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/toys-TOP-IMG_20180605_111316.webp",
+      "name": "toys-TOP-IMG_20180605_111316",
+      "sizeKB": 47,
+      "category": "toys",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-7.webp",
+      "name": "hardcover-TOP-7",
+      "sizeKB": 173,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-8.webp",
+      "name": "hardcover-TOP-8",
+      "sizeKB": 31,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-12.webp",
+      "name": "hardcover-TOP-12",
+      "sizeKB": 78,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-13.webp",
+      "name": "hardcover-TOP-13",
+      "sizeKB": 66,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-微信图片_20180525102337.webp",
+      "name": "hardcover-TOP-微信图片_20180525102337",
+      "sizeKB": 106,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-微信图片_20180525102359.webp",
+      "name": "hardcover-TOP-微信图片_20180525102359",
+      "sizeKB": 91,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-微信图片_20180605153731.webp",
+      "name": "hardcover-TOP-微信图片_20180605153731",
+      "sizeKB": 166,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-微信图片_20180605153739.webp",
+      "name": "hardcover-TOP-微信图片_20180605153739",
+      "sizeKB": 25,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-微信图片_20180605153744.webp",
+      "name": "hardcover-TOP-微信图片_20180605153744",
+      "sizeKB": 250,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-image148.webp",
+      "name": "hardcover-TOP-image148",
+      "sizeKB": 30,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_7710.webp",
+      "name": "hardcover-TOP-IMG_7710",
+      "sizeKB": 329,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_7714.webp",
+      "name": "hardcover-TOP-IMG_7714",
+      "sizeKB": 102,
+      "category": "hardcover",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_7723.webp",
+      "name": "hardcover-TOP-IMG_7723",
+      "sizeKB": 134,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_7732.webp",
+      "name": "hardcover-TOP-IMG_7732",
+      "sizeKB": 151,
+      "category": "hardcover",
+      "fit": "contain"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_101334.webp",
+      "name": "hardcover-TOP-IMG_20180605_101334",
+      "sizeKB": 163,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_101400.webp",
+      "name": "hardcover-TOP-IMG_20180605_101400",
+      "sizeKB": 260,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_101446.webp",
+      "name": "hardcover-TOP-IMG_20180605_101446",
+      "sizeKB": 175,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_101533.webp",
+      "name": "hardcover-TOP-IMG_20180605_101533",
+      "sizeKB": 119,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_101709.webp",
+      "name": "hardcover-TOP-IMG_20180605_101709",
+      "sizeKB": 208,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_104549.webp",
+      "name": "hardcover-TOP-IMG_20180605_104549",
+      "sizeKB": 93,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_104604.webp",
+      "name": "hardcover-TOP-IMG_20180605_104604",
+      "sizeKB": 64,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_104618.webp",
+      "name": "hardcover-TOP-IMG_20180605_104618",
+      "sizeKB": 191,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_104716.webp",
+      "name": "hardcover-TOP-IMG_20180605_104716",
+      "sizeKB": 149,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_104930.webp",
+      "name": "hardcover-TOP-IMG_20180605_104930",
+      "sizeKB": 91,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_110057.webp",
+      "name": "hardcover-TOP-IMG_20180605_110057",
+      "sizeKB": 176,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_110549.webp",
+      "name": "hardcover-TOP-IMG_20180605_110549",
+      "sizeKB": 127,
+      "category": "hardcover",
+      "fit": "cover"
+     },
+     {
+      "src": "/product-gallery/2026-09-22__产品图库/hardcover-TOP-IMG_20180605_111350.webp",
+      "name": "hardcover-TOP-IMG_20180605_111350",
+      "sizeKB": 180,
+      "category": "hardcover",
+      "fit": "cover"
+     }
+    ]
+   }
   ],
-  "plant": {
-    "heroOver": {
-      "en": "Since 2001",
-      "zh": "始于2001",
-      "ja": "2001年創業",
-      "ko": "2001년 설립"
-    },
-    "heroTitle": {
-      "en": "Where Precision",
-      "zh": "精密与效率",
-      "ja": "精密と効率が",
-      "ko": "정밀함과 효율성이"
-    },
-    "heroAccent": {
-      "en": "Meets Production",
-      "zh": "在此交汇",
-      "ja": "交差する場所",
-      "ko": "교차하는 곳"
-    },
-    "heroDesc": {
-      "en": "Step inside our 20,000m² smart facility — 50%+ automation rate, 24/7 climate control, and a team of 250+ master craftsmen turning raw sheets into award-winning books.",
-      "zh": "走进星嘉艺20,000平方米智慧工厂——50%+自动化率、24小时恒温恒湿、250+工匠团队，每一本好书的诞生，都从这里开始。",
-      "ja": "20,000m²のスマート工場——50%超の自動化率、24時間温度管理、250+の熟練職人。すべての良書はここから始まります。",
-      "ko": "20,000m² 규모의 스마트 공장——50% 이상의 자동화율, 24시간 온도 제어, 250명 이상의 숙련된 장인. 모든 훌륭한 책은 이곳에서 시작됩니다."
-    },
-    "scroll": {
-      "en": "Scroll to explore",
-      "zh": "向下探索",
-      "ja": "スクロール",
-      "ko": "스크롤하여 탐색"
-    },
-    "stats": [
-      {
-        "value": "50",
-        "suffix": "%+",
-        "label": {
-          "en": "Automation Rate",
-          "zh": "自动化率",
-          "ja": "自動化率",
-          "ko": "자동화율"
-        }
-      },
-      {
-        "value": "24",
-        "suffix": "/7",
-        "label": {
-          "en": "Climate Control",
-          "zh": "恒温控制",
-          "ja": "温度管理",
-          "ko": "온도 제어"
-        }
-      },
-      {
-        "value": "20",
-        "suffix": "k m²",
-        "label": {
-          "en": "Production Area",
-          "zh": "生产面积",
-          "ja": "生産面積",
-          "ko": "생산 면적"
-        }
-      },
-      {
-        "value": "250",
-        "suffix": "+",
-        "label": {
-          "en": "Team Members",
-          "zh": "工匠团队",
-          "ja": "熟練職人",
-          "ko": "숙련된 장인"
-        }
-      }
+  "groups": [
+   {
+    "id": "custom-1",
+    "category": "custom",
+    "name": "匠心特装定制·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-1-2.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-1-2.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-1-3.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-1-4.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-1-5.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-1-6.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-1-7.webp"
     ],
-    "processTitle": {
-      "en": "Production Process",
-      "zh": "生产流程",
-      "ja": "生産フロー",
-      "ko": "생산 공정"
-    },
-    "processSub": {
-      "en": "",
-      "zh": "",
-      "ja": "",
-      "ko": ""
-    },
-    "steps": [
-      {
-        "title": {
-          "en": "Design & Prepress",
-          "zh": "设计与制版",
-          "ja": "設計・製版",
-          "ko": "설계 및 제판"
-        },
-        "desc": {
-          "en": "Structural design, file prep, CTP plate-making",
-          "zh": "结构设计、文件处理、CTP制版",
-          "ja": "構造設計、ファイル処理、CTP製版",
-          "ko": "구조 설계, 파일 처리, CTP 제판"
-        },
-        "img": "/process-illustrations/process-01.webp"
-      },
-      {
-        "title": {
-          "en": "Printing",
-          "zh": "精密印刷",
-          "ja": "印刷",
-          "ko": "인쇄"
-        },
-        "desc": {
-          "en": "Heidelberg offset / UV / digital on premium stock",
-          "zh": "LED-UV高端印刷",
-          "ja": "ハイデルベルグ オフセット/UV/デジタル印刷",
-          "ko": "하이델베르그 오프셋/UV/디지털 인쇄"
-        },
-        "img": "/process-illustrations/process-02.webp"
-      },
-      {
-        "title": {
-          "en": "Die-Cutting",
-          "zh": "模切",
-          "ja": "抜き加工",
-          "ko": "다이 커팅"
-        },
-        "desc": {
-          "en": "High-precision automated cutting & creasing",
-          "zh": "高精度自动模切压痕",
-          "ja": "高精度自動抜型加工",
-          "ko": "고정밀 자동 다이 커팅"
-        },
-        "img": "/process-illustrations/process-03.webp"
-      },
-      {
-        "title": {
-          "en": "Surface & Binding",
-          "zh": "表面与装订",
-          "ja": "表面・製本",
-          "ko": "표면 및 제본"
-        },
-        "desc": {
-          "en": "Foil stamping, lamination, hand-assembly",
-          "zh": "烫金、裱糊、手工组装",
-          "ja": "箔押し、ラミネート、手組み",
-          "ko": "금박, 라미네이팅, 수작업 조립"
-        },
-        "img": "/process-illustrations/process-04.webp"
-      },
-      {
-        "title": {
-          "en": "QC Inspection",
-          "zh": "质检",
-          "ja": "品質検査",
-          "ko": "품질 검사"
-        },
-        "desc": {
-          "en": "EN71 / ASTM / ISO — full quality gate checks",
-          "zh": "EN71 / ASTM / ISO 全检",
-          "ja": "EN71 / ASTM / ISO 全数検査",
-          "ko": "EN71 / ASTM / ISO 전수 검사"
-        },
-        "img": "/process-illustrations/process-05.webp"
-      },
-      {
-        "title": {
-          "en": "Warehouse & Dispatch",
-          "zh": "仓储与发货",
-          "ja": "保管・出荷",
-          "ko": "창고 및 배송"
-        },
-        "desc": {
-          "en": "Stereo warehouse, global logistics",
-          "zh": "立体仓管理，全球物流",
-          "ja": "立体倉庫、グローバル物流",
-          "ko": "입체 창고 관리, 글로벌 물류"
-        },
-        "img": "/process-illustrations/process-06.webp"
-      }
-    ],
-    "equipTitle": {
-      "en": "Our Equipment",
-      "zh": "核心设备",
-      "ja": "主要設備",
-      "ko": "핵심 설비"
-    },
-    "equipSub": {
-      "en": "German precision, Japanese efficiency — the tools behind the craft",
-      "zh": "德国精度、日本效率——匠艺背后的硬实力",
-      "ja": "ドイツの精度、日本の効率——ものづくりを支える力",
-      "ko": "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘"
-    },
-    "equipItems": [
-      {
-        "title": {
-          "en": "Automated Laminating Machines",
-          "zh": "全自动过胶机",
-          "ja": "自動ラミネート・糊付け機",
-          "ko": "자동 라미네이팅 기계"
-        },
-        "desc": {
-          "en": "High-precision lamination and gluing for smooth, durable finishes",
-          "zh": "高精度覆膜与过胶工艺，确保表面平整耐用",
-          "ja": "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現",
-          "ko": "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장"
-        },
-        "img": "/real-factory/IMG_5121.webp"
-      },
-      {
-        "title": {
-          "en": "Automated Die-Cutting Lines",
-          "zh": "自动模切生产线",
-          "ja": "自動抜型ライン",
-          "ko": "자동 다이 커팅 라인"
-        },
-        "desc": {
-          "en": "CNC-controlled cutting, creasing, and embossing in one pass",
-          "zh": "CNC数控裁切、压痕、压凸一次完成",
-          "ja": "CNC裁断、罫線、エンボスを一貫処理",
-          "ko": "CNC 절단, 크리징, 엠보싱 원스톱 처리"
-        },
-        "img": "/real-factory/IMG_5271.webp"
-      }
-    ],
-    "certTitle": {
-      "en": "Certifications",
-      "zh": "资质认证",
-      "ja": "認証資格",
-      "ko": "인증 및 자격"
-    },
-    "ctaTitle": {
-      "en": "See It in Action",
-      "zh": "实地探访",
-      "ja": "工場見学",
-      "ko": "공장 견학"
-    },
-    "ctaDesc": {
-      "en": "Schedule a virtual tour or visit our Shenzhen facility",
-      "zh": "预约参观深圳工厂，亲眼见证自动化的力量",
-      "ja": "スマート工場をぜひご覧ください",
-      "ko": "스마트 공장을 방문하여 자동화의 힘을 직접 확인하십시오"
-    },
-    "ctaBtn": {
-      "en": "Get in Touch",
-      "zh": "联系我们",
-      "ja": "お問い合わせ",
-      "ko": "문의하기"
-    },
-    "certifications": [
-      {
-        "name": {
-          "en": "ISO 9001",
-          "zh": "ISO 9001",
-          "ja": "ISO 9001",
-          "ko": "ISO 9001"
-        },
-        "src": "/certificate/ISO_9001-2015.png"
-      },
-      {
-        "name": {
-          "en": "ISO 14001",
-          "zh": "ISO 14001",
-          "ja": "ISO 14001",
-          "ko": "ISO 14001"
-        },
-        "src": "/certificate/iso14001.png"
-      },
-      {
-        "name": {
-          "en": "Disney FAMA",
-          "zh": "Disney FAMA",
-          "ja": "Disney FAMA",
-          "ko": "Disney FAMA"
-        },
-        "src": "/certificate/Disney_logo.png",
-        "invert": true
-      },
-      {
-        "name": {
-          "en": "Walmart",
-          "zh": "Walmart",
-          "ja": "Walmart",
-          "ko": "Walmart"
-        },
-        "src": "/certificate/Walmart.png"
-      },
-      {
-        "name": {
-          "en": "Target",
-          "zh": "Target",
-          "ja": "Target",
-          "ko": "Target"
-        },
-        "src": "/certificate/Target.png"
-      },
-      {
-        "name": {
-          "en": "Costco",
-          "zh": "Costco",
-          "ja": "Costco",
-          "ko": "Costco"
-        },
-        "src": "/certificate/Costco.png"
-      }
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "contain",
+     "contain",
+     "cover",
+     "contain"
     ]
-  },
-  "gallery": {
-    "folders": [
-      {
-        "key": "2026-08-20__图库",
-        "images": [
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/custom-TOP-image161.webp",
-            "name": "image161.jpg",
-            "sizeKB": 93,
-            "category": "custom"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180525101811.webp",
-            "name": "微信图片_20180525101811.jpg",
-            "sizeKB": 102,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180525102347.webp",
-            "name": "微信图片_20180525102347.jpg",
-            "sizeKB": 79,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-微信图片_20180608165824.webp",
-            "name": "微信图片_20180608165824.jpg",
-            "sizeKB": 84,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto19.webp",
-            "name": "hdphoto19.jpg",
-            "sizeKB": 59,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-hdphoto6.webp",
-            "name": "hdphoto6.jpg",
-            "sizeKB": 38,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image105.webp",
-            "name": "image105.jpg",
-            "sizeKB": 55,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image107.webp",
-            "name": "image107.jpg",
-            "sizeKB": 41,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image131.webp",
-            "name": "image131.jpg",
-            "sizeKB": 10,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image132.webp",
-            "name": "image132.jpg",
-            "sizeKB": 27,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image134.webp",
-            "name": "image134.jpg",
-            "sizeKB": 15,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image138.webp",
-            "name": "image138.jpg",
-            "sizeKB": 8,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image140.webp",
-            "name": "image140.jpg",
-            "sizeKB": 28,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image142.webp",
-            "name": "image142.jpg",
-            "sizeKB": 16,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image143.webp",
-            "name": "image143.jpg",
-            "sizeKB": 32,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image144.webp",
-            "name": "image144.jpg",
-            "sizeKB": 51,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image145.webp",
-            "name": "image145.jpg",
-            "sizeKB": 26,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image79.webp",
-            "name": "image79.jpg",
-            "sizeKB": 122,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image80.webp",
-            "name": "image80.jpg",
-            "sizeKB": 1553,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image81.webp",
-            "name": "image81.jpg",
-            "sizeKB": 209,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image82.webp",
-            "name": "image82.jpg",
-            "sizeKB": 197,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image83.webp",
-            "name": "image83.jpg",
-            "sizeKB": 147,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image84.webp",
-            "name": "image84.jpg",
-            "sizeKB": 202,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image85.webp",
-            "name": "image85.jpg",
-            "sizeKB": 62,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image86.webp",
-            "name": "image86.jpg",
-            "sizeKB": 54,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image88.webp",
-            "name": "image88.jpg",
-            "sizeKB": 123,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image89.webp",
-            "name": "image89.jpg",
-            "sizeKB": 45,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image90.webp",
-            "name": "image90.jpg",
-            "sizeKB": 172,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_101110.webp",
-            "name": "IMG_20180605_101110.jpg",
-            "sizeKB": 360,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_105428.webp",
-            "name": "IMG_20180605_105428.jpg",
-            "sizeKB": 83,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110538.webp",
-            "name": "IMG_20180605_110538.jpg",
-            "sizeKB": 230,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110630.webp",
-            "name": "IMG_20180605_110630.jpg",
-            "sizeKB": 115,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110820.webp",
-            "name": "IMG_20180605_110820.jpg",
-            "sizeKB": 135,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_110828.webp",
-            "name": "IMG_20180605_110828.jpg",
-            "sizeKB": 154,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_111107.webp",
-            "name": "IMG_20180605_111107.jpg",
-            "sizeKB": 379,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-IMG_20180605_111326.webp",
-            "name": "IMG_20180605_111326.jpg",
-            "sizeKB": 182,
-            "category": "boardbook"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-自然拼读魔术卡.webp",
-            "name": "自然拼读魔术卡.jpg",
-            "sizeKB": 648,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-hdphoto17.webp",
-            "name": "hdphoto17.jpg",
-            "sizeKB": 38,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_095814.webp",
-            "name": "IMG_20180605_095814.jpg",
-            "sizeKB": 263,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_101132.webp",
-            "name": "IMG_20180605_101132.jpg",
-            "sizeKB": 53,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/cards-TOP-IMG_20180605_104646.webp",
-            "name": "IMG_20180605_104646.jpg",
-            "sizeKB": 199,
-            "category": "cards"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-13.webp",
-            "name": "13.jpg",
-            "sizeKB": 242,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-14.webp",
-            "name": "14.jpg",
-            "sizeKB": 417,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-15.webp",
-            "name": "15.jpg",
-            "sizeKB": 149,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-16.webp",
-            "name": "16.jpg",
-            "sizeKB": 510,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-17.webp",
-            "name": "17.jpg",
-            "sizeKB": 187,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-18.webp",
-            "name": "18.jpg",
-            "sizeKB": 233,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-6.webp",
-            "name": "6.jpg",
-            "sizeKB": 95,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-8.webp",
-            "name": "8.jpg",
-            "sizeKB": 273,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-9.webp",
-            "name": "9.jpg",
-            "sizeKB": 146,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-扣图_.webp",
-            "name": "扣图_.jpg",
-            "sizeKB": 294,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164212.webp",
-            "name": "微信图片_20180608164212.jpg",
-            "sizeKB": 124,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164225.webp",
-            "name": "微信图片_20180608164225.jpg",
-            "sizeKB": 122,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-微信图片_20180608164229.webp",
-            "name": "微信图片_20180608164229.jpg",
-            "sizeKB": 150,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto10.webp",
-            "name": "hdphoto10.jpg",
-            "sizeKB": 112,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto11.webp",
-            "name": "hdphoto11.jpg",
-            "sizeKB": 76,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto12.webp",
-            "name": "hdphoto12.jpg",
-            "sizeKB": 79,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto13.webp",
-            "name": "hdphoto13.jpg",
-            "sizeKB": 24,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto7.webp",
-            "name": "hdphoto7.jpg",
-            "sizeKB": 21,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto8.webp",
-            "name": "hdphoto8.jpg",
-            "sizeKB": 18,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-hdphoto9.webp",
-            "name": "hdphoto9.jpg",
-            "sizeKB": 20,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image100.webp",
-            "name": "image100.jpg",
-            "sizeKB": 22,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image101.webp",
-            "name": "image101.jpg",
-            "sizeKB": 20,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image102.webp",
-            "name": "image102.jpg",
-            "sizeKB": 21,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image106.webp",
-            "name": "image106.jpg",
-            "sizeKB": 55,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image120.webp",
-            "name": "image120.jpg",
-            "sizeKB": 90,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image121.webp",
-            "name": "image121.jpg",
-            "sizeKB": 144,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image124.webp",
-            "name": "image124.jpg",
-            "sizeKB": 79,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image125.webp",
-            "name": "image125.jpg",
-            "sizeKB": 135,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image126.webp",
-            "name": "image126.jpg",
-            "sizeKB": 149,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image127.webp",
-            "name": "image127.jpg",
-            "sizeKB": 75,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image128.webp",
-            "name": "image128.jpg",
-            "sizeKB": 72,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image68.webp",
-            "name": "image68.jpg",
-            "sizeKB": 946,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image69.webp",
-            "name": "image69.jpg",
-            "sizeKB": 307,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image95.webp",
-            "name": "image95.jpg",
-            "sizeKB": 42,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image96.webp",
-            "name": "image96.jpg",
-            "sizeKB": 40,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image97.webp",
-            "name": "image97.jpg",
-            "sizeKB": 36,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image98.webp",
-            "name": "image98.jpg",
-            "sizeKB": 36,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-image99.webp",
-            "name": "image99.jpg",
-            "sizeKB": 37,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105844.webp",
-            "name": "IMG_20180605_105844.jpg",
-            "sizeKB": 192,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105857.webp",
-            "name": "IMG_20180605_105857.jpg",
-            "sizeKB": 120,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_105911.webp",
-            "name": "IMG_20180605_105911.jpg",
-            "sizeKB": 179,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_111155.webp",
-            "name": "IMG_20180605_111155.jpg",
-            "sizeKB": 206,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_20180605_111316.webp",
-            "name": "IMG_20180605_111316.jpg",
-            "sizeKB": 65,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9914小.webp",
-            "name": "IMG_9914小.jpg",
-            "sizeKB": 110,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9923.webp",
-            "name": "IMG_9923.JPG.jpg",
-            "sizeKB": 119,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9956小.webp",
-            "name": "IMG_9956小.jpg",
-            "sizeKB": 73,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9960小.webp",
-            "name": "IMG_9960小.jpg",
-            "sizeKB": 126,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-IMG_9962小.webp",
-            "name": "IMG_9962小.jpg",
-            "sizeKB": 301,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/toys-TOP-What_Do_you_Want_to_Ride.webp",
-            "name": "What_Do_you_Want_to_Ride.jpg",
-            "sizeKB": 504,
-            "category": "toys"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180525102337.webp",
-            "name": "微信图片_20180525102337.jpg",
-            "sizeKB": 107,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180525102359.webp",
-            "name": "微信图片_20180525102359.jpg",
-            "sizeKB": 91,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153731.webp",
-            "name": "微信图片_20180605153731.jpg",
-            "sizeKB": 236,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153739.webp",
-            "name": "微信图片_20180605153739.jpg",
-            "sizeKB": 35,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180605153744.webp",
-            "name": "微信图片_20180605153744.jpg",
-            "sizeKB": 369,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180608164242.webp",
-            "name": "微信图片_20180608164242.jpg",
-            "sizeKB": 79,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-微信图片_20180608164246.webp",
-            "name": "微信图片_20180608164246.jpg",
-            "sizeKB": 67,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-hdphoto5.webp",
-            "name": "hdphoto5.jpg",
-            "sizeKB": 105,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image103.webp",
-            "name": "image103.jpg",
-            "sizeKB": 32,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image141.webp",
-            "name": "image141.jpg",
-            "sizeKB": 26,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image148.webp",
-            "name": "image148.jpg",
-            "sizeKB": 31,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image149.webp",
-            "name": "image149.jpg",
-            "sizeKB": 20,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image153.webp",
-            "name": "image153.jpg",
-            "sizeKB": 60,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image154.webp",
-            "name": "image154.jpg",
-            "sizeKB": 21,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image156.webp",
-            "name": "image156.jpg",
-            "sizeKB": 30,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-image159.webp",
-            "name": "image159.jpg",
-            "sizeKB": 136,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101334.webp",
-            "name": "IMG_20180605_101334.jpg",
-            "sizeKB": 245,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101400.webp",
-            "name": "IMG_20180605_101400.jpg",
-            "sizeKB": 399,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101446.webp",
-            "name": "IMG_20180605_101446.jpg",
-            "sizeKB": 310,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101533.webp",
-            "name": "IMG_20180605_101533.jpg",
-            "sizeKB": 197,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_101709.webp",
-            "name": "IMG_20180605_101709.jpg",
-            "sizeKB": 365,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104549.webp",
-            "name": "IMG_20180605_104549.jpg",
-            "sizeKB": 139,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104604.webp",
-            "name": "IMG_20180605_104604.jpg",
-            "sizeKB": 94,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104618.webp",
-            "name": "IMG_20180605_104618.jpg",
-            "sizeKB": 258,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104629.webp",
-            "name": "IMG_20180605_104629.jpg",
-            "sizeKB": 247,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104716.webp",
-            "name": "IMG_20180605_104716.jpg",
-            "sizeKB": 207,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_104930.webp",
-            "name": "IMG_20180605_104930.jpg",
-            "sizeKB": 123,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_110057.webp",
-            "name": "IMG_20180605_110057.jpg",
-            "sizeKB": 251,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_110549.webp",
-            "name": "IMG_20180605_110549.jpg",
-            "sizeKB": 176,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_20180605_111350.webp",
-            "name": "IMG_20180605_111350.jpg",
-            "sizeKB": 256,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7710.webp",
-            "name": "IMG_7710.jpg",
-            "sizeKB": 491,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7714.webp",
-            "name": "IMG_7714.jpg",
-            "sizeKB": 187,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7719.webp",
-            "name": "IMG_7719.jpg",
-            "sizeKB": 338,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7723.webp",
-            "name": "IMG_7723.jpg",
-            "sizeKB": 221,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7724.webp",
-            "name": "IMG_7724.jpg",
-            "sizeKB": 277,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_7732.webp",
-            "name": "IMG_7732.jpg",
-            "sizeKB": 239,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/hardcover-TOP-IMG_9970小.webp",
-            "name": "IMG_9970小.jpg",
-            "sizeKB": 273,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image122.webp",
-            "name": "image122.jpg",
-            "sizeKB": 88,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/stickers-TOP-image123.webp",
-            "name": "image123.jpg",
-            "sizeKB": 82,
-            "category": "stickers"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image147.webp",
-            "name": "image147.jpg",
-            "sizeKB": 19,
-            "category": "hardcover"
-          },
-          {
-            "src": "/product-gallery/2026-08-20__产品图库/boardbook-TOP-image139.webp",
-            "name": "image139.jpg",
-            "sizeKB": 10,
-            "category": "hardcover"
-          }
-        ]
-      }
+   },
+   {
+    "id": "custom-2",
+    "category": "custom",
+    "name": "匠心特装定制·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-2-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-2-1.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-2-2.webp"
     ],
-    "categories": [
-      {
-        "key": "custom",
-        "name": "匠心特装定制"
-      },
-      {
-        "key": "boardbook",
-        "name": "板纸对裱童书"
-      },
-      {
-        "key": "cards",
-        "name": "益智卡牌卡册"
-      },
-      {
-        "key": "toys",
-        "name": "益智玩具类"
-      },
-      {
-        "key": "hardcover",
-        "name": "精装图书画册"
-      },
-      {
-        "key": "stickers",
-        "name": "趣味贴纸书系"
-      }
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
     ]
-  }
+   },
+   {
+    "id": "custom-3",
+    "category": "custom",
+    "name": "匠心特装定制·组03",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-3-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-3-1.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-3-2.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "custom-4",
+    "category": "custom",
+    "name": "匠心特装定制·组04",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-4-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-4-1.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-4-IMG_9929小.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-4-IMG_9931小.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "custom-5",
+    "category": "custom",
+    "name": "匠心特装定制·组05",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-5-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-5-1.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-5-hdphoto16.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-5-image113.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "custom-6",
+    "category": "custom",
+    "name": "匠心特装定制·组06",
+    "cover": "/product-gallery/2026-09-22__产品图库/custom-6-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/custom-6-1.webp",
+     "/product-gallery/2026-09-22__产品图库/custom-6-IMG_9872小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "craft-1",
+    "category": "craft",
+    "name": "工艺展示·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/craft-1-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/craft-1-1.webp",
+     "/product-gallery/2026-09-22__产品图库/craft-1-2.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "craft-2",
+    "category": "craft",
+    "name": "工艺展示·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/craft-2-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/craft-2-1.webp",
+     "/product-gallery/2026-09-22__产品图库/craft-2-2.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-1",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-1-1全套图片.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-1-1全套图片.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-1-2火车书.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-1-3风扇书.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-1-4灯书.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-1-5车轮书.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "cover",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-2",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-2-2.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-2.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片18.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片19.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片20.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片21.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片22.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-2-图片23.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain",
+     "contain",
+     "cover",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "boardbook-3",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组03",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-3-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-3-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-3-IMG_3644.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-3-IMG_3652.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-4",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组04",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-4-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-4-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-4-2.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-4-图片24.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-5",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组05",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-5-DSC7457.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-5-DSC7457.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-5-DSC7458.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-5-DSC7459.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-6",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组06",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-6-DSC7450.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-6-DSC7450.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-6-DSC7451.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-7",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组07",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-7-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-7-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-7-2.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "boardbook-8",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组08",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-8-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-8-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-8-2.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-8-3.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-9",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组09",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-9-DSC7461.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-9-DSC7461.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-9-DSC7462.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-9-DSC7463.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "boardbook-10",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组10",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-10-DSC7464.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-10-DSC7464.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-10-DSC7465.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-11",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组11",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-11-image5.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-11-image5.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-11-image57.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-11-image58.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-11-image59.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-11-image60.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-12",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组12",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-12-image91.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-12-image91.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-12-image92.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "boardbook-13",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组13",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-13-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-13-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-13-image71.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-13-image72.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-13-image73.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-14",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组14",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-14-image74.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-14-image74.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-14-image76.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-14-image77.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-14-image78.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-15",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组15",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-15-图片13.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-15-图片13.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-15-图片14.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-15-图片15.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-15-图片16.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-15-image65.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover",
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "boardbook-16",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组16",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-16-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-16-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-16-2..webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-16-3.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "boardbook-17",
+    "category": "boardbook",
+    "name": "板纸对裱童书·组17",
+    "cover": "/product-gallery/2026-09-22__产品图库/boardbook-17-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/boardbook-17-1.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-17-IMG_3654.webp",
+     "/product-gallery/2026-09-22__产品图库/boardbook-17-IMG_3655.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-1",
+    "category": "cards",
+    "name": "益智卡牌卡册·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-1-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-1-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-1-IMG_9918小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-2",
+    "category": "cards",
+    "name": "益智卡牌卡册·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-2-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-2-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-2-IMG_9832小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-3",
+    "category": "cards",
+    "name": "益智卡牌卡册·组03",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-3-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-3-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-3-IMG_9840小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-4",
+    "category": "cards",
+    "name": "益智卡牌卡册·组04",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-4-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-4-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-4-IMG_9846小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-5",
+    "category": "cards",
+    "name": "益智卡牌卡册·组05",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-5-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-5-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-5-IMG_9878小.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-5-IMG_9884小.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "cards-6",
+    "category": "cards",
+    "name": "益智卡牌卡册·组06",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-6-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-6-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-6-2.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "cards-7",
+    "category": "cards",
+    "name": "益智卡牌卡册·组07",
+    "cover": "/product-gallery/2026-09-22__产品图库/cards-7-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/cards-7-1.webp",
+     "/product-gallery/2026-09-22__产品图库/cards-7-2.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "toys-1",
+    "category": "toys",
+    "name": "益智玩具类·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/toys-1-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/toys-1-1.webp",
+     "/product-gallery/2026-09-22__产品图库/toys-1-8.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-1",
+    "category": "hardcover",
+    "name": "精装图书画册·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-1-1_2.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-1_2.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-1.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-2.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-3.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-4.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-5.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-7.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-10.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-11.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-12.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-IMG_9902小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-IMG_9905小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-IMG_9906小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-IMG_9907小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-1-IMG_9912小.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "hardcover-2",
+    "category": "hardcover",
+    "name": "精装图书画册·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-2-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-2-1.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-2-2.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-2-3.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-2-4.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-2-4b.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-3",
+    "category": "hardcover",
+    "name": "精装图书画册·组03",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-3-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-3-1.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-3-2.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-3-3.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-3-4.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "contain",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "hardcover-4",
+    "category": "hardcover",
+    "name": "精装图书画册·组04",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-4-IMG_7725.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-4-IMG_7725.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-4-IMG_7726.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-4-IMG_77266.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-5",
+    "category": "hardcover",
+    "name": "精装图书画册·组05",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-5-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-1.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-image149.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-image150.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-image151.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-image153.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-5-image154.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "cover",
+     "contain",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-6",
+    "category": "hardcover",
+    "name": "精装图书画册·组06",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-6-图片7.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片7.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片8.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片9.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片10.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片11.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-图片12.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-6-hdphoto5.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover",
+     "contain",
+     "cover",
+     "cover",
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-7",
+    "category": "hardcover",
+    "name": "精装图书画册·组07",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-7-DSC7440.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-7-DSC7440.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-7-DSC7441.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-7-DSC7445.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover",
+     "contain"
+    ]
+   },
+   {
+    "id": "hardcover-8",
+    "category": "hardcover",
+    "name": "精装图书画册·组08",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-8-IMG_9954小.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-8-IMG_9954小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-8-IMG_9955小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-9",
+    "category": "hardcover",
+    "name": "精装图书画册·组09",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-9-IMG_9945小.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-9-IMG_9945小.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-9-IMG_9949小.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "hardcover-10",
+    "category": "hardcover",
+    "name": "精装图书画册·组10",
+    "cover": "/product-gallery/2026-09-22__产品图库/hardcover-10-IMG_7719.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/hardcover-10-IMG_7719.webp",
+     "/product-gallery/2026-09-22__产品图库/hardcover-10-IMG_7724.webp"
+    ],
+    "coverFit": "cover",
+    "imageFits": [
+     "cover",
+     "cover"
+    ]
+   },
+   {
+    "id": "stickers-1",
+    "category": "stickers",
+    "name": "趣味贴纸书系·组01",
+    "cover": "/product-gallery/2026-09-22__产品图库/stickers-1-2.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/stickers-1-2.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-1-3.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-1-image46.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-1-image47.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "stickers-2",
+    "category": "stickers",
+    "name": "趣味贴纸书系·组02",
+    "cover": "/product-gallery/2026-09-22__产品图库/stickers-2-1_2.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/stickers-2-1_2.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-2-2.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-2-image42.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-2-image44.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   },
+   {
+    "id": "stickers-3",
+    "category": "stickers",
+    "name": "趣味贴纸书系·组03",
+    "cover": "/product-gallery/2026-09-22__产品图库/stickers-3-1.webp",
+    "images": [
+     "/product-gallery/2026-09-22__产品图库/stickers-3-1.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-3-image123.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-3-IMG_9958小.webp",
+     "/product-gallery/2026-09-22__产品图库/stickers-3-IMG_9959小.webp"
+    ],
+    "coverFit": "contain",
+    "imageFits": [
+     "contain",
+     "contain",
+     "contain",
+     "contain"
+    ]
+   }
+  ],
+  "total": 277,
+  "groupTotal": 46
+ }
 }

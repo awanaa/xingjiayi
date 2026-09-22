@@ -104,8 +104,8 @@ export default function IntelligentPlant() {
       equipTitle: "Our Equipment",
       equipSub: "German precision, Japanese efficiency — the tools behind the craft",
       equipItems: [
-        { title: "Automated Laminating Machines", desc: "High-precision lamination and gluing for smooth, durable finishes", img: "/real-factory/IMG_5121.JPG" },
-        { title: "Automated Die-Cutting Lines", desc: "CNC-controlled cutting, creasing, and embossing in one pass", img: "/real-factory/IMG_5271.JPG" },
+        { title: "Automated Laminating Machines", desc: "High-precision lamination and gluing for smooth, durable finishes", img: "/real-factory/IMG_5121.webp" },
+        { title: "Automated Die-Cutting Lines", desc: "CNC-controlled cutting, creasing, and embossing in one pass", img: "/real-factory/IMG_5271.webp" },
       ],
       certTitle: "Certifications",
       ctaTitle: "See It in Action",
@@ -137,8 +137,8 @@ export default function IntelligentPlant() {
       equipTitle: "核心设备",
       equipSub: "德国精度、日本效率——匠艺背后的硬实力",
       equipItems: [
-        { title: "全自动过胶机", desc: "高精度覆膜与过胶工艺，确保表面平整耐用", img: "/real-factory/IMG_5121.JPG" },
-        { title: "自动模切生产线", desc: "CNC数控裁切、压痕、压凸一次完成", img: "/real-factory/IMG_5271.JPG" },
+        { title: "全自动过胶机", desc: "高精度覆膜与过胶工艺，确保表面平整耐用", img: "/real-factory/IMG_5121.webp" },
+        { title: "自动模切生产线", desc: "CNC数控裁切、压痕、压凸一次完成", img: "/real-factory/IMG_5271.webp" },
       ],
       certTitle: "资质认证",
       ctaTitle: "实地探访",
@@ -170,8 +170,8 @@ export default function IntelligentPlant() {
       equipTitle: "主要設備",
       equipSub: "ドイツの精度、日本の効率——ものづくりを支える力",
       equipItems: [
-        { title: "自動ラミネート・糊付け機", desc: "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現", img: "/real-factory/IMG_5121.JPG" },
-        { title: "自動抜型ライン", desc: "CNC裁断、罫線、エンボスを一貫処理", img: "/real-factory/IMG_5271.JPG" },
+        { title: "自動ラミネート・糊付け機", desc: "高精度な表面加工と接着により、滑らかで耐久性のある仕上がりを実現", img: "/real-factory/IMG_5121.webp" },
+        { title: "自動抜型ライン", desc: "CNC裁断、罫線、エンボスを一貫処理", img: "/real-factory/IMG_5271.webp" },
       ],
       certTitle: "認証資格",
       ctaTitle: "工場見学",
@@ -203,8 +203,8 @@ export default function IntelligentPlant() {
       equipTitle: "핵심 설비",
       equipSub: "독일의 정밀함, 일본의 효율성——장인 정신을 뒷받침하는 힘",
       equipItems: [
-        { title: "자동 라미네이팅 기계", desc: "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장", img: "/real-factory/IMG_5121.JPG" },
-        { title: "자동 다이 커팅 라인", desc: "CNC 절단, 크리징, 엠보싱 원스톱 처리", img: "/real-factory/IMG_5271.JPG" },
+        { title: "자동 라미네이팅 기계", desc: "고정밀 표면 처리 및 접착으로 매끄럽고 내구성 있는 마감 보장", img: "/real-factory/IMG_5121.webp" },
+        { title: "자동 다이 커팅 라인", desc: "CNC 절단, 크리징, 엠보싱 원스톱 처리", img: "/real-factory/IMG_5271.webp" },
       ],
       certTitle: "인증 및 자격",
       ctaTitle: "공장 견학",
@@ -368,7 +368,7 @@ export default function IntelligentPlant() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400/80 font-medium uppercase border border-gold-500/20 rounded-full px-4 py-1.5 backdrop-blur-sm mb-8">
+            <span className="inline-block text-xs tracking-[0.25em] text-gold-400 font-semibold uppercase bg-black/60 border border-gold-500/40 rounded-full px-5 py-2 backdrop-blur-md mb-8 shadow-lg">
               {t.heroOver}
             </span>
           </div>
@@ -376,21 +376,21 @@ export default function IntelligentPlant() {
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
-          <p className="text-white/50 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-normal animate-fade-in-up opacity-0 font-display drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {t.heroDesc}
           </p>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
-          <span className="text-[10px] tracking-widest uppercase">{t.scroll}</span>
-          <ChevronDown className="w-4 h-4" />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white animate-bounce cursor-pointer group">
+          <span className="text-xs md:text-sm tracking-widest uppercase font-medium text-white group-hover:text-gold-400 transition-colors drop-shadow-md">{t.scroll}</span>
+          <ChevronDown className="w-5 h-5 text-gold-400 group-hover:translate-y-0.5 transition-transform drop-shadow-md" />
         </div>
       </section>
 
       {/* ═══ STATS — parallax with video frame ═══ */}
       <section ref={statsRef} className="snap-start relative min-h-screen flex flex-col justify-center py-32 px-6 overflow-hidden border-t border-white/[0.04]">
         <div className="absolute inset-0">
-          <OptimizedImage src="/real-factory/IMG_5141.JPG" alt="" wrapperClassName="absolute inset-0" className="w-full h-full object-cover" />
+          <OptimizedImage src="/real-factory/IMG_5141.webp" alt="" wrapperClassName="absolute inset-0" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-gold-500/5 to-transparent" />
@@ -479,7 +479,7 @@ export default function IntelligentPlant() {
           {/* Background Factory Image - Scaled down by limiting width, positioned right */}
           <div className="absolute right-0 top-0 w-[100%] md:w-[60%] h-[120%] -top-[10%]">
             <img 
-              src="/equipment/页首顶部图片.png" 
+              src="/equipment/页首顶部图片.webp" 
               alt="Smart Factory" 
               className="w-full h-full object-cover object-[100%_45%] opacity-90" 
               style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 15%, black 45%)', maskImage: 'linear-gradient(to right, transparent 0%, transparent 15%, black 45%)' }} 
@@ -580,13 +580,13 @@ export default function IntelligentPlant() {
                  </div>
                </div>
                {/* Image */}
-               <img src="/equipment/01.png" alt="01" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+               <img src="/equipment/01.webp" alt="01" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
             </div>
 
             {/* 02 Card - Row 2 */}
             <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 items-center min-h-0 relative z-20">
                {/* Left aligned image */}
-               <img src="/equipment/02.png" alt="02" className="absolute left-[-2%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-left" />
+               <img src="/equipment/02.webp" alt="02" className="absolute left-[-2%] top-[55%] -translate-y-1/2 w-[55%] h-[155%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-left" />
                <div className="w-[50%] flex flex-col justify-center h-full relative z-20 equip-card-content ml-auto pl-8">
                  <div className="text-[#0a9396] font-bold text-[9px] md:text-[10px] tracking-widest mb-1 uppercase">02 / {lang === "zh" ? "表面处理" : "FINISHING"}</div>
                  <h3 className="text-base md:text-xl font-black text-[#111] mb-1.5 leading-tight whitespace-pre-line">
@@ -635,7 +635,7 @@ export default function IntelligentPlant() {
                      </div>
                    </div>
                  </div>
-                 <img src="/equipment/03.png" alt="03" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[60%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+                 <img src="/equipment/03.webp" alt="03" className="absolute right-[-4%] top-[55%] -translate-y-1/2 w-[60%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
               </div>
               {/* 04 */}
               <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
@@ -656,7 +656,7 @@ export default function IntelligentPlant() {
                      </div>
                    </div>
                  </div>
-                 <img src="/equipment/04.png" alt="04" className="absolute right-[0%] top-[50%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+                 <img src="/equipment/04.webp" alt="04" className="absolute right-[0%] top-[50%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
               </div>
             </div>
 
@@ -681,7 +681,7 @@ export default function IntelligentPlant() {
                      </div>
                    </div>
                  </div>
-                 <img src="/equipment/包装设备.png" alt="05" className="absolute right-[0%] top-[55%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+                 <img src="/equipment/包装设备.webp" alt="05" className="absolute right-[0%] top-[55%] -translate-y-1/2 w-[55%] h-[145%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
               </div>
               {/* 06 */}
               <div className="flex-1 bg-white rounded-xl border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.03)] flex flex-row px-6 py-2.5 min-h-0 relative overflow-visible">
@@ -702,7 +702,7 @@ export default function IntelligentPlant() {
                      </div>
                    </div>
                  </div>
-                 <img src="/equipment/05.png" alt="06" className="absolute right-[0%] top-[65%] -translate-y-1/2 w-[45%] h-[135%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
+                 <img src="/equipment/05.webp" alt="06" className="absolute right-[0%] top-[65%] -translate-y-1/2 w-[45%] h-[135%] object-contain drop-shadow-2xl z-30 pointer-events-none machine-img origin-right" />
               </div>
             </div>
 

@@ -278,12 +278,12 @@ export default function AboutUs() {
       {/* ═══ HERO ═══ */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         {/* We use factory-08.jpg as the factory/printing environment background */}
-        <OptimizedImage src="/factory/factory-08.jpg" alt="Factory" wrapperClassName="absolute inset-0 w-full h-full" className="w-full h-full object-cover opacity-40" />
+        <OptimizedImage src="/factory/factory-08.webp" alt="Factory" wrapperClassName="absolute inset-0 w-full h-full" className="w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/50 to-[#0a0a0a]" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-16">
           <div className="animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out forwards' }}>
-            <span className="inline-block text-[10px] tracking-[0.3em] text-gold-400 font-medium uppercase border border-gold-500/30 rounded-full px-5 py-2 backdrop-blur-sm bg-black/20 mb-8">
+            <span className="inline-block text-xs tracking-[0.25em] text-gold-400 font-semibold uppercase border border-gold-500/40 rounded-full px-5 py-2 backdrop-blur-md bg-black/60 mb-8 shadow-lg">
               {t.heroSub}
             </span>
           </div>
@@ -291,14 +291,14 @@ export default function AboutUs() {
             <span className="block animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.15s forwards' }}>{t.heroTitle}</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-amber-600 animate-fade-in-up opacity-0" style={{ animation: 'fadeInUp 0.8s ease-out 0.3s forwards' }}>{t.heroAccent}</span>
           </h1>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light animate-fade-in-up opacity-0 font-display" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
+          <p className="text-white max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-normal animate-fade-in-up opacity-0 font-display drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ animation: 'fadeInUp 0.8s ease-out 0.45s forwards' }}>
             {t.heroDesc}
           </p>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
-          <span className="text-[10px] tracking-widest uppercase">{t.scroll}</span>
-          <ChevronDown className="w-4 h-4" />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white animate-bounce cursor-pointer group">
+          <span className="text-xs md:text-sm tracking-widest uppercase font-medium text-white group-hover:text-gold-400 transition-colors drop-shadow-md">{t.scroll}</span>
+          <ChevronDown className="w-5 h-5 text-gold-400 group-hover:translate-y-0.5 transition-transform drop-shadow-md" />
         </div>
       </section>
 
@@ -390,7 +390,7 @@ export default function AboutUs() {
               { name: "SCAN", src: "/certifications/scan.jpg", scale: "scale-[1.8]" },
               { name: "SMETA", src: "/certifications/smeta-.png", scale: "scale-[1.8]" },
               { name: "Universal", src: "/certifications/universal.png", scale: "scale-[2.1]" },
-              { name: "中国环境标志", src: "/certifications/china10.png", scale: "scale-[1.8]" },
+              { name: "中国环境标志", src: "/certifications/china10.webp", scale: "scale-[1.8]" },
               { name: "FSC", src: "/certifications/fsc-new.png", scale: "scale-125" },
               { name: "EXPERT", src: "/certifications/expert.jpg", scale: "scale-125" },
             ].map((cert, i) => (

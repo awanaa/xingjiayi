@@ -85,7 +85,7 @@ export default function TrustProofSection({ lang, isActive, topContent, dataInde
         Icon: Globe,
       },
       {
-        end: 500, suffix: "+",
+        end: 1000, suffix: "+",
         label: lang === "zh" ? "年项目数" : lang === "ja" ? "年間プロジェクト" : "Projects Annually",
         desc: lang === "zh" ? "从纸板书到复杂立体书工程。" : lang === "ja" ? "ボードブックから複雑なポップアップまで。" : "From board books to complex pop-up engineering.",
         Icon: Award,
