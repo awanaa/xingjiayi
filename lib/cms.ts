@@ -7,7 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import { execSync } from "node:child_process";
+import { execSync, spawn } from "node:child_process";
 
 // --- Type Definitions ---
 export type LocaleString = {
@@ -230,6 +230,29 @@ export function saveContent(data: SiteContent): void {
 }
 
 /**
+ * 触发线上部署（构建 + 重启）。
+ * 非阻塞：spawn detached，后台跑 /usr/local/bin/xjy-deploy.sh，
+ * 不影响后台保存响应；脚本内部自带加锁，防并发构建。
+ */
+function triggerDeploy(reason: string): void {
+  const script = process.env.XJY_DEPLOY_SCRIPT || "/usr/local/bin/xjy-deploy.sh";
+  try {
+    if (!fs.existsSync(script)) {
+      console.error("[CMS-DEPLOY] 部署脚本不存在，跳过:", script);
+      return;
+    }
+    const child = spawn("bash", [script, reason], {
+      detached: true,
+      stdio: "ignore",
+    });
+    child.unref();
+    console.log("[CMS-DEPLOY] 已触发部署，reason=", reason, "pid=", child.pid);
+  } catch (e) {
+    console.error("[CMS-DEPLOY] 触发部署失败(仅记录):", e);
+  }
+}
+
+/**
  * content.json 双向同步：保存后自动 commit -> pull --rebase（合并远端改动）-> push。
  * 同一处两边同时改动时 git 报冲突，本地数据保留、远端保留，抛错由 API 层返回 409 提示人工合并。
  */
@@ -269,6 +292,10 @@ function syncContentToGit(): void {
     // 刷新内存缓存：pull 可能带回远端改动，避免读到旧数据
     if (fs.existsSync(CONTENT_FILE)) {
       contentCache = JSON.parse(fs.readFileSync(CONTENT_FILE, "utf8")) as SiteContent;
+    }
+    // 内容已成功 push 到 git → 触发线上重新构建并重启，使改立生效
+    if (process.env.XJY_AUTO_DEPLOY !== "0") {
+      triggerDeploy("cms-save");
     }
   } catch (e) {
     console.error("[CMS-GIT] 同步异常:", e);
