@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Eye,
   Box,
   Printer,
   FileText,
@@ -52,6 +56,99 @@ interface ContentType {
 }
 
 // --- Content Dictionary (zh / en / ja) ---
+
+// 8-Box Group Images from Desktop/首页8框图
+const FEATURED_GROUPS = [
+  {
+    id: 1,
+    cover: "/home-boxes/1/2.webp",
+    images: [
+      "/home-boxes/1/2.webp",
+      "/home-boxes/1/3.webp",
+      "/home-boxes/1/4.webp",
+      "/home-boxes/1/1.gif",
+      "/home-boxes/1/2.gif",
+    ],
+  },
+  {
+    id: 2,
+    cover: "/home-boxes/2/1.gif",
+    images: [
+      "/home-boxes/2/1.gif",
+      "/home-boxes/2/2.gif",
+      "/home-boxes/2/3.gif",
+      "/home-boxes/2/4.gif",
+      "/home-boxes/2/5.gif",
+      "/home-boxes/2/6.gif",
+      "/home-boxes/2/7.gif",
+      "/home-boxes/2/8.gif",
+      "/home-boxes/2/9.gif",
+      "/home-boxes/2/10.gif",
+    ],
+  },
+  {
+    id: 3,
+    cover: "/home-boxes/3/图片18.webp",
+    images: [
+      "/home-boxes/3/图片18.webp",
+    ],
+  },
+  {
+    id: 4,
+    cover: "/home-boxes/4/图片14.webp",
+    images: [
+      "/home-boxes/4/图片14.webp",
+      "/home-boxes/4/图片5.gif",
+    ],
+  },
+  {
+    id: 5,
+    cover: "/home-boxes/5/1.webp",
+    images: [
+      "/home-boxes/5/1.webp",
+      "/home-boxes/5/2.gif",
+      "/home-boxes/5/3.gif",
+      "/home-boxes/5/4.gif",
+      "/home-boxes/5/5.gif",
+    ],
+  },
+  {
+    id: 6,
+    cover: "/home-boxes/6/1.webp",
+    images: [
+      "/home-boxes/6/1.webp",
+      "/home-boxes/6/图片1.gif",
+      "/home-boxes/6/图片2.jpg",
+      "/home-boxes/6/图片3.jpg",
+      "/home-boxes/6/图片4.gif",
+    ],
+  },
+  {
+    id: 7,
+    cover: "/home-boxes/7/图片22.webp",
+    images: [
+      "/home-boxes/7/图片22.webp",
+      "/home-boxes/7/图片23.webp",
+      "/home-boxes/7/2.jpeg",
+      "/home-boxes/7/图片7.gif",
+      "/home-boxes/7/图片8.gif",
+      "/home-boxes/7/图片9.gif",
+    ],
+  },
+  {
+    id: 8,
+    cover: "/home-boxes/8/1全套图片.webp",
+    images: [
+      "/home-boxes/8/1全套图片.webp",
+      "/home-boxes/8/图片6.gif",
+      "/home-boxes/8/火车书.gif",
+      "/home-boxes/8/灯书.gif",
+      "/home-boxes/8/车轮书.gif",
+      "/home-boxes/8/风扇书.gif",
+    ],
+  },
+];
+
 const contentDict: Record<Lang, ContentType> = {
   en: {
     hero: {
@@ -462,6 +559,43 @@ export default function HomePage() {
   const [susMousePos, setSusMousePos] = useState({ x: 0, y: 0 });
   const [showGif, setShowGif] = useState(false);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
+
+  const [activeGroupIndex, setActiveGroupIndex] = useState<number | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+
+  const openModal = (groupIndex: number) => {
+    setActiveGroupIndex(groupIndex);
+    setActiveImageIndex(0);
+  };
+  const closeModal = () => {
+    setActiveGroupIndex(null);
+    setActiveImageIndex(0);
+  };
+  const nextImage = useCallback(() => {
+    if (activeGroupIndex === null) return;
+    const group = FEATURED_GROUPS[activeGroupIndex];
+    if (!group || group.images.length <= 1) return;
+    setActiveImageIndex((prev) => (prev + 1) % group.images.length);
+  }, [activeGroupIndex]);
+
+  const prevImage = useCallback(() => {
+    if (activeGroupIndex === null) return;
+    const group = FEATURED_GROUPS[activeGroupIndex];
+    if (!group || group.images.length <= 1) return;
+    setActiveImageIndex((prev) => (prev - 1 + group.images.length) % group.images.length);
+  }, [activeGroupIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (activeGroupIndex === null) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeGroupIndex, nextImage, prevImage]);
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const cmsContent = useCmsContent();
   const fallbackContent = contentDict[lang as "en" | "zh" | "ja" | "ko"] || contentDict.en;
@@ -708,50 +842,69 @@ export default function HomePage() {
       {/* 2. Trust Proof Section (Why Us) */}
       <TrustProofSection dataIndex={2} lang={lang} isActive={activeSection === 2} trustData={cmsContent?.trustNumbers} />
 
-      <section
+            <section
         data-index={3}
-        className="snap-section relative snap-start min-h-[100dvh] md:h-screen flex flex-col items-center justify-center pt-24 pb-12 md:pb-0 px-6 overflow-hidden bg-black"
+        className="snap-section relative snap-start min-h-[100dvh] py-16 md:py-24 flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden bg-[#080808]"
       >
-        <div className="max-w-7xl w-full">
-          <div className="text-center mb-4 md:mb-8">
-            <span className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium">
+        <div className="max-w-7xl w-full mx-auto">
+          <div className="text-center mb-6 md:mb-8">
+            <span className="text-gold-500 text-xs tracking-[0.2em] uppercase font-semibold">
               Featured Work
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-white tracking-tight">
               {content.featured.title}
             </h2>
-            <p className="text-white/70 text-sm md:text-base mt-2 max-w-2xl mx-auto">
+            <p className="text-white/80 text-sm md:text-base mt-2 max-w-2xl mx-auto font-normal">
               {content.featured.subtitle}
             </p>
             <div className="h-0.5 w-12 bg-gold-500 mx-auto mt-3 md:mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-            {content.featured.categories.map((cat, i) => (
-              <Link
-                key={i}
-                href={`/portfolio`}
-                className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/[0.06] hover-lift transition-all"
-              >
-                <div className="aspect-video relative overflow-hidden bg-white/[0.03]">
-                  <OptimizedImage
-                    src={`/products/prod-${String(i + 1).padStart(2, "0")}.webp`}
-                    alt={cat.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-smooth opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 md:gap-5">
+            {content.featured.categories.map((cat, i) => {
+              const group = FEATURED_GROUPS[i] || FEATURED_GROUPS[0];
+              const count = group.images.length;
+              return (
+                <div
+                  key={i}
+                  onClick={() => openModal(i)}
+                  className="group relative overflow-hidden rounded-2xl bg-[#141414] border border-white/[0.08] hover:border-gold-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-gold-500/15 cursor-pointer flex flex-col"
+                >
+                  <div className="aspect-[4/3] relative overflow-hidden bg-black/60 flex items-center justify-center p-3">
+                    <img
+                      src={group.cover}
+                      alt={cat.name}
+                      className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 ease-out"
+                    />
+                    
+                    {/* Badge: Item Count */}
+                    <div className="absolute top-2.5 right-2.5 bg-black/85 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-gold-500/40 text-[10px] md:text-xs font-mono text-gold-400 font-semibold shadow-md flex items-center gap-1">
+                      <span>{count}</span>
+                      <span className="text-[9px] text-white/70">{lang === 'zh' ? '款' : lang === 'ja' ? '点' : lang === 'ko' ? '개' : 'items'}</span>
+                    </div>
+
+                    {/* Hover Click Overlay Hint */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                      <span className="bg-gold-500 text-black text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <Eye className="w-3.5 h-3.5" />
+                        {lang === 'zh' ? '点击查看' : lang === 'ja' ? 'クリックして表示' : lang === 'ko' ? '클릭하여 보기' : 'Click to View'}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 md:p-4 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#141414] to-[#0d0d0d] border-t border-white/[0.04]">
+                    <div>
+                      <h3 className="text-sm md:text-base font-bold text-white group-hover:text-gold-400 transition-colors">
+                        {cat.name}
+                      </h3>
+                      <p className="text-xs text-white/70 mt-1 leading-relaxed line-clamp-2">
+                        {cat.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-3 md:p-4">
-                  <h3 className="text-base md:text-lg font-bold text-white group-hover:text-gold-500 transition-colors">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-white/70 mt-1 leading-relaxed line-clamp-2">
-                    {cat.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1153,6 +1306,116 @@ export default function HomePage() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
         }}
       />
+      
+      {/* ═══ 8-BOX PREVIEW MODAL ═══ */}
+      {activeGroupIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex flex-col justify-between p-4 md:p-6 animate-fade-in"
+          onClick={closeModal}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between w-full max-w-6xl mx-auto z-10" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-3">
+              <span className="bg-gold-500/20 text-gold-400 font-mono text-xs md:text-sm font-bold px-3 py-1 rounded-full border border-gold-500/40 shadow-sm">
+                0{activeGroupIndex + 1}
+              </span>
+              <div>
+                <h3 className="text-lg md:text-2xl font-bold text-white tracking-wide">
+                  {content.featured.categories[activeGroupIndex]?.name}
+                </h3>
+                <p className="text-xs md:text-sm text-white/70 hidden sm:block">
+                  {content.featured.categories[activeGroupIndex]?.desc}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-white/70 font-mono text-xs md:text-sm bg-white/10 px-3.5 py-1 rounded-full border border-white/15">
+                {activeImageIndex + 1} / {FEATURED_GROUPS[activeGroupIndex].images.length}
+              </span>
+              <button
+                onClick={closeModal}
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Main Display Stage */}
+          <div
+            className="relative flex-1 flex items-center justify-center my-2 max-w-6xl w-full mx-auto overflow-hidden select-none"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Left Prev Arrow */}
+            {FEATURED_GROUPS[activeGroupIndex].images.length > 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-2 md:left-4 z-20 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/75 hover:bg-gold-500 text-white hover:text-black border border-white/25 hover:border-gold-500 flex items-center justify-center transition-all duration-200 shadow-2xl hover:scale-110"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+            )}
+
+            {/* Current Image / GIF */}
+            <div className="relative max-h-[58vh] md:max-h-[66vh] max-w-full flex items-center justify-center p-2">
+              <img
+                key={FEATURED_GROUPS[activeGroupIndex].images[activeImageIndex]}
+                src={FEATURED_GROUPS[activeGroupIndex].images[activeImageIndex]}
+                alt={content.featured.categories[activeGroupIndex]?.name}
+                className="max-h-[56vh] md:max-h-[64vh] max-w-full object-contain rounded-xl shadow-2xl ring-1 ring-white/15 animate-fade-in"
+              />
+            </div>
+
+            {/* Right Next Arrow */}
+            {FEATURED_GROUPS[activeGroupIndex].images.length > 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-2 md:right-4 z-20 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/75 hover:bg-gold-500 text-white hover:text-black border border-white/25 hover:border-gold-500 flex items-center justify-center transition-all duration-200 shadow-2xl hover:scale-110"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            )}
+          </div>
+
+          {/* Footer & Thumbnail Strip */}
+          <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-3 z-10" onClick={(e) => e.stopPropagation()}>
+            {/* Thumbnail Strip (if multiple items) */}
+            {FEATURED_GROUPS[activeGroupIndex].images.length > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto max-w-full py-1 px-2 scrollbar-thin">
+                {FEATURED_GROUPS[activeGroupIndex].images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`relative flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      activeImageIndex === idx
+                        ? 'border-gold-500 scale-105 shadow-lg shadow-gold-500/30'
+                        : 'border-white/20 opacity-50 hover:opacity-100 hover:border-white/50'
+                    }`}
+                  >
+                    <img src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Bottom Actions */}
+            <div className="flex items-center gap-4 mt-1">
+              <Link
+                href="/portfolio"
+                className="bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs md:text-sm px-6 py-2.5 rounded-full flex items-center gap-2 shadow-lg shadow-gold-500/20 transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <span>{lang === 'zh' ? '前往产品展示库查看更多' : lang === 'ja' ? '製品ギャラリーでさらに見る' : lang === 'ko' ? '제품 갤러리에서 더 보기' : 'Explore Full Portfolio'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Quote Form Modal */}
       {showQuoteForm && (
         <QuoteForm
