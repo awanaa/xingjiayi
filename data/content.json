@@ -320,7 +320,7 @@
           "ja": "工程内管理",
           "ko": "공정 제어"
         },
-        "image": "/real-factory/03.png"
+        "image": "/real-factory/03.webp"
       },
       {
         "name": {
@@ -329,7 +329,7 @@
           "ja": "機能テスト",
           "ko": "기능 테스트"
         },
-        "image": "/real-factory/04.png"
+        "image": "/real-factory/04.webp"
       },
       {
         "name": {
@@ -338,7 +338,7 @@
           "ja": "最終検査",
           "ko": "완제품 검사"
         },
-        "image": "/real-factory/05.png"
+        "image": "/real-factory/05.webp"
       }
     ]
   },
@@ -363,7 +363,7 @@
           "ja": "FSC® 認証紙",
           "ko": "FSC® 인증 종이"
         },
-        "image": "/eco/01.png"
+        "image": "/eco/01.webp"
       },
       {
         "name": {
@@ -372,7 +372,7 @@
           "ja": "再生・生分解性素材",
           "ko": "재생 및 생분해성 재료"
         },
-        "image": "/eco/02.png"
+        "image": "/eco/02.webp"
       },
       {
         "name": {
@@ -381,7 +381,7 @@
           "ja": "大豆・水性インク",
           "ko": "대두 및 수성 잉크"
         },
-        "image": "/eco/03.png"
+        "image": "/eco/03.webp"
       },
       {
         "name": {
@@ -390,7 +390,7 @@
           "ja": "自動化生産によるロス削減",
           "ko": "자동화 생산을 통한 손실 감소"
         },
-        "image": "/eco/04.png"
+        "image": "/eco/04.webp"
       },
       {
         "name": {
@@ -399,7 +399,7 @@
           "ja": "廃棄物削減プログラム",
           "ko": "폐기물 감축 프로그램"
         },
-        "image": "/eco/05.png"
+        "image": "/eco/05.webp"
       },
       {
         "name": {
@@ -408,7 +408,7 @@
           "ja": "省エネ生産",
           "ko": "에너지 효율적인 생산"
         },
-        "image": "/eco/06.png"
+        "image": "/eco/06.webp"
       }
     ]
   },
@@ -533,7 +533,7 @@
         "ja": "中国环境标志",
         "ko": "中国环境标志"
       },
-      "src": "/certifications/china10.png",
+      "src": "/certifications/china10.webp",
       "scale": "scale-[1.8]"
     },
     {
