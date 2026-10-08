@@ -174,7 +174,9 @@ const contentDict: Record<Lang, ContentType> = {
         { name: "Activity Kits", desc: "Multi-component sets combining books, puzzles, crafts, and toys." },
         { name: "Boxed Sets", desc: "Premium gift sets with coordinated components for special editions." },
         { name: "Licensed Products", desc: "IP-branded books and kits meeting global compliance standards." },
-      ],
+        { name: "Sticker & Cards", desc: "Sticker activity books and interactive card decks." },
+        { name: "Custom Editions", desc: "Custom-engineered publications with lights, sounds and motion." },
+      ]
     },
     capabilities: {
       title: "From Concept to Global Delivery",
@@ -245,7 +247,9 @@ const contentDict: Record<Lang, ContentType> = {
         { name: "活动套装", desc: "书+拼图+手工+玩具的多组件综合套装。" },
         { name: "礼盒套装", desc: "精品礼品组合套装，包含协调搭配的多种组件。" },
         { name: "授权产品", desc: "IP品牌图书与套装，满足全球合规标准。" },
-      ],
+        { name: "趣味贴纸与卡牌", desc: "趣味贴纸书与高品质互动卡牌套装。" },
+        { name: "特装定制与声光机关", desc: "含发光、发声、动态机械联动的匠心定制特装出版物。" },
+      ]
     },
     capabilities: {
       title: "从卓越产品到全球交付",
@@ -317,7 +321,9 @@ const contentDict: Record<Lang, ContentType> = {
         { name: "アクティビティキット", desc: "本、パズル、工作、おもちゃを組み合わせたマルチコンポーネントセット。" },
         { name: "ボックスセット", desc: "特別編集版のためのプレミアムギフトセット。" },
         { name: "ライセンス製品", desc: "IPブランドの絵本とキット、グローバルコンプライアンス基準準拠。" },
-      ],
+        { name: "シール＆カード", desc: "シール絵本と知育カード。" },
+        { name: "特装カスタム", desc: "光・音・動的ギミックを組み込んだ匠の特装出版。" },
+      ]
     },
     capabilities: {
       title: "コンセプトからグローバル配送まで",
@@ -381,13 +387,15 @@ const contentDict: Record<Lang, ContentType> = {
       title: "아이디어를 탁월한 제품으로",
       subtitle: "페이퍼 엔지니어링, 인쇄, 제본 및 수작업을 결합하여 차별화된 출판물을 만드는 방법을 알아보세요",
       categories: [
-        { name: "보드북", desc: "조기 독서를 위해 설계된 내구성 있는 FSC 인증 보드입니다." },
-        { name: "팝업북 및 조작북", desc: "풀탭, 휠, 팝업 등 복잡한 3D 종이 구조를 포함합니다." },
-        { name: "사운드 및 전자북", desc: "CE 인증 사운드 모듈, LED 및 대화형 전자 부품." },
-        { name: "액티비티 키트", desc: "도서 + 퍼즐 + 공예 + 장난감이 결합된 멀티 컴포넌트 세트입니다." },
-        { name: "박스 세트", desc: "조화로운 여러 구성 요소를 포함하는 프리미엄 선물 세트입니다." },
-        { name: "라이선스 제품", desc: "글로벌 규정 준수 기준을 충족하는 IP 브랜드 도서 및 키트입니다." },
-      ],
+        { name: "보드북", desc: "내구성 좋은 FSC 인증 판지로 만든 조기 교육 그림책." },
+        { name: "입체책과 기관책", desc: "탭, 회전판, 팝업 등 복잡한 3D 페이퍼 구조." },
+        { name: "사운드북과 전자책", desc: "CE 인증 사운드 모듈, LED 및 인터랙티브 전자 부품." },
+        { name: "액티비티 키트", desc: "책 + 퍼즐 + 공예 + 장난감의 다중 구성 종합 세트." },
+        { name: "박스 세트", desc: "프리미엄 선물 세트, 조화로운 구성품." },
+        { name: "라이선스 제품", desc: "IP 브랜드 도서 및 세트, 글로벌 컴플라이언스 기준 준수." },
+        { name: "스티커 및 카드", desc: "재미있는 스티커 북과 인터랙티브 카드 덱." },
+        { name: "특장 커스텀", desc: "빛, 소리, 동적 기계 연동을 갖춘 장인 특장 출판." },
+      ]
     },
     capabilities: {
       title: "우수한 제품에서 글로벌 배송까지",
