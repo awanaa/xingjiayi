@@ -61,13 +61,13 @@ interface ContentType {
 const FEATURED_GROUPS = [
   {
     id: 1,
-    cover: "/home-boxes/1/2.webp",
+    cover: "/home-boxes/1/1.gif",
     images: [
+      "/home-boxes/1/1.gif",
+      "/home-boxes/1/2.gif",
       "/home-boxes/1/2.webp",
       "/home-boxes/1/3.webp",
       "/home-boxes/1/4.webp",
-      "/home-boxes/1/1.gif",
-      "/home-boxes/1/2.gif",
     ],
   },
   {
@@ -125,11 +125,11 @@ const FEATURED_GROUPS = [
   },
   {
     id: 7,
-    cover: "/home-boxes/7/图片22.webp",
+    cover: "/home-boxes/7/2.jpeg",
     images: [
+      "/home-boxes/7/2.jpeg",
       "/home-boxes/7/图片22.webp",
       "/home-boxes/7/图片23.webp",
-      "/home-boxes/7/2.jpeg",
       "/home-boxes/7/图片7.gif",
       "/home-boxes/7/图片8.gif",
       "/home-boxes/7/图片9.gif",
@@ -1365,6 +1365,14 @@ export default function HomePage() {
                 key={FEATURED_GROUPS[activeGroupIndex].images[activeImageIndex]}
                 src={FEATURED_GROUPS[activeGroupIndex].images[activeImageIndex]}
                 alt={content.featured.categories[activeGroupIndex]?.name}
+                decoding="async"
+                onError={(e) => {
+                  // webp/png 解码失败时互换格式兜底，防止空白
+                  const el = e.currentTarget;
+                  const cur = el.src.split('?')[0];
+                  if (cur.endsWith('.webp')) el.src = cur.replace(/\.webp$/, '.png');
+                  else if (cur.endsWith('.png')) el.src = cur.replace(/\.png$/, '.webp');
+                }}
                 className="max-h-[56vh] md:max-h-[64vh] max-w-full object-contain rounded-xl shadow-2xl ring-1 ring-white/15 animate-fade-in"
               />
             </div>
@@ -1396,7 +1404,14 @@ export default function HomePage() {
                         : 'border-white/20 opacity-50 hover:opacity-100 hover:border-white/50'
                     }`}
                   >
-                    <img src={img} alt={`thumb-${idx}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`thumb-${idx}`} loading="lazy" decoding="async"
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        const cur = el.src.split('?')[0];
+                        if (cur.endsWith('.webp')) el.src = cur.replace(/\.webp$/, '.png');
+                        else if (cur.endsWith('.png')) el.src = cur.replace(/\.png$/, '.webp');
+                      }}
+                      className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
