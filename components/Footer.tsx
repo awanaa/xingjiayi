@@ -16,7 +16,7 @@ export default function Footer({ dark = false }: { dark?: boolean }) {
         {/* Company Info */}
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <img src="/company-logo.png" alt="星嘉艺" className="h-12 w-12 md:h-14 md:w-14 object-cover object-left bg-white/95 p-1.5 rounded-xl shadow-sm ring-1 ring-white/10" />
+            <img src="/company-logo-v2.png" alt="星嘉艺" className="h-12 w-12 md:h-14 md:w-14 object-cover object-left bg-white/95 p-1.5 rounded-xl shadow-sm ring-1 ring-white/10" />
             <div className="flex flex-col justify-center">
               <span className={`font-bold text-xl md:text-2xl leading-none tracking-widest ${dark ? "text-white" : "text-primary"}`} style={{fontFamily: 'var(--font-noto)'}}>星嘉艺</span>
               <span className={`font-mono text-xs tracking-[0.2em] mt-1 ${dark ? "text-white/80" : "text-secondary"}`}>XINGJIAYI</span>

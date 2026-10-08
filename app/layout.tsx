@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Shenzhen Xingjiayi Art Paper Co., Ltd. | 深圳市星嘉艺纸艺有限公司",
   description: "深圳市星嘉艺纸艺有限公司 – 立足深圳，服务全球。三十年深耕纸艺工程与智能印刷解决方案。",
   icons: {
-    icon: "/company-logo.png",
+    icon: "/company-logo-v2.png",
   },
 };
 

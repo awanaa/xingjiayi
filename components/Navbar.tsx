@@ -33,7 +33,7 @@ export default function Navbar({ lang, onLangChange, showBackButton }: NavbarPro
         <Link href="/" className="absolute top-1/2 -translate-y-1/2 z-10 transition-[left] duration-500 ease-smooth flex items-center" style={{ left: showBackButton ? '-16px' : '0px' }}>
           <div className="relative flex items-center gap-3">
             <img
-              src="/company-logo.png"
+              src="/company-logo-v2.png"
               alt={lang === "zh" ? "星嘉艺" : "XINGJIAYI"}
               className={`h-10 w-10 md:h-12 md:w-12 object-cover object-left bg-white/95 p-1.5 rounded-xl shadow-sm ring-1 ring-white/10 origin-left transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]`}
             />
