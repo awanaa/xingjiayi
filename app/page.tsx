@@ -882,7 +882,13 @@ export default function HomePage() {
                     <img
                       src={group.cover}
                       alt={cat.name}
-                      className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 ease-out"
+                      className={`w-full h-full object-contain transition-transform duration-500 ease-out ${
+                        i === 4 || i === 5
+                          ? 'scale-[1.25] group-hover:scale-[1.33]'
+                          : i === 6
+                          ? 'scale-[1.32] group-hover:scale-[1.40]'
+                          : 'scale-100 group-hover:scale-108'
+                      }`}
                     />
                     
                     {/* Badge: Item Count */}
