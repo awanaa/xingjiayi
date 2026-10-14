@@ -164,7 +164,7 @@ const contentDict: Record<Lang, ContentType> = {
         "A trusted manufacturing partner supporting publishers, retailers and creative brands from concept to delivery",
     },
     featured: {
-      title: "Ideas Engineered into Exceptional Products",
+      title: "Our Featured Products",
       subtitle:
         "Explore how we combine paper engineering, printing, binding and hand assembly to deliver distinctive publishing products",
       categories: [
@@ -238,7 +238,7 @@ const contentDict: Record<Lang, ContentType> = {
       subtitle: "值得信赖的制造合作伙伴，从概念到交付全程支持出版商、零售商和创意品牌",
     },
     featured: {
-      title: "将创意转化为卓越产品",
+      title: "精选产品",
       subtitle: "探索我们如何将纸艺工程、印刷、装订与手工组装相结合，打造独具特色的出版产品",
       categories: [
         { name: "纸板书", desc: "耐用FSC认证纸板，专为早期阅读设计。" },
@@ -862,9 +862,6 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-white tracking-tight">
               {content.featured.title}
             </h2>
-            <p className="text-white/80 text-sm md:text-base mt-2 max-w-2xl mx-auto font-normal">
-              {content.featured.subtitle}
-            </p>
             <div className="h-0.5 w-12 bg-gold-500 mx-auto mt-3 md:mt-4" />
           </div>
 
@@ -894,7 +891,7 @@ export default function HomePage() {
                     {/* Badge: Item Count */}
                     <div className="absolute top-2.5 right-2.5 bg-black/85 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-gold-500/40 text-[10px] md:text-xs font-mono text-gold-400 font-semibold shadow-md flex items-center gap-1">
                       <span>{count}</span>
-                      <span className="text-[9px] text-white/70">{lang === 'zh' ? '款' : lang === 'ja' ? '点' : lang === 'ko' ? '개' : 'items'}</span>
+                      <span className="text-[9px] text-white/70">{lang === 'zh' ? '图' : lang === 'ja' ? '枚' : lang === 'ko' ? '장' : 'images'}</span>
                     </div>
 
                     {/* Hover Click Overlay Hint */}

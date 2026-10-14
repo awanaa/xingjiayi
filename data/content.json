@@ -41,10 +41,10 @@
   },
   "featured": {
     "title": {
-      "en": "Ideas Engineered into Exceptional Products",
-      "zh": "将创意转化为卓越产品",
-      "ja": "アイデアを卓越した製品へ",
-      "ko": "아이디어를 탁월한 제품으로"
+      "en": "Our Featured Products",
+      "zh": "精选产品",
+      "ja": "注目の製品",
+      "ko": "주요 제품"
     },
     "subtitle": {
       "en": "Explore how we combine paper engineering, printing, binding and hand assembly to deliver distinctive publishing products",
