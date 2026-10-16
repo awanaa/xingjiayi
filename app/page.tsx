@@ -908,9 +908,6 @@ export default function HomePage() {
                       <h3 className="text-sm md:text-base font-bold text-white group-hover:text-gold-400 transition-colors">
                         {cat.name}
                       </h3>
-                      <p className="text-xs text-white/70 mt-1 leading-relaxed line-clamp-2">
-                        {cat.desc}
-                      </p>
                     </div>
                   </div>
                 </div>
